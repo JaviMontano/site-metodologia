@@ -21,15 +21,18 @@ Fix the invisible language toggle, eliminate layout shift on language switch, co
 
 ## Constitution Check
 
-*GATE: Passed — all design decisions verified against Constitution v1.0.0.*
+*GATE: Passed — all design decisions verified against Constitution v2.0.0.*
 
 | Principle | Status | Verification |
 |-----------|--------|--------------|
-| I. Static-First | PASS | No server dependencies added. All changes are HTML/CSS/JS edits. |
+| I. Client-Rendered, Cloud-Backed | PASS | All changes are client-side HTML/CSS/JS edits. No backend dependency introduced. Content sourced from static HTML (pre-migration mode). `data-i18n` attribute contract is forward-compatible with future cloud backend. |
 | II. Accessibility-First | PASS | Lang toggle has ARIA radiogroup, aria-pressed, focus-visible. Skip-to-content exists. |
 | III. SEO Integrity | PASS | No pages added/removed. Existing meta tags preserved. Deprecated tag removed. |
-| IV. Component Consistency | PASS | Toggle uses shared `.lang-toggle` CSS. Floating nav exclusion uses reusable `data-nav-exclude` attribute. |
+| IV. Component Consistency | PASS | Toggle uses shared `.lang-toggle` CSS. Floating nav exclusion uses reusable `data-nav-exclude` attribute. Data access via i18n service module (centralized). |
 | V. Brand Separation | PASS | All copy changes use MetodologIA-approved terminology per brand_voice_v2.md. |
+| VI. Content Authority | PASS | During this phase, HTML files are the single source of truth for content. i18n JSON files are the single source for translations. No duplication introduced. |
+| VII. Secure by Default | N/A | No backend operations in this feature. |
+| VIII. Offline Resilience | N/A | No backend dependency — site remains fully static during this phase. |
 
 ## Architecture
 
