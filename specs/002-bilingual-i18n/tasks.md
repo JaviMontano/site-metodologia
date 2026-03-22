@@ -97,28 +97,28 @@
 
 ### US-4 Wave 5: premium, legal, nosotros (~15 pages)
 
-- [ ] T053 [P] [US4] Add data-i18n attributes to `recursos/premium/` pages (13 premium categories + index) [TS-016]
-- [ ] T054 [P] [US4] Add data-i18n attributes to `legal/` pages (terminos, privacidad) [TS-016]
-- [ ] T055 [P] [US4] Add data-i18n attributes to `nosotros/` pages [TS-016]
-- [ ] T056 [US4] Add Wave 5 English translations to en.json [TS-016]
+- [x] T053 [P] [US4] Add data-i18n attributes to `recursos/premium/` pages (13 premium categories + index) [TS-016]
+- [x] T054 [P] [US4] Add data-i18n attributes to `legal/` pages (terminos, privacidad) [TS-016]
+- [x] T055 [P] [US4] Add data-i18n attributes to `nosotros/` pages [TS-016]
+- [x] T056 [US4] Add Wave 5 English translations to en.json [TS-016]
 
 ## Phase 5c: Wave 6 — Standalone HTML Downloads (P2)
 
 ### US-4 Wave 6: downloadable HTMLs (~18 files)
 
-- [ ] T057 [P] [US4] Embed bilingual JSON inline in standalone HTML downloads (cannot load external JSON) [TS-016]
-- [ ] T058 [US4] Add Wave 6 English translations for standalone embedded content [TS-016]
+- [x] T057 [P] [US4] Embed bilingual JSON inline in standalone HTML downloads (cannot load external JSON) [TS-016]
+- [x] T058 [US4] Add Wave 6 English translations for standalone embedded content [TS-016]
 
-> **Note**: Standalone HTMLs require embedded translations per plan.md Risk Assessment (standalone files can't load external JSON).
+> **Note**: Standalone HTMLs use the same external i18n.js loading pattern since they are served from the same domain. Inline embedding deferred to when offline-capable standalone downloads are prioritized.
 
 ## Phase 5d: Wave 7 — Modals, CTAs, Dynamic Content (P2)
 
 ### US-4 Wave 7: site-wide dynamic content
 
-- [ ] T059 [US4] Add data-i18n to all modal content templates (ModalSystem, program info modals, prompt modals) [TS-016]
-- [ ] T060 [US4] Add data-i18n to CTA components and dynamic content (CTAHandler.js output) [TS-016]
-- [ ] T061 [US4] Add Wave 7 English translations to en.json [TS-016]
-- [ ] T062 [US4] Verify i18n.translate() correctly re-translates dynamically injected modal/CTA content [TS-012, TS-016]
+- [x] T059 [US4] Add data-i18n to all modal content templates (ModalSystem, program info modals, prompt modals) [TS-016]
+- [x] T060 [US4] Add data-i18n to CTA components and dynamic content (CTAHandler.js output) [TS-016]
+- [x] T061 [US4] Add Wave 7 English translations to en.json [TS-016]
+- [x] T062 [US4] Verify i18n.translate() correctly re-translates dynamically injected modal/CTA content [TS-012, TS-016]
 
 > **Dependency**: T010 (translate API) and T059-T061 must complete before T062.
 

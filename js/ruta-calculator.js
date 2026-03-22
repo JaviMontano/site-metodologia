@@ -105,7 +105,7 @@ function openLevelModal(level) {
         
         <div class="grid md:grid-cols-2 gap-6 mb-8">
             <div>
-                <h4 class="text-xs font-bold text-slate-200 uppercase tracking-wider mb-3">¿Qué Incluye?</h4>
+                <h4 class="text-xs font-bold text-slate-200 uppercase tracking-wider mb-3" data-i18n="modal.section_includes">¿Qué Incluye?</h4>
                 <ul class="space-y-2">
                     ${data.keypoints.map(k => `
                         <li class="flex items-start gap-2 text-sm text-slate-100">
@@ -116,7 +116,7 @@ function openLevelModal(level) {
                 </ul>
             </div>
             <div>
-                <h4 class="text-xs font-bold text-slate-200 uppercase tracking-wider mb-3">Beneficios</h4>
+                <h4 class="text-xs font-bold text-slate-200 uppercase tracking-wider mb-3" data-i18n="modal.section_benefits">Beneficios</h4>
                 <ul class="space-y-2">
                     ${data.benefits.map(b => `
                         <li class="flex items-start gap-2 text-sm text-slate-100">

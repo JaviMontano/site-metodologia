@@ -1030,5 +1030,104 @@
       "title": "Want to be a Beta Tester?",
       "cta": "Become a Beta Tester"
     }
+  },
+  "modal": {
+    "close": "Close",
+    "close_title": "Close modal",
+    "section_includes": "What's Included?",
+    "section_benefits": "Benefits",
+    "section_benefits_transform": "Benefits & Transformations"
+  },
+  "cta": {
+    "email_tooltip_prefix": "Opens your email for",
+    "primera_conversacion": "First Conversation",
+    "simular_inversion": "Simulate Investment",
+    "agendar_diagnostico": "Schedule Diagnosis",
+    "ver_detalles": "See Details",
+    "cotizar": "Get a Quote"
+  },
+  "premium": {
+    "breadcrumb": {
+      "current": "Premium Catalog"
+    },
+    "hero": {
+      "badge": "Enterprise Level",
+      "title_line1": "Premium",
+      "title_line2": "Resources",
+      "description": "Advanced versions designed for B2B environments. Includes priority support, guaranteed updates, and extended technical documentation.",
+      "cta_catalog": "View Catalog",
+      "cta_free": "Free Resources"
+    },
+    "value": {
+      "support_title": "Priority Support",
+      "support_desc": "Guaranteed 24h response, dedicated WhatsApp Business channel",
+      "updates_title": "Guaranteed Updates",
+      "updates_desc": "12 months of improvements included"
+    },
+    "pricing": {
+      "heading": "Investment",
+      "heading_highlight": "Table",
+      "col_resource": "Resource",
+      "footer": "Prices in COP + VAT"
+    },
+    "cta": {
+      "title": "Looking for something more specific?",
+      "description": "We design architecturally sound solutions for your unique processes.",
+      "button": "Explore Custom Services"
+    }
+  },
+  "legal": {
+    "common": {
+      "last_updated": "Last updated:"
+    },
+    "terminos": {
+      "breadcrumb": "Terms",
+      "title": "Terms and Conditions",
+      "intro": "Please read these terms carefully before using our services."
+    },
+    "privacidad": {
+      "breadcrumb": "Privacy",
+      "badge": "Sovereign Privacy",
+      "title": "Privacy Policy",
+      "subtitle": "Local-First architecture, data sovereignty, total transparency."
+    }
+  },
+  "nosotros": {
+    "breadcrumb": "About Us",
+    "hero": {
+      "badge": "Identity & Purpose",
+      "title_line1": "Who",
+      "title_line2": "We Are",
+      "description": "Strategists to co-create environments of abundance.",
+      "cta_primary": "First Conversation",
+      "cta_team": "Meet the Team"
+    },
+    "purpose": {
+      "heading": "Our Purpose",
+      "subheading": "Strategists to co-create environments of abundance"
+    },
+    "team": {
+      "label": "Team",
+      "heading": "Our Team",
+      "description": "A team of strategists dedicated to co-creating environments where excellence and innovation meet."
+    },
+    "model": {
+      "heading": "Service Model & Ambassadors"
+    },
+    "mision": {
+      "breadcrumb": "Mission",
+      "hero_badge": "Core Purpose",
+      "hero_cta_primary": "Join the Purpose"
+    },
+    "ecosistema": {
+      "breadcrumb": "Ecosystem",
+      "hero_badge": "Connected Value Network",
+      "hero_cta_partners": "View Partners",
+      "hero_cta_community": "Community",
+      "partners_heading": "Authorized Partners",
+      "community_heading": "The Community",
+      "cta_heading": "Where do you fit in the network?",
+      "cta_primary": "First Conversation"
+    }
   }
 }

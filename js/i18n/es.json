@@ -1030,5 +1030,104 @@
       "title": "¿Quieres ser Beta Tester?",
       "cta": "Ser Beta Tester"
     }
+  },
+  "modal": {
+    "close": "Cerrar",
+    "close_title": "Cerrar modal",
+    "section_includes": "¿Qué Incluye?",
+    "section_benefits": "Beneficios",
+    "section_benefits_transform": "Beneficios y Transformaciones"
+  },
+  "cta": {
+    "email_tooltip_prefix": "Abrirá tu correo para:",
+    "primera_conversacion": "Primera Conversación",
+    "simular_inversion": "Simular Inversión",
+    "agendar_diagnostico": "Agendar Diagnóstico",
+    "ver_detalles": "Ver Detalles",
+    "cotizar": "Cotizar"
+  },
+  "premium": {
+    "breadcrumb": {
+      "current": "Catálogo Premium"
+    },
+    "hero": {
+      "badge": "Nivel Enterprise",
+      "title_line1": "Recursos",
+      "title_line2": "Premium",
+      "description": "Versiones avanzadas diseñadas para entornos B2B. Incluyen soporte prioritario, actualizaciones garantizadas y documentación técnica extendida.",
+      "cta_catalog": "Ver Catálogo",
+      "cta_free": "Recursos Gratuitos"
+    },
+    "value": {
+      "support_title": "Soporte Prioritario",
+      "support_desc": "Respuesta garantizada 24h, canal dedicado WhatsApp Business",
+      "updates_title": "Actualizaciones Garantizadas",
+      "updates_desc": "12 meses de mejoras incluidas"
+    },
+    "pricing": {
+      "heading": "Tabla de",
+      "heading_highlight": "Inversión",
+      "col_resource": "Recurso",
+      "footer": "Precios en COP + IVA"
+    },
+    "cta": {
+      "title": "¿Buscas algo más específico?",
+      "description": "Diseñamos soluciones arquitectónicamente sólidas para tus procesos únicos.",
+      "button": "Explorar Servicios a Medida"
+    }
+  },
+  "legal": {
+    "common": {
+      "last_updated": "Última actualización:"
+    },
+    "terminos": {
+      "breadcrumb": "Términos",
+      "title": "Términos y Condiciones",
+      "intro": "Por favor lea estos términos con atención antes de usar nuestros servicios."
+    },
+    "privacidad": {
+      "breadcrumb": "Privacidad",
+      "badge": "Privacidad Soberana",
+      "title": "Política de Privacidad",
+      "subtitle": "Arquitectura Local-First, soberanía de datos, transparencia total."
+    }
+  },
+  "nosotros": {
+    "breadcrumb": "Nosotros",
+    "hero": {
+      "badge": "Identidad y Propósito",
+      "title_line1": "Quiénes",
+      "title_line2": "Somos",
+      "description": "Estrategas para co-crear ambientes de abundancia.",
+      "cta_primary": "Primera Conversación",
+      "cta_team": "Conocer al Equipo"
+    },
+    "purpose": {
+      "heading": "Nuestro Propósito",
+      "subheading": "Estrategas para co-crear ambientes de abundancia"
+    },
+    "team": {
+      "label": "Equipo",
+      "heading": "Nuestro Equipo",
+      "description": "Un equipo de estrategas dedicados a co-crear ambientes donde la excelencia y la innovación se encuentran."
+    },
+    "model": {
+      "heading": "Modelo de Servicio & Embajadores"
+    },
+    "mision": {
+      "breadcrumb": "Misión",
+      "hero_badge": "Propósito Central",
+      "hero_cta_primary": "Únete al Propósito"
+    },
+    "ecosistema": {
+      "breadcrumb": "Ecosistema",
+      "hero_badge": "Red de Valor Conectada",
+      "hero_cta_partners": "Ver Partners",
+      "hero_cta_community": "Comunidad",
+      "partners_heading": "Partners Autorizados",
+      "community_heading": "La Comunidad",
+      "cta_heading": "¿Dónde encajas en la red?",
+      "cta_primary": "Primera Conversación"
+    }
   }
 }
