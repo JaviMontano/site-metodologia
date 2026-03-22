@@ -18,6 +18,7 @@ class SiteHeader extends HTMLElement {
         const basePath = this.getAttribute('base-path') || '.';
         this.render();
         this.loadCTAHandler(basePath);
+        this.loadI18n(basePath);
         this.hydrateIcons();
     }
 
@@ -60,12 +61,21 @@ class SiteHeader extends HTMLElement {
         }
     }
 
+    loadI18n(basePath) {
+        if (!window.i18nLoaded) {
+            const script = document.createElement('script');
+            script.src = `${basePath}/js/i18n/i18n.js`;
+            document.head.appendChild(script);
+            window.i18nLoaded = true;
+        }
+    }
+
     render() {
         const basePath = this.getAttribute('base-path') || '.';
         const currentPath = window.location.pathname;
         this.innerHTML = `
-        <nav class="premium-nav" aria-label="Navegación Principal">
-            <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[10001] focus:px-4 focus:py-2 focus:bg-brand-gold focus:text-black focus:rounded-lg focus:font-bold focus:text-sm">Saltar al contenido principal</a>
+        <nav class="premium-nav" data-i18n-aria-label="nav.menu_label">
+            <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[10001] focus:px-4 focus:py-2 focus:bg-brand-gold focus:text-black focus:rounded-lg focus:font-bold focus:text-sm" data-i18n="nav.skip">Saltar al contenido principal</a>
             <div class="nav-container">
                 <!-- Left: Logo + Tagline -->
                 <div class="nav-brand">
@@ -93,32 +103,38 @@ class SiteHeader extends HTMLElement {
                     </a>
                     <div class="nav-tagline-modern">
                         <span class="tagline-text">
-                            <span class="highlight-ia-yellow">Aceleremos</span> su Estrateg<span class="highlight-ia-premium">IA</span>
+                            <span class="highlight-ia-yellow" data-i18n="tagline.prefix">Aceleremos</span> <span data-i18n="tagline.suffix">su Estrateg</span><span class="highlight-ia-premium">IA</span>
                         </span>
                     </div>
                 </div>
 
+                <!-- Language Toggle -->
+                <div class="lang-toggle" role="radiogroup" aria-label="Idioma / Language">
+                    <button class="lang-toggle__btn active" data-lang="es" aria-pressed="true" type="button">ES</button>
+                    <button class="lang-toggle__btn" data-lang="en" aria-pressed="false" type="button">EN</button>
+                </div>
+
                 <!-- Center: Navigation Links -->
                 <div class="hidden lg:flex items-center gap-5" role="menubar">
-                    <a href="${basePath}/ruta/index.html" class="nav-link ${this.isActive(currentPath, 'ruta')}" role="menuitem">Ruta de (R)Evolución</a>
-                    <a href="${basePath}/recursos/index.html" class="nav-link ${this.isActive(currentPath, 'recursos')}" role="menuitem">Recursos</a>
-                    <a href="${basePath}/servicios/index.html" class="nav-link ${this.isActive(currentPath, 'servicios')}" role="menuitem">Servicios</a>
-                    <a href="${basePath}/contacto/index.html" class="nav-link ${this.isActive(currentPath, 'contacto')}" role="menuitem">Contacto</a>
+                    <a href="${basePath}/ruta/index.html" class="nav-link ${this.isActive(currentPath, 'ruta')}" role="menuitem" data-i18n="nav.ruta">Ruta de (R)Evolución</a>
+                    <a href="${basePath}/recursos/index.html" class="nav-link ${this.isActive(currentPath, 'recursos')}" role="menuitem" data-i18n="nav.recursos">Recursos</a>
+                    <a href="${basePath}/servicios/index.html" class="nav-link ${this.isActive(currentPath, 'servicios')}" role="menuitem" data-i18n="nav.servicios">Servicios</a>
+                    <a href="${basePath}/contacto/index.html" class="nav-link ${this.isActive(currentPath, 'contacto')}" role="menuitem" data-i18n="nav.contacto">Contacto</a>
                 </div>
 
                 <!-- Right Actions -->
                 <div class="hidden md:flex items-center gap-4">
                      <a href="https://campus.metodologia.info" target="_blank" rel="noopener noreferrer" class="text-sm text-slate-100 hover:text-brand-gold transition-colors flex items-center gap-1" aria-label="Acceder al Campus (abre en nueva pestaña)">
-                        Campus
+                        <span data-i18n="nav.campus">Campus</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50" aria-hidden="true"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg>
                     </a>
-                    <a href="${basePath}/contacto/index.html" class="nav-cta-glow">
+                    <a href="${basePath}/contacto/index.html" class="nav-cta-glow" data-i18n="nav.cta">
                         Primera Conversación
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn md:hidden" aria-label="Abrir menú de navegación" id="header-menu-toggle" aria-expanded="false" aria-controls="mobile-nav-overlay">
+                <button class="mobile-menu-btn md:hidden" data-i18n-aria-label="nav.menu_open" aria-label="Abrir menú de navegación" id="header-menu-toggle" aria-expanded="false" aria-controls="mobile-nav-overlay">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
                 </button>
             </div>
@@ -127,16 +143,22 @@ class SiteHeader extends HTMLElement {
 
             <!-- Mobile Menu Overlay (Hidden by default) -->
             <div id="mobile-nav-overlay" class="mobile-menu hidden absolute top-full left-0 w-full bg-[var(--bg-primary)]/95 backdrop-blur-xl border-b border-white/10 p-6 flex-col gap-4 lg:hidden" role="menu">
-                 <a href="${basePath}/ruta/index.html" class="text-white font-medium py-2" role="menuitem">Ruta de (R)Evolución</a>
-                 <a href="${basePath}/recursos/index.html" class="text-white font-medium py-2" role="menuitem">Recursos</a>
-                 <a href="${basePath}/servicios/index.html" class="text-white font-medium py-2" role="menuitem">Servicios</a>
-                 <a href="${basePath}/contacto/index.html" class="text-white font-medium py-2" role="menuitem">Contacto</a>
+                 <!-- Mobile Language Toggle -->
+                 <div class="lang-toggle lang-toggle--mobile" role="radiogroup" aria-label="Idioma / Language">
+                     <button class="lang-toggle__btn active" data-lang="es" aria-pressed="true" type="button">ES</button>
+                     <button class="lang-toggle__btn" data-lang="en" aria-pressed="false" type="button">EN</button>
+                 </div>
+                 <a href="${basePath}/ruta/index.html" class="text-white font-medium py-2" role="menuitem" data-i18n="nav.ruta">Ruta de (R)Evolución</a>
+                 <a href="${basePath}/recursos/index.html" class="text-white font-medium py-2" role="menuitem" data-i18n="nav.recursos">Recursos</a>
+                 <a href="${basePath}/servicios/index.html" class="text-white font-medium py-2" role="menuitem" data-i18n="nav.servicios">Servicios</a>
+                 <a href="${basePath}/contacto/index.html" class="text-white font-medium py-2" role="menuitem" data-i18n="nav.contacto">Contacto</a>
             </div>
         </nav>
         `;
 
         const initInteractivity = () => {
             this.setupInteractivity();
+            this.setupLangToggle();
             this.setupFloatingNav(basePath);
         };
 
@@ -175,6 +197,24 @@ class SiteHeader extends HTMLElement {
         }
     }
 
+    setupLangToggle() {
+        const toggles = this.querySelectorAll('.lang-toggle__btn');
+        toggles.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                if (window.i18n && window.i18n.setLang) {
+                    window.i18n.setLang(lang);
+                }
+                // Sync all toggle buttons (desktop + mobile)
+                document.querySelectorAll('.lang-toggle__btn').forEach(b => {
+                    const isActive = b.getAttribute('data-lang') === lang;
+                    b.classList.toggle('active', isActive);
+                    b.setAttribute('aria-pressed', String(isActive));
+                });
+            });
+        });
+    }
+
     setupFloatingNav(basePath) {
         // Detect page sections: <section id="...">, <h2 id="...">, or
         // headings inside sections
@@ -186,10 +226,11 @@ class SiteHeader extends HTMLElement {
         nav.className = 'floating-nav';
         nav.setAttribute('role', 'navigation');
         nav.setAttribute('aria-label', 'Navegación de secciones');
+        nav.setAttribute('data-i18n-aria-label', 'nav.sections_label');
 
         // Home/logo pill
         nav.innerHTML = `
-            <a href="${basePath}/index.html" class="floating-nav__home" aria-label="Inicio" title="Inicio">
+            <a href="${basePath}/index.html" class="floating-nav__home" aria-label="Inicio" title="Inicio" data-i18n-aria-label="nav.home" data-i18n-title="nav.home">
                 <svg width="14" height="14" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="currentColor" opacity="0.15"/><path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="currentColor"/></svg>
             </a>
             <div class="floating-nav__divider"></div>
