@@ -29,22 +29,22 @@
 
 ### US-1: Language Toggle
 
-- [ ] T013 [US1] Add language toggle HTML to SiteHeader.js (between logo/tagline and first nav link) [TS-001]
-- [ ] T014 [US1] Style `.lang-toggle` in `estilos/components.css` (pill shape, gold active, semi-transparent) [TS-001]
-- [ ] T015 [US1] Wire toggle click → `i18n.setLang()` with aria-pressed state update [TS-001, TS-004]
-- [ ] T016 [US1] Add toggle to mobile menu layout in SiteHeader.js [TS-004]
-- [ ] T017 [US1] Add keyboard navigation (Tab focus, Enter/Space activate) and focus ring styling [TS-004]
+- [x] T013 [US1] Add language toggle HTML to SiteHeader.js (between logo/tagline and first nav link) [TS-001]
+- [x] T014 [US1] Style `.lang-toggle` in `estilos/components.css` (pill shape, gold active, semi-transparent) [TS-001]
+- [x] T015 [US1] Wire toggle click → `i18n.setLang()` with aria-pressed state update [TS-001, TS-004]
+- [x] T016 [US1] Add toggle to mobile menu layout in SiteHeader.js [TS-004]
+- [x] T017 [US1] Add keyboard navigation (Tab focus, Enter/Space activate) and focus ring styling [TS-004]
 
 ### US-2: Header/Footer Translation
 
-- [ ] T018 [P] [US2] Add data-i18n attributes to SiteHeader.js nav links, tagline, CTA [TS-005]
-- [ ] T019 [P] [US2] Add data-i18n attributes to SiteFooter.js section headers, links, copyright [TS-006]
-- [ ] T020 [US2] Add data-i18n attributes to floating nav section labels [TS-007]
-- [ ] T021 [P] [US2] Add English translations for all header/footer keys to en.json [TS-005, TS-006, TS-007]
+- [x] T018 [P] [US2] Add data-i18n attributes to SiteHeader.js nav links, tagline, CTA [TS-005]
+- [x] T019 [P] [US2] Add data-i18n attributes to SiteFooter.js section headers, links, copyright [TS-006]
+- [x] T020 [US2] Add data-i18n attributes to floating nav section labels [TS-007]
+- [x] T021 [P] [US2] Add English translations for all header/footer keys to en.json [TS-005, TS-006, TS-007]
 
 ### i18n Script Loading
 
-- [ ] T022 Add `<script src="{basePath}/js/i18n/i18n.js" defer></script>` to SiteHeader.js (loads on every page)
+- [x] T022 Add `<script src="{basePath}/js/i18n/i18n.js" defer></script>` to SiteHeader.js (loads on every page)
 
 > **Dependency**: T013-T022 must complete before Phase 4.
 

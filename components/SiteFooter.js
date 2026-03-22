@@ -60,46 +60,46 @@ class SiteFooter extends HTMLElement {
                                 <p class="text-slate-200 text-[10px] tracking-[0.2em] uppercase font-bold">Aceleremos su Estrateg<span class="text-brand-gold">IA</span></p>
                             </div>
                         </div>
-                        <p class="text-slate-200 text-sm leading-relaxed max-w-sm italic">
+                        <p class="text-slate-200 text-sm leading-relaxed max-w-sm italic" data-i18n="footer.quote">
                             "La excelencia no se compra, se diseña. Se cocrea y se comparte."
                         </p>
                     </div>
 
                     <!-- Servicios -->
                     <nav class="space-y-4" aria-label="Enlaces de Servicios">
-                        <h4 class="text-white font-bold text-xs uppercase tracking-widest border-b border-brand-gold/20 pb-2 inline-block">Servicios</h4>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-widest border-b border-brand-gold/20 pb-2 inline-block" data-i18n="footer.servicios">Servicios</h4>
                         <ul class="space-y-3">
-                            <li><a href="${basePath}/empresas/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300">Empresas</a></li>
-                            <li><a href="${basePath}/personas/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300">Personas</a></li>
-                            <li><a href="${basePath}/recursos/automatizaciones/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300">Aceleradores a Medida</a></li>
-                            <li><a href="${basePath}/recursos/a-medida/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300">Servicios a Medida</a></li>
+                            <li><a href="${basePath}/empresas/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300" data-i18n="footer.empresas">Empresas</a></li>
+                            <li><a href="${basePath}/personas/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300" data-i18n="footer.personas">Personas</a></li>
+                            <li><a href="${basePath}/recursos/automatizaciones/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300" data-i18n="footer.aceleradores">Aceleradores a Medida</a></li>
+                            <li><a href="${basePath}/recursos/a-medida/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300" data-i18n="footer.a_medida">Servicios a Medida</a></li>
                         </ul>
                     </nav>
 
                     <!-- Recursos -->
                     <nav class="space-y-4" aria-label="Enlaces de Recursos">
-                        <h4 class="text-white font-bold text-xs uppercase tracking-widest border-b border-brand-gold/20 pb-2 inline-block">Recursos</h4>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-widest border-b border-brand-gold/20 pb-2 inline-block" data-i18n="footer.recursos">Recursos</h4>
                         <ul class="space-y-3">
-                            <li><a href="${basePath}/recursos/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300">Catálogo</a></li>
-                            <li><a href="${basePath}/recursos/playbooks/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300">Playbooks</a></li>
-                            <li><a href="${basePath}/sitemap.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300">Sitemap</a></li>
-                            <li><a href="${basePath}/contacto/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300">Contacto</a></li>
+                            <li><a href="${basePath}/recursos/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300" data-i18n="footer.catalogo">Catálogo</a></li>
+                            <li><a href="${basePath}/recursos/playbooks/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300" data-i18n="footer.playbooks">Playbooks</a></li>
+                            <li><a href="${basePath}/sitemap.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300" data-i18n="footer.sitemap">Sitemap</a></li>
+                            <li><a href="${basePath}/contacto/index.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300" data-i18n="footer.contacto">Contacto</a></li>
                         </ul>
                     </nav>
 
                     <!-- Legal -->
                     <nav class="space-y-4" aria-label="Enlaces Legales">
-                        <h4 class="text-white font-bold text-xs uppercase tracking-widest border-b border-brand-gold/20 pb-2 inline-block">Legal</h4>
+                        <h4 class="text-white font-bold text-xs uppercase tracking-widest border-b border-brand-gold/20 pb-2 inline-block" data-i18n="footer.legal">Legal</h4>
                         <ul class="space-y-3">
-                            <li><a href="${basePath}/legal/terminos.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300">Términos</a></li>
-                            <li><a href="${basePath}/legal/privacidad.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300">Privacidad</a></li>
+                            <li><a href="${basePath}/legal/terminos.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300" data-i18n="footer.terminos">Términos</a></li>
+                            <li><a href="${basePath}/legal/privacidad.html" class="text-slate-100 hover:text-brand-gold text-sm transition-colors flex items-center gap-2 hover:translate-x-1 duration-300" data-i18n="footer.privacidad">Privacidad</a></li>
                         </ul>
                     </nav>
                 </div>
 
                 <!-- Bottom Bar -->
                 <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-xs text-slate-300">© 2026 MetodologIA. Copyleft.</p>
+                    <p class="text-xs text-slate-300" data-i18n="footer.copyright">© 2026 MetodologIA. Copyleft.</p>
                     <div class="flex items-center gap-2">
                         <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
                         <p class="text-[10px] text-slate-200 font-bold uppercase tracking-wider">
