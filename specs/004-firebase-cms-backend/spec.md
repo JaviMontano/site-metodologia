@@ -124,6 +124,8 @@ Firestore security rules enforce that public visitors can only read published co
 - What happens if two admins edit the same program simultaneously? Last-write-wins with a warning: the admin interface shows a "content was modified by another user" alert if the document version has changed since loading.
 - What happens if the Firestore free tier quota is exceeded? The site continues to function on cached content. An alert is sent to the admin. Content reads are prioritized over analytics/logging writes.
 - What happens when a new program is added? The admin creates it in Firestore with all required fields (both languages); the public page dynamically renders the new program card from the collection — no HTML changes needed.
+- How are admin accounts created? Admin custom claims are provisioned via a CLI script using Firebase Admin SDK (`setCustomUserClaims`). No admin management UI in v1 — the team is 1-3 people and Firebase Console cannot set custom claims directly. A runbook documents the process for adding future admins.
+- What happens if an admin publishes incorrect content and wants to undo? The audit log (FR-011) stores the previous value for every edit. In v1, recovery is manual — a developer restores the previous value using the audit log. No automated rollback UI. For text content with 1-3 admins, re-editing is faster than building rollback infrastructure.
 
 ## Requirements
 
@@ -139,7 +141,7 @@ Firestore security rules enforce that public visitors can only read published co
 - **FR-008**: An admin interface MUST be accessible at a protected route, requiring Firebase Authentication with the "admin" custom claim.
 - **FR-009**: The admin interface MUST allow editing programs, prices, and translations with side-by-side ES/EN editing.
 - **FR-010**: The admin interface MUST block publishing if any required field is empty or if a language variant is missing.
-- **FR-011**: All admin edits MUST be logged with timestamp, admin identity, field changed, and previous value.
+- **FR-011**: All admin edits MUST be logged with timestamp, admin identity, field changed, and previous value. Audit logs MUST have a bounded retention period (default: 90 days).
 - **FR-012**: Firestore security rules MUST enforce: public read for published content, write restricted to authenticated users with "admin" custom claim.
 - **FR-013**: Security rules MUST validate document schema on write — required fields, data types, both language variants present.
 - **FR-014**: Security rules MUST be version-controlled in the repository and tested against the Firebase Emulator before deployment.
@@ -170,3 +172,13 @@ Firestore security rules enforce that public visitors can only read published co
 - **SC-011**: Firestore content renders within 2 seconds on 3G or falls back to cache/static within the same window.
 - **SC-012**: All admin edits produce an audit log entry with timestamp, admin ID, field, and previous value.
 - **SC-013**: During migration, pages with non-migrated content continue to function from static HTML/JS — zero regressions.
+
+## Clarifications
+
+### Session 2026-03-22
+
+- Q: How are admin accounts created and managed? -> A: CLI script using Firebase Admin SDK `setCustomUserClaims`. No admin management UI in v1. Documented in runbook. Firebase Console cannot set custom claims directly. [FR-008, US-4, SC-006, Edge Cases]
+- Q: Is content rollback needed when an admin publishes incorrect content? -> A: No rollback UI in v1. Audit log (FR-011) stores previous values for manual recovery. Re-editing is faster than rollback infrastructure for 1-3 admins editing text. [FR-011, US-4, Edge Cases]
+- Q: What is the audit log retention policy? -> A: 90-day retention, implementable via Firestore TTL fields. Prevents unbounded growth. [FR-011, SC-012]
+- Q: Should migration sequence be defined in the spec? -> A: No — migration order is a plan-level decision. Spec mechanism (FR-017, FR-018, dual-source) is sufficient. [FR-017, FR-018]
+- Q: Should TTL configuration location be defined in the spec? -> A: No — the "where" is implementation detail for plan. Spec defines "what" (configurable, default 1h). [FR-007]

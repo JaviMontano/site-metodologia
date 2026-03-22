@@ -36,4 +36,18 @@
 - [x] CHK019 Security principle (VII) enforced — data-layer security, managed identity, no client secrets
 - [x] CHK020 Offline resilience principle (VIII) enforced — caching, fallback, degraded mode
 
-## Score: 20/20 — Ready for Phase 02 (Plan)
+## Admin & Operations
+
+- [x] CHK021 Admin provisioning mechanism defined (CLI script + runbook, no admin management UI in v1)
+- [x] CHK022 Audit log retention policy specified (90-day bounded retention via Firestore TTL)
+- [x] CHK023 Content recovery mechanism addressed (manual via audit log, no rollback UI in v1)
+
+## Clarifications
+
+### Session 2026-03-22
+
+- Q: How are admin accounts created? -> A: CLI script with Admin SDK, documented in runbook. No UI. [CHK021, FR-008, US-4]
+- Q: Is content rollback needed? -> A: No UI in v1. Audit log stores previous values for manual recovery. [CHK023, FR-011]
+- Q: What is audit log retention? -> A: 90 days, via Firestore TTL. [CHK022, FR-011]
+
+## Score: 23/23 — Ready for Phase 02 (Plan)
