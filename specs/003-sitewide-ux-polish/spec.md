@@ -134,6 +134,7 @@ Remove deprecated meta tags that trigger browser console warnings, specifically 
 **Acceptance Scenarios**:
 
 1. **Given** any page is loaded, **When** checking the browser console, **Then** zero deprecation warnings appear related to meta tags.
+2. **Given** a full-site grep for `apple-mobile-web-app-capable`, **When** scanning all HTML files, **Then** zero instances of this deprecated meta tag remain.
 
 ---
 
@@ -144,12 +145,13 @@ Remove deprecated meta tags that trigger browser console warnings, specifically 
 - What happens on pages with dynamically injected content (CTAHandler.js)? Dynamic content re-translates via `i18n.translate()`.
 - What happens with the toggle on very narrow viewports (< 320px)? Toggle remains accessible and does not break layout.
 - What happens when JavaScript is disabled? The page remains in Spanish (fallback), no toggle appears, and no broken UI results.
+- What happens when a user switches language mid-scroll while the floating nav is visible? The floating nav labels MUST update immediately via the global `i18n.translate()` call — no stale labels remain.
 
 ## Requirements
 
 ### Functional Requirements
 
-- **FR-001**: The language toggle MUST be visible in the desktop nav bar within the right-actions container (alongside Campus and CTA).
+- **FR-001**: The language toggle MUST be visible in the desktop nav bar within the right-actions container (alongside Campus and CTA). The toggle MUST announce state changes to screen readers via an `aria-live="polite"` region or equivalent mechanism.
 - **FR-002**: The language toggle MUST maintain identical dimensions in both ES and EN states (fixed-width pill, no layout shift).
 - **FR-003**: Switching languages MUST produce zero Cumulative Layout Shift (CLS delta = 0) on every page.
 - **FR-004**: All user-facing text in hero sections, CTAs, badges, and section headers MUST have `data-i18n` attributes with corresponding EN translations.
@@ -163,10 +165,10 @@ Remove deprecated meta tags that trigger browser console warnings, specifically 
 - **FR-008**: All locally-tracked assets referenced by HTML/JS MUST be included in Git and deployed to production.
 - **FR-009**: Card styling within the same row/section MUST use consistent background and border treatments.
 - **FR-010**: Content sections with text + visual columns MUST follow the zigzag alternation pattern per estandares/layout-patterns.md.
-- **FR-011**: Stale date references MUST be updated to reflect current status.
+- **FR-011**: Stale date references MUST be updated to reflect current status: either replace with the accurate current date, remove the time-bound reference, or rewrite using relative/evergreen language (e.g., "Próximamente" instead of "Retoma en Febrero 2026").
 - **FR-012**: Deprecated meta tags (e.g., `apple-mobile-web-app-capable`) MUST be removed or replaced with current standards.
 - **FR-013**: All pages MUST produce zero console errors and zero 404 resource errors.
-- **FR-014**: Every major content section MUST include at least one micro-interaction element per estandares/micro-interactions.md.
+- **FR-014**: Every major content section MUST include at least one micro-interaction element per estandares/micro-interactions.md. A "major content section" is defined as any `<section>` element containing a heading (`h2`/`h3`) plus at least one content block (paragraph, card grid, or visual).
 - **FR-015**: All heading copy MUST use MetodologIA approved terminology per brand_voice_v2.md.
 
 ## Success Criteria
