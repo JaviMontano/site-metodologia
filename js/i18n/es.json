@@ -36,5 +36,319 @@
     "privacidad": "Privacidad",
     "copyright": "© 2026 MetodologIA. Copyleft.",
     "powered": "Success as a Service"
+  },
+  "home": {
+    "breadcrumb": "Inicio",
+    "quote": { "text": "\"El éxito depende más de cómo te apalancas que de cuánto te esfuerzas\"" },
+    "hero": {
+      "badge": "Edición 2026",
+      "title_line1": "Success as a",
+      "title_line2": "Service",
+      "subtitle": "Aceleremos su EstrategIA. Metodologías de alto rendimiento para alcanzar la Soberanía Digital, Profesional y Estratégica.",
+      "cta_vision": "Descubrir Visión",
+      "cta_levels": "Ver Niveles"
+    },
+    "dashboard": {
+      "eyebrow": "Así definimos el éxito operativo",
+      "kpi1_label": "Time to\nValue",
+      "kpi1_unit": "Prompt",
+      "kpi2_label": "Delay of\nFeedback",
+      "kpi2_unit": "Immediate",
+      "kpi3_label": "Friction\nLevel",
+      "kpi3_unit": "Seamless",
+      "kpi4_label": "Quality\nAssurance",
+      "kpi4_unit": "Entrusted",
+      "footer_caption": "100 ✓ = Nuestro Estándar Operativo."
+    },
+    "separator1": { "text": "\"La (R)evolución empieza con el diseño de tu arquitectura operativa\"" },
+    "gateway": {
+      "empresas_badge": "Organizaciones",
+      "empresas_title": "Empresas",
+      "empresas_desc": "Modelos Operativos y Ways of Working para líderes visionarios y organizaciones innovadoras que buscan escalar sin caos.",
+      "empresas_cta": "Ver Soluciones B2B",
+      "personas_badge": "Personas que quieren Crear Impacto",
+      "personas_title": "Personas",
+      "personas_desc": "Diseño de futuro para personas que se reinventan y aspiran a prosperar en la era de la IA.",
+      "personas_cta": "Explorar Ruta B2C"
+    },
+    "separator2": { "text": "\"El objetivo: Crear impacto positivo consistentemente\"" },
+    "closing": {
+      "badge": "Acceso Universal",
+      "line1": "La Tecnología es el Pincel.",
+      "line2": "Tu Way of Working es la Técnica.",
+      "line3": "Tus Resultados son la Obra Maestra.",
+      "headline": "El Método es el camino\npara cerrar la brecha.",
+      "subheadline": "Entre lo que tienes ahora y lo que quieres lograr."
+    }
+  },
+  "ruta": {
+    "quote": { "text": "\"El método es la diferencia entre un resultado mediocre y una obra de arte estratégica\"" },
+    "breadcrumb": { "home": "Inicio", "current": "Ruta de (R)Evolución" },
+    "hero": {
+      "badge": "Sistema de 9 Niveles",
+      "title_line1": "Tu Camino a la",
+      "title_line2": "Soberanía",
+      "description": "Spoiler alert: Deja de usar herramientas y empieza a diseñarlas. Un camino para profesionales que quieren ser dueños de su tiempo. Crear impacto. Generar abundancia. Vivir con propósito.",
+      "cta_primary": "Diseñar mi Inversión",
+      "cta_secondary": "Ver el Mapa"
+    },
+    "kpis": {
+      "levels_label": "Niveles de Evolución",
+      "bootcamps_label": "Bootcamps Tácticos",
+      "elite_label": "Programas Élite",
+      "potential_label": "Potencial Desbloqueado"
+    },
+    "roadmap": {
+      "heading_line1": "El Camino a la",
+      "heading_line2": "Excelencia",
+      "subheading": "4 fases progresivas que te llevan de Usuario a Referencia del sector.",
+      "phase1_label": "Fase 1: Fundamento",
+      "phase2_label": "Fase 2: Acelerar",
+      "phase3_label": "Fase 3: Catalizar",
+      "phase4_label": "Fase 4: Amplificar",
+      "status_ready": "Listo",
+      "duration_note": "* Duración estimada: 6–12 meses. La ruta se personaliza a tus metas."
+    },
+    "niveles": {
+      "section_badge": "Deep Dive",
+      "heading_line1": "10 Niveles de",
+      "heading_line2": "(R)Evolución",
+      "subheading": "Nivel 0 (Diagnóstico) + 9 Niveles de (R)Evolución"
+    },
+    "shared": {
+      "evolution_label": "Cómo (R)Evolucionas",
+      "details_btn": "Detalles",
+      "cotizador_link": "Ver en Cotizador",
+      "elite_badge": "Programa Élite"
+    },
+    "n0": {
+      "level_label": "Nivel 0", "title": "Diagnóstico", "title_suffix": "Estratégico",
+      "description": "GRATIS. Evaluamos tu madurez digital, profesional y metodológica para diseñar un roadmap personalizado. Sin diagnósticos genéricos.",
+      "feat1": "Mapa de pérdidas de tiempo y puntos de fricción", "feat2": "Análisis de madurez digital y metodológica", "feat3": "Plan de mejora quick-win + sesión 1:1 de 30 min",
+      "evolution_text": "De \"no sé por dónde empezar\" a claridad total sobre tu situación actual, prioridades y siguientes pasos.",
+      "cta_link": "Agendar Diagnóstico"
+    },
+    "n1": {
+      "level_label": "Nivel 1", "title_suffix": "Personal",
+      "description": "Coaching Estratégico 1:1. Diseñamos tu roadmap hacia la soberanía digital, profesional y estratégica. 18 horas de acompañamiento personalizado.",
+      "feat1": "Plan de carrera digital + profesional", "feat2": "Metas trimestrales medibles (OKRs)", "feat3": "100+ prompts + metodología probada",
+      "evolution_text": "De la reactividad operativa a la estrategia deliberada. Dirección clara sin perder tiempo."
+    },
+    "n2": {
+      "level_label": "Nivel 2", "title": "Ofimática con",
+      "description": "Bootcamp Ofimático. Domina tu ecosistema ofimático con IA: Microsoft 365 (Excel, Word, PowerPoint) o Google Workspace (Sheets, Docs, Slides). 18 hrs (+2 nivelación).",
+      "feat1": "Redacción automática de correos y documentos", "feat2": "Reportes, dashboards y presentaciones con IA", "feat3": "100+ prompts aplicados a tu ecosistema",
+      "evolution_text": "De tareas manuales a 5–10 horas semanales recuperadas. Menos fricción, más creatividad."
+    },
+    "n3": {
+      "level_label": "Nivel 3", "title": "Gestión Comercial con",
+      "description": "Bootcamp Comercial. Prospección, negociación y cierre potenciados con IA. 18 hrs (+2 nivelación opcional).",
+      "feat1": "Prospección inteligente", "feat2": "Personalización masiva de outreach", "feat3": "100+ prompts comerciales + banco de objeciones",
+      "evolution_text": "De pipeline impredecible a mayor tasa de cierre y reuniones más cualificadas."
+    },
+    "n4": {
+      "level_label": "Nivel 4", "title": "Ways of", "title_suffix": "Working",
+      "description": "Bootcamp Metodológico. Diseño de flujos, gestión del conocimiento y optimización de workflows. 18 hrs (+2 nivelación).",
+      "feat1": "Agile + GTD + Kanban + 2do Cerebro Digital", "feat2": "Flujos de trabajo optimizados con IA", "feat3": "100+ prompts + S.O. Vital (Sistema Operativo Personal)",
+      "evolution_text": "Del caos operativo a procesos replicables. Menos errores, equipo alineado."
+    },
+    "n5": {
+      "level_label": "Nivel 5", "title": "Trabajo", "title_suffix": "Amplificado",
+      "description": "Bootcamp de IA Generativa. Prompting avanzado, asistentes IA personalizados, automatizaciones n8n. 18 hrs (+2 nivelación).",
+      "feat1": "Prompting de alto rendimiento", "feat2": "GPTs personalizados + agentes IA", "feat3": "100+ prompts + 8 asistentes especializados",
+      "evolution_text": "De usuario básico a dominio de IA generativa. Tus propias soluciones agénticas."
+    },
+    "n6": {
+      "level_label": "Nivel 6", "title_suffix": "Proyectos",
+      "description": "Bootcamp de Gestión. Dashboards de productividad, gestión de agentes IA, métricas en tiempo real. 18 hrs (+2 nivelación).",
+      "feat1": "Dashboards de control automatizados", "feat2": "Orquestación de agentes IA", "feat3": "100+ prompts + gobierno de automatizaciones",
+      "evolution_text": "Del micromanagement a visibilidad 360°. Decisiones basadas en datos."
+    },
+    "n7": {
+      "level_label": "Nivel 7", "title": "Programa de", "title_suffix": "Empoderamiento",
+      "description": "48 hrs de Evolución. Te conviertes en quien guía a otros. Módulo 0 de prueba para decidir.",
+      "feat1": "Diseño de tus propios sistemas", "feat2": "Mentalidad de diseñador y arquitecto", "feat3": "140+ prompts + asistentes personalizados",
+      "evolution_text": "De dependencia tecnológica a soberanía total. Independencia y diferenciación profesional."
+    },
+    "n8": {
+      "level_label": "Nivel 8", "title_suffix": "Coding",
+      "description": "Bootcamp de Desarrollo. Si puedes explicarlo, puedes construirlo. 18 hrs (+2 nivelación).",
+      "feat1": "Desarrollo asistido por IA (Cursor, Copilot, v0, Agentic)", "feat2": "Aplicaciones y automatizaciones propias", "feat3": "100+ prompts + deploy en infraestructura propia",
+      "evolution_text": "De \"necesito un developer\" a tu propio software. Ideas → Realidad en horas."
+    },
+    "n9": {
+      "level_label": "Nivel 9", "title_suffix": "Champions",
+      "description": "48 hrs de Revolución. Pasas de usuario a diseñador de herramientas, productos, servicios y experiencias. Módulo 0 de prueba.",
+      "feat1": "Liderazgo de (r)evolución digital", "feat2": "Mentoría y formación de equipos", "feat3": "Certificación Champion + Red de Líderes",
+      "evolution_text": "De operador a agente de cambio. Autoridad reconocida, impacto multiplicado."
+    },
+    "cta_cotizador": {
+      "badge": "Inversión Inteligente",
+      "heading_line1": "Diseña tu", "heading_line2": "Compromiso",
+      "description": "Entre más te comprometas con tu evolución, mayor será el respaldo que te damos. Personaliza tu ruta y descubre opciones de inversión.",
+      "btn": "Simular Inversión"
+    },
+    "final_cta": {
+      "heading": "¿Listo para comenzar tu (R)Evolución?",
+      "description": "El primer paso es una conversación. Sin compromiso, sin ventas agresivas. Solo claridad.",
+      "btn": "Confirmar Interés en la Ruta"
+    }
+  },
+  "contacto": {
+    "hero": {
+      "badge": "Agenda Abierta",
+      "title_line1": "Hablemos de",
+      "title_line2": "Oportunidades",
+      "subtitle": "Videollamada Google Meet. Primera conversación estratégica de (R)Evolución — sin costo."
+    },
+    "value_card": {
+      "title": "¿Qué logramos en 60 minutos?",
+      "body": "Conectamos tus dolores y metas actuales con las posibilidades reales de nuestro portafolio de servicios: bootcamps, rutas de (R)Evolución digital y proyectos con inteligencia artificial aplicada.",
+      "doc_title": "Documento de Entendimiento",
+      "doc_body": "Revisamos el contexto (retos, capacidades, urgencias, expectativas) y lo condensamos en un Documento que mapea y deja claro dónde tiene más sentido invertir primero y con qué tipo de experiencia a medida."
+    },
+    "action_card": {
+      "title": "Reserva tu espacio",
+      "availability_label": "Disponibilidad semanal:",
+      "availability_value": "Todos los lunes (9:00 AM – 3:30 PM)",
+      "cta_button": "Reservar ahora",
+      "policy_link": "Logística y Políticas",
+      "session_duration": "Sesión de 60 min"
+    },
+    "footer_note": {
+      "reschedule_prefix": "¿Necesitas reprogramar?",
+      "reschedule_link": "Escríbenos un email",
+      "reschedule_policy": "La primera reprogramación con causa justificada es gratuita; los cambios posteriores tienen cargo de gestión."
+    },
+    "modal": {
+      "title": "Logística y Políticas",
+      "sla_title": "SLA de Agendamiento",
+      "sla_body": "Siempre ofrecemos el primer espacio disponible dentro de los próximos 3 días hábiles.",
+      "reschedule_title": "Reprogramación",
+      "reschedule_body": "Puedes mover la cita directamente desde el enlace del calendario.",
+      "reschedule_first": "Primera reprogramación (causa justificada):",
+      "reschedule_first_cost": "Sin cargo.",
+      "reschedule_second": "Segunda reprogramación:",
+      "reschedule_second_cost": "Cargo de gestión de COP 200.000 aplica.",
+      "noshow_title": "Política de No-Show",
+      "noshow_body": "Si no asistes y no avisas, la sesión será tratada como segunda consulta al reconectarte. Para agendar nuevamente, debes regularizar el cargo de COP 200.000.",
+      "close_button": "Entendido"
+    }
+  },
+  "servicios": {
+    "quote": { "text": "\"La formación es el único activo que no se deprecia en la era de la IA\"" },
+    "breadcrumb": { "home": "Inicio", "current": "Servicios" },
+    "hero": {
+      "badge": "Catálogo Completo",
+      "title": "Nuestro Catálogo",
+      "title_highlight": "Catálogo",
+      "subtitle": "Formación, consultoría y coaching para potenciar tu productividad con IA.",
+      "kpi_workshops": "Workshops",
+      "kpi_bootcamps": "Bootcamps",
+      "kpi_elite": "Programas Élite",
+      "kpi_consultoria": "Consultoría"
+    },
+    "workshops": {
+      "title": "Workshops", "duration": "3 Horas",
+      "price_corp_label": "Corporativo:", "price_pers_label": "Personas:",
+      "pyme_note": "Empresas ≤ 10 empleados / ≤ 3 años pueden aplicar a Tarifa Personas (Validación requerida).",
+      "ws01": "Intro IA", "ws02": "Prompting", "ws03": "2do Cerebro", "ws04": "Productividad",
+      "ws05": "Motivadores", "ws06": "Felicidad", "ws07": "Team Canvas", "ws08": "De Ocupado a Productivo",
+      "ws09": "¿Qué está pasando con la IA?", "ws10": "Ideación", "ws11": "Ética IA", "ws12": "Liderazgo"
+    },
+    "bootcamps": {
+      "title": "Bootcamps (Tracción)", "duration": "3 Semanas",
+      "price_corp_label": "Corporativo:", "price_pers_label": "Personas:",
+      "usd_note": "Misma tarifa en USD",
+      "pyme_note": "Empresas ≤ 10 empleados / ≤ 3 años pueden aplicar a Tarifa Personas (Validación requerida).",
+      "bc01": "Ofimática + IA", "bc01_sub": "M365 + Copilot",
+      "bc02": "Ventas con IA", "bc02_sub": "Comercial B2B",
+      "bc03": "Ways of Working", "bc03_sub": "Agile + GTD",
+      "bc04": "Trabajo Amplificado", "bc04_sub": "GPTs + Agentes",
+      "bc05": "Vibe Coding", "bc05_sub": "v0 + Stitch"
+    },
+    "programas": {
+      "title": "Programas Élite ((R)Evolución)", "duration": "16 Semanas",
+      "price_corp_label": "Corporativo:", "price_pers_label": "Personas:",
+      "usd_note": "Misma tarifa en USD",
+      "pyme_note": "Empresas ≤ 10 empleados / ≤ 3 años pueden aplicar a Tarifa Personas (Validación requerida).",
+      "prog01_title": "Programa Empoderamiento", "prog01_level": "Nivel 7",
+      "prog01_desc": "14 módulos en 2 fases para lograr más y mejor, en menos tiempo.",
+      "prog02_title": "Champions Digitales", "prog02_level": "Nivel 9",
+      "prog02_desc": "Formación para convertirte en Agente de Cambio en tu organización."
+    },
+    "consultoria": {
+      "title": "Consultoría", "subtitle": "Proyectos y coaching a medida",
+      "card1_title": "Diagnóstico", "card1_desc": "Evaluación de madurez digital. Gratuito para Empresas. Para Personas, sujeto a disponibilidad de agenda.", "card1_tag": "Punto de Partida",
+      "card2_title": "Soluciones a Medida", "card2_desc": "Exclusividad total. Depende del contexto, ROI y estrategia específica.", "card2_tag": "Boutique / High-End",
+      "card3_title": "Tracción", "card3_desc": "Resultados a corto plazo e inmersión táctica.",
+      "card4_title": "(R)Evolución", "card4_desc": "Evolución cultural y estratégica profunda."
+    },
+    "cta": {
+      "title": "¿Listo para calcular tu inversión?",
+      "subtitle": "Usa nuestro cotizador interactivo para armar tu paquete personalizado.",
+      "btn_simulate": "Simular Inversión", "btn_contact": "Agendar Conversación",
+      "policy_trybuy": "Try & Buy: prueba sin riesgo", "policy_pyme": "PyME <10: tarifa B2C", "policy_leveling": "Nivelación incluida"
+    },
+    "recursos": {
+      "badge": "Aceleradores",
+      "title": "¿Quieres acelerar aún más?",
+      "subtitle": "Descubre nuestra biblioteca de Recursos Premium y herramientas Gratuitas diseñadas para impulsar tu productividad desde el día uno.",
+      "btn_premium": "Explorar Premium", "btn_free": "Recursos Gratuitos"
+    }
+  },
+  "vision": {
+    "hook": { "quote": "\"La tecnología sin método es solo velocidad en la dirección equivocada\"" },
+    "breadcrumb": { "home": "Inicio", "current": "Visión" },
+    "hero": {
+      "badge": "La Ciencia del Trabajo Amplificado",
+      "description": "<strong>Spoiler alert:</strong> La tecnología sin método es solo velocidad en la dirección equivocada. Diseñamos sistemas para la <strong>Soberanía Digital</strong>.",
+      "cta": "Explorar el Sistema"
+    },
+    "staircase": {
+      "step4": { "phase": "Fase 4", "label": "Escalar y Soberanía" },
+      "step3": { "phase": "Fase 3", "label": "Sistematizar" },
+      "step2": { "phase": "Fase 2", "label": "Tracción" },
+      "step1": { "phase": "Fase 1", "label": "Diagnóstico" }
+    },
+    "problema": {
+      "badge": "Paso 1: El Diagnóstico",
+      "title": "La <span>Fractura</span> Operativa",
+      "subtitle": "\"El caos\" no es mala suerte. Es un fallo de diseño en tu sistema de trabajo.",
+      "card1": { "title": "Multitasking Crónico", "description": "El asesino silencioso de la profundidad estratégica.", "tag": "Alerta Crítica" },
+      "card2": { "title": "Fricción Repetitiva", "description": "Tareas zombie drenando talento senior.", "tag": "Fuga de Recursos" },
+      "card3": { "title": "Silos de Información", "description": "Conocimiento atrapado en chats y correos.", "tag": "Amnesia Institucional" },
+      "card4": { "title": "IA Cosmética", "description": "Herramientas poderosas, procesos rotos.", "tag": "La Falacia de la Herramienta" },
+      "link": "La consecuencia de ignorar esto..."
+    },
+    "trampa": {
+      "badge": "Paso 2: Entender la Trampa",
+      "description": "La tecnología es un <strong>amplificador</strong>. Si tu proceso es sólido, lo escala. Si tu proceso es basura, escala la basura.",
+      "quote": "\"Creer que comprar software va a arreglar un problema de comportamiento.\"",
+      "quote_author": "— La Falacia de la Herramienta",
+      "link": "¿Entonces cuál es la solución?"
+    },
+    "solucion": {
+      "badge": "Paso 3: Nuestra Solución",
+      "title": "Framework P.I.V.O.T.E.",
+      "subtitle": "Human First, AI Next. Limpiamos la señal antes de amplificarla.",
+      "phase_a": "Fase A", "phase_b": "Fase B",
+      "p": { "title": "Personas", "subtitle": "Mentalidad y Roles" },
+      "i": { "title": "Interacciones", "subtitle": "Flujos y Fricción" },
+      "v": { "title": "Valor", "subtitle": "Impacto Real" },
+      "o": { "title": "Organización", "subtitle": "Sistematización" },
+      "t": { "title": "Tecnología", "subtitle": "Automatización" },
+      "e": { "title": "Evolución", "subtitle": "Mejora Continua" }
+    },
+    "resultado": {
+      "badge": "Paso 4: El Destino",
+      "title": "Soberanía <span>Estratégica</span>",
+      "subtitle": "De Operador a Diseñador de Impacto. Los sistemas trabajan para ti.",
+      "card1": { "title": "Tiempo", "description": "Liberas tiempo estratégico mediante automatización inteligente." },
+      "card2": { "title": "Escala", "description": "Crecimiento exponencial sin aumentar costos fijos." },
+      "card3": { "title": "Cultura", "description": "Una organización antifrágil que aprende continuamente." },
+      "cta_primary": "Ver Roadmap Completo", "cta_secondary": "Explorar Servicios",
+      "modal_close": "Cerrar modal"
+    }
   }
 }

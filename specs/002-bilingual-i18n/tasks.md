@@ -52,14 +52,14 @@
 
 ### US-4 Wave 1: 5 Core Pages
 
-- [ ] T023 [P] [US4] Add data-i18n attributes to `index.html` (hero, sections, CTAs) [TS-014]
-- [ ] T024 [P] [US4] Add data-i18n attributes to `ruta/index.html` [TS-014]
-- [ ] T025 [P] [US4] Add data-i18n attributes to `contacto/index.html` [TS-014]
-- [ ] T026 [P] [US4] Add data-i18n attributes to `servicios/index.html` [TS-014]
-- [ ] T027 [P] [US4] Add data-i18n attributes to `vision.html` [TS-014]
-- [ ] T028 [US4] Add all Wave 1 English translations to en.json [TS-014]
-- [ ] T029 [US4] Add all Wave 1 Spanish keys to es.json (matching HTML content) [TS-014]
-- [ ] T030 [US4] Verify graceful fallback on untranslated pages (header/footer EN, body ES) [TS-015]
+- [x] T023 [P] [US4] Add data-i18n attributes to `index.html` (hero, sections, CTAs) [TS-014]
+- [x] T024 [P] [US4] Add data-i18n attributes to `ruta/index.html` [TS-014]
+- [x] T025 [P] [US4] Add data-i18n attributes to `contacto/index.html` [TS-014]
+- [x] T026 [P] [US4] Add data-i18n attributes to `servicios/index.html` [TS-014]
+- [x] T027 [P] [US4] Add data-i18n attributes to `vision.html` [TS-014]
+- [x] T028 [US4] Add all Wave 1 English translations to en.json [TS-014]
+- [x] T029 [US4] Add all Wave 1 Spanish keys to es.json (matching HTML content) [TS-014]
+- [x] T030 [US4] Verify graceful fallback on untranslated pages (header/footer EN, body ES) [TS-015]
 
 ## Phase 4b: Wave 2 — Product Pages (P2)
 
