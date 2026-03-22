@@ -42,19 +42,20 @@ Every hero section, CTA, badge, and visible text element across all public pages
 
 ---
 
-### User Story 3 - Navigation Polish: No Closing Quote in Menu (Priority: P1)
+### User Story 3 - Floating Nav: Exclude Quote from Section Menu (Priority: P1)
 
-The index.html hook-quote section ("El éxito depende más de cómo te apalancas...") must not render as part of or overlap with the navigation menu. The quote should sit cleanly below the nav with proper spacing and visual separation.
+The floating nav (scroll-triggered section navigation) on the homepage picks up the hook-quote section ("El éxito depende más de cómo te apalancas...") and displays it as a navigation item alongside legitimate sections like "Personas" and "Empresas." The quote must be excluded from the floating nav's section detection logic while remaining visible on the page itself.
 
-**Why this priority**: User explicitly reported this as a visual defect. The quote appearing to be part of the menu creates confusion about the navigation structure.
+**Why this priority**: User explicitly reported this. The quote appearing as a floating nav item creates confusion — it's decorative content, not a navigable section.
 
-**Independent Test**: Load homepage, verify quote is visually separated from the nav bar by clear spacing and does not appear to be a menu item.
+**Independent Test**: Scroll down on the homepage until the floating nav appears. Verify the quote is NOT listed among the section links. Verify the quote still renders in its original position on the page.
 
 **Acceptance Scenarios**:
 
-1. **Given** a user loads the homepage, **When** they view the navigation area, **Then** the closing quote is not visible within or adjacent to the nav menu items.
-2. **Given** a user views the page on mobile, **When** the nav is collapsed, **Then** the quote section does not overlap with or appear to be part of the hamburger menu.
-3. **Given** the quote section exists, **When** rendered on desktop, **Then** there is adequate visual separation (spacing, divider, or background contrast) between the nav and the quote.
+1. **Given** a user scrolls past the main nav on the homepage, **When** the floating nav appears, **Then** the hook-quote text is NOT listed as a floating nav item.
+2. **Given** the floating nav shows section links, **When** reviewing the items, **Then** only legitimate page sections (Personas, Empresas, etc.) appear — no decorative content.
+3. **Given** the hook-quote section exists on the page, **When** the user scrolls to it, **Then** the quote renders normally in its original position with full styling.
+4. **Given** other pages have their own sections, **When** the floating nav detects sections, **Then** the detection logic correctly excludes non-navigable decorative elements site-wide.
 
 ---
 
@@ -153,7 +154,11 @@ Remove deprecated meta tags that trigger browser console warnings, specifically 
 - **FR-003**: Switching languages MUST produce zero Cumulative Layout Shift (CLS delta = 0) on every page.
 - **FR-004**: All user-facing text in hero sections, CTAs, badges, and section headers MUST have `data-i18n` attributes with corresponding EN translations.
 - **FR-005**: The `es.json` translation values MUST exactly match the HTML fallback text for all keys (no mismatches).
-- **FR-006**: The homepage hook-quote section MUST render with clear visual separation from the navigation bar — it MUST NOT appear to be a menu item.
+- **FR-006**: The floating nav's section detection MUST exclude decorative/quote sections — the hook-quote MUST NOT appear as a floating nav item.
+- **FR-016**: The contacto/ page MUST include a general inquiry mailto link (contacto@metodologia.info) in addition to the scheduling option.
+- **FR-017**: Every standalone HTML download MUST have an EN variant file (e.g., `wf-01-standalone-en.html`).
+- **FR-018**: Every PDF in playbooks and bibliotecas MUST have an EN variant.
+- **FR-019**: All JSON data files referenced by the site MUST contain bilingual content or have EN variants.
 - **FR-007**: All `href="#"` placeholder links MUST be replaced with functional destinations (mailto, page link, or modal trigger).
 - **FR-008**: All locally-tracked assets referenced by HTML/JS MUST be included in Git and deployed to production.
 - **FR-009**: Card styling within the same row/section MUST use consistent background and border treatments.
@@ -170,11 +175,22 @@ Remove deprecated meta tags that trigger browser console warnings, specifically 
 
 - **SC-001**: Language toggle is visible and functional on 100% of public pages (desktop and mobile).
 - **SC-002**: CLS delta when switching languages is 0.000 on all pages (measured via Lighthouse or CLS observer).
-- **SC-003**: 100% of user-facing text elements display in English when EN is selected — zero Spanish remnants.
-- **SC-004**: Zero `href="#"` placeholder links remain on any public page.
+- **SC-003**: 100% of user-facing text elements display in English when EN is selected — zero Spanish remnants on site pages AND standalone downloads have EN variants.
+- **SC-004**: Zero `href="#"` placeholder links remain on any public page — all point to contacto/.
 - **SC-005**: Zero 404 resource errors across all pages in production.
 - **SC-006**: Zero browser console errors or deprecation warnings across all pages.
 - **SC-007**: Lighthouse Performance score remains >= 90 on homepage, empresas/, personas/ after all changes.
 - **SC-008**: All Playwright bilingual test suites (19-25) continue to pass at 100%.
 - **SC-009**: Brand voice audit: 100% compliance with approved terminology on all page headings.
 - **SC-010**: Visual consistency: all card rows within the same section use uniform styling.
+- **SC-011**: Zigzag layout pattern applied to 100% of text+visual content sections site-wide.
+- **SC-012**: Contacto page includes a general inquiry mailto form/link.
+- **SC-013**: Every standalone HTML download has an EN variant file. Every PDF in playbooks and bibliotecas has an EN variant. All JSON data files are bilingual.
+
+## Clarifications
+
+- **Q1:** The "closing quote in menu" refers to the **floating nav** (scroll-triggered section navigation), NOT the main nav bar. The floating nav's `detectSections()` picks up the hook-quote section and displays it as a nav item alongside "Personas", "Empresas", etc. The quote content should remain on the page but be **excluded from the floating nav**. → **A:** Exclude the hook-quote section from the floating nav detection logic. The quote stays on the page, just not in the floating menu. | Affects: FR-006, US3
+- **Q2:** The gold "Agendamiento" card on empresas/ and personas/ should be **unified with dark cards** for consistency and simplicity. → **A:** All cards in the same row use consistent dark styling. No standout gold card. | Affects: FR-009, US5
+- **Q3:** Zigzag layout pattern should be a **comprehensive site-wide rewrite** — apply to ALL text+visual content sections, not just fix violations. → **A:** Full zigzag compliance across all pages. | Affects: FR-010, SC-011
+- **Q4:** All dead links (`href="#"`) should point to **contacto/**. Additionally, the contacto page needs a **new general inquiry mailto option** (contacto@metodologia.info). → **A:** Dead links → contacto/. Add mailto CTA on contacto page. | Affects: FR-007, US4, SC-004, SC-012
+- **Q5:** Bilingual scope includes **standalone HTML downloads** (each gets an EN variant file), **PDFs** in playbooks and bibliotecas (EN variants), and **JSON data files** (bilingual content). → **A:** Full bilingual coverage: site pages + standalone HTMLs (EN copies) + PDFs (EN copies) + JSONs (bilingual). | Affects: FR-004, US2, SC-003, SC-013
