@@ -104,39 +104,39 @@
                     <li><span class="text-slate-700">/</span></li>
                     <li><a href="index.html" class="hover:text-brand-gold transition-colors">Personas</a></li>
                     <li><span class="text-slate-700">/</span></li>
-                    <li class="text-slate-100 font-medium" aria-current="page">Bootcamp</li>
+                    <li class="text-slate-100 font-medium" aria-current="page" data-i18n="personas.bootcamp.breadcrumb">Bootcamp</li>
                 </ol>
             </nav>
             
             <!-- Badge -->
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-6">
                 <span class="flex h-2 w-2 rounded-full bg-brand-gold animate-pulse"></span>
-                <span class="text-xs font-bold text-brand-gold tracking-widest uppercase">Paso 2: Compromiso</span>
+                <span class="text-xs font-bold text-brand-gold tracking-widest uppercase" data-i18n="personas.bootcamp.badge">Paso 2: Compromiso</span>
             </div>
             
             <!-- Title -->
-            <h1 class="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Bootcamp de <span class="text-gradient-gold">Amplificación Profesional</span>
+            <h1 class="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight" data-i18n="personas.bootcamp.title">
+                Bootcamp de <span class="text-gradient-gold" data-i18n="personas.bootcamp.title.highlight">Amplificación Profesional</span>
             </h1>
-            
-            <p class="text-lg text-slate-100 mb-8 leading-relaxed">
+
+            <p class="text-lg text-slate-100 mb-8 leading-relaxed" data-i18n="personas.bootcamp.description">
                 18 horas de co-creación estratégica para convertirte en <strong class="text-white">Campeón Digital</strong>. Domina la IA, automatiza tu valor y asegura tu relevancia profesional.
             </p>
 
             <!-- KPIs -->
             <div class="flex flex-wrap gap-8 mb-8 border-l-2 border-brand-gold/30 pl-6">
-                <div><div class="text-3xl font-bold text-white">18h</div><div class="text-xs text-slate-200 uppercase">Inmersión</div></div>
-                <div><div class="text-3xl font-bold text-white">9</div><div class="text-xs text-slate-200 uppercase">Hitos de Valor</div></div>
-                <div><div class="text-3xl font-bold text-white">100%</div><div class="text-xs text-slate-200 uppercase">Co-creación</div></div>
+                <div><div class="text-3xl font-bold text-white">18h</div><div class="text-xs text-slate-200 uppercase" data-i18n="personas.bootcamp.kpi.immersion">Inmersión</div></div>
+                <div><div class="text-3xl font-bold text-white">9</div><div class="text-xs text-slate-200 uppercase" data-i18n="personas.bootcamp.kpi.milestones">Hitos de Valor</div></div>
+                <div><div class="text-3xl font-bold text-white">100%</div><div class="text-xs text-slate-200 uppercase" data-i18n="personas.bootcamp.kpi.cocreation">Co-creación</div></div>
             </div>
 
             <!-- CTAs -->
             <div class="flex flex-col sm:flex-row gap-4">
                 <a href="https://calendar.app.google/NjLeBD2S4dryzVkQ6" target="_blank" rel="noopener noreferrer" class="btn-pristino-gold justify-center">
-                    Aplicar al Bootcamp <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    <span data-i18n="personas.bootcamp.cta.primary">Aplicar al Bootcamp</span> <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
                 <a href="#programa" class="px-6 py-3 rounded-xl border border-white/20 text-white font-medium hover:bg-white/5 text-center flex items-center justify-center gap-2">
-                    Ver Programa <i data-lucide="chevron-down" class="w-4 h-4 text-brand-gold"></i>
+                    <span data-i18n="personas.bootcamp.cta.secondary">Ver Programa</span> <i data-lucide="chevron-down" class="w-4 h-4 text-brand-gold"></i>
                 </a>
             </div>
         </div>
@@ -147,15 +147,15 @@
 <section id="programa" class="section-padding bg-slate-950 border-t border-white/5">
     <div class="container-max">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-white mb-4">Programa de <span class="highlight-ia-yellow">Co-creación</span></h2>
-            <p class="text-slate-100 max-w-xl mx-auto">9 hitos de (R)Evolución personal + 2 horas de nivelación opcional.</p>
+            <h2 class="text-3xl font-bold text-white mb-4" data-i18n="personas.bootcamp.program.title">Programa de <span class="highlight-ia-yellow" data-i18n="personas.bootcamp.program.title.highlight">Co-creación</span></h2>
+            <p class="text-slate-100 max-w-xl mx-auto" data-i18n="personas.bootcamp.program.subtitle">9 hitos de (R)Evolución personal + 2 horas de nivelación opcional.</p>
         </div>
 
         <!-- Hitos Grid -->
         <div class="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
             <!-- Fase 1 -->
             <div class="space-y-3">
-                <span class="level-badge level-1 w-full justify-center mb-2">Fase 1: Fundamentos</span>
+                <span class="level-badge level-1 w-full justify-center mb-2" data-i18n="personas.bootcamp.phase1">Fase 1: Fundamentos</span>
                 <div onclick="openModuleModal(1)" class="hito-card">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-sm">01</span>
@@ -178,7 +178,7 @@
             
             <!-- Fase 2 -->
             <div class="space-y-3">
-                <span class="level-badge level-2 w-full justify-center mb-2">Fase 2: Estrategia</span>
+                <span class="level-badge level-2 w-full justify-center mb-2" data-i18n="personas.bootcamp.phase2">Fase 2: Estrategia</span>
                 <div onclick="openModuleModal(4)" class="hito-card">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-sm">04</span>
@@ -201,7 +201,7 @@
             
             <!-- Fase 3 -->
             <div class="space-y-3">
-                <span class="level-badge level-3 w-full justify-center mb-2">Fase 3: Ejecución</span>
+                <span class="level-badge level-3 w-full justify-center mb-2" data-i18n="personas.bootcamp.phase3">Fase 3: Ejecución</span>
                 <div onclick="openModuleModal(7)" class="hito-card">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold text-sm">07</span>
@@ -232,7 +232,7 @@
             <!-- Value Stack -->
             <div class="bg-slate-800/50 border border-white/5 rounded-2xl p-8">
                 <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                    <i data-lucide="gift" class="w-5 h-5 text-brand-gold"></i> Ecosistema de Valor Incluido
+                    <i data-lucide="gift" class="w-5 h-5 text-brand-gold"></i> <span data-i18n="personas.bootcamp.value.title">Ecosistema de Valor Incluido</span>
                 </h3>
                 <div class="space-y-4">
                     <div class="flex justify-between items-center p-3 bg-white/5 rounded-lg">
@@ -263,8 +263,8 @@
                 <div class="relative bg-slate-900 border border-white/10 rounded-2xl p-8 h-full flex flex-col">
                     <div class="absolute top-0 right-0 bg-gradient-to-bl from-yellow-500 to-amber-600 text-black text-xs font-bold px-4 py-2 rounded-bl-2xl">OFERTA INTEGRAL</div>
                     
-                    <h3 class="text-2xl font-bold text-white mb-2 mt-4">Programa Completo</h3>
-                    <p class="text-slate-100 text-sm mb-6">18 Horas + Entregables + Bonus</p>
+                    <h3 class="text-2xl font-bold text-white mb-2 mt-4" data-i18n="personas.bootcamp.pricing.title">Programa Completo</h3>
+                    <p class="text-slate-100 text-sm mb-6" data-i18n="personas.bootcamp.pricing.subtitle">18 Horas + Entregables + Bonus</p>
                     
                     <div class="flex items-baseline gap-2 mb-6">
                         <span class="text-4xl font-bold text-white">$3.200.000</span>
@@ -298,7 +298,7 @@
 <!-- SECTION 4: FAQ -->
 <section id="faq" class="section-padding bg-slate-950 border-t border-white/5">
     <div class="container-max max-w-2xl">
-        <h2 class="text-2xl font-bold text-white mb-8 text-center">Preguntas Frecuentes</h2>
+        <h2 class="text-2xl font-bold text-white mb-8 text-center" data-i18n="personas.bootcamp.faq.title">Preguntas Frecuentes</h2>
         <div class="space-y-3" id="faq-container">
             <!-- FAQ items rendered by JS -->
         </div>
@@ -308,14 +308,14 @@
 <!-- SECTION 5: FINAL CTA -->
 <section class="py-16 bg-gradient-to-b from-slate-950 to-slate-900 border-t border-white/5">
     <div class="container-max text-center">
-        <h2 class="text-2xl font-bold text-white mb-4">¿Listo para tu <span class="text-gradient-gold">(R)Evolución</span>?</h2>
-        <p class="text-slate-100 mb-8 max-w-md mx-auto">La primera conversación es de diagnóstico. Sin costo, sin compromiso.</p>
+        <h2 class="text-2xl font-bold text-white mb-4" data-i18n="personas.bootcamp.finalcta.title">¿Listo para tu <span class="text-gradient-gold" data-i18n="personas.bootcamp.finalcta.title.highlight">(R)Evolución</span>?</h2>
+        <p class="text-slate-100 mb-8 max-w-md mx-auto" data-i18n="personas.bootcamp.finalcta.description">La primera conversación es de diagnóstico. Sin costo, sin compromiso.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://calendar.app.google/NjLeBD2S4dryzVkQ6" target="_blank" rel="noopener noreferrer" class="btn-pristino-gold">
-                Agendar Conversación <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                <span data-i18n="personas.bootcamp.finalcta.cta.primary">Agendar Conversación</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
             <a href="../contacto/index.html" class="px-6 py-3 rounded-xl border border-white/20 text-white font-medium hover:bg-white/5">
-                Solicitar Información
+                <span data-i18n="personas.bootcamp.finalcta.cta.secondary">Solicitar Información</span>
             </a>
         </div>
     </div>

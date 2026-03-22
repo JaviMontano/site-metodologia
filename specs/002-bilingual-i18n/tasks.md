@@ -65,12 +65,12 @@
 
 ### US-4 Wave 2: empresas + personas (~10 pages)
 
-- [ ] T043 [P] [US4] Add data-i18n attributes to `empresas/index.html` (program cards, hero, CTAs) [TS-016]
-- [ ] T044 [P] [US4] Add data-i18n attributes to `personas/index.html` (program cards, hero, CTAs) [TS-016]
-- [ ] T045 [P] [US4] Add data-i18n attributes to empresas/ sub-pages (diagnostico, estrategia, amplificacion, ofimatica, ventas, champions) [TS-016]
-- [ ] T046 [P] [US4] Add data-i18n attributes to personas/ sub-pages (diagnostico, estrategia, amplificacion, ofimatica, ventas, empoderamiento) [TS-016]
-- [ ] T047 [US4] Add Wave 2 English translations to en.json [TS-016]
-- [ ] T048 [US4] Add Wave 2 Spanish keys to es.json (matching HTML content) [TS-016]
+- [x] T043 [P] [US4] Add data-i18n attributes to `empresas/index.html` (program cards, hero, CTAs) [TS-016]
+- [x] T044 [P] [US4] Add data-i18n attributes to `personas/index.html` (program cards, hero, CTAs) [TS-016]
+- [x] T045 [P] [US4] Add data-i18n attributes to empresas/ sub-pages (diagnostico, estrategia, amplificacion, ofimatica, ventas, champions) [TS-016]
+- [x] T046 [P] [US4] Add data-i18n attributes to personas/ sub-pages (diagnostico, estrategia, amplificacion, ofimatica, ventas, empoderamiento) [TS-016]
+- [x] T047 [US4] Add Wave 2 English translations to en.json [TS-016]
+- [x] T048 [US4] Add Wave 2 Spanish keys to es.json (matching HTML content) [TS-016]
 
 > **Dependency**: T028-T029 (Wave 1 JSON complete) before T047-T048.
 
@@ -78,10 +78,10 @@
 
 ### US-4 Wave 3: recursos, biblioteca-prompts, catalogo (~5 pages)
 
-- [ ] T049 [P] [US4] Add data-i18n attributes to `recursos/index.html` (category cards, hero, download links) [TS-016]
-- [ ] T050 [P] [US4] Add data-i18n attributes to `biblioteca-prompts/index.html` [TS-016]
-- [ ] T051 [P] [US4] Add data-i18n attributes to catalogo pages [TS-016]
-- [ ] T052 [US4] Add Wave 3 English translations to en.json [TS-016]
+- [x] T049 [P] [US4] Add data-i18n attributes to `recursos/index.html` (category cards, hero, download links) [TS-016]
+- [x] T050 [P] [US4] Add data-i18n attributes to `biblioteca-prompts/index.html` [TS-016]
+- [x] T051 [P] [US4] Add data-i18n attributes to catalogo pages [TS-016]
+- [x] T052 [US4] Add Wave 3 English translations to en.json [TS-016]
 
 > **Dependency**: Can run in parallel with Phase 4b.
 
@@ -89,9 +89,9 @@
 
 ### US-5: Bilingual Library UI Chrome
 
-- [ ] T031 [P] [US5] Add data-i18n to all 9 biblioteca landing pages (hero, search, categories, downloads) [TS-017]
-- [ ] T032 [US5] Add biblioteca UI chrome translations to en.json [TS-017]
-- [ ] T033 [US5] Verify prompt modal chrome translated, prompt content stays Spanish [TS-018]
+- [x] T031 [P] [US5] Add data-i18n to all 9 biblioteca landing pages (hero, search, categories, downloads) [TS-017]
+- [x] T032 [US5] Add biblioteca UI chrome translations to en.json [TS-017]
+- [x] T033 [US5] Verify prompt modal chrome translated, prompt content stays Spanish [TS-018]
 
 ## Phase 5b: Wave 5 — Remaining Public Pages (P2)
 
