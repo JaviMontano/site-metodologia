@@ -1,5 +1,5 @@
 {
-  "tdd_determination": "optional",
+  "tdd_determination": "mandatory",
   "planview": {
     "nodeClassifications": {
       "Browser SPA": "client",

@@ -1,19 +1,18 @@
 <!-- Sync Impact Report
-Version: 2.0.0 (architectural evolution)
+Version: 3.0.0 (TDD + Design System + Brand Voice)
 Modified principles:
-  - I. Static-First → I. Client-Rendered, Cloud-Backed
-  - IV. Component Consistency → IV. Component Consistency (expanded for data layer)
+  - None (all v2.0.0 principles preserved)
 Added sections:
-  - VI. Content Authority
-  - VII. Secure by Default
-  - VIII. Offline Resilience
-  - Quality Standards: expanded for dynamic content
-  - Development Workflow: expanded for backend-aware workflow
-Removed sections: None (all v1 principles preserved or evolved)
+  - IX. Test-Driven Development
+  - X. Design System Governance
+  - XI. Brand Voice Integrity
+  - Quality Standards: expanded for TDD, design tokens, content voice
+  - Development Workflow: expanded for test-first, ATDD, design compliance
+Removed sections: None
 Follow-up TODOs:
-  - Update PREMISE.md scope (backend/CMS now in scope)
-  - Review spec 003-sitewide-ux-polish for compatibility
-  - Future spec: 004-firebase-cms-backend
+  - Update plan.md test stack (Playwright for ATDD, Vitest for unit)
+  - Create design-tokens.json or variables.css update with canonical palette
+  - Downstream specs may need testify re-run for TDD compliance
 -->
 
 # Site MetodologIA Constitution
@@ -192,6 +191,112 @@ where connectivity varies. A backend dependency must not
 make the site less reliable than the static version it
 replaces.
 
+### IX. Test-Driven Development
+
+All production code MUST be preceded by tests. Tests define
+expected behavior; code is written to satisfy those tests.
+
+- Tests MUST be written before the production code they
+  verify — red-green-refactor is the required workflow
+- Acceptance Test-Driven Development (ATDD): feature-level
+  behavior is specified as executable acceptance scenarios
+  (Given/When/Then) before implementation begins
+- End-to-end tests MUST cover critical user journeys:
+  content loading, offline resilience, admin workflows,
+  language switching, cotizador calculations
+- Security rules MUST be tested against an emulator before
+  deployment — positive and negative access scenarios
+- Test assertions MUST NOT be modified to make failing
+  tests pass — fix the production code instead
+- Feature files (.feature) and test specifications are
+  generated from requirements and hash-locked — changes
+  require re-running the testify phase, not manual edits
+- Tests MUST run in automation (CI or pre-commit) — manual
+  test execution is not a substitute for automated gates
+
+**Rationale**: A CMS migration touches every page on the
+site. Without test-first discipline, regressions hide until
+users report them. ATDD ensures acceptance criteria are
+executable, not just documented. Hash-locked feature files
+prevent the common failure mode of weakening tests to match
+broken code.
+
+### X. Design System Governance
+
+The site follows a documented design system with canonical
+tokens. Visual decisions are made once and enforced
+everywhere — not reinvented per page.
+
+- **Aesthetic**: Neo-Swiss Clean — flat vector illustration,
+  Swiss grid (editorial order), generous whitespace,
+  column-based composition, soft geometric forms, simple
+  consistent iconography
+- **Color palette** (exclusive, no deviations):
+  Navy #122562, Gold #FFD700, Blue #137DC5, Dark #1F2833,
+  Lavender #BBA0CC, Gray #808080
+- **Typography hierarchy**: Poppins (headings), Trebuchet
+  (body), Futura (footnotes, callouts, small UI labels)
+- **Visual rules**: high legibility (large text, high
+  contrast), no text on noisy backgrounds, soft shadows
+  and micro-gradients (never realistic), faceless human
+  figures in illustrations, UI element motifs (chips,
+  checklists, timers)
+- All design tokens (colors, fonts, spacing, shadows) MUST
+  be defined in a single source of truth (CSS custom
+  properties or a tokens file) and referenced — never
+  hardcoded as raw values across pages
+- New pages and components MUST use existing tokens — no
+  one-off color values, font stacks, or spacing that
+  diverges from the system
+- Dark/light theme variants MUST both comply with the
+  palette and contrast requirements
+
+**Rationale**: 63+ pages without a governed design system
+drift into visual inconsistency. Canonical tokens ensure
+every page looks like the same brand. The Neo-Swiss Clean
+aesthetic communicates the method-driven, professional
+identity of MetodologIA without visual noise.
+
+### XI. Brand Voice Integrity
+
+All public-facing content follows the MetodologIA Brand
+Voice v3.0 — a method-driven, evidence-based communication
+standard.
+
+- **Structure**: all substantive content uses the Minto
+  pyramid — conclusion first, then supporting reasons
+  (MECE), then evidence, then a call to action
+- **Evidence honesty**: every strong claim must be supported
+  by a real data point, a suggested indicator, an observable
+  signal, or an explicit "data required" marker — never
+  unsupported assertions
+- **Language**: Spanish (Latin American neutral, "tu" form),
+  no regionalisms or local idioms
+- **Prohibited terms** (zero tolerance in published
+  content): "hack", "truco", "secreto", "resultados
+  instantaneos", "arquitecto", "arquitectura",
+  "transformacion" (use "(R)Evolucion" instead)
+- **Preferred terms**: "metodo", "disenar/diseno",
+  "sistemas", "gobernanza", "capacidades",
+  "(R)Evolucion", "Success as a Service" (B2B)
+- **Voice pillars**:
+  - P1 (R)Evolucion: the gap between current and desired
+    state is closed with method
+  - P2 Intention over intensity: design before force
+  - P3 Technology as ally: automate the repetitive,
+    amplify the important
+- **Content quality gate**: every published piece must pass
+  — Minto structure, MECE supports, honest evidence,
+  zero red-list terms, executable CTA, both language
+  variants present
+
+**Rationale**: Brand voice is not a style preference — it
+is a quality system. The Minto-First structure ensures
+content drives decisions, not just comprehension. Evidence
+honesty prevents the credibility erosion that comes from
+inflated promises. The red/green vocabulary list prevents
+brand dilution across 63+ pages of content.
+
 ## Quality Standards
 
 - No broken links or missing assets on any public page
@@ -210,10 +315,24 @@ replaces.
 - Both language variants (ES/EN) must be present before
   content is published — no partial translations visible
   to users
+- All acceptance scenarios MUST have passing automated
+  tests before a feature is considered complete
+- Security rule changes MUST pass emulator tests before
+  deployment
+- New UI components MUST use design system tokens — no
+  raw hex values, no inline font declarations
+- Published content MUST pass the brand voice quality gate
+  (Minto structure, evidence, CTA, red-list scan)
 
 ## Development Workflow
 
 - Read existing code before modifying any file
+- Write tests before writing the production code they
+  verify (TDD: red-green-refactor)
+- Define acceptance scenarios (Given/When/Then) before
+  implementation begins (ATDD)
+- Run the full automated test suite before committing —
+  do not commit with failing tests
 - Test changes across representative pages (not just the
   page being edited)
 - Verify modal behavior, navigation, and theme toggle after
@@ -227,6 +346,10 @@ replaces.
   cloud sources during the migration period
 - Run accessibility checks on admin interfaces, not just
   public pages
+- Verify new components against design system tokens
+  before merging
+- Scan published content against the brand voice red list
+  before release
 
 ## Governance
 
@@ -245,5 +368,11 @@ personal preferences.
 - **Migration decisions** (which content migrates to the
   backend and when) are governed by Content Authority
   (Principle VI) — never duplicate, migrate incrementally
+- **Test discipline** is non-negotiable: no feature is
+  complete without passing automated tests (Principle IX)
+- **Design tokens** are the canonical source for visual
+  decisions; deviations require amendment (Principle X)
+- **Brand voice** compliance is verified for all published
+  content; red-list violations block release (Principle XI)
 
-**Version**: 2.0.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-03-22
+**Version**: 3.0.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-03-22
