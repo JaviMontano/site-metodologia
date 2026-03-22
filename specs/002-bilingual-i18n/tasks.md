@@ -126,17 +126,17 @@
 
 ### US-6: hreflang Tags
 
-- [ ] T034 [P] [US6] Add hreflang link tags to all public pages (index, follow) [TS-019]
-- [ ] T035 [US6] Verify internal/noindex pages do NOT have hreflang [TS-020]
+- [x] T034 [P] [US6] Add hreflang link tags to all public pages (index, follow) [TS-019]
+- [x] T035 [US6] Verify internal/noindex pages do NOT have hreflang [TS-020]
 
 ### US-7: Playwright Tests
 
-- [ ] T036 [P] [US7] Create `tests/19-bilingual-foundation.spec.js` — i18n module, toggle, persistence [TS-021]
-- [ ] T037 [P] [US7] Create `tests/20-bilingual-header-footer.spec.js` — header/footer in both langs [TS-021]
-- [ ] T038 [P] [US7] Create `tests/21-bilingual-core-pages.spec.js` — Wave 1 page verification [TS-021]
-- [ ] T039 [P] [US7] Create `tests/22-bilingual-bibliotecas.spec.js` — library UI chrome [TS-021]
-- [ ] T063 [P] [US7] Create `tests/24-bilingual-product-pages.spec.js` — Wave 2 empresas/personas verification [TS-021, TS-022]
-- [ ] T064 [P] [US7] Create `tests/25-bilingual-remaining.spec.js` — Waves 3, 5, 6, 7 comprehensive verification [TS-021, TS-022]
+- [x] T036 [P] [US7] Create `tests/19-bilingual-foundation.spec.js` — i18n module, toggle, persistence [TS-021]
+- [x] T037 [P] [US7] Create `tests/20-bilingual-header-footer.spec.js` — header/footer in both langs [TS-021]
+- [x] T038 [P] [US7] Create `tests/21-bilingual-core-pages.spec.js` — Wave 1 page verification [TS-021]
+- [x] T039 [P] [US7] Create `tests/22-bilingual-bibliotecas.spec.js` — library UI chrome [TS-021]
+- [x] T063 [P] [US7] Create `tests/24-bilingual-product-pages.spec.js` — Wave 2 empresas/personas verification [TS-021, TS-022]
+- [x] T064 [P] [US7] Create `tests/25-bilingual-remaining.spec.js` — Waves 3, 5, 6, 7 comprehensive verification [TS-021, TS-022]
 - [ ] T040 [US7] Run full test suite, verify 100% pass rate [TS-021, TS-022]
 
 ## Phase 7: Polish & Cross-Cutting
