@@ -1,18 +1,18 @@
 <!-- Sync Impact Report
-Version: 3.0.0 (TDD + Design System + Brand Voice)
+Version: 3.1.0 (Code Sustainability + TDD rationale refinement)
 Modified principles:
-  - None (all v2.0.0 principles preserved)
+  - IX. Test-Driven Development: rationale expanded — TDD/ATDD
+    prevents unnecessary code, not just regressions
 Added sections:
-  - IX. Test-Driven Development
-  - X. Design System Governance
-  - XI. Brand Voice Integrity
-  - Quality Standards: expanded for TDD, design tokens, content voice
-  - Development Workflow: expanded for test-first, ATDD, design compliance
+  - XII. Code Sustainability
+  - Quality Standards: expanded for naming, README, scaffolding
+  - Development Workflow: expanded for naming conventions
 Removed sections: None
 Follow-up TODOs:
   - Update plan.md test stack (Playwright for ATDD, Vitest for unit)
   - Create design-tokens.json or variables.css update with canonical palette
   - Downstream specs may need testify re-run for TDD compliance
+  - Define naming convention reference (slugging rules, file patterns)
 -->
 
 # Site MetodologIA Constitution
@@ -214,9 +214,14 @@ expected behavior; code is written to satisfy those tests.
 - Tests MUST run in automation (CI or pre-commit) — manual
   test execution is not a substitute for automated gates
 
-**Rationale**: A CMS migration touches every page on the
-site. Without test-first discipline, regressions hide until
-users report them. ATDD ensures acceptance criteria are
+**Rationale**: The primary purpose of TDD and ATDD is to
+prevent unnecessary code generation. Tests written first
+define the exact boundary of what the system must do —
+nothing more, nothing less. This discipline is vital for
+sustainability and simplicity without trivializing the
+enterprise robustness the project requires. A CMS migration
+touches every page; test-first prevents both regressions
+and overengineering. ATDD ensures acceptance criteria are
 executable, not just documented. Hash-locked feature files
 prevent the common failure mode of weakening tests to match
 broken code.
@@ -297,6 +302,57 @@ honesty prevents the credibility erosion that comes from
 inflated promises. The red/green vocabulary list prevents
 brand dilution across 63+ pages of content.
 
+### XII. Code Sustainability
+
+All code must be written for the person who maintains it
+next — not the person who writes it now. The codebase must
+be understandable, navigable, and modifiable by someone
+without specialist knowledge of the original implementation.
+
+- **Business-readable code**: variable names, function names,
+  and module names must reflect business concepts — not
+  implementation mechanics. A non-developer reading the code
+  should understand what it does from its naming alone
+- **Naming conventions**: files, directories, CSS classes,
+  JS identifiers, and URL slugs follow a documented,
+  consistent naming convention. No ad-hoc abbreviations,
+  no inconsistent casing across the same domain
+- **Slugging**: all URL paths, file names, and identifiers
+  that appear in user-facing contexts use kebab-case slugs
+  derived from the business name — predictable, searchable,
+  and human-readable
+- **Scaffolding**: new features follow established directory
+  patterns. The file structure must be self-documenting —
+  a new contributor can find where to add code by looking
+  at the existing layout, not by asking
+- **README-driven**: every significant module or directory
+  must have a README or inline documentation that explains
+  its purpose, boundaries, and usage — not its
+  implementation details
+- **Clean code**: no dead code, no commented-out code, no
+  magic numbers, no functions longer than what fits on one
+  screen. Single responsibility per module. Explicit over
+  implicit
+- **Extensible without rewrite**: new content types,
+  programs, or pages must be addable by following existing
+  patterns — not by modifying core infrastructure
+- **Interoperable**: modules communicate through documented
+  contracts (function signatures, event names, data shapes),
+  not through shared mutable state or implicit dependencies
+- **Scalable simplicity**: prefer the simplest solution that
+  meets the requirement. Complexity is added only when a
+  simpler approach has been proven insufficient — never
+  preemptively
+
+**Rationale**: The site will be maintained by a small team
+where any member may touch any part of the codebase. Code
+that requires specialist knowledge to modify becomes a
+single point of failure. Business-readable naming, consistent
+conventions, and self-documenting structure reduce onboarding
+time and maintenance risk. TDD (Principle IX) prevents
+unnecessary code; this principle ensures the necessary code
+is written for longevity.
+
 ## Quality Standards
 
 - No broken links or missing assets on any public page
@@ -323,6 +379,12 @@ brand dilution across 63+ pages of content.
   raw hex values, no inline font declarations
 - Published content MUST pass the brand voice quality gate
   (Minto structure, evidence, CTA, red-list scan)
+- All new modules and directories MUST have a README that
+  explains purpose and usage
+- Variable and function names MUST reflect business concepts
+  — no cryptic abbreviations or implementation-only naming
+- File and URL naming MUST follow the documented slug
+  convention — no ad-hoc patterns
 
 ## Development Workflow
 
@@ -350,6 +412,10 @@ brand dilution across 63+ pages of content.
   before merging
 - Scan published content against the brand voice red list
   before release
+- Name every new file, function, and variable using
+  business-readable terms — review naming before merging
+- Add a README to any new module or directory that explains
+  what it does and how to extend it
 
 ## Governance
 
@@ -374,5 +440,7 @@ personal preferences.
   decisions; deviations require amendment (Principle X)
 - **Brand voice** compliance is verified for all published
   content; red-list violations block release (Principle XI)
+- **Code sustainability** is verified by naming review,
+  README presence, and pattern adherence (Principle XII)
 
-**Version**: 3.0.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-03-22
+**Version**: 3.1.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-03-22
