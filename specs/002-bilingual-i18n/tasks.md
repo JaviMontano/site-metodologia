@@ -2,8 +2,8 @@
 
 **Feature**: Bilingual Site (ES/EN)
 **Branch**: `002-bilingual-i18n`
-**Total Tasks**: 42
-**Parallel Opportunities**: 12 tasks marked [P]
+**Total Tasks**: 62
+**Parallel Opportunities**: 22 tasks marked [P]
 
 ## Phase 1: Setup
 
@@ -61,6 +61,30 @@
 - [ ] T029 [US4] Add all Wave 1 Spanish keys to es.json (matching HTML content) [TS-014]
 - [ ] T030 [US4] Verify graceful fallback on untranslated pages (header/footer EN, body ES) [TS-015]
 
+## Phase 4b: Wave 2 — Product Pages (P2)
+
+### US-4 Wave 2: empresas + personas (~10 pages)
+
+- [ ] T043 [P] [US4] Add data-i18n attributes to `empresas/index.html` (program cards, hero, CTAs) [TS-016]
+- [ ] T044 [P] [US4] Add data-i18n attributes to `personas/index.html` (program cards, hero, CTAs) [TS-016]
+- [ ] T045 [P] [US4] Add data-i18n attributes to empresas/ sub-pages (diagnostico, estrategia, amplificacion, ofimatica, ventas, champions) [TS-016]
+- [ ] T046 [P] [US4] Add data-i18n attributes to personas/ sub-pages (diagnostico, estrategia, amplificacion, ofimatica, ventas, empoderamiento) [TS-016]
+- [ ] T047 [US4] Add Wave 2 English translations to en.json [TS-016]
+- [ ] T048 [US4] Add Wave 2 Spanish keys to es.json (matching HTML content) [TS-016]
+
+> **Dependency**: T028-T029 (Wave 1 JSON complete) before T047-T048.
+
+## Phase 4c: Wave 3 — Resources Hub (P2)
+
+### US-4 Wave 3: recursos, biblioteca-prompts, catalogo (~5 pages)
+
+- [ ] T049 [P] [US4] Add data-i18n attributes to `recursos/index.html` (category cards, hero, download links) [TS-016]
+- [ ] T050 [P] [US4] Add data-i18n attributes to `biblioteca-prompts/index.html` [TS-016]
+- [ ] T051 [P] [US4] Add data-i18n attributes to catalogo pages [TS-016]
+- [ ] T052 [US4] Add Wave 3 English translations to en.json [TS-016]
+
+> **Dependency**: Can run in parallel with Phase 4b.
+
 ## Phase 5: Wave 4 — Biblioteca Landing Pages (P2)
 
 ### US-5: Bilingual Library UI Chrome
@@ -68,6 +92,35 @@
 - [ ] T031 [P] [US5] Add data-i18n to all 9 biblioteca landing pages (hero, search, categories, downloads) [TS-017]
 - [ ] T032 [US5] Add biblioteca UI chrome translations to en.json [TS-017]
 - [ ] T033 [US5] Verify prompt modal chrome translated, prompt content stays Spanish [TS-018]
+
+## Phase 5b: Wave 5 — Remaining Public Pages (P2)
+
+### US-4 Wave 5: premium, legal, nosotros (~15 pages)
+
+- [ ] T053 [P] [US4] Add data-i18n attributes to `recursos/premium/` pages (13 premium categories + index) [TS-016]
+- [ ] T054 [P] [US4] Add data-i18n attributes to `legal/` pages (terminos, privacidad) [TS-016]
+- [ ] T055 [P] [US4] Add data-i18n attributes to `nosotros/` pages [TS-016]
+- [ ] T056 [US4] Add Wave 5 English translations to en.json [TS-016]
+
+## Phase 5c: Wave 6 — Standalone HTML Downloads (P2)
+
+### US-4 Wave 6: downloadable HTMLs (~18 files)
+
+- [ ] T057 [P] [US4] Embed bilingual JSON inline in standalone HTML downloads (cannot load external JSON) [TS-016]
+- [ ] T058 [US4] Add Wave 6 English translations for standalone embedded content [TS-016]
+
+> **Note**: Standalone HTMLs require embedded translations per plan.md Risk Assessment (standalone files can't load external JSON).
+
+## Phase 5d: Wave 7 — Modals, CTAs, Dynamic Content (P2)
+
+### US-4 Wave 7: site-wide dynamic content
+
+- [ ] T059 [US4] Add data-i18n to all modal content templates (ModalSystem, program info modals, prompt modals) [TS-016]
+- [ ] T060 [US4] Add data-i18n to CTA components and dynamic content (CTAHandler.js output) [TS-016]
+- [ ] T061 [US4] Add Wave 7 English translations to en.json [TS-016]
+- [ ] T062 [US4] Verify i18n.translate() correctly re-translates dynamically injected modal/CTA content [TS-012, TS-016]
+
+> **Dependency**: T010 (translate API) and T059-T061 must complete before T062.
 
 ## Phase 6: SEO + Testing (P3)
 
@@ -82,6 +135,8 @@
 - [ ] T037 [P] [US7] Create `tests/20-bilingual-header-footer.spec.js` — header/footer in both langs [TS-021]
 - [ ] T038 [P] [US7] Create `tests/21-bilingual-core-pages.spec.js` — Wave 1 page verification [TS-021]
 - [ ] T039 [P] [US7] Create `tests/22-bilingual-bibliotecas.spec.js` — library UI chrome [TS-021]
+- [ ] T063 [P] [US7] Create `tests/24-bilingual-product-pages.spec.js` — Wave 2 empresas/personas verification [TS-021, TS-022]
+- [ ] T064 [P] [US7] Create `tests/25-bilingual-remaining.spec.js` — Waves 3, 5, 6, 7 comprehensive verification [TS-021, TS-022]
 - [ ] T040 [US7] Run full test suite, verify 100% pass rate [TS-021, TS-022]
 
 ## Phase 7: Polish & Cross-Cutting
@@ -92,28 +147,48 @@
 ## Dependency Graph
 
 ```
-T001 → T002 → T003..T012 → T013..T022 → T023..T030 → T031..T033 → T034..T040 → T041..T042
-                                           ↑ (parallel within phase)
+T001 → T002 → T003..T012 → T013..T022 → T023..T030 ──┬── T043..T048 (Wave 2)
+                                                        ├── T049..T052 (Wave 3)  [parallel]
+                                                        └── T031..T033 (Wave 4)
+                                                                    │
+                                          T053..T056 (Wave 5) ◄────┤
+                                          T057..T058 (Wave 6) ◄────┤
+                                          T059..T062 (Wave 7) ◄────┘
+                                                                    │
+                                          T034..T035 (hreflang) ◄──┤
+                                          T036..T040, T063..T064 ◄──┘ (tests)
+                                                                    │
+                                          T041..T042 (polish) ◄────┘
 ```
 
-**Critical Path**: T001 → T003 → T006 → T013 → T015 → T022 → T023 → T028 → T031 → T036 → T040 → T042
-**Length**: 12 tasks sequential
+**Critical Path**: T001 → T003 → T006 → T013 → T015 → T022 → T023 → T028 → T043 → T047 → T053 → T056 → T059 → T061 → T040 → T042
+**Length**: 16 tasks sequential
 
 **Parallel Batches**:
 - Phase 3: T018, T019, T021 can run in parallel
 - Phase 4: T023, T024, T025, T026, T027 can run in parallel
-- Phase 6: T034, T036, T037, T038, T039 can run in parallel
+- Phase 4b: T043, T044, T045, T046 can run in parallel
+- Phase 4c: T049, T050, T051 can run in parallel (also parallel with 4b)
+- Phase 5: T031 parallel execution across 9 pages
+- Phase 5b: T053, T054, T055 can run in parallel
+- Phase 6: T034, T036, T037, T038, T039, T063, T064 can run in parallel
 
 ## MVP Scope
 
 **Minimum Viable**: Phases 1-3 (T001-T022) = toggle + header/footer translated = bilingual shell on every page.
 **Full P1**: Phases 1-4 (T001-T030) = 5 core pages fully bilingual.
-**Complete**: All phases (T001-T042) = full bilingual site with tests and SEO.
+**P2 Complete**: Phases 4b-5d (T043-T062) = all 7 waves translated.
+**Complete**: All phases (T001-T064) = full bilingual site with tests, SEO, and polish.
 
 ## Implementation Strategy
 
 1. Build i18n module first (Phase 2) — it's the foundation everything depends on
 2. Add toggle + header/footer (Phase 3) — gives immediate visual bilingual presence on ALL pages
 3. Translate core pages in parallel (Phase 4) — 5 pages can be done simultaneously
-4. Libraries and SEO (Phases 5-6) — lower priority, can be deferred
-5. Polish (Phase 7) — final verification pass
+4. Product + resource pages (Phases 4b-4c) — can run in parallel, high-traffic pages
+5. Libraries (Phase 5) — UI chrome only, prompt content stays Spanish
+6. Remaining public pages (Phase 5b) — premium, legal, nosotros
+7. Standalone HTMLs (Phase 5c) — require embedded translations (special handling)
+8. Dynamic content (Phase 5d) — modals, CTAs, use translate() API
+9. SEO + Tests (Phase 6) — hreflang tags, Playwright verification
+10. Polish (Phase 7) — final verification pass

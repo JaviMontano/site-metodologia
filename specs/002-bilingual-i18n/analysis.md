@@ -7,7 +7,7 @@
 | ID | Category | Severity | Location(s) | Summary | Recommendation |
 |----|----------|----------|-------------|---------|----------------|
 | A-01 | Phase Separation | MEDIUM | spec.md:43-56 (US3) | User Story 3 prescribes implementation details (JSON files, data-i18n attributes, i18n.js module, localStorage key "lang") that belong in plan.md | Rewrite US3 to describe the *capability* ("translations load and apply without page reload") not the *mechanism*. Move architecture to plan.md |
-| A-02 | Coverage Gap | HIGH | tasks.md (missing phases) | Waves 2, 3, 5, 6, 7 from spec.md (lines 75-80) have zero tasks. Only Waves 0, 1, 4 are decomposed. SC-007 requires all 7 waves complete in 4 sprints | Add task phases for Waves 2, 3, 5, 6, 7 — or explicitly mark them out-of-MVP scope in tasks.md |
+| ~~A-02~~ | ~~Coverage Gap~~ | ~~HIGH~~ | ~~tasks.md~~ | ~~RESOLVED: Waves 2, 3, 5, 6, 7 added as Phases 4b, 4c, 5b, 5c, 5d (T043-T064). All 7 waves now have tasks.~~ | — |
 | A-03 | Coverage Gap | MEDIUM | plan.md (all) | plan.md never references FR-xxx or SC-xxx IDs. Requirements are addressed conceptually but not ID-traceable | Add inline FR/SC ID references where plan sections address specific requirements |
 | A-04 | Inconsistency | MEDIUM | plan.md:7, tasks.md:17 (T005) | Browser language auto-detection (navigator.language) appears in plan and T005 but has no FR requirement in spec.md | Add FR-013 for auto-detection, or remove from plan/tasks if not desired |
 | A-05 | Ambiguity | MEDIUM | spec.md:163, plan.md:19 | "63+ pages" used without definitive count. Wave breakdown sums to ~62 pages + 18 files + "site-wide" — inconsistent total | Pin exact page count or clarify "63+" as approximation with definitive wave totals |
@@ -46,7 +46,7 @@
 | SC-004 | Yes | T041 | — | — |
 | SC-005 | Yes | T036-T040 | Yes (conceptual) | Testing Strategy |
 | SC-006 | Yes | T042 | Yes (conceptual) | Performance Goals |
-| SC-007 | **NO** | Missing Waves 2,3,5,6,7 | Yes (conceptual) | Phases D-F |
+| SC-007 | Yes | T043-T064 (Waves 2,3,5,6,7) | Yes (conceptual) | Phases D-F |
 | SC-008 | Yes | T034 | Yes (conceptual) | Phase C |
 
 ## Feature File Traceability
@@ -89,21 +89,22 @@
 ## Metrics
 
 - **Total Requirements**: 12 FR + 8 SC = 20
-- **Total Tasks**: 42
+- **Total Tasks**: 64 (was 42, +22 for Waves 2,3,5,6,7 + tests)
 - **FR Task Coverage**: 12/12 (100%)
-- **SC Task Coverage**: 7/8 (87.5%) — SC-007 under-covered
+- **SC Task Coverage**: 8/8 (100%) — SC-007 resolved
 - **Feature File Coverage**: 20/20 (100%)
 - **Plan ID Traceability**: 0/20 (0% — conceptual only)
 - **Ambiguity Count**: 2 (page count, sprint duration)
 - **Critical Issues**: 0
-- **High Issues**: 1
+- **High Issues**: 0 (was 1, A-02 resolved)
 - **Medium Issues**: 3
 - **Low Issues**: 2
 
-**Health Score**: 88/100 (→ stable)
+**Health Score**: 93/100 (↑ improving)
 
 ## Score History
 
 | Run | Score | Coverage | Critical | High | Medium | Low | Total |
 |-----|-------|----------|----------|------|--------|-----|-------|
 | 2026-03-22T18:22:00Z | 88 | 95% | 0 | 1 | 3 | 2 | 7 |
+| 2026-03-22T18:34:00Z | 93 | 100% | 0 | 0 | 3 | 2 | 6 |
