@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "ruta": "Ruta de (R)Evolución",
+    "recursos": "Recursos",
+    "servicios": "Servicios",
+    "contacto": "Contacto",
+    "campus": "Campus",
+    "cta": "Primera Conversación",
+    "skip": "Saltar al contenido principal",
+    "menu_open": "Abrir menú de navegación",
+    "menu_label": "Navegación Principal",
+    "sections_label": "Navegación de secciones",
+    "home": "Inicio"
+  },
+  "tagline": {
+    "prefix": "Aceleremos",
+    "suffix": "su Estrateg"
+  },
+  "toggle": {
+    "label": "Idioma / Language"
+  },
+  "footer": {
+    "quote": "\"La excelencia no se compra, se diseña. Se cocrea y se comparte.\"",
+    "servicios": "Servicios",
+    "empresas": "Empresas",
+    "personas": "Personas",
+    "aceleradores": "Aceleradores a Medida",
+    "a_medida": "Servicios a Medida",
+    "recursos": "Recursos",
+    "catalogo": "Catálogo",
+    "playbooks": "Playbooks",
+    "sitemap": "Sitemap",
+    "contacto": "Contacto",
+    "legal": "Legal",
+    "terminos": "Términos",
+    "privacidad": "Privacidad",
+    "copyright": "© 2026 MetodologIA. Copyleft.",
+    "powered": "Success as a Service"
+  }
+}

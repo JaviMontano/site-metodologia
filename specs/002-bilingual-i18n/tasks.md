@@ -7,21 +7,21 @@
 
 ## Phase 1: Setup
 
-- [ ] T001 Create directory structure: `js/i18n/` for translation module and JSON files
-- [ ] T002 Create `js/i18n/es.json` skeleton with nav, footer, toggle, and common section keys extracted from current HTML
+- [x] T001 Create directory structure: `js/i18n/` for translation module and JSON files
+- [x] T002 Create `js/i18n/es.json` skeleton with nav, footer, toggle, and common section keys extracted from current HTML
 
 ## Phase 2: Foundational (i18n Module)
 
-- [ ] T003 [US3] Create `js/i18n/i18n.js` — singleton module with init(), setLang(), translate(), t() API [TS-008, TS-009, TS-010]
-- [ ] T004 [US3] Implement localStorage read/write for lang preference (key: "lang", values: "es"/"en") [TS-008]
-- [ ] T005 [US3] Implement browser language auto-detection on first visit (navigator.language → "en" if English, fallback "es") [TS-008]
-- [ ] T006 [US3] Implement data-i18n text translation (querySelectorAll + textContent replacement) [TS-009]
-- [ ] T007 [US3] Implement data-i18n-placeholder, data-i18n-title, data-i18n-content, data-i18n-aria-label attribute translation [TS-010]
-- [ ] T008 [US3] Implement data-i18n-html for innerHTML translation (rich text) [TS-009]
-- [ ] T009 [US3] Implement graceful fallback: retain original HTML text when translation key missing [TS-011]
-- [ ] T010 [US3] Implement window.i18n.translate(element) for dynamic content re-translation [TS-012]
-- [ ] T011 [US3] Update `<html lang="es">` attribute on language switch [TS-008]
-- [ ] T012 [US3] Ensure i18n.js load time impact < 50ms [TS-013]
+- [x] T003 [US3] Create `js/i18n/i18n.js` — singleton module with init(), setLang(), translate(), t() API [TS-008, TS-009, TS-010]
+- [x] T004 [US3] Implement localStorage read/write for lang preference (key: "lang", values: "es"/"en") [TS-008]
+- [x] T005 [US3] Implement browser language auto-detection on first visit (navigator.language → "en" if English, fallback "es") [TS-008]
+- [x] T006 [US3] Implement data-i18n text translation (querySelectorAll + textContent replacement) [TS-009]
+- [x] T007 [US3] Implement data-i18n-placeholder, data-i18n-title, data-i18n-content, data-i18n-aria-label attribute translation [TS-010]
+- [x] T008 [US3] Implement data-i18n-html for innerHTML translation (rich text) [TS-009]
+- [x] T009 [US3] Implement graceful fallback: retain original HTML text when translation key missing [TS-011]
+- [x] T010 [US3] Implement window.i18n.translate(element) for dynamic content re-translation [TS-012]
+- [x] T011 [US3] Update `<html lang="es">` attribute on language switch [TS-008]
+- [x] T012 [US3] Ensure i18n.js load time impact < 50ms [TS-013]
 
 > **Dependency**: T003-T012 must complete before Phase 3.
 

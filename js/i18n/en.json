@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "ruta": "Route of (R)Evolution",
+    "recursos": "Resources",
+    "servicios": "Services",
+    "contacto": "Contact",
+    "campus": "Campus",
+    "cta": "First Conversation",
+    "skip": "Skip to main content",
+    "menu_open": "Open navigation menu",
+    "menu_label": "Main Navigation",
+    "sections_label": "Section navigation",
+    "home": "Home"
+  },
+  "tagline": {
+    "prefix": "Let's Accelerate",
+    "suffix": "your Strateg"
+  },
+  "toggle": {
+    "label": "Idioma / Language"
+  },
+  "footer": {
+    "quote": "\"Excellence is not bought, it is designed. Co-created and shared.\"",
+    "servicios": "Services",
+    "empresas": "For Companies",
+    "personas": "For Individuals",
+    "aceleradores": "Custom Accelerators",
+    "a_medida": "Custom Services",
+    "recursos": "Resources",
+    "catalogo": "Catalog",
+    "playbooks": "Playbooks",
+    "sitemap": "Sitemap",
+    "contacto": "Contact",
+    "legal": "Legal",
+    "terminos": "Terms",
+    "privacidad": "Privacy",
+    "copyright": "© 2026 MetodologIA. Copyleft.",
+    "powered": "Success as a Service"
+  }
+}
