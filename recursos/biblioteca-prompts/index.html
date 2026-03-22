@@ -42,9 +42,9 @@
     <link rel="stylesheet" href="../../estilos/base.css">
     <link rel="stylesheet" href="../../estilos/components.css">
     
-    <!-- Tailwind (CDN for dev, local for production) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+    <!-- Tailwind (Local Build) -->
+    <link rel="stylesheet" href="../../dist/output.css">
+
     <!-- Components -->
     <script src="../../js/icons.js" defer></script>
     <script src="../../components/SiteHeader.js" defer></script>
@@ -682,8 +682,8 @@
                 <h2><i data-lucide="book" class="w-8 h-8 inline-block mr-2 text-brand-gold"></i> Biblioteca Universal</h2>
                 <p>La colección más completa y versátil. 180 prompts para análisis, comunicación, estrategia, productividad y mucho más. Compatible con ChatGPT, Gemini, Claude y cualquier IA.</p>
                 <div class="featured-stats">
-                    <span class="featured-stat"><i data-lucide="file-text" class="w-4 h-4 text-brand-gold"></i> <strong>180</strong> prompts</span>
-                    <span class="featured-stat"><i data-lucide="tag" class="w-4 h-4 text-brand-gold"></i> <strong>16</strong> categorías</span>
+                    <span class="featured-stat"><i data-lucide="file-text" class="w-4 h-4 text-brand-gold"></i> <strong>202</strong> prompts</span>
+                    <span class="featured-stat"><i data-lucide="tag" class="w-4 h-4 text-brand-gold"></i> <strong>29</strong> categorías</span>
                     <span class="featured-stat"><i data-lucide="clipboard-list" class="w-4 h-4 text-brand-gold"></i> Incluye <strong>parámetros</strong></span>
                     <span class="featured-stat"><i data-lucide="target" class="w-4 h-4 text-brand-gold"></i> <strong>Arquetipos expertos</strong></span>
                 </div>
@@ -749,85 +749,85 @@
         <p class="section-subtitle">Bibliotecas especializadas por área funcional. Optimizadas para el día a día.</p>
         
         <div class="libraries-grid">
-            <div class="library-card disabled">
+            <a href="../biblioteca-ventas/index.html" class="library-card" style="text-decoration:none">
                 <div class="library-icon ventas"><i data-lucide="banknote" class="w-7 h-7"></i></div>
                 <h3>Ventas</h3>
-                <p>Prospección, negociación, seguimiento y cierre con IA.</p>
+                <p>Prospección, discovery, negociación, cierre y postventa con IA.</p>
                 <div class="library-meta">
-                    <span class="library-count">100+ prompts</span>
-                    <span class="library-status coming-soon">Coming Soon</span>
+                    <span class="library-count">101 prompts</span>
+                    <span class="library-status available">Disponible</span>
                 </div>
-            </div>
+            </a>
             
-            <div class="library-card disabled">
+            <a href="../biblioteca-marketing/index.html" class="library-card" style="text-decoration:none">
                 <div class="library-icon marketing"><i data-lucide="megaphone" class="w-7 h-7"></i></div>
                 <h3>Marketing</h3>
-                <p>Copywriting, contenidos, SEO y campañas.</p>
+                <p>Copywriting, comunicación, email marketing, contenidos visuales y presentaciones.</p>
                 <div class="library-meta">
-                    <span class="library-count">100+ prompts</span>
-                    <span class="library-status coming-soon">Coming Soon</span>
+                    <span class="library-count">31 prompts</span>
+                    <span class="library-status available">Disponible</span>
                 </div>
-            </div>
+            </a>
 
-            <div class="library-card disabled">
+            <a href="../biblioteca-desarrollo/index.html" class="library-card" style="text-decoration:none">
                 <div class="library-icon desarrollo"><i data-lucide="laptop" class="w-7 h-7"></i></div>
                 <h3>Desarrollo</h3>
-                <p>Coding, debugging, arquitectura y documentación técnica.</p>
+                <p>Meta-prompting, razonamiento avanzado, system prompts y frameworks de código.</p>
                 <div class="library-meta">
-                    <span class="library-count">100+ prompts</span>
-                    <span class="library-status coming-soon">Coming Soon</span>
+                    <span class="library-count">33 prompts</span>
+                    <span class="library-status available">Disponible</span>
                 </div>
-            </div>
-            
-            <div class="library-card disabled">
+            </a>
+
+            <a href="../biblioteca-productos/index.html" class="library-card" style="text-decoration:none">
                 <div class="library-icon productos"><i data-lucide="package" class="w-7 h-7"></i></div>
                 <h3>Productos</h3>
-                <p>Product Management, UX y prototipado rápido.</p>
+                <p>Artefactos de producto, UX, canvas, mapas de experiencia y frameworks de negocio.</p>
                 <div class="library-meta">
-                    <span class="library-count">100+ prompts</span>
-                    <span class="library-status coming-soon">Coming Soon</span>
+                    <span class="library-count">45 prompts</span>
+                    <span class="library-status available">Disponible</span>
                 </div>
-            </div>
-            
-            <div class="library-card disabled">
+            </a>
+
+            <a href="../biblioteca-estrategia/index.html" class="library-card" style="text-decoration:none">
                 <div class="library-icon estrategia"><i data-lucide="gem" class="w-7 h-7"></i></div>
                 <h3>EstrategIA</h3>
-                <p>Pensamiento sistémico y diseño de futuros.</p>
+                <p>Análisis estratégico, diagnósticos, planificación y toma de decisiones con IA.</p>
                 <div class="library-meta">
-                    <span class="library-count">100+ prompts</span>
-                    <span class="library-status coming-soon">Coming Soon</span>
+                    <span class="library-count">33 prompts</span>
+                    <span class="library-status available">Disponible</span>
                 </div>
-            </div>
+            </a>
 
-            <div class="library-card disabled">
+            <a href="../biblioteca-proyectos/index.html" class="library-card" style="text-decoration:none">
                 <div class="library-icon proyectos"><i data-lucide="layout" class="w-7 h-7"></i></div>
                 <h3>Proyectos</h3>
-                <p>Metodologías ágiles y gestión de equipos.</p>
+                <p>Productividad, reuniones, planificación semanal y gestión de equipos.</p>
                 <div class="library-meta">
-                    <span class="library-count">100+ prompts</span>
-                    <span class="library-status coming-soon">Coming Soon</span>
+                    <span class="library-count">10 prompts</span>
+                    <span class="library-status available">Disponible</span>
                 </div>
-            </div>
+            </a>
 
-            <div class="library-card disabled">
+            <a href="../biblioteca-consulting/index.html" class="library-card" style="text-decoration:none">
                 <div class="library-icon consulting"><i data-lucide="search" class="w-7 h-7"></i></div>
                 <h3>Consulting</h3>
-                <p>Diagnóstico, frameworks y presentaciones ejecutivas.</p>
+                <p>Investigación, documentos ejecutivos, síntesis y análisis profundo.</p>
                 <div class="library-meta">
-                    <span class="library-count">100+ prompts</span>
-                    <span class="library-status coming-soon">Coming Soon</span>
+                    <span class="library-count">18 prompts</span>
+                    <span class="library-status available">Disponible</span>
                 </div>
-            </div>
+            </a>
 
-            <div class="library-card disabled">
+            <a href="../biblioteca-vibe-coding/index.html" class="library-card" style="text-decoration:none">
                 <div class="library-icon vibe-coding"><i data-lucide="palette" class="w-7 h-7"></i></div>
                 <h3>Vibe Coding</h3>
-                <p>Arquitectura de soluciones y desarrollo creativo con IA.</p>
+                <p>Demos interactivas, contenido visual, video y recursos creativos con IA.</p>
                 <div class="library-meta">
-                    <span class="library-count">100+ prompts</span>
-                    <span class="library-status coming-soon">Coming Soon</span>
+                    <span class="library-count">10 prompts</span>
+                    <span class="library-status available">Disponible</span>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
     

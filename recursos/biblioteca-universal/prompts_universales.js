@@ -2,7 +2,7 @@ window.promptsUniversales = [
   {
     "id": "a",
     "label_title": "A",
-    "category": "a",
+    "category": "general",
     "content": "¡Aprobado! Por favor, proceder. Repasa el plan y aprovecha insights antes de avanzar con lo operativo.",
     "paramCount": 0,
     "keywords": []
@@ -1463,5 +1463,291 @@ window.promptsUniversales = [
     "content": "===parametros\n\n- tema: {[tema]} → Concepto o proceso a explicar (ej. \"Cómo funciona blockchain\", \"Ciclo de ventas B2B\")\n- audiencia: {[audiencia]} → Perfil del espectador (ej. \"Ejecutivos no técnicos\", \"Estudiantes universitarios\")\n- duracion_total: {[duracion_total]} → Duración total del video (30 segundos a 3 minutos)\n- estilo_visual: {[estilo_visual]} → Estilo de animación (ej. \"Motion graphics minimalista\", \"Ilustración 2D\", \"Isométrico\")\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no hay, escribe \"No hay adjuntos\")\n\n===prompt\n\n# Objetivo\n\nCrear especificaciones técnicas para videos pedagógicos y explicativos (30s a 3 min) usando Veo 3.1 de Google, optimizados para claridad conceptual, retención y aprendizaje.\n\n# Motores de Google Recomendados\n\n> **IMPORTANTE:** Utiliza siempre la versión más actual disponible:\n> - **Video principal:** Veo 3.1 o superior\n> - **Imágenes/frames:** Imagen 3 Ultra / Nano Banana Pro\n> - **Audio narración:** Veo 3.1 con audio nativo o NotebookLM para voice-over\n\n# Arquetipo Experto\n\nActúa como un **Diseñador Instruccional Visual** especializado en learning experience y motion graphics para educación corporativa.\n\n# Diferencia: Video Pedagógico vs Miniclip\n\n| Aspecto | Video Pedagógico | Miniclip |\n|---------|------------------|----------|\n| Duración | 30s - 3 minutos | 5-15 segundos |\n| Objetivo | Explicar concepto completo | Hook + 1 idea rápida |\n| Estructura | Intro → Desarrollo → Conclusión | Hook → Punch → CTA |\n| Ritmo | Pausado, didáctico | Ultra-rápido |\n| Narración | Voz explicativa | Mínima o ninguna |\n\n# Estructura de Video Pedagógico\n\n## Fases del Video (desglosar en escenas)\n1. **Hook/Intro (5-10s):** Pregunta o problema que engancha\n2. **Contexto (10-20s):** Establecer el \"por qué importa\"\n3. **Desarrollo (60-120s):** Explicación paso a paso, visualizada\n4. **Recapitulación (10-15s):** Resumen visual de puntos clave\n5. **CTA/Cierre (5-10s):** Siguiente paso o recurso adicional\n\n## Prompt Structure para Veo 3.1\n\n[Scene Description] + [Visual Style] + [Camera Movement] + [Pacing] + [Educational Mood]\n\n**Ejemplo:**\n\"Animated diagram showing data flowing through interconnected nodes, clean isometric style, smooth camera orbit, educational pacing with pauses for comprehension, calm blue color palette, professional explainer video aesthetic\"\n\n## Movimientos de Cámara para Educación\n\n- **Paneos suaves:** Para mostrar flujos y procesos lineales\n- **Zoom gradual:** Para enfatizar conceptos clave\n- **Orbit lento:** Para mostrar objetos 3D desde múltiples ángulos\n- **Transiciones limpias:** Fade, morph, o wipe entre conceptos\n\n# Checklist de Calidad\n\n☐ Un concepto principal por escena\n☐ Pausas visuales para absorción\n☐ Movimiento de cámara especificado\n☐ Estilo consistente en todas las escenas\n☐ Transiciones definidas\n☐ Espacio para narración/subtítulos\n\n# Entregable Esperado\n\nJSON con array de escenas:\n- scene_number, duration_seconds\n- veo_prompt (EN) para Veo 3.1\n- camera_movement\n- transition_to_next\n- narration_script (opcional)",
     "paramCount": 5,
     "keywords": []
+  },
+  {
+    "id": "report_ejecutivo_semanal",
+    "label_title": "Ejecutivo Semanal",
+    "category": "report",
+    "content": "===parametros\n\n- periodo: {[periodo]} → Período del reporte (ej. \"Semana 12, Marzo 2026\")\n- equipo: {[equipo]} → Equipo o área responsable\n- metricas_clave: {[metricas_clave]} → KPIs principales a reportar\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Reporte Semanal\", \"Status\", \"Ejecutivo\", \"KPIs\"]\n\n===prompt\n\n# Objetivo\n\nGenerar un reporte ejecutivo semanal que comunique progreso, bloqueos y próximos pasos de forma clara y accionable para stakeholders senior.\n\n# Arquetipo Experto\n\nActúa como un **Project Manager Senior** experto en comunicación ejecutiva y reporting de alto nivel.\n\n# Parámetros\n\n- periodo: {[periodo]} → Período del reporte\n- equipo: {[equipo]} → Equipo o área\n- metricas_clave: {[metricas_clave]} → KPIs principales\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n# Checklist\n\n- [ ] Recopilar datos del período\n- [ ] Calcular variaciones vs período anterior\n- [ ] Identificar logros clave y bloqueos\n- [ ] Definir acciones para siguiente período\n- [ ] Formatear para lectura ejecutiva (< 2 min)\n\n# Plan\n\n1. **Recopilación**: Consolidar datos y métricas del período.\n2. **Análisis**: Calcular variaciones, identificar tendencias.\n3. **Redacción**: Estructurar en formato ejecutivo (highlights, métricas, bloqueos, next steps).\n4. **Visualización**: Incluir mini-gráficos o indicadores RAG.\n5. **Entrega**: Documento listo para enviar a stakeholders.\n\n# Entregable Esperado\n\nReporte ejecutivo de 1-2 páginas con: highlights del período, dashboard de KPIs con RAG status, top 3 logros, top 3 riesgos/bloqueos, y plan de acción para siguiente período.",
+    "paramCount": 4,
+    "keywords": [
+      "Reporte Semanal",
+      "Status",
+      "Ejecutivo",
+      "KPIs"
+    ]
+  },
+  {
+    "id": "report_metricas_kpi",
+    "label_title": "Metricas Kpi",
+    "category": "report",
+    "content": "===parametros\n\n- area: {[area]} → Área funcional (ventas, marketing, producto, etc.)\n- kpis: {[kpis]} → Lista de KPIs a analizar\n- periodo: {[periodo]} → Período de análisis\n- benchmark: {[benchmark]} → (opcional) Benchmark de referencia\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"KPIs\", \"Métricas\", \"Dashboard\", \"Performance\"]\n\n===prompt\n\n# Objetivo\n\nCrear un reporte de métricas y KPIs que transforme datos crudos en insights accionables con visualización clara.\n\n# Arquetipo Experto\n\nActúa como un **Data Analyst Senior** especializado en business intelligence y storytelling con datos.\n\n# Entregable Esperado\n\nReporte de KPIs con: tabla de métricas con tendencia, análisis de variaciones significativas, correlaciones identificadas, 5 insights accionables y recomendaciones priorizadas.",
+    "paramCount": 5,
+    "keywords": [
+      "KPIs",
+      "Métricas",
+      "Dashboard",
+      "Performance"
+    ]
+  },
+  {
+    "id": "report_avance_proyecto",
+    "label_title": "Avance Proyecto",
+    "category": "report",
+    "content": "===parametros\n\n- proyecto: {[proyecto]} → Nombre del proyecto\n- fase_actual: {[fase_actual]} → Fase actual del proyecto\n- completado: {[completado]} → % de avance estimado\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Avance\", \"Proyecto\", \"Tracking\", \"Milestones\"]\n\n===prompt\n\n# Objetivo\n\nGenerar reporte de avance de proyecto con tracking de milestones, riesgos y forecast.\n\n# Arquetipo Experto\n\nActúa como un **PMO Director** con experiencia en reporting de portafolio de proyectos.\n\n# Entregable Esperado\n\nReporte de avance con: resumen ejecutivo, timeline con milestones (completados/pendientes), burndown de tareas, registro de riesgos actualizado, forecast de fecha de entrega y acciones requeridas.",
+    "paramCount": 4,
+    "keywords": [
+      "Avance",
+      "Proyecto",
+      "Tracking",
+      "Milestones"
+    ]
+  },
+  {
+    "id": "report_incidentes",
+    "label_title": "Incidentes",
+    "category": "report",
+    "content": "===parametros\n\n- incidente: {[incidente]} → Descripción del incidente\n- severidad: {[severidad]} → (crítico|alto|medio|bajo)\n- impacto: {[impacto]} → Impacto en usuarios/negocio\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Incidente\", \"Post-mortem\", \"RCA\", \"Resolución\"]\n\n===prompt\n\n# Objetivo\n\nDocumentar incidente con análisis de causa raíz, timeline de resolución y acciones preventivas.\n\n# Arquetipo Experto\n\nActúa como un **Incident Commander** con experiencia en post-mortems blameless de empresas tech.\n\n# Entregable Esperado\n\nReporte de incidente con: resumen, timeline de eventos, análisis de causa raíz (5 Whys), impacto cuantificado, acciones correctivas con owners y deadlines, y mejoras preventivas.",
+    "paramCount": 4,
+    "keywords": [
+      "Incidente",
+      "Post-mortem",
+      "RCA",
+      "Resolución"
+    ]
+  },
+  {
+    "id": "report_retrospectiva",
+    "label_title": "Retrospectiva",
+    "category": "report",
+    "content": "===parametros\n\n- equipo: {[equipo]} → Equipo que participa\n- periodo: {[periodo]} → Período a evaluar\n- formato: {[formato]} → (4Ls|Start-Stop-Continue|Mad-Sad-Glad)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Retrospectiva\", \"Mejora Continua\", \"Equipo\", \"Feedback\"]\n\n===prompt\n\n# Objetivo\n\nFacilitar y documentar retrospectiva de equipo que genere mejoras concretas.\n\n# Arquetipo Experto\n\nActúa como un **Agile Coach Senior** con experiencia facilitando retrospectivas que generan cambio real.\n\n# Entregable Esperado\n\nDocumento de retrospectiva con: insights por categoría, top 5 action items con owners, commitment del equipo, métricas de comparación vs retrospectiva anterior.",
+    "paramCount": 4,
+    "keywords": [
+      "Retrospectiva",
+      "Mejora Continua",
+      "Equipo",
+      "Feedback"
+    ]
+  },
+  {
+    "id": "report_stakeholders",
+    "label_title": "Stakeholders",
+    "category": "report",
+    "content": "===parametros\n\n- proyecto: {[proyecto]} → Nombre del proyecto/iniciativa\n- audiencia: {[audiencia]} → Stakeholders destinatarios\n- frecuencia: {[frecuencia]} → (semanal|quincenal|mensual)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Stakeholders\", \"Comunicación\", \"Status\", \"Ejecutivo\"]\n\n===prompt\n\n# Objetivo\n\nCrear reporte de status adaptado al nivel de los stakeholders, con el nivel de detalle correcto.\n\n# Arquetipo Experto\n\nActúa como un **Program Manager** experto en comunicación ejecutiva adaptada por audiencia.\n\n# Entregable Esperado\n\nReporte adaptado por audiencia con: executive summary (C-level), detalle técnico (managers), y action items (equipo operativo).",
+    "paramCount": 4,
+    "keywords": [
+      "Stakeholders",
+      "Comunicación",
+      "Status",
+      "Ejecutivo"
+    ]
+  },
+  {
+    "id": "report_comparativo_periodos",
+    "label_title": "Comparativo Periodos",
+    "category": "report",
+    "content": "===parametros\n\n- metricas: {[metricas]} → Métricas a comparar\n- periodo_1: {[periodo_1]} → Primer período\n- periodo_2: {[periodo_2]} → Segundo período\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Comparativo\", \"Tendencias\", \"Variación\", \"Análisis\"]\n\n===prompt\n\n# Objetivo\n\nComparar métricas entre dos períodos identificando variaciones significativas, causas y tendencias.\n\n# Arquetipo Experto\n\nActúa como un **Business Analyst** especializado en análisis comparativo y detección de anomalías.\n\n# Entregable Esperado\n\nAnálisis comparativo con: tabla de variaciones (absoluta y %), gráficos de tendencia, causas identificadas por variación significativa, y recomendaciones.",
+    "paramCount": 4,
+    "keywords": [
+      "Comparativo",
+      "Tendencias",
+      "Variación",
+      "Análisis"
+    ]
+  },
+  {
+    "id": "report_tendencias",
+    "label_title": "Tendencias",
+    "category": "report",
+    "content": "===parametros\n\n- industria: {[industria]} → Industria o sector\n- horizonte: {[horizonte]} → Horizonte temporal (6m, 1a, 3a)\n- fuentes: {[fuentes]} → Fuentes de información preferidas\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Tendencias\", \"Futuro\", \"Industria\", \"Signals\"]\n\n===prompt\n\n# Objetivo\n\nIdentificar y analizar tendencias emergentes que impactarán la industria en el horizonte definido.\n\n# Arquetipo Experto\n\nActúa como un **Analista de Tendencias** con metodología de scanning de señales débiles y fuertes.\n\n# Entregable Esperado\n\nReporte de tendencias con: radar de tendencias (emergente/creciente/madura), análisis de impacto por tendencia, implicaciones para el negocio, y recomendaciones estratégicas.",
+    "paramCount": 4,
+    "keywords": [
+      "Tendencias",
+      "Futuro",
+      "Industria",
+      "Signals"
+    ]
+  },
+  {
+    "id": "informe_tecnico_hallazgos",
+    "label_title": "Tecnico Hallazgos",
+    "category": "informe",
+    "content": "===parametros\n\n- sistema: {[sistema]} → Sistema o área evaluada\n- tipo_evaluacion: {[tipo_evaluacion]} → (auditoría|diagnóstico|assessment)\n- hallazgos: {[hallazgos]} → Resumen de hallazgos principales\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Informe Técnico\", \"Hallazgos\", \"Diagnóstico\", \"Recomendaciones\"]\n\n===prompt\n\n# Objetivo\n\nDocumentar hallazgos técnicos de una evaluación con severidad, evidencia y recomendaciones priorizadas.\n\n# Arquetipo Experto\n\nActúa como un **Consultor Técnico Senior** con experiencia en documentación de hallazgos de auditoría técnica.\n\n# Entregable Esperado\n\nInforme técnico con: resumen ejecutivo, metodología, tabla de hallazgos (ID, severidad, evidencia, recomendación), heatmap de riesgos y roadmap de remediación.",
+    "paramCount": 4,
+    "keywords": [
+      "Informe Técnico",
+      "Hallazgos",
+      "Diagnóstico",
+      "Recomendaciones"
+    ]
+  },
+  {
+    "id": "informe_auditoria",
+    "label_title": "Auditoria",
+    "category": "informe",
+    "content": "===parametros\n\n- area: {[area]} → Área auditada\n- estandar: {[estandar]} → Estándar de referencia (ISO, COBIT, NIST, etc.)\n- alcance: {[alcance]} → Alcance de la auditoría\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Auditoría\", \"Cumplimiento\", \"Estándares\", \"Findings\"]\n\n===prompt\n\n# Objetivo\n\nGenerar informe de auditoría formal con hallazgos clasificados contra el estándar de referencia.\n\n# Arquetipo Experto\n\nActúa como un **Auditor Certificado** (CISA/ISO Lead Auditor) con experiencia en auditorías de cumplimiento.\n\n# Entregable Esperado\n\nInforme de auditoría con: alcance, metodología, criterios de evaluación, hallazgos por control (conforme/no conforme/observación), plan de acción correctiva y scoring de madurez.",
+    "paramCount": 4,
+    "keywords": [
+      "Auditoría",
+      "Cumplimiento",
+      "Estándares",
+      "Findings"
+    ]
+  },
+  {
+    "id": "informe_viabilidad",
+    "label_title": "Viabilidad",
+    "category": "informe",
+    "content": "===parametros\n\n- iniciativa: {[iniciativa]} → Iniciativa a evaluar\n- dimensiones: {[dimensiones]} → Dimensiones de viabilidad (técnica, financiera, operativa, legal)\n- horizonte: {[horizonte]} → Horizonte de evaluación\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Viabilidad\", \"Factibilidad\", \"Evaluación\", \"Go/No-Go\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar la viabilidad multidimensional de una iniciativa con recomendación Go/No-Go fundamentada.\n\n# Arquetipo Experto\n\nActúa como un **Consultor de Factibilidad** con experiencia en evaluaciones multidimensionales de proyectos complejos.\n\n# Entregable Esperado\n\nEstudio de viabilidad con: análisis por dimensión, matriz de factibilidad, riesgos por dimensión, recomendación Go/No-Go con condiciones, y plan de mitigación.",
+    "paramCount": 4,
+    "keywords": [
+      "Viabilidad",
+      "Factibilidad",
+      "Evaluación",
+      "Go/No-Go"
+    ]
+  },
+  {
+    "id": "informe_impacto",
+    "label_title": "Impacto",
+    "category": "informe",
+    "content": "===parametros\n\n- cambio: {[cambio]} → Cambio o iniciativa a evaluar\n- areas_impacto: {[areas_impacto]} → Áreas de impacto (personas, procesos, tecnología)\n- stakeholders: {[stakeholders]} → Stakeholders afectados\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Impacto\", \"Evaluación\", \"Cambio\", \"Stakeholders\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar el impacto de un cambio en todas las dimensiones afectadas con plan de mitigación.\n\n# Arquetipo Experto\n\nActúa como un **Change Impact Analyst** especializado en evaluaciones de impacto organizacional.\n\n# Entregable Esperado\n\nInforme de impacto con: mapa de impacto por área, severity rating, stakeholders afectados, plan de mitigación y comunicación, y timeline de adopción.",
+    "paramCount": 4,
+    "keywords": [
+      "Impacto",
+      "Evaluación",
+      "Cambio",
+      "Stakeholders"
+    ]
+  },
+  {
+    "id": "informe_cumplimiento",
+    "label_title": "Cumplimiento",
+    "category": "informe",
+    "content": "===parametros\n\n- regulacion: {[regulacion]} → Regulación o estándar (GDPR, SOX, PCI-DSS, etc.)\n- organizacion: {[organizacion]} → Organización evaluada\n- alcance: {[alcance]} → Alcance del assessment\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Cumplimiento\", \"Compliance\", \"Regulación\", \"Gap\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar nivel de cumplimiento regulatorio e identificar gaps con plan de remediación priorizado.\n\n# Arquetipo Experto\n\nActúa como un **Compliance Officer** certificado con experiencia en frameworks regulatorios internacionales.\n\n# Entregable Esperado\n\nInforme de cumplimiento con: score por control, heatmap de gaps, hallazgos priorizados por riesgo, plan de remediación con estimación de esfuerzo, y dashboard de compliance.",
+    "paramCount": 4,
+    "keywords": [
+      "Cumplimiento",
+      "Compliance",
+      "Regulación",
+      "Gap"
+    ]
+  },
+  {
+    "id": "informe_benchmarking",
+    "label_title": "Benchmarking",
+    "category": "informe",
+    "content": "===parametros\n\n- organizacion: {[organizacion]} → Tu organización\n- competidores: {[competidores]} → Organizaciones de referencia\n- dimensiones: {[dimensiones]} → Dimensiones a comparar\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Benchmarking\", \"Comparación\", \"Best Practices\", \"Gap\"]\n\n===prompt\n\n# Objetivo\n\nComparar la organización contra best-in-class identificando gaps y oportunidades de mejora.\n\n# Arquetipo Experto\n\nActúa como un **Analista de Benchmarking** con acceso a bases de datos sectoriales y metodología rigurosa.\n\n# Entregable Esperado\n\nInforme de benchmarking con: matriz comparativa por dimensión, radar chart de posición relativa, gaps prioritarios, best practices transferibles y roadmap de mejora.",
+    "paramCount": 4,
+    "keywords": [
+      "Benchmarking",
+      "Comparación",
+      "Best Practices",
+      "Gap"
+    ]
+  },
+  {
+    "id": "informe_due_diligence",
+    "label_title": "Due Diligence",
+    "category": "informe",
+    "content": "===parametros\n\n- target: {[target]} → Empresa o activo a evaluar\n- tipo: {[tipo]} → (técnica|financiera|operativa|comercial)\n- horizonte: {[horizonte]} → Horizonte de la evaluación\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Due Diligence\", \"Evaluación\", \"M&A\", \"Riesgo\"]\n\n===prompt\n\n# Objetivo\n\nRealizar due diligence estructurada que identifique riesgos, oportunidades y valoración fundamentada.\n\n# Arquetipo Experto\n\nActúa como un **Consultor de Due Diligence** con experiencia en procesos de M&A y evaluación de empresas.\n\n# Entregable Esperado\n\nInforme de due diligence con: resumen ejecutivo, evaluación por área, red flags identificados, oportunidades, valoración preliminar y recomendación de proceed/pause/no-go.",
+    "paramCount": 4,
+    "keywords": [
+      "Due Diligence",
+      "Evaluación",
+      "M&A",
+      "Riesgo"
+    ]
+  },
+  {
+    "id": "informe_diagnostico_organizacional",
+    "label_title": "Diagnostico Organizacional",
+    "category": "informe",
+    "content": "===parametros\n\n- organizacion: {[organizacion]} → Organización a diagnosticar\n- areas: {[areas]} → Áreas de diagnóstico (cultura, procesos, tecnología, talento)\n- profundidad: {[profundidad]} → (exploratoria|detallada|exhaustiva)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Diagnóstico\", \"Organizacional\", \"Assessment\", \"Mejora\"]\n\n===prompt\n\n# Objetivo\n\nRealizar diagnóstico organizacional integral que identifique fortalezas, debilidades y oportunidades de mejora.\n\n# Arquetipo Experto\n\nActúa como un **Consultor Organizacional Senior** con experiencia en diagnósticos de empresas de 100-10,000 empleados.\n\n# Entregable Esperado\n\nDiagnóstico con: mapa de madurez por dimensión, hallazgos priorizados, quick wins identificados, roadmap de transformación a 12 meses y business case de mejora.",
+    "paramCount": 4,
+    "keywords": [
+      "Diagnóstico",
+      "Organizacional",
+      "Assessment",
+      "Mejora"
+    ]
+  },
+  {
+    "id": "dashboard_ejecutivo_resumen",
+    "label_title": "Ejecutivo Resumen",
+    "category": "dashboard",
+    "content": "===parametros\n\n- organizacion: {[organizacion]} → Nombre de la organización\n- kpis: {[kpis]} → KPIs principales del negocio\n- frecuencia: {[frecuencia]} → Frecuencia de actualización\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Dashboard\", \"Ejecutivo\", \"C-Level\", \"KPIs\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar dashboard ejecutivo que comunique la salud del negocio en una vista de 30 segundos.\n\n# Arquetipo Experto\n\nActúa como un **BI Director** especializado en dashboards ejecutivos para boards y C-suite.\n\n# Entregable Esperado\n\nEspecificación de dashboard con: layout, KPIs con semáforo RAG, sparklines de tendencia, drill-down paths, y mockup describiendo cada widget.",
+    "paramCount": 4,
+    "keywords": [
+      "Dashboard",
+      "Ejecutivo",
+      "C-Level",
+      "KPIs"
+    ]
+  },
+  {
+    "id": "dashboard_operativo_realtime",
+    "label_title": "Operativo Realtime",
+    "category": "dashboard",
+    "content": "===parametros\n\n- sistema: {[sistema]} → Sistema a monitorear\n- metricas: {[metricas]} → Métricas operativas clave\n- umbrales: {[umbrales]} → Umbrales de alerta\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Dashboard\", \"Operativo\", \"Realtime\", \"Monitoreo\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar dashboard operativo en tiempo real para monitoreo y detección temprana de anomalías.\n\n# Arquetipo Experto\n\nActúa como un **SRE Senior** con experiencia en diseño de dashboards de observabilidad.\n\n# Entregable Esperado\n\nEspecificación de dashboard operativo con: métricas por panel, umbrales de alerta, reglas de escalamiento, layout responsive y guía de interpretación.",
+    "paramCount": 4,
+    "keywords": [
+      "Dashboard",
+      "Operativo",
+      "Realtime",
+      "Monitoreo"
+    ]
+  },
+  {
+    "id": "dashboard_financiero",
+    "label_title": "Financiero",
+    "category": "dashboard",
+    "content": "===parametros\n\n- empresa: {[empresa]} → Nombre de la empresa\n- metricas_financieras: {[metricas_financieras]} → Métricas financieras a incluir\n- periodo: {[periodo]} → Período de análisis\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Dashboard\", \"Financiero\", \"P&L\", \"Cash Flow\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar dashboard financiero que visualice la salud financiera con métricas de P&L, cash flow y proyecciones.\n\n# Arquetipo Experto\n\nActúa como un **CFO** con experiencia en diseño de reportes financieros para boards.\n\n# Entregable Esperado\n\nEspecificación de dashboard financiero con: P&L resumido, cash flow, burn rate, runway, métricas de eficiencia, comparativo vs presupuesto y forecast.",
+    "paramCount": 4,
+    "keywords": [
+      "Dashboard",
+      "Financiero",
+      "P&L",
+      "Cash Flow"
+    ]
+  },
+  {
+    "id": "dashboard_equipo_rendimiento",
+    "label_title": "Equipo Rendimiento",
+    "category": "dashboard",
+    "content": "===parametros\n\n- equipo: {[equipo]} → Equipo a evaluar\n- metricas: {[metricas]} → Métricas de rendimiento\n- periodo: {[periodo]} → Período de evaluación\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Dashboard\", \"Equipo\", \"Rendimiento\", \"Velocity\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar dashboard de rendimiento de equipo que facilite coaching y mejora continua.\n\n# Arquetipo Experto\n\nActúa como un **Engineering Manager** con experiencia en métricas de equipo (DORA, SPACE framework).\n\n# Entregable Esperado\n\nDashboard con: velocity/throughput, cycle time, deployment frequency, lead time, team health indicators, y trends con anotaciones.",
+    "paramCount": 4,
+    "keywords": [
+      "Dashboard",
+      "Equipo",
+      "Rendimiento",
+      "Velocity"
+    ]
+  },
+  {
+    "id": "dashboard_cliente_salud",
+    "label_title": "Cliente Salud",
+    "category": "dashboard",
+    "content": "===parametros\n\n- segmento: {[segmento]} → Segmento de clientes\n- metricas_cx: {[metricas_cx]} → Métricas de experiencia del cliente\n- periodo: {[periodo]} → Período de análisis\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Dashboard\", \"Cliente\", \"NPS\", \"Health Score\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar dashboard de salud del cliente que anticipe churn y detecte oportunidades de upsell.\n\n# Arquetipo Experto\n\nActúa como un **Customer Success Director** con experiencia en health scoring y predicción de churn.\n\n# Entregable Esperado\n\nDashboard con: health score por cliente, NPS trend, usage metrics, risk signals, upsell indicators, y cohort analysis de retención.",
+    "paramCount": 4,
+    "keywords": [
+      "Dashboard",
+      "Cliente",
+      "NPS",
+      "Health Score"
+    ]
+  },
+  {
+    "id": "dashboard_proyecto_portfolio",
+    "label_title": "Proyecto Portfolio",
+    "category": "dashboard",
+    "content": "===parametros\n\n- portfolio: {[portfolio]} → Nombre del portfolio\n- proyectos: {[proyectos]} → Lista de proyectos\n- dimensiones: {[dimensiones]} → Dimensiones a trackear (budget, schedule, scope, quality)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===keywords\n[\"Dashboard\", \"Portfolio\", \"PMO\", \"Multi-proyecto\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar dashboard de portfolio que dé visibilidad sobre todos los proyectos en una vista consolidada.\n\n# Arquetipo Experto\n\nActúa como un **PMO Director** con experiencia en gestión de portfolios de 20+ proyectos simultáneos.\n\n# Entregable Esperado\n\nDashboard de portfolio con: mapa de calor de salud por proyecto, burn rate consolidado, resource allocation heatmap, dependency graph, y RAG status por dimensión.",
+    "paramCount": 4,
+    "keywords": [
+      "Dashboard",
+      "Portfolio",
+      "PMO",
+      "Multi-proyecto"
+    ]
   }
 ];

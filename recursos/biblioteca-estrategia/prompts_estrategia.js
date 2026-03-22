@@ -1,0 +1,1348 @@
+window.promptsEstrategia = [
+  {
+    "id": "analisis_comparar_opciones_decision",
+    "label_title": "Comparar Opciones Decision",
+    "category": "analisis",
+    "content": "===parametros\n\n- elementos: {[elementos]} → Elementos a comparar (ej. \"Opción A, Opción B\")\n- criterios: {[criterios]} → Criterios de comparación (ej. \"Costo, ROI, Riesgo\") Ejemplos: 'ROI y tiempo de implementación' o 'Impacto y viabilidad técnica'\n- dimensiones: {[dimensiones]} → (opcional; Dimensiones adicionales) Ejemplos: 'Personas, Procesos, Tecnología' o 'Estratégico, Operativo, Táctico'\n- profundidad: {[profundidad]} → (opcional; Nivel de profundidad: bajo|medio|alto) Ejemplos: 'alto - análisis exhaustivo' o 'medio - overview ejecutivo'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===keywords\n[\"Toma de Decisiones\", \"Análisis Comparativo\", \"Matriz de Decisión\", \"Estrategia\"]\n\n===prompt\n\n# Objetivo\n\nRealizar análisis completo y estructurado según los parámetros especificados, generando un entregable completo y profesional que cumpla con los estándares de calidad. El resultado debe estar listo para uso inmediato.\n\n# Arquetipo Experto\n\nActúa como un **Consultor Senior de Decisiones Estratégicas** con experiencia en matrices de decisión ponderadas y análisis de trade-offs complejos.\n\n# Parámetros\n\n- elementos: {[elementos]} → Elementos a comparar (ej. \"Opción A, Opción B\")\n- criterios: {[criterios]} → Criterios de comparación (ej. \"Costo, ROI, Riesgo\")\n- dimensiones: {[dimensiones]} → (opcional; Dimensiones adicionales)\n- profundidad: {[profundidad]} → (opcional; Nivel de profundidad: bajo|medio|alto)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n- [ ] Asegurar que el resultado esté listo para uso inmediato\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal del entregable?\n- ¿Qué formato y estructura se requiere?\n- ¿Hay información adicional en los adjuntos?\n- ¿Qué metodología o proceso se debe aplicar?\n- ¿Hay restricciones o requisitos específicos?\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos. Identificar tipo y formato de entregable.\n2. **Metodología**: Aplicar el proceso y metodología especificados.\n3. **Diseño**: Planificar estructura y contenido del entregable según especificaciones.\n4. **Creación**: Generar contenido completo y estructurado aplicando estándares de calidad.\n5. **Validación**: Verificar completitud, coherencia y calidad del entregable.\n6. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nMatriz comparativa detallada con scoring, pros/contras, recomendación fundamentada y plan de acción para la opción seleccionada",
+    "paramCount": 5,
+    "keywords": [
+      "Toma de Decisiones",
+      "Análisis Comparativo",
+      "Matriz de Decisión",
+      "Estrategia"
+    ]
+  },
+  {
+    "id": "analisis_evaluacion_riesgos_plan",
+    "label_title": "Evaluacion Riesgos Plan",
+    "category": "analisis",
+    "content": "===parametros\n\n- plan: {[plan]} → Plan o proyecto a evaluar Ejemplos: 'Lanzamiento producto nuevo' o 'Migración de sistemas'\n- horizonte: {[horizonte]} → (opcional; Período de análisis) Ejemplos: '6 meses' o '1 año'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Gestión de Riesgos\", \"Mitigación\", \"Planificación\", \"Seguridad\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar los riesgos del plan \"{[plan]}\" identificando amenazas potenciales, su probabilidad e impacto, y estrategias de mitigación.\n\n# Arquetipo Experto\n\nActúa como un **Risk Manager Certificado** especializado en identificación, evaluación y mitigación de riesgos empresariales.\n\n# Parámetros\n\n- plan: {[plan]} → Plan o proyecto a evaluar\n- horizonte: {[horizonte]} → (opcional; Período de análisis)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n# Checklist\n\n- [ ] Identificar riesgos potenciales (internos y externos)\n- [ ] Evaluar probabilidad de ocurrencia\n- [ ] Evaluar impacto potencial\n- [ ] Calcular nivel de riesgo (probabilidad x impacto)\n- [ ] Proponer estrategias de mitigación\n\n# Plan\n\n1. **Identificación**: Brainstorm de riesgos por categoría.\n2. **Evaluación**: Calificar probabilidad e impacto.\n3. **Priorización**: Ordenar por nivel de riesgo.\n4. **Mitigación**: Proponer acciones preventivas y contingentes.\n\n# Entregable Esperado\n\nMatriz de riesgos con identificación, probabilidad (1-5), impacto (1-5), nivel de riesgo, estrategia de respuesta y plan de contingencia",
+    "paramCount": 3,
+    "keywords": [
+      "Gestión de Riesgos",
+      "Mitigación",
+      "Planificación",
+      "Seguridad"
+    ]
+  },
+  {
+    "id": "analisis_evaluar_situacion_actual",
+    "label_title": "Evaluar Situacion Actual",
+    "category": "analisis",
+    "content": "===parametros\n\n- situacion: {[situacion]} → Descripción del problema/escenario\n- tipo: {[tipo]} → (analisis|evaluacion|diagnostico) Ejemplos: 'analisis' o 'evaluacion'\n- profundidad: {[profundidad]} → (basico|medio|alto|detallado) Ejemplos: 'basico' o 'medio'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n- ref_previa: {[ref_previa]} → (opcional) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n\n===keywords\n[\"Diagnóstico\", \"Análisis Situacional\", \"Resolución de Problemas\", \"Consultoría\"]\n\n===prompt\n\n# Objetivo\n\nRealizar un \"{[tipo]}\" de la situación descrita, aplicando una profundidad \"{[profundidad]}\". El objetivo es pasar de la observación de síntomas a la comprensión de la estructura subyacente.\n\n# Arquetipo Experto\n\nActúa como un **Consultor de Gestión de Crisis** y **Analista de Sistemas Complejos**. Usas marcos mentales rigurosos para entender el caos.\n\n# Parámetros\n\n- situacion: {[situacion]} → Descripción del problema/escenario\n- tipo: {[tipo]} → (analisis|evaluacion|diagnostico)\n- profundidad: {[profundidad]} → (basico|medio|alto|detallado)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n- ref_previa: {[ref_previa]} → (opcional)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n- [ ] Asegurar que el resultado esté listo para uso inmediato\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal del entregable?\n- ¿Qué formato y estructura se requiere?\n- ¿Hay información adicional en los adjuntos?\n- ¿Hay restricciones o requisitos específicos?\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos. Identificar tipo y formato de entregable.\n2. **Diseño**: Planificar estructura y contenido del entregable según especificaciones.\n3. **Creación**: Generar contenido completo y estructurado aplicando estándares de calidad.\n4. **Validación**: Verificar completitud, coherencia y calidad del entregable.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nAnálisis situacional completo con contexto, factores clave, riesgos y oportunidades identificadas",
+    "paramCount": 5,
+    "keywords": [
+      "Diagnóstico",
+      "Análisis Situacional",
+      "Resolución de Problemas",
+      "Consultoría"
+    ]
+  },
+  {
+    "id": "analisis_generar_ideas_innovadoras",
+    "label_title": "Generar Ideas Innovadoras",
+    "category": "analisis",
+    "content": "===parametros\n\n- desafio: {[desafio]} → Desafío a resolver\n- marco: {[marco]} → (opcional; design_thinking|blue_ocean|ambos) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n- restricciones: {[restricciones]} → (opcional; Limitaciones) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===keywords\n[\"Innovación\", \"Design Thinking\", \"Creatividad\", \"Disrupción\"]\n\n===prompt\n\n# Objetivo\n\nDeconstruir el desafío \"{[desafio]}\" hasta sus verdades fundamentales y reconstruirlo para encontrar una solución 10x mejor, ignorando las prácticas estándar de la industria.\n\n# Arquetipo Experto\n\nEres un **Arquitecto de Innovación Radical** experto en Pensamiento de Primeros Principios (First Principles Thinking) y Estrategia de Océano Azul.\n\n# Parámetros\n\n- desafio: {[desafio]} → Desafío a resolver\n- marco: {[marco]} → (opcional; design_thinking|blue_ocean|ambos)\n- restricciones: {[restricciones]} → (opcional; Limitaciones)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n- [ ] Asegurar que el resultado esté listo para uso inmediato\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal del entregable?\n- ¿Qué formato y estructura se requiere?\n- ¿Hay información adicional en los adjuntos?\n- ¿Hay restricciones o requisitos específicos?\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos. Identificar tipo y formato de entregable.\n2. **Diseño**: Planificar estructura y contenido del entregable según especificaciones.\n3. **Creación**: Generar contenido completo y estructurado aplicando estándares de calidad.\n4. **Validación**: Verificar completitud, coherencia y calidad del entregable.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nPortfolio de ideas innovadoras con evaluación de impacto, viabilidad y roadmap de implementación",
+    "paramCount": 4,
+    "keywords": [
+      "Innovación",
+      "Design Thinking",
+      "Creatividad",
+      "Disrupción"
+    ]
+  },
+  {
+    "id": "analisis_ideacion_rapida_8_variantes",
+    "label_title": "Ideacion Rapida 8 Variantes",
+    "category": "analisis",
+    "content": "===parametros\n\n- desafio: {[desafio]} → Desafío o problema a resolver\n- tiempo_por_idea: {[tiempo_por_idea]} → (opcional; Tiempo simulado por idea) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n- iteraciones: {[iteraciones]} → (opcional; Número de rondas) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===keywords\n[\"Ideación\", \"Brainstorming\", \"Agile\", \"Variantes\"]\n\n===prompt\n\n# Objetivo\n\nGenerar 8 bocetos de solución radicalmente distintos para el desafío: \"{[desafio]}\". El objetivo es maximizar la divergencia y explorar los extremos del espacio de solución.\n\n# Arquetipo Experto\n\nActúa como un **Facilitador Experto en Design Sprint** (Google Ventures style). Tu especialidad es desbloquear la creatividad mediante restricciones extremas y pensamiento lateral.\n\n# Parámetros\n\n- desafio: {[desafio]} → Desafío o problema a resolver\n- tiempo_por_idea: {[tiempo_por_idea]} → (opcional; Tiempo simulado por idea)\n- iteraciones: {[iteraciones]} → (opcional; Número de rondas)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n- [ ] Asegurar que el resultado esté listo para uso inmediato\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal del entregable?\n- ¿Qué formato y estructura se requiere?\n- ¿Hay información adicional en los adjuntos?\n- ¿Qué metodología o proceso se debe aplicar?\n- ¿Hay restricciones o requisitos específicos?\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos. Identificar tipo y formato de entregable.\n2. **Metodología**: Aplicar el proceso y metodología especificados.\n3. **Diseño**: Planificar estructura y contenido del entregable según especificaciones.\n4. **Creación**: Generar contenido completo y estructurado aplicando estándares de calidad.\n5. **Validación**: Verificar completitud, coherencia y calidad del entregable.\n6. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\n8 variantes de solución con evaluación rápida, selección de top 3 y recomendación de siguiente paso",
+    "paramCount": 4,
+    "keywords": [
+      "Ideación",
+      "Brainstorming",
+      "Agile",
+      "Variantes"
+    ]
+  },
+  {
+    "id": "analisis_identificar_causa_raiz_issue",
+    "label_title": "Identificar Causa Raiz Issue",
+    "category": "analisis",
+    "content": "===parametros\n\n- problema: {[problema]} → Descripción del problema a analizar Ejemplos: 'Caída en ventas Q3' o 'Alta rotación de personal'\n- metodologia: {[metodologia]} → (opcional; 5_whys|fishbone|ambos) Ejemplos: '5_whys' o 'fishbone'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===prompt\n\n# Objetivo\n\nIdentificar la causa raíz del problema \"{[problema]}\" utilizando metodologías estructuradas de análisis para asegurar que las soluciones ataquen el origen y no solo los síntomas.\n\n# Arquetipo Experto\n\nActúa como un **Consultor de Mejora Continua Six Sigma** especializado en Root Cause Analysis y resolución de problemas complejos.\n\n# Parámetros\n\n- problema: {[problema]} → Descripción del problema a analizar\n- metodologia: {[metodologia]} → (opcional; 5_whys|fishbone|ambos)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n# Checklist\n\n- [ ] Definir el problema con precisión\n- [ ] Recopilar datos y evidencia disponible\n- [ ] Aplicar metodología de análisis\n- [ ] Identificar causas contributivas vs causa raíz\n- [ ] Validar hipótesis de causa raíz\n\n# Plan\n\n1. **Definición**: Clarificar el problema en términos medibles.\n2. **Análisis**: Aplicar 5 Whys y/o Diagrama Ishikawa.\n3. **Validación**: Verificar que la causa identificada explica el problema.\n4. **Recomendación**: Proponer acciones correctivas.\n\n# Entregable Esperado\n\nAnálisis de causa raíz con árbol de causas, causa raíz identificada, evidencia de soporte y recomendaciones de acción correctiva",
+    "paramCount": 3,
+    "keywords": []
+  },
+  {
+    "id": "analisis_predecir_tendencias_futuras",
+    "label_title": "Predecir Tendencias Futuras",
+    "category": "analisis",
+    "content": "===parametros\n\n- datos: {[datos]} → Datos históricos o tema Ejemplos: 'Transformación digital en retail' o 'Estrategias de retención de talento'\n- horizonte: {[horizonte]} → (opcional; corto/medio/largo plazo) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n- metodologia: {[metodologia]} → (opcional; tendencias|forecasting|completo) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===prompt\n\n# Objetivo\n\nGenerar un informe de prospectiva sobre \"{[datos]}\" para el horizonte \"{[horizonte]}\", utilizando el marco STEEP (Social, Tecnológico, Económico, Ambiental, Político).\n\n# Arquetipo Experto\n\nActúa como un **Futurista Cuantitativo** y **Analista de Inteligencia Competitiva**. Combinas análisis de datos duros con intuición estratégica.\n\n# Parámetros\n\n- datos: {[datos]} → Datos históricos o tema\n- horizonte: {[horizonte]} → (opcional; corto/medio/largo plazo)\n- metodologia: {[metodologia]} → (opcional; tendencias|forecasting|completo)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n- [ ] Asegurar que el resultado esté listo para uso inmediato\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal del entregable?\n- ¿Qué formato y estructura se requiere?\n- ¿Hay información adicional en los adjuntos?\n- ¿Hay restricciones o requisitos específicos?\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos. Identificar tipo y formato de entregable.\n2. **Diseño**: Planificar estructura y contenido del entregable según especificaciones.\n3. **Creación**: Generar contenido completo y estructurado aplicando estándares de calidad.\n4. **Validación**: Verificar completitud, coherencia y calidad del entregable.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nReporte de tendencias con proyecciones, escenarios futuros y recomendaciones estratégicas",
+    "paramCount": 4,
+    "keywords": []
+  },
+  {
+    "id": "analisis_swot_completo_estrategico",
+    "label_title": "Swot Completo Estrategico",
+    "category": "analisis",
+    "content": "===parametros\n\n- organizacion: {[organizacion]} → Organización/Proyecto a analizar\n- contexto: {[contexto]} → (opcional; Contexto de mercado) Ejemplos: 'Reunión de planificación Q2' o 'Presentación a inversores'\n- profundidad: {[profundidad]} → (opcional; bajo|medio|alto) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===prompt\n\n# Objetivo\n\nEjecutar un diagnóstico estratégico completo para \"{[organizacion]}\" ({[contexto]}) y transformarlo inmediatamente en una Matriz CAME (Corregir, Afrontar, Mantener, Explotar).\n\n# Arquetipo Experto\n\nActúa como un **Socio de Estrategia Corporativa**. Tu enfoque es transformar datos cualitativos en vectores de estrategia accionable.\n\n# Parámetros\n\n- organizacion: {[organizacion]} → Organización/Proyecto a analizar\n- contexto: {[contexto]} → (opcional; Contexto de mercado)\n- profundidad: {[profundidad]} → (opcional; bajo|medio|alto)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n- [ ] Asegurar que el resultado esté listo para uso inmediato\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal del entregable?\n- ¿Qué formato y estructura se requiere?\n- ¿Hay información adicional en los adjuntos?\n- ¿Qué metodología o proceso se debe aplicar?\n- ¿Hay restricciones o requisitos específicos?\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos. Identificar tipo y formato de entregable.\n2. **Metodología**: Aplicar el proceso y metodología especificados.\n3. **Diseño**: Planificar estructura y contenido del entregable según especificaciones.\n4. **Creación**: Generar contenido completo y estructurado aplicando estándares de calidad.\n5. **Validación**: Verificar completitud, coherencia y calidad del entregable.\n6. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nMatriz SWOT completa con análisis estratégico, oportunidades priorizadas y plan de acción",
+    "paramCount": 4,
+    "keywords": []
+  },
+  {
+    "id": "conectar_dominios",
+    "label_title": "Dominios",
+    "category": "conectar",
+    "content": "===parametros\n\n- dominio_a: {[dominio_a]} → Campo 1 (ej. Biología) Ejemplos: 'Biología - ciencias naturales' o 'Física - ciencias exactas'\n- dominio_b: {[dominio_b]} → Campo 2 (ej. Arquitectura de Software) Ejemplos: 'Arquitectura de Software - tecnología' o 'Marketing - negocios'\n- problema_objetivo: {[problema_objetivo]} → Problema a resolver Ejemplos: 'Optimizar rendimiento sistema' o 'Mejorar estrategia de crecimiento'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===prompt\n\n# Objetivo\n\nAplicar modelos mentales, principios o soluciones de \"{[dominio_a]}\" para resolver problemas o innovar en \"{[dominio_b]}\", enfocado en \"{[problema_objetivo]}\".\n\n# Arquetipo Experto\n\n**Polímata Sintético**. Tu superpoder es la **Polinización Cruzada** (Cross-Pollination) de ideas. Encuentras patrones isomorfos entre campos que parecen no tener nada que ver.\n\n# Parámetros\n\n- dominio_a: {[dominio_a]} → Campo 1 (ej. Biología) Ejemplos: 'Biología - ciencias naturales' o 'Física - ciencias exactas'\n- dominio_b: {[dominio_b]} → Campo 2 (ej. Arquitectura de Software) Ejemplos: 'Arquitectura de Software - tecnología' o 'Marketing - negocios'\n- problema_objetivo: {[problema_objetivo]} → Problema a resolver Ejemplos: 'Optimizar rendimiento sistema' o 'Mejorar estrategia de crecimiento'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Analizar contexto y requisitos del prompt\n- [ ] Validar parámetros proporcionados\n- [ ] Ejecutar proceso según metodología establecida\n- [ ] Validar calidad del entregable\n- [ ] Revisar coherencia y completitud\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal de esta tarea?\n- ¿Qué información crítica necesito para completarla?\n- ¿Cuál es el formato y estructura esperada del entregable?\n- ¿Hay restricciones o consideraciones especiales?\n\n# Plan\n\n# PROCESO DE SÍNTESIS\n\n1.  **Abstracción de Principios**: ¿Cuáles son las leyes fundamentales de A? (ej. Evolución, Selección Natural).\n2.  **Mapeo de Transferencia**: ¿Cómo se ven esas leyes en el contexto de B? (ej. Algoritmos Genéticos en código).\n3.  **Generación de Insights**: Ideas híbridas que un experto de un solo campo jamás vería.\n\n# FORMATO DE SALIDA\n\n-   **Principios Transferibles**: Lista de modelos mentales de A aplicables a B.\n-   **Soluciones Híbridas**: 3 ideas innovadoras para el problema objetivo.\n-   **Cambio de Perspectiva**: Cómo cambia nuestra forma de ver B después de aplicar A.\n\n# Entregable Esperado\n\nSíntesis de polinización cruzada con principios transferibles (modelos mentales de dominio A aplicables a B), 3 soluciones híbridas innovadoras para el problema objetivo y cambio de perspectiva sobre cómo ver dominio B después de aplicar principios de A\n",
+    "paramCount": 4,
+    "keywords": []
+  },
+  {
+    "id": "debatir_socratimente_tema",
+    "label_title": "Socratimente Tema",
+    "category": "debatir",
+    "content": "===parametros\n\n- tema: {[tema]} → Tópico a debatir Ejemplos: 'Inteligencia artificial y ética' o 'Sostenibilidad empresarial'\n- nivel_profundidad: {[nivel_profundidad]} → (exploratorio|filosofico|tecnico) Ejemplos: 'filosofico - exploración profunda' o 'tecnico - análisis detallado'\n- posicion_usuario: {[posicion_usuario]} → (opcional; Tu postura inicial) Ejemplos: 'A favor de regulación estricta' o 'Escéptico sobre beneficios'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===prompt\n\n# Objetivo\n\nExaminar críticamente el tema \"{[tema]}\" mediante un diálogo socrático riguroso.\n\n# Arquetipo Experto\n\n**Sócrates** (el tábano de Atenas). Tu objetivo no es ganar un debate, sino exponer contradicciones, refinar definiciones y alcanzar una verdad más profunda a través de la *Elenchus* (refutación cooperativa).\n\n# Parámetros\n\n- tema: {[tema]} → Tópico a debatir Ejemplos: 'Inteligencia artificial y ética' o 'Sostenibilidad empresarial'\n- nivel_profundidad: {[nivel_profundidad]} → (exploratorio|filosofico|tecnico) Ejemplos: 'filosofico - exploración profunda' o 'tecnico - análisis detallado'\n- posicion_usuario: {[posicion_usuario]} → (opcional; Tu postura inicial) Ejemplos: 'A favor de regulación estricta' o 'Escéptico sobre beneficios'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Analizar contexto y requisitos del prompt\n- [ ] Validar parámetros proporcionados\n- [ ] Ejecutar proceso según metodología establecida\n- [ ] Validar calidad del entregable\n- [ ] Revisar coherencia y completitud\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal de esta tarea?\n- ¿Qué información crítica necesito para completarla?\n- ¿Cuál es el formato y estructura esperada del entregable?\n- ¿Hay restricciones o consideraciones especiales?\n\n# Plan\n\n# REGLAS DE DIÁLOGO\n\n1.  **Mayéutica**: No des respuestas. Haz preguntas que obliguen al usuario a parir la idea.\n2.  **Ironía Socrática**: Asume una postura de ignorancia docta (\"Solo sé que no sé nada\") para invitar a la explicación.\n3.  **Búsqueda de Definiciones**: Pregunta \"¿Qué es X?\" antes de discutir sobre las propiedades de X.\n4.  **Exposición de Aporías**: Guía suavemente al usuario hacia callejones sin salida lógicos para forzar una reevaluación de sus premisas.\n\n# INSTRUCCIÓN DE INICIO\n\nInicia con una pregunta fundamental y provocadora sobre \"{[tema]}\".\n\n# Entregable Esperado\n\nDiálogo socrático riguroso iniciando con pregunta fundamental y provocadora, aplicando mayéutica (preguntas que obligan a parir ideas), ironía socrática (ignorancia docta), búsqueda de definiciones y exposición de aporías para alcanzar verdad más profunda\n",
+    "paramCount": 4,
+    "keywords": []
+  },
+  {
+    "id": "decision_comparar_opciones_rapido",
+    "label_title": "Comparar Opciones Rapido",
+    "category": "decision",
+    "content": "===parametros\n\n- opciones: {[opciones]} → Alternativas a comparar Ejemplos: 'Opción A vs Opción B' o 'Proveedor X, Y, Z'\n- criterios: {[criterios]} → (opcional; Factores de evaluación) Ejemplos: 'Costo, Tiempo, Calidad' o 'Riesgo, ROI'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===prompt\n\n# Objetivo\n\nComparar las opciones \"{[opciones]}\" de forma estructurada para facilitar una decisión informada y objetiva.\n\n# Arquetipo Experto\n\nActúa como un **Analista de Decisiones** especializado en metodologías de evaluación multicriterio y trade-off analysis.\n\n# Parámetros\n\n- opciones: {[opciones]} → Alternativas a comparar\n- criterios: {[criterios]} → (opcional; Factores de evaluación)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n# Checklist\n\n- [ ] Listar todas las opciones disponibles\n- [ ] Definir criterios de evaluación relevantes\n- [ ] Evaluar cada opción contra cada criterio\n- [ ] Identificar pros y contras de cada opción\n- [ ] Generar recomendación fundamentada\n\n# Plan\n\n1. **Criterios**: Definir o validar factores de decisión.\n2. **Evaluación**: Analizar cada opción sistemáticamente.\n3. **Comparación**: Crear matriz comparativa.\n4. **Recomendación**: Sintetizar en sugerencia clara.\n\n# Entregable Esperado\n\nMatriz comparativa con opciones evaluadas por criterio, pros/contras de cada opción y recomendación fundamentada",
+    "paramCount": 3,
+    "keywords": []
+  },
+  {
+    "id": "decision_criterios_evaluacion",
+    "label_title": "Criterios Evaluacion",
+    "category": "decision",
+    "content": "===parametros\n\n- decision: {[decision]} → Decisión que se debe tomar Ejemplos: 'Seleccionar proveedor' o 'Elegir tecnología'\n- contexto: {[contexto]} → (opcional; Situación y restricciones) Ejemplos: 'Presupuesto limitado' o 'Timeline agresivo'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===prompt\n\n# Objetivo\n\nDefinir los criterios de evaluación óptimos para la decisión \"{[decision]}\", asegurando que se consideren todos los factores relevantes ponderados correctamente.\n\n# Arquetipo Experto\n\nActúa como un **Consultor de Estrategia** especializado en frameworks de decisión y gobernanza corporativa.\n\n# Parámetros\n\n- decision: {[decision]} → Decisión que se debe tomar\n- contexto: {[contexto]} → (opcional; Situación y restricciones)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n# Checklist\n\n- [ ] Identificar stakeholders y sus intereses\n- [ ] Listar criterios potenciales (cuantitativos y cualitativos)\n- [ ] Priorizar criterios por importancia\n- [ ] Definir métricas o indicadores por criterio\n- [ ] Establecer pesos relativos\n\n# Plan\n\n1. **Stakeholders**: Identificar quién se ve afectado.\n2. **Brainstorm**: Listar todos los criterios posibles.\n3. **Filtrado**: Seleccionar los criterios críticos.\n4. **Ponderación**: Asignar pesos según importancia relativa.\n\n# Entregable Esperado\n\nFramework de criterios de decisión con lista priorizada, definición de cada criterio, métrica de evaluación y peso asignado",
+    "paramCount": 3,
+    "keywords": []
+  },
+  {
+    "id": "decision_recomendar_opcion",
+    "label_title": "Recomendar Opcion",
+    "category": "decision",
+    "content": "===parametros\n\n- situacion_opciones: {[situacion_opciones]} → Descripción de la situación y opciones disponibles Ejemplos: 'Elegir entre 3 proveedores de cloud' o 'Decidir estrategia de pricing'\n- restricciones: {[restricciones]} → (opcional; Limitaciones a considerar) Ejemplos: 'Budget máximo $50K' o 'Debe estar listo en Q2'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===prompt\n\n# Objetivo\n\nAnalizar la situación \"{[situacion_opciones]}\" y recomendar la mejor opción con justificación clara y plan de implementación.\n\n# Arquetipo Experto\n\nActúa como un **Asesor Estratégico Senior** con experiencia en toma de decisiones ejecutivas y análisis de trade-offs.\n\n# Parámetros\n\n- situacion_opciones: {[situacion_opciones]} → Descripción de la situación y opciones\n- restricciones: {[restricciones]} → (opcional; Limitaciones a considerar)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n# Checklist\n\n- [ ] Entender objetivos y restricciones\n- [ ] Analizar cada opción objetivamente\n- [ ] Evaluar pros, contras y riesgos\n- [ ] Considerar factores de implementación\n- [ ] Formular recomendación con justificación\n\n# Plan\n\n1. **Contexto**: Clarificar objetivos y limitaciones.\n2. **Análisis**: Evaluar cada opción sistemáticamente.\n3. **Síntesis**: Comparar y contrastar alternativas.\n4. **Recomendación**: Proponer opción óptima con roadmap.\n\n# Entregable Esperado\n\nRecomendación ejecutiva con análisis de opciones, justificación de la elección, riesgos a considerar y pasos inmediatos de implementación",
+    "paramCount": 3,
+    "keywords": []
+  },
+  {
+    "id": "diagnostico_analizar_brechas_as_is_to_be",
+    "label_title": "Analizar Brechas As Is To Be",
+    "category": "diagnostico",
+    "content": "===parametros\n\n- situacion_actual: {[situacion_actual]} → Estado actual (AS-IS) Ejemplos: 'Proceso manual con Excel' o 'Sistema legacy sin integración'\n- situacion_deseada: {[situacion_deseada]} → Estado futuro (TO-BE) Ejemplos: 'Automatización completa con IA' o 'Plataforma integrada cloud'\n- dimensiones: {[dimensiones]} → (opcional; Personas, Procesos, Tecnología) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n- prioridad: {[prioridad]} → (opcional; Baja|Media|Alta) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===prompt\n\n# Objetivo\n\nRealizar un Análisis de Brechas (Gap Analysis) riguroso entre el estado \"{[situacion_actual]}\" y el estado \"{[situacion_deseada]}\", identificando no solo qué falta, sino por qué falta y cómo llenarlo.\n\n# Arquetipo Experto\n\n**Arquitecto de Transformación Empresarial**. Tu especialidad es construir puentes viables entre la realidad actual y la visión estratégica.\n\n# Parámetros\n\n- situacion_actual: {[situacion_actual]} → Estado actual (AS-IS)\n- situacion_deseada: {[situacion_deseada]} → Estado futuro (TO-BE)\n- dimensiones: {[dimensiones]} → (opcional; Personas, Procesos, Tecnología)\n- prioridad: {[prioridad]} → (opcional; Baja|Media|Alta)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n# Checklist\n\n- [ ] Analizar contexto y requisitos del prompt\n- [ ] Validar parámetros proporcionados\n- [ ] Ejecutar proceso según metodología establecida\n- [ ] Validar calidad del entregable\n- [ ] Revisar coherencia y completitud\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal de esta tarea?\n- ¿Qué información crítica necesito para completarla?\n- ¿Cuál es el formato y estructura esperada del entregable?\n- ¿Hay restricciones o consideraciones especiales?\n\n# Plan\n\n# MARCO DE ANÁLISIS (Modelo PPT)\n\n1.  **Personas (Skills & Culture)**: ¿Tenemos el talento y la mentalidad necesaria?\n2.  **Procesos (Workflow & Policy)**: ¿Son nuestros métodos actuales escalables al estado deseado?\n3.  **Tecnología (Tools & Infra)**: ¿Las herramientas actuales habilitan o frenan el futuro?\n\n# PROCESO DE RAZONAMIENTO\n\n1.  **Mapeo AS-IS**: Describe la realidad actual sin filtros (pain points, cuellos de botella).\n2.  **Definición TO-BE**: Cristaliza la visión futura en términos operativos, no aspiracionales.\n3.  **Identificación del Delta**: Calcula la distancia exacta entre ambos puntos.\n4.  **Puente Estratégico**: Define las iniciativas específicas para cerrar el gap.\n\n# FORMATO DE SALIDA\n\nMatriz de Cierre de Brechas:\n| Dimensión | Estado Actual (AS-IS) | Estado Deseado (TO-BE) | La Brecha (Gap) | Acción de Cierre (Iniciativa) |\n| :--- | :--- | :--- | :--- | :--- |\n| **Personas** | ... | ... | ... | ... |\n| **Procesos** | ... | ... | ... | ... |\n| **Tecnología**| ... | ... | ... | ... |\n\n**Hoja de Ruta**: Secuencia lógica de implementación (Corto vs. Largo plazo).\n\n# Entregable Esperado\n\nAnálisis de brechas completo con estado actual vs deseado, gaps identificados, causas raíz y plan de cierre",
+    "paramCount": 5,
+    "keywords": []
+  },
+  {
+    "id": "diagnostico_analizar_situacion_sistemica",
+    "label_title": "Analizar Situacion Sistemica",
+    "category": "diagnostico",
+    "content": "===parametros\n\n- situacion: {[situacion]} → Escenario a diagnosticar\n- criterios: {[criterios]} → (opcional; Criterios de evaluación) Ejemplos: 'ROI y tiempo de implementación' o 'Impacto y viabilidad técnica'\n- ref_previa: {[ref_previa]} → (opcional) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===prompt\n\n# Objetivo\n\nDiagnosticar la situación \"{[situacion]}\" profundizando más allá de lo evidente para encontrar el punto de apalancamiento sistémico.\n\n# Arquetipo Experto\n\n**Pensador Sistémico** experto en el Modelo del Iceberg. No te quedas en los eventos; buscas las estructuras que los generan.\n\n# Parámetros\n\n- situacion: {[situacion]} → Escenario a diagnosticar\n- criterios: {[criterios]} → (opcional; Criterios de evaluación)\n- ref_previa: {[ref_previa]} → (opcional)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n# Checklist\n\n- [ ] Analizar contexto y requisitos del prompt\n- [ ] Validar parámetros proporcionados\n- [ ] Ejecutar proceso según metodología establecida\n- [ ] Validar calidad del entregable\n- [ ] Revisar coherencia y completitud\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal de esta tarea?\n- ¿Qué información crítica necesito para completarla?\n- ¿Cuál es el formato y estructura esperada del entregable?\n- ¿Hay restricciones o consideraciones especiales?\n\n# Plan\n\n# NIVELES DE ANÁLISIS (Modelo Iceberg)\n\n1.  **Eventos (Lo visible)**: ¿Qué pasó exactamente? (Hechos objetivos).\n2.  **Patrones (Tendencias)**: ¿Ha pasado esto antes? ¿Con qué frecuencia?\n3.  **Estructuras (Causas Sistémicas)**: ¿Qué políticas, flujos de información o incentivos generan estos patrones?\n4.  **Modelos Mentales (Creencias)**: ¿Qué asunciones profundas mantienen estas estructuras en su lugar?\n\n# FORMATO DE SALIDA\n\nInforme de Diagnóstico Profundo:\n-   **El Síntoma**: Descripción clara del evento.\n-   **La Enfermedad**: Explicación de la estructura subyacente.\n-   **La Cura**: Intervención propuesta a nivel estructural o de mentalidad (no parches superficiales).\n\n# CONSTRAINTS\n\nEvita culpar a individuos (\"Error humano\"). Busca fallos en el diseño del sistema.\n\n# Entregable Esperado\n\nDiagnóstico sistémico completo con análisis de niveles (eventos, patrones, estructuras, modelos mentales) y puntos de apalancamiento",
+    "paramCount": 4,
+    "keywords": []
+  },
+  {
+    "id": "diagnostico_auditar_agenda_productividad",
+    "label_title": "Auditar Agenda Productividad",
+    "category": "diagnostico",
+    "content": "===parametros\n\n- resumen_agenda: {[resumen_agenda]} → Datos de la agenda actual\n- objetivo_principal: {[objetivo_principal]} → Meta prioritaria Ejemplos: 'Aumentar productividad 30%' o 'Mejorar satisfacción cliente a 9/10'\n- anexos: {[anexos]} → (opcional) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n===prompt\n\n# Objetivo\n\nAuditar la agenda proporcionada ({[resumen_agenda]}) para diagnosticar fugas de energía, desenfoque estratégico y \"trabajo falso\", realineándola con el objetivo: \"{[objetivo_principal]}\".\n\n# Arquetipo Experto\n\n**Coach de Productividad Ejecutiva** experto en *Essentialism* (Greg McKeown) y *Deep Work* (Cal Newport).\n\n# Parámetros\n\n- resumen_agenda: {[resumen_agenda]} → Datos de la agenda actual\n- objetivo_principal: {[objetivo_principal]} → Meta prioritaria\n- anexos: {[anexos]} → (opcional)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos)\n\n# Checklist\n\n- [ ] Analizar contexto y requisitos del prompt\n- [ ] Validar parámetros proporcionados\n- [ ] Ejecutar proceso según metodología establecida\n- [ ] Validar calidad del entregable\n- [ ] Revisar coherencia y completitud\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal de esta tarea?\n- ¿Qué información crítica necesito para completarla?\n- ¿Cuál es el formato y estructura esperada del entregable?\n- ¿Hay restricciones o consideraciones especiales?\n\n# Plan\n\n# PROTOCOLO DE AUDITORÍA\n\n1.  **Categorización (Eisenhower)**: Etiqueta cada bloque de tiempo:\n    -   *Q1 (Urgente/Importante)*: Crisis, fechas límite.\n    -   *Q2 (No Urgente/Importante)*: Estrategia, planificación, salud (EL OBJETIVO).\n    -   *Q3 (Urgente/No Importante)*: Interrupciones, reuniones de otros.\n    -   *Q4 (Ni Urgente/Ni Importante)*: Trivialidades.\n2.  **Cálculo de Ratio**: ¿Qué % del tiempo está realmente dedicado al objetivo principal?\n3.  **Identificación de Ladrones de Tiempo**: Reuniones sin agenda, micro-gestión, notificaciones.\n\n# FORMATO DE SALIDA\n\n1.  **Diagnóstico de Salud**: Gráfico de texto (ASCII) mostrando la distribución Q1-Q4.\n2.  **El Veredicto**: \"Tu agenda dice que tu prioridad es X, pero tu tiempo dice que es Y\".\n3.  **Plan de Reingeniería**: 3 acciones radicales para liberar 20% del tiempo esta semana (ej. \"Cancelar reunión X\", \"Bloquear 2h para Deep Work\").\n\n# Entregable Esperado\n\nAuditoría de agenda con categorización Eisenhower, análisis de productividad y recomendaciones de optimización",
+    "paramCount": 4,
+    "keywords": []
+  },
+  {
+    "id": "diagnostico_encontrar_causa_raiz",
+    "label_title": "Encontrar Causa Raiz",
+    "category": "diagnostico",
+    "content": "===parametros\n\n- problema: {[problema]} → Problema a diagnosticar\n- sintomas: {[sintomas]} → (opcional) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n- metodologia: {[metodologia]} → (5_whys|fishbone|pareto|ambas) Ejemplos: '5_whys' o 'fishbone'\n- profundidad: {[profundidad]} → (basico|medio|alto) Ejemplos: 'basico' o 'medio'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===prompt\n\n# Objetivo\n\nEjecutar un Análisis de Causa Raíz (RCA) quirúrgico sobre el problema: \"{[problema]}\", para asegurar que la solución propuesta erradique el problema, no solo el síntoma.\n\n# Arquetipo Experto\n\nActúa como un **Master Black Belt en Six Sigma** y experto en resolución de problemas industriales/organizacionales.\n\n# Parámetros\n\n- problema: {[problema]} → Problema a diagnosticar\n- sintomas: {[sintomas]} → (opcional)\n- metodologia: {[metodologia]} → (5_whys|fishbone|pareto|ambas)\n- profundidad: {[profundidad]} → (basico|medio|alto)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n- [ ] Asegurar que el resultado esté listo para uso inmediato\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal del entregable?\n- ¿Qué formato y estructura se requiere?\n- ¿Hay información adicional en los adjuntos?\n- ¿Hay restricciones o requisitos específicos?\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos. Identificar tipo y formato de entregable.\n2. **Diseño**: Planificar estructura y contenido del entregable según especificaciones.\n3. **Creación**: Generar contenido completo y estructurado aplicando estándares de calidad.\n4. **Validación**: Verificar completitud, coherencia y calidad del entregable.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nAnálisis de causa raíz con metodología aplicada, causas identificadas, validación y plan de solución",
+    "paramCount": 5,
+    "keywords": []
+  },
+  {
+    "id": "diagnostico_evaluar_conversacion_calidad",
+    "label_title": "Evaluar Conversacion Calidad",
+    "category": "diagnostico",
+    "content": "===parametros\n\n- transcripcion: {[transcripcion]} → (opcional; Transcripción completa de la conversación a diagnosticar) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos con información de la conversación a evaluar; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n- contexto: {[contexto]} → (opcional; Contexto adicional sobre la conversación o situación) Ejemplos: 'Reunión de planificación Q2' o 'Presentación a inversores'\n- enfoque: {[enfoque]} → (opcional; Enfoque del diagnóstico: efectividad|calidad|estructura|todos) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n\n===prompt\n\n# Objetivo\n\nRealizar un diagnóstico completo y estructurado de la conversación proporcionada (transcripción o adjuntos), evaluando su efectividad, calidad, estructura y oportunidades de mejora. El resultado debe ser un análisis profesional que identifique fortalezas, debilidades y recomendaciones concretas.\n\n# Arquetipo Experto\n\nActúa como un **Especialista en Análisis de Comunicación y Diagnóstico Conversacional**. Tu especialidad es evaluar conversaciones desde múltiples dimensiones: efectividad, claridad, estructura, tono, impacto y oportunidades de mejora.\n\n# Parámetros\n\n- transcripcion: {[transcripcion]} → (opcional; Transcripción completa de la conversación a diagnosticar)\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos con información de la conversación a evaluar; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n- contexto: {[contexto]} → (opcional; Contexto adicional sobre la conversación o situación)\n- enfoque: {[enfoque]} → (opcional; Enfoque del diagnóstico: efectividad|calidad|estructura|todos)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Revisar transcripción o adjuntos con información de la conversación\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología de diagnóstico conversacional\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n- [ ] Asegurar que el resultado esté listo para uso inmediato\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal del diagnóstico?\n- ¿Qué información de la conversación está disponible?\n- ¿Qué formato y estructura se requiere para el diagnóstico?\n- ¿Hay contexto adicional relevante?\n- ¿Qué enfoque específico se debe aplicar?\n\n# Plan\n\n1. **Análisis**: Revisar transcripción o adjuntos con información de la conversación. Identificar participantes, contexto y objetivos.\n2. **Evaluación**: Aplicar metodología de diagnóstico conversacional según el enfoque especificado.\n3. **Diagnóstico**: Generar análisis completo evaluando efectividad, calidad, estructura y oportunidades de mejora.\n4. **Recomendaciones**: Proporcionar recomendaciones concretas y accionables.\n5. **Validación**: Verificar completitud, coherencia y calidad del diagnóstico.\n6. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nDiagnóstico de conversación con evaluación de calidad, puntos fuertes/débiles y recomendaciones de mejora",
+    "paramCount": 4,
+    "keywords": []
+  },
+  {
+    "id": "explicar_conceptos_complejos",
+    "label_title": "Conceptos Complejos",
+    "category": "explicar",
+    "content": "===parametros\n\n- concepto: {[concepto]} → Tema difícil (física cuántica, blockchain, fenomenología) Ejemplos: 'Física cuántica - mecánica cuántica' o 'Blockchain - tecnología distribuida'\n- audiencia: {[audiencia]} → (niño_5_anos|abuela|estudiante|profesional_otro_campo) Ejemplos: 'niño_5_anos - explicación simple' o 'profesional_otro_campo - experto diferente'\n- formato: {[formato]} → (analogia|paso_a_paso|historia) Ejemplos: 'analogia - comparación visual' o 'paso_a_paso - explicación gradual'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===prompt\n\n# Objetivo\n\nExplicar \"{[concepto]}\" a una audiencia \"{[audiencia]}\" garantizando la comprensión intuitiva sin sacrificar la verdad esencial.\n\n# Arquetipo Experto\n\nuna fusión entre **Richard Feynman** (El Gran Explicador) y un **Diseñador Instruccional de Metaforas**. Odias la jerga, amas la claridad.\n\n# Parámetros\n\n- concepto: {[concepto]} → Tema difícil (física cuántica, blockchain, fenomenología) Ejemplos: 'Física cuántica - mecánica cuántica' o 'Blockchain - tecnología distribuida'\n- audiencia: {[audiencia]} → (niño_5_anos|abuela|estudiante|profesional_otro_campo) Ejemplos: 'niño_5_anos - explicación simple' o 'profesional_otro_campo - experto diferente'\n- formato: {[formato]} → (analogia|paso_a_paso|historia) Ejemplos: 'analogia - comparación visual' o 'paso_a_paso - explicación gradual'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Analizar contexto y requisitos del prompt\n- [ ] Validar parámetros proporcionados\n- [ ] Ejecutar proceso según metodología establecida\n- [ ] Validar calidad del entregable\n- [ ] Revisar coherencia y completitud\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal de esta tarea?\n- ¿Qué información crítica necesito para completarla?\n- ¿Cuál es el formato y estructura esperada del entregable?\n- ¿Hay restricciones o consideraciones especiales?\n\n# Plan\n\n# TÉCNICA DE EXPLICACIÓN (Feynman + Isomorfismo)\n\n1.  **Descontrucción**: Rompe el concepto en sus componentes atómicos.\n2.  **Puente Analógico**: Encuentra un sistema familiar para la audiencia (cocina, tráfico, legos) que funcione igual que el concepto complejo.\n3.  **Traducción Vernácula**: Reescribe la explicación usando solo las 1000 palabras más comunes del idioma.\n4.  **Verificación de Límites**: Explica dónde la analogía deja de ser perfecta (para evitar malentendidos).\n\n# FORMATO DE SALIDA\n\n1.  **La Analogía Principal**: Una historia o comparación visual.\n2.  **La Explicación Técnica Simplificada**: \"En otras palabras...\".\n3.  **Check de Comprensión**: Una pregunta para verificar si se entendió.\n\n# Entregable Esperado\n\nExplicación intuitiva con analogía principal (historia o comparación visual), explicación técnica simplificada usando las 1000 palabras más comunes, verificación de límites de la analogía y check de comprensión para garantizar entendimiento sin sacrificar verdad esencial\n",
+    "paramCount": 4,
+    "keywords": []
+  },
+  {
+    "id": "planificacion_crear_roadmap_estrategico_horizontes",
+    "label_title": "Crear Roadmap Estrategico Horizontes",
+    "category": "planificacion",
+    "content": "===parametros\n\n- objetivo: {[objetivo]} → North Star / Meta final Ejemplos: 'Lanzar producto líder en mercado' o 'Digitalizar operaciones completas'\n- horizonte: {[horizonte]} → (corto|medio|largo|horizontes_1_2_3) Ejemplos: 'horizontes_1_2_3 - todos los horizontes' o 'largo - H3 futuro'\n- enfoque: {[enfoque]} → (producto|tecnologia|negocio|completo) Ejemplos: 'producto - desarrollo producto' o 'completo - visión integral'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===prompt\n\n# Objetivo\n\nDiseñar un Roadmap Estratégico para alcanzar \"{[objetivo]}\", balanceando la ejecución inmediata con la visión a largo plazo.\n\n# Arquetipo Experto\n\n**Director de Estrategia (CSO)** experto en la metodología de los **Tres Horizontes de Innovación** (McKinsey).\n\n# Parámetros\n\n- objetivo: {[objetivo]} → North Star / Meta final Ejemplos: 'Lanzar producto líder en mercado' o 'Digitalizar operaciones completas'\n- horizonte: {[horizonte]} → (corto|medio|largo|horizontes_1_2_3) Ejemplos: 'horizontes_1_2_3 - todos los horizontes' o 'largo - H3 futuro'\n- enfoque: {[enfoque]} → (producto|tecnologia|negocio|completo) Ejemplos: 'producto - desarrollo producto' o 'completo - visión integral'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Analizar contexto y requisitos del prompt\n- [ ] Validar parámetros proporcionados\n- [ ] Ejecutar proceso según metodología establecida\n- [ ] Validar calidad del entregable\n- [ ] Revisar coherencia y completitud\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal de esta tarea?\n- ¿Qué información crítica necesito para completarla?\n- ¿Cuál es el formato y estructura esperada del entregable?\n- ¿Hay restricciones o consideraciones especiales?\n\n# Plan\n\n# MARCO DE PLANIFICACIÓN (3 HORIZONTES)\n\n1.  **Horizonte 1 (H1 - Core Business)**: ¿Qué debemos ejecutar YA para mantener las luces encendidas y financiar el crecimiento? (0-12 meses).\n2.  **Horizonte 2 (H2 - Emerging)**: ¿Qué iniciativas están escalando y requieren inversión para convertirse en el nuevo core? (12-36 meses).\n3.  **Horizonte 3 (H3 - Future)**: ¿Qué apuestas disruptivas o experimentos debemos plantar hoy para el futuro lejano? (36+ meses).\n\n# FORMATO DE SALIDA\n\n1.  **Visión Estratégica**: Enunciado claro del estado final.\n2.  **Matriz de Horizontes**: Tabla con iniciativas clave por horizonte, KPIs de éxito y recursos necesarios.\n3.  **Dependencias Críticas**: ¿Qué debe pasar en H1 para que H2 sea posible?\n4.  **Riesgos de Ejecución**: Pre-mortem de fallos probables.\n\n# Entregable Esperado\n\nRoadmap estratégico con visión estratégica clara, matriz de horizontes (H1/H2/H3) con iniciativas, KPIs y recursos, dependencias críticas entre horizontes y riesgos de ejecución (pre-mortem)\n",
+    "paramCount": 4,
+    "keywords": []
+  },
+  {
+    "id": "planificacion_resolver_decision_compleja",
+    "label_title": "Resolver Decision Compleja",
+    "category": "planificacion",
+    "content": "===parametros\n\n- decision: {[decision]} → Dilema a resolver Ejemplos: 'Qué tecnología usar' o 'Contratar o desarrollar internamente'\n- alternativas: {[alternativas]} → Opciones (A, B, C) Ejemplos: 'Opción A, Opción B, Opción C' o 'Solución X, Solución Y'\n- criterios: {[criterios]} → Factores de peso Ejemplos: 'Costo, ROI, Riesgo' o 'Tiempo, Calidad, Escalabilidad'\n- contexto: {[contexto]} → Background Ejemplos: 'Startup en crecimiento' o 'Empresa establecida'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===prompt\n\n# Objetivo\n\nResolver el dilema \"{[decision]}\" evaluando las alternativas \"{[alternativas]}\" bajo los criterios \"{[criterios]}\".\n\n# Arquetipo Experto\n\n**Arquitecto de Decisiones** y **Teórico de Juegos**. Ayudas a humanos a superar sesgos cognitivos para tomar decisiones racionales.\n\n# Parámetros\n\n- decision: {[decision]} → Dilema a resolver Ejemplos: 'Qué tecnología usar' o 'Contratar o desarrollar internamente'\n- alternativas: {[alternativas]} → Opciones (A, B, C) Ejemplos: 'Opción A, Opción B, Opción C' o 'Solución X, Solución Y'\n- criterios: {[criterios]} → Factores de peso Ejemplos: 'Costo, ROI, Riesgo' o 'Tiempo, Calidad, Escalabilidad'\n- contexto: {[contexto]} → Background Ejemplos: 'Startup en crecimiento' o 'Empresa establecida'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Analizar contexto y requisitos del prompt\n- [ ] Validar parámetros proporcionados\n- [ ] Ejecutar proceso según metodología establecida\n- [ ] Validar calidad del entregable\n- [ ] Revisar coherencia y completitud\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal de esta tarea?\n- ¿Qué información crítica necesito para completarla?\n- ¿Cuál es el formato y estructura esperada del entregable?\n- ¿Hay restricciones o consideraciones especiales?\n\n# Plan\n\n# MARCO DE DECISIÓN\n\n1.  **Matriz de Decisión Ponderada**: Asigna pesos a los criterios y puntúa cada alternativa. (Matriz de Pugh).\n2.  **Análisis de Escenarios (Best/Worst/Likely)**: ¿Qué es lo peor que pasa si elegimos A? (Pre-mortem).\n3.  **Costo de Oportunidad**: ¿Qué sacrificamos irrevocablemente con cada opción?\n4.  **Mitigación de Sesgos**: Chequeo explícito contra sesgo de confirmación, falacia de costo hundido y aversión a la pérdida.\n\n# FORMATO DE SALIDA\n\n1.  **La Recomendación**: Clara e inequívoca.\n2.  **La Lógica**: La matriz y el razonamiento detrás del puntaje.\n3.  **El Plan de Contingencia**: Qué hacer si la decisión resulta equivocada (Reversibilidad).\n\n# Entregable Esperado\n\nResolución de decisión compleja con recomendación clara, lógica completa (matriz de decisión ponderada), análisis de escenarios (Best/Worst/Likely) y plan de contingencia\n",
+    "paramCount": 5,
+    "keywords": []
+  },
+  {
+    "id": "planificacion_reto_antifragil_estrategico",
+    "label_title": "Reto Antifragil Estrategico",
+    "category": "planificacion",
+    "content": "===parametros\n\n- reto: {[reto]} → Objetivo ambicioso Ejemplos: 'Lanzar producto en 3 meses' o 'Digitalizar procesos en 6 meses'\n- recursos: {[recursos]} → Disponibilidad Ejemplos: 'Equipo de 5 personas, $50k presupuesto' o '2 desarrolladores, sin presupuesto adicional'\n- plazo: {[plazo]} → Deadline Ejemplos: '3 meses desde hoy' o 'Q2 2024'\n- filosofia_ejecucion: {[filosofia_ejecucion]} → (agile|waterfall|hibrido) Ejemplos: 'agile - iterativo' o 'waterfall - secuencial'\n\n===prompt\n\n# Objetivo\n\nCrear un Plan Maestro para el reto \"{[reto]}\" que sea robusto ante la incertidumbre y el error.\n\n# Arquetipo Experto\n\n**Estratega Antifrágil** (inspirado en N. Taleb). Tu objetivo no es solo que el plan sobreviva al caos, sino que se beneficie de él.\n\n# Parámetros\n\n- reto: {[reto]} → Objetivo ambicioso Ejemplos: 'Lanzar producto en 3 meses' o 'Digitalizar procesos en 6 meses'\n- recursos: {[recursos]} → Disponibilidad Ejemplos: 'Equipo de 5 personas, $50k presupuesto' o '2 desarrolladores, sin presupuesto adicional'\n- plazo: {[plazo]} → Deadline Ejemplos: '3 meses desde hoy' o 'Q2 2024'\n- filosofia_ejecucion: {[filosofia_ejecucion]} → (agile|waterfall|hibrido) Ejemplos: 'agile - iterativo' o 'waterfall - secuencial'\n\n# Checklist\n\n- [ ] Analizar contexto y requisitos del prompt\n- [ ] Validar parámetros proporcionados\n- [ ] Ejecutar proceso según metodología establecida\n- [ ] Validar calidad del entregable\n- [ ] Revisar coherencia y completitud\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal de esta tarea?\n- ¿Qué información crítica necesito para completarla?\n- ¿Cuál es el formato y estructura esperada del entregable?\n- ¿Hay restricciones o consideraciones especiales?\n\n# Plan\n\n# PRINCIPIOS DE DISEÑO\n\n1.  **Redundancia**: Evita puntos únicos de fallo.\n2.  **Opcionalidad**: Diseña pasos que abran más caminos, no que los cierren.\n3.  **Barbell Strategy**: Combina apuestas extremadamente seguras con apuestas de alto riesgo/alto retorno.\n4.  **Feedback Loops Rápidos**: El plan debe detectar errores temprano para corregir barato.\n\n# FORMATO DE SALIDA\n\n1.  **Estrategia Central**: El enfoque core.\n2.  **Roadmap Antifrágil**: Fases con hitos de validación.\n3.  **Matriz de Riesgos y Asimetrías**: Dónde estamos expuestos y dónde tenemos ventaja.\n4.  **Protocolos de Crisis**: Qué hacer cuando (no si) algo sale mal.\n\n# Entregable Esperado\n\nPlan maestro antifrágil con estrategia central, roadmap con hitos de validación, matriz de riesgos y asimetrías y protocolos de crisis\n",
+    "paramCount": 4,
+    "keywords": []
+  },
+  {
+    "id": "planificacion_reto_antifragil_tactico",
+    "label_title": "Reto Antifragil Tactico",
+    "category": "planificacion",
+    "content": "===parametros\n\n- reto: {[reto]} → Objetivo táctico Ejemplos: 'Lanzar producto en 3 meses' o 'Digitalizar procesos en 6 meses'\n- recursos: {[recursos]} → Disponibilidad Ejemplos: 'Equipo de 5 personas, $50k presupuesto' o '2 desarrolladores, sin presupuesto adicional'\n- plazo: {[plazo]} → Deadline Ejemplos: '3 meses desde hoy' o 'Q2 2024'\n- ref_previa: {[ref_previa]} → (opcional) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n\n===prompt\n\n# Objetivo\n\nGenerar un plan de ejecución táctica para \"{[reto]}\" enfocado en la velocidad, la adaptabilidad y la resiliencia.\n\n# Arquetipo Experto\n\n**Comandante de Operaciones Especiales**. Tu enfoque es la ejecución táctica en entornos volátiles.\n\n# Parámetros\n\n- reto: {[reto]} → Objetivo táctico Ejemplos: 'Lanzar producto en 3 meses' o 'Digitalizar procesos en 6 meses'\n- recursos: {[recursos]} → Disponibilidad Ejemplos: 'Equipo de 5 personas, $50k presupuesto' o '2 desarrolladores, sin presupuesto adicional'\n- plazo: {[plazo]} → Deadline Ejemplos: '3 meses desde hoy' o 'Q2 2024'\n- ref_previa: {[ref_previa]} → (opcional) Ejemplos: ver opciones disponibles o dejar vacío si no aplica\n\n# Checklist\n\n- [ ] Analizar contexto y requisitos del prompt\n- [ ] Validar parámetros proporcionados\n- [ ] Ejecutar proceso según metodología establecida\n- [ ] Validar calidad del entregable\n- [ ] Revisar coherencia y completitud\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal de esta tarea?\n- ¿Qué información crítica necesito para completarla?\n- ¿Cuál es el formato y estructura esperada del entregable?\n- ¿Hay restricciones o consideraciones especiales?\n\n# Plan\n\n# TÁCTICAS DE EJECUCIÓN\n\n1.  **Descomposición Modular**: Divide el reto en unidades independientes. Si una falla, el resto sobrevive.\n2.  **Sprints de Validación**: Define el \"Mínimo Paso Viable\" para probar la hipótesis mañana.\n3.  **Defensa en Profundidad**: Ten un plan B y un plan C listos para los nodos críticos.\n\n# FORMATO DE SALIDA\n\n-   **Lista de Verificación de Preparación**: Qué tener listo antes de empezar.\n-   **Secuencia de Ataque**: Pasos 1, 2, 3.\n-   **Puntos de Control**: Cuándo parar y evaluar.\n-   **Kill Switch**: Criterios claros para abortar o pivotar.\n\n# Entregable Esperado\n\nPlan de ejecución táctica con lista de verificación de preparación, secuencia de ataque (pasos 1,2,3), puntos de control y kill switch (criterios de aborto/pivote)\n",
+    "paramCount": 4,
+    "keywords": []
+  },
+  {
+    "id": "planificacion_reto_ejecutable_gtd",
+    "label_title": "Reto Ejecutable Gtd",
+    "category": "planificacion",
+    "content": "===parametros\n\n- reto_plazo: {[reto_plazo]} → Meta + Tiempo Ejemplos: 'Lanzar MVP en 30 días' o 'Migrar sistema en Q1'\n- recursos: {[recursos]} → Equipo/Presupuesto Ejemplos: 'Equipo de 5 personas, $50k presupuesto' o '2 desarrolladores, sin presupuesto adicional'\n- anexos: {[anexos]} → (opcional) Ejemplos: 'Documentación técnica' o 'Requisitos del cliente'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===prompt\n\n# Objetivo\n\nConvertir el reto \"{[reto_plazo]}\" en un plan de batalla lineal, lógico y ejecutable (GTD - Getting Things Done).\n\n# Arquetipo Experto\n\n**Project Manager de Ejecución**. No haces PowerPoint, haces que las cosas pasen.\n\n# Parámetros\n\n- reto_plazo: {[reto_plazo]} → Meta + Tiempo Ejemplos: 'Lanzar MVP en 30 días' o 'Migrar sistema en Q1'\n- recursos: {[recursos]} → Equipo/Presupuesto Ejemplos: 'Equipo de 5 personas, $50k presupuesto' o '2 desarrolladores, sin presupuesto adicional'\n- anexos: {[anexos]} → (opcional) Ejemplos: 'Documentación técnica' o 'Requisitos del cliente'\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Analizar contexto y requisitos del prompt\n- [ ] Validar parámetros proporcionados\n- [ ] Ejecutar proceso según metodología establecida\n- [ ] Validar calidad del entregable\n- [ ] Revisar coherencia y completitud\n\n# Preguntas Clave\n\n- ¿Cuál es el objetivo principal de esta tarea?\n- ¿Qué información crítica necesito para completarla?\n- ¿Cuál es el formato y estructura esperada del entregable?\n- ¿Hay restricciones o consideraciones especiales?\n\n# Plan\n\n# ESTRUCTURA DEL PLAN (WBS)\n\n1.  **Work Breakdown Structure**: Desglosa el elefante en bistecs. Tareas de <4 horas.\n2.  **Dependencias**: ¿Qué bloquea qué? Identifica la Ruta Crítica.\n3.  **Asignación de Recursos**: Quién hace qué con qué.\n4.  **Calendario Inverso**: Empieza en la fecha límite y trabaja hacia atrás hasta hoy.\n\n# FORMATO DE SALIDA\n\n-   **Cronograma Semanal/Diario**: Qué debe pasar cada día.\n-   **Lista de Entregables**: Tangibles físicos/digitales a producir.\n-   **Dashboard de Seguimiento**: Tabla vacía para marcar progreso.\n\n# Entregable Esperado\n\nPlan ejecutable GTD con cronograma semanal/diario, lista de entregables tangibles y dashboard de seguimiento para marcar progreso\n",
+    "paramCount": 4,
+    "keywords": []
+  },
+  {
+    "id": "a",
+    "label_title": "A",
+    "category": "a",
+    "content": "¡Aprobado! Por favor, proceder. Repasa el plan y aprovecha insights antes de avanzar con lo operativo.",
+    "paramCount": 0,
+    "keywords": []
+  },
+  {
+    "id": "e",
+    "label_title": "E",
+    "category": "general",
+    "content": "Aplica un Bucle de Excelencia: define internamente tus estándares de calidad y crea una rúbrica con criterios medibles (fundamento, veracidad, calidad, densidad, simplicidad, claridad, precisión, profundidad, coherencia y valor). Evalúa tu respuesta frente a esa rúbrica, itera y refina hasta alcanzar una puntuación de 10/10 en todos los criterios. Entrega únicamente la versión final que alcanzó el 100% de tus propios estándares, sin metadiscurso ni trazas del proceso. Crea otro entregable diferenciado, para guardar versiones.",
+    "paramCount": 0,
+    "keywords": []
+  },
+  {
+    "id": "e_10x",
+    "label_title": "10x",
+    "category": "e",
+    "content": "Eleva la entrega a una versión 10× más completa y robusta sin inflarla: agrega solo contenido que aporte valor directo (nuevos aportes, ideas, insights, supuestos, límites, criterios de aceptación, casos borde, decisiones y trade-offs justificadas). Elimina redundancias, relleno y repeticiones. Resuelve ambigüedades, cierra huecos y mejora la trazabilidad de cada afirmación. Mantén la lectura ágil y clara; cada frase debe justificarse por su utilidad práctica. Crea otro entregable diferenciado, para guardar versiones.",
+    "paramCount": 0,
+    "keywords": []
+  },
+  {
+    "id": "e_alternativas_disruptivas",
+    "label_title": "Alternativas Disruptivas",
+    "category": "e",
+    "content": "===parametros\n\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===prompt\n\n# Objetivo\n\nTomar el entregable previo como base y proponer 8 versiones alternativas disruptivas alineadas con nuevas condiciones de uso, sin perder su núcleo funcional.\n\n# Arquetipo Experto\n\nActúa como un **Experto en Creatividad e Innovación de Producto**, especializado en adaptar productos existentes de alto valor a nuevos contextos.\n\n# Parámetros\n\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Analizar el entregable previo y extraer su propósito principal\n- [ ] Identificar la lógica estructural y el tono original\n- [ ] Determinar el público objetivo original\n- [ ] Generar 8 versiones alternativas con pivotes significativamente distintos\n- [ ] Asegurar que todas las propuestas sean claras, funcionales y contextualmente disruptivas\n- [ ] Mantener alineación con el propósito original\n\n# Plan\n\n1. **Evaluación del Entregable Base**: Analizar el entregable previo. Extraer: su propósito principal, su lógica estructural, su tono y público objetivo original.\n2. **Generación de Versiones**: Proponer 8 versiones alternativas del entregable anterior, considerando pivotes significativamente distintos entre sí, pero alineadas con el propósito original.\n3. **Validación**: Asegurar que todas las propuestas sean claras, funcionales y contextualmente disruptivas.\n\n# Entregable Esperado\n\n8 versiones alternativas del entregable previo, cada una con pivotes significativamente distintos pero alineadas con el propósito original. Todas las propuestas deben ser claras, funcionales y contextualmente disruptivas.",
+    "paramCount": 1,
+    "keywords": []
+  },
+  {
+    "id": "e_ejecucion_excepcional",
+    "label_title": "Ejecucion Excepcional",
+    "category": "e",
+    "content": "===parametros\n\n- prompt_xml: {[prompt_xml]} → Prompt en estructura XML para máxima precisión\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===prompt\n\n# Objetivo\n\nEjecutar con maestría el prompt proporcionado en estructura XML, priorizando calidad sobre velocidad y aplicando un Bucle de Excelencia para alcanzar estándares de 10/10.\n\n# Arquetipo Experto\n\nActúa como un **Ejecutor Excepcional de Tareas Complejas**, especializado en procesar instrucciones estructuradas con máxima precisión y calidad.\n\n# Parámetros\n\n- prompt_xml: {[prompt_xml]} → Prompt en estructura XML para máxima precisión. Formato: ```xml\n<descripcion_de_la_tarea>\n{\"Realiza los siguiente: [la acción concreta que esperas haga la IA, empieza con un verbo] y entrégame [el resultado que esperas con los criterios que hacen que recibas a gusto]. Determina un plan coherente para lograr mi objetivo. Respeta mis consideraciones: [tus prioridades y restricciones clave]. Devuélvelo en el siguiente formato: [tu formato de salida]. Si falta información, dedúcela con criterio pero, explica al final los supuestos y tu proceso de razonamiento.\"}\n</prompt>\n```\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Meditar profundamente antes de ejecutar el prompt XML\n- [ ] Analizar la estructura XML y extraer la tarea concreta\n- [ ] Identificar el resultado esperado y criterios de aceptación\n- [ ] Determinar un plan coherente para lograr el objetivo\n- [ ] Aplicar Bucle de Excelencia: definir estándares de calidad y crear rúbrica\n- [ ] Evaluar respuesta frente a la rúbrica e iterar hasta 10/10\n- [ ] Entregar únicamente la versión final sin metadiscurso\n\n# Plan\n\n1. **Análisis**: Meditar profundamente y analizar el prompt XML proporcionado.\n2. **Extracción**: Extraer la acción concreta, resultado esperado, consideraciones y formato de salida.\n3. **Planificación**: Determinar un plan coherente para lograr el objetivo.\n4. **Ejecución**: Ejecutar con maestría, priorizando calidad sobre velocidad.\n5. **Bucle de Excelencia**: Definir estándares de calidad, crear rúbrica, evaluar e iterar hasta 10/10.\n6. **Entrega**: Proporcionar únicamente la versión final sin metadiscurso ni trazas del proceso.\n\n# Entregable Esperado\n\nResultado final que alcanzó 10/10 en todos los criterios de la rúbrica de excelencia, sin metadiscurso ni trazas del proceso. El entregable debe cumplir completamente con la acción concreta, el resultado esperado y el formato de salida especificados en el prompt XML.",
+    "paramCount": 2,
+    "keywords": []
+  },
+  {
+    "id": "e_en_limpio",
+    "label_title": "En Limpio",
+    "category": "e",
+    "content": "Entregar el texto previo en su versión final, consolidada, en limpio y lista para exportar y usar de inmediato, sin necesidad de edición adicional. Aplicar todas las mejoras necesarias para garantizar precisión, claridad, coherencia, formato óptimo y trazabilidad interna. El documento debe ser plena y explícitamente auto-contenido y autosuficiente: aunque incluya referencias a fuentes externas, debe integrar en el propio texto toda la información indispensable de dichas fuentes para mantener su autonomía. No incluir ningún elemento fuera del entregable final. Crea otro entregable diferenciado, para guardar versiones.",
+    "paramCount": 0,
+    "keywords": []
+  },
+  {
+    "id": "i_generar_contexto_de_hilo_de_conversacion",
+    "label_title": "Generar Contexto De Hilo De Conversacion",
+    "category": "i",
+    "content": "===parametros\n\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===prompt\n\n# Objetivo\n\nCrear un prompt de priming que permita heredar todo el contexto clave acumulado en este trabajo, de forma que pueda ser comprendido y continuado por un modelo de lenguaje que no tiene acceso al historial previo.\n\n# Arquetipo Experto\n\nActúa como un **Especialista en Gestión de Contexto y Continuidad de Conversación**, experto en sintetizar información compleja en instrucciones autosuficientes.\n\n# Parámetros\n\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Revisar todo el historial de conversación y contexto acumulado\n- [ ] Identificar hallazgos relevantes obtenidos durante el proceso\n- [ ] Extraer aprendizajes, patrones o principios derivados del trabajo\n- [ ] Identificar supuestos validados, acuerdos explícitos o lineamientos metodológicos\n- [ ] Determinar factores esenciales que aseguren continuidad estratégica, técnica y narrativa\n- [ ] Redactar prompt completamente autosuficiente sin referencias a \"esta conversación\"\n- [ ] Asegurar que el prompt actúe como cápsula cognitiva independiente\n\n# Plan\n\n1. **Análisis**: Revisar todo el historial y contexto acumulado en este trabajo.\n2. **Síntesis**: Extraer y sintetizar los siguientes elementos:\n   - Hallazgos relevantes obtenidos durante el proceso\n   - Aprendizajes, patrones o principios derivados del trabajo\n   - Supuestos validados, acuerdos explícitos o lineamientos metodológicos\n   - Cualquier otro factor esencial que asegure continuidad estratégica, técnica y narrativa\n3. **Redacción**: Crear prompt de priming claro, estructurado y completamente autosuficiente.\n4. **Validación**: Asegurar que el prompt no haga referencia a \"esta conversación\" ni dependa de insumos externos.\n\n# Entregable Esperado\n\nPrompt de priming completamente autosuficiente que sintetice todo el contexto clave acumulado. El prompt debe actuar como una cápsula cognitiva que permita a un modelo de lenguaje sin acceso al historial previo comprender y continuar el trabajo con total coherencia y continuidad.",
+    "paramCount": 1,
+    "keywords": []
+  },
+  {
+    "id": "i_retomar_hilo",
+    "label_title": "Retomar Hilo",
+    "category": "i",
+    "content": "===parametros\n\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n===prompt\n\n# Objetivo\n\nRevisar cuidadosamente todo el historial de esta conversación y elaborar una síntesis clara, estructurada y funcional que permita continuar el trabajo con total coherencia y trazabilidad.\n\n# Arquetipo Experto\n\nActúa como un **Especialista en Gestión de Continuidad y Sincronización de Contexto**, experto en sintetizar conversaciones complejas en resúmenes accionables.\n\n# Parámetros\n\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\"; si hay adjuntos y no quieres especificar usa la plantilla sugerida de revisión exhaustiva: \"Solicito revises detalladamente los anexos, por separado y en conjunto. Crear debate socrático de integración de contenido y este prompt, antes de resolver y ejecutar.\")\n\n# Checklist\n\n- [ ] Revisar cuidadosamente todo el historial de conversación\n- [ ] Resumir las solicitudes principales, objetivos estratégicos y decisiones metodológicas\n- [ ] Identificar acuerdos, configuraciones o lineamientos que deben seguir activos\n- [ ] Resumir las últimas acciones, prompts y decisiones\n- [ ] Realizar confirmación funcional de configuraciones persistentes\n- [ ] Declarar continuidad y preparación para la siguiente fase\n- [ ] Asegurar que el resumen sea fácilmente utilizable para próximos pasos\n\n# Plan\n\n1. **Revisión**: Revisar cuidadosamente todo el historial de esta conversación.\n2. **Síntesis en Tres Bloques**:\n   - **Instrucciones clave**: Resumir las solicitudes principales, los objetivos estratégicos y las decisiones metodológicas que han guiado esta interacción.\n   - **Peticiones persistentes**: Identificar acuerdos, configuraciones o lineamientos que deben seguir activos (por ejemplo, estilo narrativo, formatos establecidos, restricciones técnicas o semánticas).\n   - **Sincronización actual**: Resumir brevemente las últimas acciones, prompts y decisiones, asegurando que ambas partes estén alineadas respecto al estado actual del trabajo.\n3. **Acciones Finales**:\n   - **Confirmación funcional**: Asegurar que se mantienen activas todas las configuraciones persistentes identificadas.\n   - **Declaración de continuidad**: Declarar que se está listo para continuar con la siguiente fase, asegurando coherencia, trazabilidad y continuidad técnica.\n\n# Entregable Esperado\n\nSíntesis clara, estructurada y funcional compuesta por tres bloques (Instrucciones clave, Peticiones persistentes, Sincronización actual), seguida de confirmación funcional y declaración de continuidad. El resumen debe ser fácilmente utilizable para próximos pasos, evitando repeticiones y manteniendo una estructura clara.",
+    "paramCount": 1,
+    "keywords": []
+  },
+  {
+    "id": "s",
+    "label_title": "S",
+    "category": "general",
+    "content": "Sintetiza las opciones \"abiertas\" en revisión. Consolida una solución que tome lo mejor de todas las alternativas presentadas, integrando fortalezas y mitigando debilidades de cada opción.",
+    "paramCount": 0,
+    "keywords": []
+  },
+  {
+    "id": "estrategia_vision_estrategica_3_horizontes",
+    "label_title": "Visión Estratégica 3 Horizontes",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para visión estratégica 3 horizontes\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Horizontes\", \"McKinsey\", \"Visión\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar visión estratégica usando el framework de 3 horizontes de McKinsey\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Horizontes, McKinsey.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para visión estratégica 3 horizontes\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para visión estratégica 3 horizontes",
+    "paramCount": 4,
+    "keywords": [
+      "Horizontes",
+      "McKinsey",
+      "Visión"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_pestel_completo",
+    "label_title": "Análisis PESTEL Completo",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis pestel completo\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"PESTEL\", \"Macro\", \"Entorno\"]\n\n===prompt\n\n# Objetivo\n\nRealizar análisis PESTEL profundo del entorno macro\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en PESTEL, Macro.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis pestel completo\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis pestel completo",
+    "paramCount": 4,
+    "keywords": [
+      "PESTEL",
+      "Macro",
+      "Entorno"
+    ]
+  },
+  {
+    "id": "estrategia_mapa_estrategico_bsc",
+    "label_title": "Mapa Estratégico BSC",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para mapa estratégico bsc\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"BSC\", \"Mapa Estratégico\", \"KPIs\"]\n\n===prompt\n\n# Objetivo\n\nCrear mapa estratégico con Balanced Scorecard\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en BSC, Mapa Estratégico.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para mapa estratégico bsc\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para mapa estratégico bsc",
+    "paramCount": 4,
+    "keywords": [
+      "BSC",
+      "Mapa Estratégico",
+      "KPIs"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_cadena_valor",
+    "label_title": "Análisis de Cadena de Valor",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de cadena de valor\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Cadena de Valor\", \"Porter\", \"Competitividad\"]\n\n===prompt\n\n# Objetivo\n\nAnalizar la cadena de valor de Porter\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Cadena de Valor, Porter.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de cadena de valor\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis de cadena de valor",
+    "paramCount": 4,
+    "keywords": [
+      "Cadena de Valor",
+      "Porter",
+      "Competitividad"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_oceano_azul",
+    "label_title": "Estrategia Océano Azul",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia océano azul\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Blue Ocean\", \"Innovación\", \"Diferenciación\"]\n\n===prompt\n\n# Objetivo\n\nAplicar el framework de Océano Azul\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Blue Ocean, Innovación.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia océano azul\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia océano azul",
+    "paramCount": 4,
+    "keywords": [
+      "Blue Ocean",
+      "Innovación",
+      "Diferenciación"
+    ]
+  },
+  {
+    "id": "estrategia_design_thinking_sprint",
+    "label_title": "Design Thinking Sprint",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para design thinking sprint\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Design Thinking\", \"Sprint\", \"Innovación\"]\n\n===prompt\n\n# Objetivo\n\nFacilitar un sprint de Design Thinking\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Design Thinking, Sprint.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para design thinking sprint\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para design thinking sprint",
+    "paramCount": 4,
+    "keywords": [
+      "Design Thinking",
+      "Sprint",
+      "Innovación"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_5_fuerzas_mercado",
+    "label_title": "Análisis 5 Fuerzas de Mercado",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis 5 fuerzas de mercado\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"5 Fuerzas\", \"Porter\", \"Competencia\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar las 5 fuerzas competitivas de Porter\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en 5 Fuerzas, Porter.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis 5 fuerzas de mercado\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis 5 fuerzas de mercado",
+    "paramCount": 4,
+    "keywords": [
+      "5 Fuerzas",
+      "Porter",
+      "Competencia"
+    ]
+  },
+  {
+    "id": "estrategia_plan_transformacion_digital",
+    "label_title": "Plan de Transformación Digital",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de transformación digital\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Transformación Digital\", \"Roadmap\", \"Cambio\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar roadmap de transformación digital\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Transformación Digital, Roadmap.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de transformación digital\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de transformación digital",
+    "paramCount": 4,
+    "keywords": [
+      "Transformación Digital",
+      "Roadmap",
+      "Cambio"
+    ]
+  },
+  {
+    "id": "estrategia_matriz_ansoff_crecimiento",
+    "label_title": "Matriz Ansoff de Crecimiento",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para matriz ansoff de crecimiento\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Ansoff\", \"Crecimiento\", \"Estrategia\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar opciones de crecimiento con Ansoff\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Ansoff, Crecimiento.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para matriz ansoff de crecimiento\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para matriz ansoff de crecimiento",
+    "paramCount": 4,
+    "keywords": [
+      "Ansoff",
+      "Crecimiento",
+      "Estrategia"
+    ]
+  },
+  {
+    "id": "estrategia_okr_quarterly_planning",
+    "label_title": "Planificación OKR Trimestral",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para planificación okr trimestral\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"OKR\", \"Planificación\", \"Metas\"]\n\n===prompt\n\n# Objetivo\n\nDefinir OKRs para el próximo trimestre\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en OKR, Planificación.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para planificación okr trimestral\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para planificación okr trimestral",
+    "paramCount": 4,
+    "keywords": [
+      "OKR",
+      "Planificación",
+      "Metas"
+    ]
+  },
+  {
+    "id": "estrategia_scenario_planning",
+    "label_title": "Planificación por Escenarios",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para planificación por escenarios\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Escenarios\", \"Futurismo\", \"Planificación\"]\n\n===prompt\n\n# Objetivo\n\nConstruir 3-4 escenarios futuros plausibles\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Escenarios, Futurismo.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para planificación por escenarios\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para planificación por escenarios",
+    "paramCount": 4,
+    "keywords": [
+      "Escenarios",
+      "Futurismo",
+      "Planificación"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_go_to_market",
+    "label_title": "Estrategia Go-to-Market",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia go-to-market\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"GTM\", \"Lanzamiento\", \"Mercado\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar estrategia de entrada al mercado\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en GTM, Lanzamiento.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia go-to-market\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia go-to-market",
+    "paramCount": 4,
+    "keywords": [
+      "GTM",
+      "Lanzamiento",
+      "Mercado"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_stakeholders",
+    "label_title": "Análisis de Stakeholders",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de stakeholders\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Stakeholders\", \"Mapeo\", \"Gobernanza\"]\n\n===prompt\n\n# Objetivo\n\nMapear stakeholders con influencia e interés\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Stakeholders, Mapeo.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de stakeholders\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis de stakeholders",
+    "paramCount": 4,
+    "keywords": [
+      "Stakeholders",
+      "Mapeo",
+      "Gobernanza"
+    ]
+  },
+  {
+    "id": "estrategia_modelo_canvas_negocio",
+    "label_title": "Modelo Canvas de Negocio",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para modelo canvas de negocio\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Canvas\", \"Modelo de Negocio\", \"Lean\"]\n\n===prompt\n\n# Objetivo\n\nCompletar Business Model Canvas\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Canvas, Modelo de Negocio.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para modelo canvas de negocio\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para modelo canvas de negocio",
+    "paramCount": 4,
+    "keywords": [
+      "Canvas",
+      "Modelo de Negocio",
+      "Lean"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_pricing",
+    "label_title": "Estrategia de Pricing",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de pricing\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Pricing\", \"Monetización\", \"Revenue\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar estrategia de precios\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Pricing, Monetización.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de pricing\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de pricing",
+    "paramCount": 4,
+    "keywords": [
+      "Pricing",
+      "Monetización",
+      "Revenue"
+    ]
+  },
+  {
+    "id": "estrategia_plan_innovacion",
+    "label_title": "Plan de Innovación",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de innovación\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Innovación\", \"Intraemprendimiento\", \"I+D\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar programa de innovación corporativa\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Innovación, Intraemprendimiento.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de innovación\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de innovación",
+    "paramCount": 4,
+    "keywords": [
+      "Innovación",
+      "Intraemprendimiento",
+      "I+D"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_core_competencies",
+    "label_title": "Análisis de Core Competencies",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de core competencies\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Core Competencies\", \"Prahalad\", \"Recursos\"]\n\n===prompt\n\n# Objetivo\n\nIdentificar competencias centrales\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Core Competencies, Prahalad.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de core competencies\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis de core competencies",
+    "paramCount": 4,
+    "keywords": [
+      "Core Competencies",
+      "Prahalad",
+      "Recursos"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_alianzas",
+    "label_title": "Estrategia de Alianzas",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de alianzas\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Alianzas\", \"Partners\", \"Ecosistema\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar estrategia de partnerships\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Alianzas, Partners.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de alianzas\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de alianzas",
+    "paramCount": 4,
+    "keywords": [
+      "Alianzas",
+      "Partners",
+      "Ecosistema"
+    ]
+  },
+  {
+    "id": "estrategia_war_gaming_competitivo",
+    "label_title": "War Gaming Competitivo",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para war gaming competitivo\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"War Gaming\", \"Competencia\", \"Simulación\"]\n\n===prompt\n\n# Objetivo\n\nSimular movimientos competitivos\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en War Gaming, Competencia.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para war gaming competitivo\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para war gaming competitivo",
+    "paramCount": 4,
+    "keywords": [
+      "War Gaming",
+      "Competencia",
+      "Simulación"
+    ]
+  },
+  {
+    "id": "estrategia_north_star_metric",
+    "label_title": "Definir North Star Metric",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para definir north star metric\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"North Star\", \"Métrica\", \"Product-Led\"]\n\n===prompt\n\n# Objetivo\n\nIdentificar la métrica que mejor mide valor\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en North Star, Métrica.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para definir north star metric\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para definir north star metric",
+    "paramCount": 4,
+    "keywords": [
+      "North Star",
+      "Métrica",
+      "Product-Led"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_disruption",
+    "label_title": "Análisis de Disruption",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de disruption\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Disrupción\", \"Innovación\", \"Riesgo\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar riesgo de disrupción en la industria\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Disrupción, Innovación.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de disruption\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis de disruption",
+    "paramCount": 4,
+    "keywords": [
+      "Disrupción",
+      "Innovación",
+      "Riesgo"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_datos",
+    "label_title": "Estrategia de Datos",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de datos\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Data Strategy\", \"Analytics\", \"Gobernanza\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar estrategia de datos empresarial\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Data Strategy, Analytics.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de datos\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de datos",
+    "paramCount": 4,
+    "keywords": [
+      "Data Strategy",
+      "Analytics",
+      "Gobernanza"
+    ]
+  },
+  {
+    "id": "estrategia_roadmap_producto",
+    "label_title": "Roadmap de Producto",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para roadmap de producto\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Roadmap\", \"Producto\", \"Priorización\"]\n\n===prompt\n\n# Objetivo\n\nCrear roadmap de producto a 12 meses\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Roadmap, Producto.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para roadmap de producto\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para roadmap de producto",
+    "paramCount": 4,
+    "keywords": [
+      "Roadmap",
+      "Producto",
+      "Priorización"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_impact_effort",
+    "label_title": "Análisis Impact-Effort",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis impact-effort\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Impact-Effort\", \"Priorización\", \"Quick Wins\"]\n\n===prompt\n\n# Objetivo\n\nPriorizar iniciativas por impacto vs esfuerzo\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Impact-Effort, Priorización.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis impact-effort\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis impact-effort",
+    "paramCount": 4,
+    "keywords": [
+      "Impact-Effort",
+      "Priorización",
+      "Quick Wins"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_talento",
+    "label_title": "Estrategia de Talento",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de talento\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Talento\", \"HR\", \"Employer Branding\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar estrategia de atracción y retención\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Talento, HR.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de talento\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de talento",
+    "paramCount": 4,
+    "keywords": [
+      "Talento",
+      "HR",
+      "Employer Branding"
+    ]
+  },
+  {
+    "id": "estrategia_plan_sucesion",
+    "label_title": "Plan de Sucesión",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de sucesión\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Sucesión\", \"Liderazgo\", \"Continuidad\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar plan de sucesión para roles críticos\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Sucesión, Liderazgo.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de sucesión\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de sucesión",
+    "paramCount": 4,
+    "keywords": [
+      "Sucesión",
+      "Liderazgo",
+      "Continuidad"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_sostenibilidad",
+    "label_title": "Estrategia de Sostenibilidad",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de sostenibilidad\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"ESG\", \"Sostenibilidad\", \"Impacto\"]\n\n===prompt\n\n# Objetivo\n\nIntegrar ESG en la estrategia corporativa\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en ESG, Sostenibilidad.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de sostenibilidad\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de sostenibilidad",
+    "paramCount": 4,
+    "keywords": [
+      "ESG",
+      "Sostenibilidad",
+      "Impacto"
+    ]
+  },
+  {
+    "id": "estrategia_plan_expansion_mercado",
+    "label_title": "Plan de Expansión de Mercado",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de expansión de mercado\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Expansión\", \"Internacionalización\", \"Mercados\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar y planificar expansión geográfica\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Expansión, Internacionalización.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de expansión de mercado\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de expansión de mercado",
+    "paramCount": 4,
+    "keywords": [
+      "Expansión",
+      "Internacionalización",
+      "Mercados"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_tendencias",
+    "label_title": "Análisis de Tendencias",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de tendencias\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Tendencias\", \"Futuro\", \"Signals\"]\n\n===prompt\n\n# Objetivo\n\nIdentificar tendencias emergentes en la industria\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Tendencias, Futuro.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de tendencias\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis de tendencias",
+    "paramCount": 4,
+    "keywords": [
+      "Tendencias",
+      "Futuro",
+      "Signals"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_plataforma",
+    "label_title": "Estrategia de Plataforma",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de plataforma\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Plataforma\", \"Network Effects\", \"Ecosistema\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar modelo de plataforma\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Plataforma, Network Effects.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de plataforma\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de plataforma",
+    "paramCount": 4,
+    "keywords": [
+      "Plataforma",
+      "Network Effects",
+      "Ecosistema"
+    ]
+  },
+  {
+    "id": "estrategia_decision_build_buy_partner",
+    "label_title": "Decisión Build vs Buy vs Partner",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para decisión build vs buy vs partner\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Build vs Buy\", \"Make or Buy\", \"Partnership\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar alternativas de desarrollo\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Build vs Buy, Make or Buy.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para decisión build vs buy vs partner\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para decisión build vs buy vs partner",
+    "paramCount": 4,
+    "keywords": [
+      "Build vs Buy",
+      "Make or Buy",
+      "Partnership"
+    ]
+  },
+  {
+    "id": "estrategia_plan_contingencia",
+    "label_title": "Plan de Contingencia",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de contingencia\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Contingencia\", \"Resiliencia\", \"Riesgo\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar planes B y C para escenarios adversos\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Contingencia, Resiliencia.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de contingencia\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de contingencia",
+    "paramCount": 4,
+    "keywords": [
+      "Contingencia",
+      "Resiliencia",
+      "Riesgo"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_customer_centric",
+    "label_title": "Estrategia Customer-Centric",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia customer-centric\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Customer-Centric\", \"CX\", \"Transformación\"]\n\n===prompt\n\n# Objetivo\n\nRediseñar la organización alrededor del cliente\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Customer-Centric, CX.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia customer-centric\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia customer-centric",
+    "paramCount": 4,
+    "keywords": [
+      "Customer-Centric",
+      "CX",
+      "Transformación"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_benchmarking",
+    "label_title": "Benchmarking Estratégico",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para benchmarking estratégico\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Benchmarking\", \"Best Practices\", \"Mejora\"]\n\n===prompt\n\n# Objetivo\n\nComparar con best-in-class de la industria\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Benchmarking, Best Practices.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para benchmarking estratégico\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para benchmarking estratégico",
+    "paramCount": 4,
+    "keywords": [
+      "Benchmarking",
+      "Best Practices",
+      "Mejora"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_ai_adoption",
+    "label_title": "Estrategia de Adopción de IA",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de adopción de ia\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"IA\", \"Adopción\", \"Transformación\"]\n\n===prompt\n\n# Objetivo\n\nPlan de adopción de IA organizacional\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en IA, Adopción.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de adopción de ia\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de adopción de ia",
+    "paramCount": 4,
+    "keywords": [
+      "IA",
+      "Adopción",
+      "Transformación"
+    ]
+  },
+  {
+    "id": "estrategia_plan_reduccion_costos",
+    "label_title": "Plan de Reducción de Costos",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de reducción de costos\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Costos\", \"Eficiencia\", \"Lean\"]\n\n===prompt\n\n# Objetivo\n\nIdentificar oportunidades de eficiencia\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Costos, Eficiencia.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de reducción de costos\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de reducción de costos",
+    "paramCount": 4,
+    "keywords": [
+      "Costos",
+      "Eficiencia",
+      "Lean"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_marca",
+    "label_title": "Estrategia de Marca",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de marca\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Marca\", \"Branding\", \"Posicionamiento\"]\n\n===prompt\n\n# Objetivo\n\nDefinir arquitectura y posicionamiento de marca\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Marca, Branding.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de marca\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de marca",
+    "paramCount": 4,
+    "keywords": [
+      "Marca",
+      "Branding",
+      "Posicionamiento"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_vrio",
+    "label_title": "Análisis VRIO",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis vrio\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"VRIO\", \"Recursos\", \"Ventaja Competitiva\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar recursos con framework VRIO\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en VRIO, Recursos.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis vrio\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis vrio",
+    "paramCount": 4,
+    "keywords": [
+      "VRIO",
+      "Recursos",
+      "Ventaja Competitiva"
+    ]
+  },
+  {
+    "id": "estrategia_plan_gestion_cambio",
+    "label_title": "Plan de Gestión del Cambio",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de gestión del cambio\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Change Management\", \"Cambio\", \"Adopción\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar plan de change management\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Change Management, Cambio.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de gestión del cambio\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de gestión del cambio",
+    "paramCount": 4,
+    "keywords": [
+      "Change Management",
+      "Cambio",
+      "Adopción"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_omnicanal",
+    "label_title": "Estrategia Omnicanal",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia omnicanal\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Omnicanal\", \"CX\", \"Integración\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar experiencia omnicanal coherente\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Omnicanal, CX.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia omnicanal\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia omnicanal",
+    "paramCount": 4,
+    "keywords": [
+      "Omnicanal",
+      "CX",
+      "Integración"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_rentabilidad_cliente",
+    "label_title": "Análisis de Rentabilidad por Cliente",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de rentabilidad por cliente\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Rentabilidad\", \"CLV\", \"Segmentación\"]\n\n===prompt\n\n# Objetivo\n\nCalcular rentabilidad por segmento\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Rentabilidad, CLV.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de rentabilidad por cliente\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis de rentabilidad por cliente",
+    "paramCount": 4,
+    "keywords": [
+      "Rentabilidad",
+      "CLV",
+      "Segmentación"
+    ]
+  },
+  {
+    "id": "estrategia_plan_recuperacion_crisis",
+    "label_title": "Plan de Recuperación Post-Crisis",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de recuperación post-crisis\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Crisis\", \"Recuperación\", \"Resiliencia\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar plan de recuperación\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Crisis, Recuperación.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de recuperación post-crisis\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de recuperación post-crisis",
+    "paramCount": 4,
+    "keywords": [
+      "Crisis",
+      "Recuperación",
+      "Resiliencia"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_ecosistema_digital",
+    "label_title": "Estrategia de Ecosistema Digital",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de ecosistema digital\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Ecosistema\", \"Digital\", \"Stack\"]\n\n===prompt\n\n# Objetivo\n\nMapear y optimizar ecosistema digital\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Ecosistema, Digital.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de ecosistema digital\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de ecosistema digital",
+    "paramCount": 4,
+    "keywords": [
+      "Ecosistema",
+      "Digital",
+      "Stack"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_market_sizing",
+    "label_title": "Market Sizing (TAM/SAM/SOM)",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para market sizing (tam/sam/som)\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"TAM\", \"SAM\", \"SOM\", \"Market Sizing\"]\n\n===prompt\n\n# Objetivo\n\nCalcular tamaño de mercado\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en TAM, SAM.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para market sizing (tam/sam/som)\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para market sizing (tam/sam/som)",
+    "paramCount": 4,
+    "keywords": [
+      "TAM",
+      "SAM",
+      "SOM",
+      "Market Sizing"
+    ]
+  },
+  {
+    "id": "estrategia_plan_mvp_validacion",
+    "label_title": "Plan de MVP y Validación",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de mvp y validación\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"MVP\", \"Lean Startup\", \"Validación\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar MVP y plan de validación\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en MVP, Lean Startup.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de mvp y validación\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de mvp y validación",
+    "paramCount": 4,
+    "keywords": [
+      "MVP",
+      "Lean Startup",
+      "Validación"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_partnership_revenue",
+    "label_title": "Revenue Partnership Strategy",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para revenue partnership strategy\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Revenue Share\", \"Partners\", \"Monetización\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar modelo de revenue sharing\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Revenue Share, Partners.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para revenue partnership strategy\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para revenue partnership strategy",
+    "paramCount": 4,
+    "keywords": [
+      "Revenue Share",
+      "Partners",
+      "Monetización"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_customer_churn",
+    "label_title": "Análisis de Churn",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de churn\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Churn\", \"Retención\", \"Análisis\"]\n\n===prompt\n\n# Objetivo\n\nIdentificar causas y reducir churn\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Churn, Retención.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis de churn\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis de churn",
+    "paramCount": 4,
+    "keywords": [
+      "Churn",
+      "Retención",
+      "Análisis"
+    ]
+  },
+  {
+    "id": "estrategia_plan_cultura_organizacional",
+    "label_title": "Plan de Cultura Organizacional",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de cultura organizacional\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Cultura\", \"Valores\", \"Organización\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar cultura de alto rendimiento\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Cultura, Valores.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de cultura organizacional\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de cultura organizacional",
+    "paramCount": 4,
+    "keywords": [
+      "Cultura",
+      "Valores",
+      "Organización"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_open_innovation",
+    "label_title": "Estrategia de Open Innovation",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de open innovation\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Open Innovation\", \"Colaboración\", \"Ecosistema\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar programa de innovación abierta\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Open Innovation, Colaboración.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de open innovation\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de open innovation",
+    "paramCount": 4,
+    "keywords": [
+      "Open Innovation",
+      "Colaboración",
+      "Ecosistema"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_jobs_to_be_done",
+    "label_title": "Análisis Jobs-to-be-Done",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis jobs-to-be-done\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"JTBD\", \"Clayton Christensen\", \"Necesidades\"]\n\n===prompt\n\n# Objetivo\n\nIdentificar los 'jobs' de los clientes\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en JTBD, Clayton Christensen.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis jobs-to-be-done\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis jobs-to-be-done",
+    "paramCount": 4,
+    "keywords": [
+      "JTBD",
+      "Clayton Christensen",
+      "Necesidades"
+    ]
+  },
+  {
+    "id": "estrategia_plan_kpi_dashboards",
+    "label_title": "Plan de KPIs y Dashboards",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de kpis y dashboards\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"KPIs\", \"Dashboards\", \"Métricas\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar sistema de métricas ejecutivas\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en KPIs, Dashboards.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de kpis y dashboards\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de kpis y dashboards",
+    "paramCount": 4,
+    "keywords": [
+      "KPIs",
+      "Dashboards",
+      "Métricas"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_lean_operations",
+    "label_title": "Estrategia Lean Operations",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia lean operations\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Lean\", \"Operaciones\", \"Eficiencia\"]\n\n===prompt\n\n# Objetivo\n\nOptimizar operaciones con principios lean\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Lean, Operaciones.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia lean operations\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia lean operations",
+    "paramCount": 4,
+    "keywords": [
+      "Lean",
+      "Operaciones",
+      "Eficiencia"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_value_chain",
+    "label_title": "Análisis Value Chain Digital",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis value chain digital\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Value Chain\", \"Digital\", \"Procesos\"]\n\n===prompt\n\n# Objetivo\n\nMapear cadena de valor digital\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Value Chain, Digital.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis value chain digital\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis value chain digital",
+    "paramCount": 4,
+    "keywords": [
+      "Value Chain",
+      "Digital",
+      "Procesos"
+    ]
+  },
+  {
+    "id": "estrategia_plan_internacionalizacion",
+    "label_title": "Plan de Internacionalización",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de internacionalización\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Internacional\", \"Expansión\", \"Mercados\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar y planificar entrada a nuevos países\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Internacional, Expansión.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de internacionalización\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de internacionalización",
+    "paramCount": 4,
+    "keywords": [
+      "Internacional",
+      "Expansión",
+      "Mercados"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_fintech_disruption",
+    "label_title": "Estrategia Anti-Disrupción",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia anti-disrupción\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Anti-Disrupción\", \"Defensa\", \"Innovación\"]\n\n===prompt\n\n# Objetivo\n\nProtegerse ante disrupciones del mercado\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Anti-Disrupción, Defensa.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia anti-disrupción\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia anti-disrupción",
+    "paramCount": 4,
+    "keywords": [
+      "Anti-Disrupción",
+      "Defensa",
+      "Innovación"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_organizational_health",
+    "label_title": "Diagnóstico de Salud Organizacional",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para diagnóstico de salud organizacional\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Organización\", \"Diagnóstico\", \"Cultura\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar salud organizacional\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Organización, Diagnóstico.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para diagnóstico de salud organizacional\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para diagnóstico de salud organizacional",
+    "paramCount": 4,
+    "keywords": [
+      "Organización",
+      "Diagnóstico",
+      "Cultura"
+    ]
+  },
+  {
+    "id": "estrategia_plan_digital_twin_strategy",
+    "label_title": "Estrategia de Digital Twin",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de digital twin\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Digital Twin\", \"Simulación\", \"IoT\"]\n\n===prompt\n\n# Objetivo\n\nImplementar gemelos digitales\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Digital Twin, Simulación.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de digital twin\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de digital twin",
+    "paramCount": 4,
+    "keywords": [
+      "Digital Twin",
+      "Simulación",
+      "IoT"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_data_monetization",
+    "label_title": "Estrategia de Monetización de Datos",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de monetización de datos\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Data Monetization\", \"Datos\", \"Revenue\"]\n\n===prompt\n\n# Objetivo\n\nCrear revenue a partir de datos\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Data Monetization, Datos.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de monetización de datos\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de monetización de datos",
+    "paramCount": 4,
+    "keywords": [
+      "Data Monetization",
+      "Datos",
+      "Revenue"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_madurez_digital",
+    "label_title": "Diagnóstico de Madurez Digital",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para diagnóstico de madurez digital\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Madurez Digital\", \"Assessment\", \"Transformación\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar nivel de madurez digital\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Madurez Digital, Assessment.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para diagnóstico de madurez digital\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para diagnóstico de madurez digital",
+    "paramCount": 4,
+    "keywords": [
+      "Madurez Digital",
+      "Assessment",
+      "Transformación"
+    ]
+  },
+  {
+    "id": "estrategia_plan_agile_transformation",
+    "label_title": "Plan de Transformación Ágil",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de transformación ágil\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Agile\", \"Transformación\", \"Scrum\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar adopción de agilidad\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Agile, Transformación.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de transformación ágil\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de transformación ágil",
+    "paramCount": 4,
+    "keywords": [
+      "Agile",
+      "Transformación",
+      "Scrum"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_api_economy",
+    "label_title": "Estrategia API Economy",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia api economy\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"API\", \"Economy\", \"Plataforma\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar estrategia de APIs como producto\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en API, Economy.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia api economy\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia api economy",
+    "paramCount": 4,
+    "keywords": [
+      "API",
+      "Economy",
+      "Plataforma"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_porter_diamond",
+    "label_title": "Análisis Diamante de Porter",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis diamante de porter\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Porter\", \"Diamante\", \"Competitividad\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar competitividad nacional/regional\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Porter, Diamante.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para análisis diamante de porter\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para análisis diamante de porter",
+    "paramCount": 4,
+    "keywords": [
+      "Porter",
+      "Diamante",
+      "Competitividad"
+    ]
+  },
+  {
+    "id": "estrategia_plan_employee_experience",
+    "label_title": "Plan Employee Experience",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan employee experience\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Employee Experience\", \"EX\", \"Talento\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar experiencia del empleado\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Employee Experience, EX.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan employee experience\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan employee experience",
+    "paramCount": 4,
+    "keywords": [
+      "Employee Experience",
+      "EX",
+      "Talento"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_subscription_model",
+    "label_title": "Estrategia de Modelo de Suscripción",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de modelo de suscripción\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Suscripción\", \"SaaS\", \"Recurrente\"]\n\n===prompt\n\n# Objetivo\n\nMigrar a modelo de suscripción\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Suscripción, SaaS.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de modelo de suscripción\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de modelo de suscripción",
+    "paramCount": 4,
+    "keywords": [
+      "Suscripción",
+      "SaaS",
+      "Recurrente"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_ecosystem_mapping",
+    "label_title": "Mapeo de Ecosistema",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para mapeo de ecosistema\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Ecosistema\", \"Mapeo\", \"Network\"]\n\n===prompt\n\n# Objetivo\n\nMapear actores y relaciones del ecosistema\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Ecosistema, Mapeo.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para mapeo de ecosistema\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para mapeo de ecosistema",
+    "paramCount": 4,
+    "keywords": [
+      "Ecosistema",
+      "Mapeo",
+      "Network"
+    ]
+  },
+  {
+    "id": "estrategia_plan_thought_leadership",
+    "label_title": "Plan de Thought Leadership",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de thought leadership\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Thought Leadership\", \"Personal Brand\", \"Autoridad\"]\n\n===prompt\n\n# Objetivo\n\nPosicionar como líder de pensamiento\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Thought Leadership, Personal Brand.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para plan de thought leadership\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para plan de thought leadership",
+    "paramCount": 4,
+    "keywords": [
+      "Thought Leadership",
+      "Personal Brand",
+      "Autoridad"
+    ]
+  },
+  {
+    "id": "estrategia_estrategia_circular_economy",
+    "label_title": "Estrategia de Economía Circular",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de economía circular\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Economía Circular\", \"Sostenibilidad\", \"Innovación\"]\n\n===prompt\n\n# Objetivo\n\nIntegrar principios de economía circular\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Economía Circular, Sostenibilidad.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para estrategia de economía circular\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para estrategia de economía circular",
+    "paramCount": 4,
+    "keywords": [
+      "Economía Circular",
+      "Sostenibilidad",
+      "Innovación"
+    ]
+  },
+  {
+    "id": "estrategia_analisis_technology_radar",
+    "label_title": "Technology Radar",
+    "category": "estrategia",
+    "content": "===parametros\n\n- contexto: {[contexto]} → Contexto o escenario para technology radar\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa; si no hay, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Technology Radar\", \"Evaluación\", \"Tendencias\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar tecnologías emergentes\n\n# Arquetipo Experto\n\nActúa como un **Experto Senior en EstrategIA** especializado en Technology Radar, Evaluación.\n\n# Parámetros\n\n- contexto: {[contexto]} → Contexto o escenario para technology radar\n- objetivo: {[objetivo]} → Objetivo específico del entregable\n- profundidad: {[profundidad]} → (básico|medio|alto) Nivel de detalle\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos y qué se anexa)\n\n# Checklist\n\n- [ ] Analizar y comprender los parámetros y requisitos\n- [ ] Identificar el tipo de entregable y formato apropiado\n- [ ] Aplicar metodología y proceso especificado\n- [ ] Generar contenido completo y estructurado\n- [ ] Aplicar estándares de calidad y profesionalismo\n- [ ] Validar completitud y coherencia del entregable\n\n# Plan\n\n1. **Análisis**: Revisar parámetros, adjuntos y requisitos.\n2. **Diseño**: Planificar estructura y contenido del entregable.\n3. **Creación**: Generar contenido completo y estructurado.\n4. **Validación**: Verificar completitud, coherencia y calidad.\n5. **Entrega**: Proporcionar resultado final listo para uso inmediato.\n\n# Entregable Esperado\n\nEntregable profesional completo con análisis, estructura y recomendaciones para technology radar",
+    "paramCount": 4,
+    "keywords": [
+      "Technology Radar",
+      "Evaluación",
+      "Tendencias"
+    ]
+  },
+  {
+    "id": "estrategia_sustainability",
+    "label_title": "Estrategia de Sostenibilidad ESG",
+    "category": "transformacion",
+    "content": "===parametros\n\n- organizacion: {[organizacion]} → Nombre\n- industria: {[industria]} → Industria\n- prioridades: {[prioridades]} → Prioridades ESG\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"ESG\", \"Sostenibilidad\", \"Impacto\"]\n\n===prompt\n\n# Objetivo\n\nIntegrar ESG en la estrategia corporativa con métricas y reporting.\n\n# Arquetipo Experto\n\nActúa como un **ESG Strategist** con reportes GRI/SASB.\n\n# Parámetros\n\n- organizacion: {[organizacion]} → Nombre\n- industria: {[industria]} → Industria\n- prioridades: {[prioridades]} → Prioridades ESG\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nPlan ESG con materialidad, KPIs, roadmap y framework de reporting",
+    "paramCount": 4,
+    "keywords": [
+      "ESG",
+      "Sostenibilidad",
+      "Impacto"
+    ]
+  },
+  {
+    "id": "estrategia_data_monetization",
+    "label_title": "Monetización de Datos",
+    "category": "innovacion",
+    "content": "===parametros\n\n- datos: {[datos]} → Datos disponibles\n- mercado: {[mercado]} → Mercado\n- modelo: {[modelo]} → Modelo preferido\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Data\", \"Monetización\", \"Revenue\"]\n\n===prompt\n\n# Objetivo\n\nCrear revenue a partir de datos con modelos de monetización.\n\n# Arquetipo Experto\n\nActúa como un **Chief Data Officer** con data products exitosos.\n\n# Parámetros\n\n- datos: {[datos]} → Datos disponibles\n- mercado: {[mercado]} → Mercado\n- modelo: {[modelo]} → Modelo preferido\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nEstrategia con: assets de datos, modelos de monetización, pricing y GTM",
+    "paramCount": 4,
+    "keywords": [
+      "Data",
+      "Monetización",
+      "Revenue"
+    ]
+  },
+  {
+    "id": "estrategia_api_economy",
+    "label_title": "Estrategia API Economy",
+    "category": "innovacion",
+    "content": "===parametros\n\n- plataforma: {[plataforma]} → Plataforma\n- partners: {[partners]} → Partners objetivo\n- modelo: {[modelo]} → Modelo de monetización\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"API\", \"Economy\", \"Plataforma\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar APIs como producto para crear ecosistema.\n\n# Arquetipo Experto\n\nActúa como un **API Product Manager** con ecosistemas de 1K+ developers.\n\n# Parámetros\n\n- plataforma: {[plataforma]} → Plataforma\n- partners: {[partners]} → Partners objetivo\n- modelo: {[modelo]} → Modelo de monetización\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nEstrategia con: API catalog, developer portal, pricing, governance y KPIs",
+    "paramCount": 4,
+    "keywords": [
+      "API",
+      "Economy",
+      "Plataforma"
+    ]
+  },
+  {
+    "id": "estrategia_subscription",
+    "label_title": "Modelo de Suscripción",
+    "category": "formulacion",
+    "content": "===parametros\n\n- producto: {[producto]} → Producto\n- precio_actual: {[precio_actual]} → Pricing actual\n- segmentos: {[segmentos]} → Segmentos\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Suscripción\", \"Recurrente\", \"SaaS\"]\n\n===prompt\n\n# Objetivo\n\nMigrar o diseñar modelo de suscripción/recurring revenue.\n\n# Arquetipo Experto\n\nActúa como un **Subscription Economy Expert**.\n\n# Parámetros\n\n- producto: {[producto]} → Producto\n- precio_actual: {[precio_actual]} → Pricing actual\n- segmentos: {[segmentos]} → Segmentos\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nPlan con: tiers, pricing, churn mitigation, expansion revenue y forecast",
+    "paramCount": 4,
+    "keywords": [
+      "Suscripción",
+      "Recurrente",
+      "SaaS"
+    ]
+  },
+  {
+    "id": "estrategia_partnership",
+    "label_title": "Estrategia de Alianzas",
+    "category": "formulacion",
+    "content": "===parametros\n\n- empresa: {[empresa]} → Tu empresa\n- objetivo: {[objetivo]} → Objetivo\n- tipo: {[tipo]} → Tipo de alianza\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Alianzas\", \"Partners\", \"Ecosistema\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar ecosistema de partnerships estratégicos.\n\n# Arquetipo Experto\n\nActúa como un **VP de Alianzas Estratégicas**.\n\n# Parámetros\n\n- empresa: {[empresa]} → Tu empresa\n- objetivo: {[objetivo]} → Objetivo\n- tipo: {[tipo]} → Tipo de alianza\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nFramework con: criterios, pipeline, estructura de deals y governance",
+    "paramCount": 4,
+    "keywords": [
+      "Alianzas",
+      "Partners",
+      "Ecosistema"
+    ]
+  },
+  {
+    "id": "estrategia_employee_exp",
+    "label_title": "Employee Experience",
+    "category": "transformacion",
+    "content": "===parametros\n\n- empresa: {[empresa]} → Nombre\n- pain_points: {[pain_points]} → Pain points actuales\n- cultura: {[cultura]} → Cultura deseada\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Employee Experience\", \"EX\", \"Talento\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar experiencia del empleado alineada con marca y estrategia.\n\n# Arquetipo Experto\n\nActúa como un **Chief People Officer** con EX frameworks.\n\n# Parámetros\n\n- empresa: {[empresa]} → Nombre\n- pain_points: {[pain_points]} → Pain points actuales\n- cultura: {[cultura]} → Cultura deseada\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nPlan con: journey del empleado, touchpoints, quick wins y métricas",
+    "paramCount": 4,
+    "keywords": [
+      "Employee Experience",
+      "EX",
+      "Talento"
+    ]
+  },
+  {
+    "id": "estrategia_market_entry",
+    "label_title": "Entrada a Nuevo Mercado",
+    "category": "formulacion",
+    "content": "===parametros\n\n- mercado: {[mercado]} → Mercado objetivo\n- producto: {[producto]} → Producto\n- recursos: {[recursos]} → Recursos disponibles\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Expansión\", \"Mercado\", \"Internacional\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar y planificar expansión a mercado geográfico/vertical.\n\n# Arquetipo Experto\n\nActúa como un **Market Entry Strategist** con 10+ mercados abiertos.\n\n# Parámetros\n\n- mercado: {[mercado]} → Mercado objetivo\n- producto: {[producto]} → Producto\n- recursos: {[recursos]} → Recursos disponibles\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nPlan con: market assessment, entry mode, localization, timeline y investment",
+    "paramCount": 4,
+    "keywords": [
+      "Expansión",
+      "Mercado",
+      "Internacional"
+    ]
+  },
+  {
+    "id": "estrategia_circular_economy",
+    "label_title": "Economía Circular",
+    "category": "innovacion",
+    "content": "===parametros\n\n- empresa: {[empresa]} → Nombre\n- industria: {[industria]} → Industria\n- productos: {[productos]} → Productos/servicios\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Circular\", \"Sostenibilidad\", \"Innovación\"]\n\n===prompt\n\n# Objetivo\n\nIntegrar principios de economía circular en el modelo de negocio.\n\n# Arquetipo Experto\n\nActúa como un **Circular Economy Consultant** con casos de transformación.\n\n# Parámetros\n\n- empresa: {[empresa]} → Nombre\n- industria: {[industria]} → Industria\n- productos: {[productos]} → Productos/servicios\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nModelo con: flujos circulares, oportunidades, business case y roadmap",
+    "paramCount": 4,
+    "keywords": [
+      "Circular",
+      "Sostenibilidad",
+      "Innovación"
+    ]
+  },
+  {
+    "id": "estrategia_customer_centric",
+    "label_title": "Estrategia Customer-Centric",
+    "category": "transformacion",
+    "content": "===parametros\n\n- empresa: {[empresa]} → Nombre\n- nps_actual: {[nps_actual]} → NPS actual\n- journey: {[journey]} → Customer journey actual\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Customer-Centric\", \"CX\", \"Transformación\"]\n\n===prompt\n\n# Objetivo\n\nRediseñar organización alrededor del cliente.\n\n# Arquetipo Experto\n\nActúa como un **Chief Customer Officer** con transformaciones CX exitosas.\n\n# Parámetros\n\n- empresa: {[empresa]} → Nombre\n- nps_actual: {[nps_actual]} → NPS actual\n- journey: {[journey]} → Customer journey actual\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nPlan con: diagnóstico CX, quick wins, estructura, métricas y roadmap",
+    "paramCount": 4,
+    "keywords": [
+      "Customer-Centric",
+      "CX",
+      "Transformación"
+    ]
+  },
+  {
+    "id": "estrategia_thought_leadership",
+    "label_title": "Thought Leadership",
+    "category": "formulacion",
+    "content": "===parametros\n\n- persona: {[persona]} → Nombre de la persona/empresa\n- tema: {[tema]} → Tema de expertise\n- audiencia: {[audiencia]} → Audiencia objetivo\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Thought Leadership\", \"Autoridad\", \"Personal Brand\"]\n\n===prompt\n\n# Objetivo\n\nPosicionar ejecutivo/empresa como líder de pensamiento en el sector.\n\n# Arquetipo Experto\n\nActúa como un **Executive Communications Director**.\n\n# Parámetros\n\n- persona: {[persona]} → Nombre de la persona/empresa\n- tema: {[tema]} → Tema de expertise\n- audiencia: {[audiencia]} → Audiencia objetivo\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nPlan con: plataforma de ideas, canales, calendario, KPIs y playbook de contenido",
+    "paramCount": 4,
+    "keywords": [
+      "Thought Leadership",
+      "Autoridad",
+      "Personal Brand"
+    ]
+  },
+  {
+    "id": "estrategia_cost_reduction",
+    "label_title": "Reducción Estructural de Costos",
+    "category": "analisis",
+    "content": "===parametros\n\n- area: {[area]} → Área a optimizar\n- presupuesto: {[presupuesto]} → Presupuesto actual\n- objetivo: {[objetivo]} → % de reducción target\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Costos\", \"Eficiencia\", \"Lean\"]\n\n===prompt\n\n# Objetivo\n\nIdentificar oportunidades de eficiencia sin sacrificar capacidad estratégica.\n\n# Arquetipo Experto\n\nActúa como un **Cost Transformation Consultant** de McKinsey/BCG.\n\n# Parámetros\n\n- area: {[area]} → Área a optimizar\n- presupuesto: {[presupuesto]} → Presupuesto actual\n- objetivo: {[objetivo]} → % de reducción target\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nPlan con: categorización de costos, oportunidades por wave, impacto estimado y timeline",
+    "paramCount": 4,
+    "keywords": [
+      "Costos",
+      "Eficiencia",
+      "Lean"
+    ]
+  },
+  {
+    "id": "estrategia_mergers",
+    "label_title": "Estrategia M&A",
+    "category": "decisiones",
+    "content": "===parametros\n\n- target: {[target]} → Empresa target\n- racional: {[racional]} → Racional estratégico\n- presupuesto: {[presupuesto]} → Presupuesto disponible\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"M&A\", \"Adquisición\", \"Integración\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar oportunidad de fusión o adquisición.\n\n# Arquetipo Experto\n\nActúa como un **M&A Advisor** con deals de $50M+.\n\n# Parámetros\n\n- target: {[target]} → Empresa target\n- racional: {[racional]} → Racional estratégico\n- presupuesto: {[presupuesto]} → Presupuesto disponible\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nEvaluación con: strategic fit, synergies, valuation range, risks e integration plan",
+    "paramCount": 4,
+    "keywords": [
+      "M&A",
+      "Adquisición",
+      "Integración"
+    ]
+  },
+  {
+    "id": "estrategia_succession",
+    "label_title": "Plan de Sucesión",
+    "category": "gobierno",
+    "content": "===parametros\n\n- roles: {[roles]} → Roles críticos\n- horizonte: {[horizonte]} → Horizonte\n- candidatos: {[candidatos]} → Pool de candidatos\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Sucesión\", \"Liderazgo\", \"Continuidad\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar plan de sucesión para roles críticos de liderazgo.\n\n# Arquetipo Experto\n\nActúa como un **Talent & Succession Planning Director**.\n\n# Parámetros\n\n- roles: {[roles]} → Roles críticos\n- horizonte: {[horizonte]} → Horizonte\n- candidatos: {[candidatos]} → Pool de candidatos\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nPlan con: assessment de readiness, gaps de desarrollo, pipeline y timeline",
+    "paramCount": 4,
+    "keywords": [
+      "Sucesión",
+      "Liderazgo",
+      "Continuidad"
+    ]
+  },
+  {
+    "id": "estrategia_crisis_recovery",
+    "label_title": "Recuperación Post-Crisis",
+    "category": "riesgo",
+    "content": "===parametros\n\n- crisis: {[crisis]} → Tipo de crisis\n- impacto: {[impacto]} → Impacto en el negocio\n- recursos: {[recursos]} → Recursos disponibles\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Crisis\", \"Recuperación\", \"Resiliencia\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar plan de recuperación estratégica post-crisis.\n\n# Arquetipo Experto\n\nActúa como un **Crisis Recovery Consultant** con turnarounds exitosos.\n\n# Parámetros\n\n- crisis: {[crisis]} → Tipo de crisis\n- impacto: {[impacto]} → Impacto en el negocio\n- recursos: {[recursos]} → Recursos disponibles\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nPlan con: estabilización, recuperación, reconstrucción y fortalecimiento",
+    "paramCount": 4,
+    "keywords": [
+      "Crisis",
+      "Recuperación",
+      "Resiliencia"
+    ]
+  },
+  {
+    "id": "estrategia_omnicanal",
+    "label_title": "Estrategia Omnicanal",
+    "category": "transformacion",
+    "content": "===parametros\n\n- canales: {[canales]} → Canales actuales\n- clientes: {[clientes]} → Segmentos de clientes\n- dolor: {[dolor]} → Pain points actuales\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Omnicanal\", \"CX\", \"Integración\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar experiencia omnicanal coherente y sin fricción.\n\n# Arquetipo Experto\n\nActúa como un **Omnichannel Strategy Director**.\n\n# Parámetros\n\n- canales: {[canales]} → Canales actuales\n- clientes: {[clientes]} → Segmentos de clientes\n- dolor: {[dolor]} → Pain points actuales\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nPlan con: mapa de canales, integraciones, journey unificado y KPIs",
+    "paramCount": 4,
+    "keywords": [
+      "Omnicanal",
+      "CX",
+      "Integración"
+    ]
+  },
+  {
+    "id": "estrategia_agile_org",
+    "label_title": "Organización Ágil",
+    "category": "transformacion",
+    "content": "===parametros\n\n- empresa: {[empresa]} → Nombre\n- tamano: {[tamano]} → Tamaño de la org\n- madurez_actual: {[madurez_actual]} → Madurez ágil actual\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Agile\", \"Organización\", \"Escalamiento\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar organización ágil más allá de equipos individuales.\n\n# Arquetipo Experto\n\nActúa como un **Enterprise Agility Coach** con SAFe/LeSS/Spotify.\n\n# Parámetros\n\n- empresa: {[empresa]} → Nombre\n- tamano: {[tamano]} → Tamaño de la org\n- madurez_actual: {[madurez_actual]} → Madurez ágil actual\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nPlan con: modelo operativo, team topologies, governance y roadmap de adopción",
+    "paramCount": 4,
+    "keywords": [
+      "Agile",
+      "Organización",
+      "Escalamiento"
+    ]
+  },
+  {
+    "id": "estrategia_vendor_consolidation",
+    "label_title": "Consolidación de Proveedores",
+    "category": "decisiones",
+    "content": "===parametros\n\n- proveedores: {[proveedores]} → Lista de proveedores actuales\n- categorias: {[categorias]} → Categorías\n- gasto: {[gasto]} → Gasto total\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Proveedores\", \"Consolidación\", \"Procurement\"]\n\n===prompt\n\n# Objetivo\n\nEvaluar y consolidar base de proveedores para eficiencia.\n\n# Arquetipo Experto\n\nActúa como un **Strategic Procurement Director**.\n\n# Parámetros\n\n- proveedores: {[proveedores]} → Lista de proveedores actuales\n- categorias: {[categorias]} → Categorías\n- gasto: {[gasto]} → Gasto total\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nPlan con: análisis de gasto, proveedores estratégicos vs tácticos y savings estimados",
+    "paramCount": 4,
+    "keywords": [
+      "Proveedores",
+      "Consolidación",
+      "Procurement"
+    ]
+  },
+  {
+    "id": "estrategia_ip_innovation",
+    "label_title": "Estrategia de Propiedad Intelectual",
+    "category": "innovacion",
+    "content": "===parametros\n\n- innovaciones: {[innovaciones]} → Innovaciones a proteger\n- mercados: {[mercados]} → Mercados\n- competidores: {[competidores]} → Competidores\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"IP\", \"Patentes\", \"Innovación\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar estrategia de IP que proteja innovación y genere valor.\n\n# Arquetipo Experto\n\nActúa como un **IP Strategist** con portfolio de 100+ patentes.\n\n# Parámetros\n\n- innovaciones: {[innovaciones]} → Innovaciones a proteger\n- mercados: {[mercados]} → Mercados\n- competidores: {[competidores]} → Competidores\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nEstrategia con: audit IP, gaps, plan de registro, licensing opportunities y defensa",
+    "paramCount": 4,
+    "keywords": [
+      "IP",
+      "Patentes",
+      "Innovación"
+    ]
+  },
+  {
+    "id": "estrategia_kpi_system",
+    "label_title": "Sistema de KPIs Ejecutivos",
+    "category": "gobierno",
+    "content": "===parametros\n\n- organizacion: {[organizacion]} → Nombre\n- areas: {[areas]} → Áreas clave\n- frecuencia: {[frecuencia]} → Frecuencia de revisión\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"KPIs\", \"Métricas\", \"Ejecutivo\"]\n\n===prompt\n\n# Objetivo\n\nDiseñar sistema integral de métricas que guíe decisiones ejecutivas.\n\n# Arquetipo Experto\n\nActúa como un **Performance Management Director**.\n\n# Parámetros\n\n- organizacion: {[organizacion]} → Nombre\n- areas: {[areas]} → Áreas clave\n- frecuencia: {[frecuencia]} → Frecuencia de revisión\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nSistema con: KPIs por nivel, cascadeo, dashboards, rituales de revisión y governance",
+    "paramCount": 4,
+    "keywords": [
+      "KPIs",
+      "Métricas",
+      "Ejecutivo"
+    ]
+  },
+  {
+    "id": "estrategia_digital_twin",
+    "label_title": "Estrategia de Digital Twin",
+    "category": "innovacion",
+    "content": "===parametros\n\n- proceso: {[proceso]} → Proceso a digitalizar\n- objetivo: {[objetivo]} → Objetivo\n- datos: {[datos]} → Datos disponibles\n- adjuntos: {[adjuntos]} → (indica si hay adjuntos; si no, escribe \"No hay adjuntos\")\n\n===keywords\n[\"Digital Twin\", \"Simulación\", \"IoT\"]\n\n===prompt\n\n# Objetivo\n\nImplementar gemelos digitales para simulación y optimización.\n\n# Arquetipo Experto\n\nActúa como un **Digital Twin Architect** con implementaciones industriales.\n\n# Parámetros\n\n- proceso: {[proceso]} → Proceso a digitalizar\n- objetivo: {[objetivo]} → Objetivo\n- datos: {[datos]} → Datos disponibles\n- adjuntos: {[adjuntos]}\n\n# Checklist\n\n- [ ] Analizar contexto y parámetros\n- [ ] Definir formato del entregable\n- [ ] Aplicar metodología del dominio\n- [ ] Generar contenido profesional\n- [ ] Validar calidad y coherencia\n- [ ] Entregar resultado listo para uso\n\n# Plan\n\n1. **Análisis**: Revisar parámetros y contexto.\n2. **Diseño**: Planificar estructura.\n3. **Ejecución**: Generar contenido.\n4. **Validación**: Verificar completitud.\n5. **Entrega**: Resultado final.\n\n# Entregable Esperado\n\nPlan con: use case, arquitectura, datos requeridos, ROI y roadmap",
+    "paramCount": 4,
+    "keywords": [
+      "Digital Twin",
+      "Simulación",
+      "IoT"
+    ]
+  }
+];
