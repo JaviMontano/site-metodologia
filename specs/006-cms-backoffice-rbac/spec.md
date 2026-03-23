@@ -278,7 +278,9 @@ versions, restore a previous version.
 - **FR-003**: System MUST authenticate via Google OAuth popup
   exclusively [US1]
 - **FR-004**: System MUST enforce session timeout after 8 hours
-  of inactivity [US1]
+  of inactivity — client-side idle tracking with forced sign-out.
+  Timer resets on user interaction (click, keypress, navigation).
+  No server-side token revocation needed [US1]
 
 ### Role-Based Access Control
 
@@ -318,7 +320,10 @@ versions, restore a previous version.
 ### Content Editing
 
 - **FR-018**: All content editors MUST display bilingual fields
-  side by side (ES left, EN right) [US5]
+  side by side (ES left, EN right). Saving an `_es` field marks
+  the corresponding `_en` field as "needs review" (dirty flag).
+  Flag resets when `_en` is saved. Empty `_en` fields show
+  "translation needed" indicator [US5]
 - **FR-019**: Price editor MUST support B2C base, B2B multipliers,
   and premium pricing with working save [US5]
 - **FR-020**: Translation editor MUST support bulk save (batch
@@ -340,9 +345,11 @@ versions, restore a previous version.
 - **FR-025**: Audit log viewer MUST display changes with filters
   by collection, user, and date range [US7]
 - **FR-026**: Audit entries MUST include previous value alongside
-  new value for diff display [US8]
+  new value for diff display — the audit log IS the version
+  history, no separate version collection [US8]
 - **FR-027**: System MUST support restoring a document to a
-  previous version from audit history [US8]
+  previous version by reconstructing from audit entries. Restore
+  creates a new write (never overwrites history) [US8]
 - **FR-028**: System MUST log login/logout events in addition to
   content changes [US8]
 
@@ -375,7 +382,7 @@ versions, restore a previous version.
 | Invite | Email + assigned role for external users — `config/invites` |
 | Audit Entry | Timestamp, user, collection, doc, field, old/new values |
 | Page Record | HTML path, level, i18n coverage, meta overrides |
-| Content Version | Document snapshot at point in time — for restore |
+| Content Version | Reconstructed from audit entries — no separate collection |
 
 ## Assumptions
 
@@ -386,13 +393,20 @@ versions, restore a previous version.
   [INFERENCE]
 - Page management reads site structure at scan time, not
   real-time file watching [INFERENCE]
-- Firestore Spark plan supports required operations [CONFIG]
+- Firebase Blaze plan (pay-as-you-go) required for Cloud
+  Functions — cost is effectively $0 at 1-10 CMS users.
+  Serverless functions handle privileged operations (custom
+  claims, role assignment) that require Admin SDK [CONFIG]
 
 ## Clarifications
 
 ### Session 2026-03-23
 
 - Q: What does "assigned" mean for editor content access? -> A: Editors can edit ALL content types (programs, pricing, translations) — no per-document assignment. Role separation is by privilege level, not content scope. Revisit if team exceeds 10 CMS users. [FR-006, US2, SC-002]
+- Q: Does Spark plan support custom claims via Cloud Functions? -> A: No. Upgrade to Blaze (pay-as-you-go). Cost is $0 at this scale. Cloud Functions are the canonical mechanism for privileged Admin SDK operations (claims, role assignment). [FR-005, FR-010, FR-012, SC-002, SC-008]
+- Q: How is the 8h session timeout enforced? -> A: Client-side idle tracking. JS timer resets on user interaction (click, keypress, navigation). After 8h idle, force signOut(). No server-side token revocation. [FR-004, US1]
+- Q: How are content versions stored for restore? -> A: Audit log IS the version history — no separate versions collection. Restore reconstructs from audit entries and creates a new write (never overwrites history). Aligns with VI (Content Authority) and XIV (Simple First). [FR-026, FR-027, US8, SC-007]
+- Q: When is a translation considered "stale"? -> A: Any save to an _es field marks the corresponding _en field as "needs review" (dirty flag). Flag resets when _en is saved. Empty _en fields show "translation needed". No timestamp comparison needed. [FR-018, US5, SC-004]
 
 ## Out of Scope
 
