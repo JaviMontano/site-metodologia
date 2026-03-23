@@ -4,6 +4,9 @@ Significant decisions, completions, and changes across sessions.
 
 ## 2026-03-23
 
+- **[amendment]**: Constitution v5.1.0 — added XVIII (Indexable & Self-Organizing Repository), Workspace section, gitignore governance. [XVIII, XII]
+- **[decision]**: `estandares/` moved to `workspace/estandares/` — internal references are not repo content, they're user interaction material. Removed from git tracking. [XVIII]
+- **[decision]**: `workspace/` gitignored with comment — user interaction layer stays local. Tasks bridge (`workspace/tasks/`) connects tasklog.md to working files. [XVIII]
 - **[amendment]**: Constitution v5.0.0 — added XVII (Continuous Learning Loop), Session Protocol, Operational Logs, Insights System. Structural evolution for cross-session scalability. [XVII, XIII, XV]
 - **[amendment]**: Constitution v4.1.0 — codified sanitization default (VII), runner-agnostic BDD (XV), dual-layer verification (VII) from Socratic debates. [VII, XV, XIV]
 - **[insight]**: Created `insights/` system with 5 domain files, 13 total insights extracted from 3 Socratic debates. [XVII]

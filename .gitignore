@@ -6,4 +6,7 @@ audit-*.png
 !favicon.svg
 !assets/**
 !recursos/**
-workspace/outputs/
+
+# Workspace — user interaction layer, not repo content
+# Contains inputs, specs drafts, estandares, dated sessions, tasks bridge
+workspace/

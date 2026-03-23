@@ -12,6 +12,7 @@ Open work items across sessions. Reviewed at every session start per Session Pro
 | TL-004 | Generate tasks.md via /iikit-05-tasks | open | — | 2026-03-22 | Blocked by TL-002 (testify must be current) |
 | TL-005 | Update plan.md with worktree branching strategy | open | — | 2026-03-22 | Constitution TODO from v4.0.0 |
 | TL-006 | Define BDD scenario coverage matrix per principle | open | — | 2026-03-22 | Constitution TODO from v4.0.0 |
+| TL-007 | Add README.md to all existing directories lacking one | open | — | 2026-03-23 | XVIII compliance — audit all dirs |
 
 ## Completed
 

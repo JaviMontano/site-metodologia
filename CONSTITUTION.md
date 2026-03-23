@@ -1,28 +1,22 @@
 <!-- Sync Impact Report
-Version: 5.0.0 (Structural Evolution — learning loop, insights, session protocol, operational logs)
+Version: 5.1.0 (Workspace + Indexability + Auto-Organization)
 Added principles:
-  - XVII. Continuous Learning Loop: Socratic debates feed insights
-    into reusable decision patterns, captured in insights/ system
-Modified principles:
-  - VII. Secure by Default: added audit log qualified path requirement
-    (from TS-020 debate)
+  - XVIII. Indexable & Self-Organizing Repository
 Added sections:
-  - Session Protocol (new top-level section)
-  - Operational Logs (new top-level section — changelog, tasklog)
-  - Insights System (new top-level section — insights/ directory)
-  - XVII. Continuous Learning Loop (new principle in Work Philosophy)
+  - Workspace (new top-level section)
 Modified sections:
-  - Quality Standards: added audit log field qualification
-  - Governance: expanded with operational log and insights references
-Previous version: 4.1.0 (Socratic Hardening)
-Origin: TS-020 Socratic debate + user request for structural
-  scalability (insights, session protocol, continuous improvement)
-  - Debate 3: audit log verification strategy (Emulator, not Playwright)
+  - Quality Standards: added indexability and workspace rules
+  - Governance: added workspace and indexability governance
+  - .gitignore: workspace/ excluded from repo
+Previous version: 5.0.0 (Structural Evolution)
+Origin: User request for scalable workspace interaction layer,
+  estandares/ migration, and repo-wide indexability
 Removed sections: None
 Follow-up TODOs:
   - Update plan.md with worktree branching strategy
   - Define BDD scenario coverage matrix per principle
   - Downstream specs may need testify re-run for new BDD scope
+  - Add README.md to all existing directories lacking one
 -->
 
 # Site MetodologIA Constitution
@@ -636,6 +630,113 @@ debates → insights → constitution amendments → fewer
 debates needed. The compounding effect means the project
 gets faster and more precise over time, not slower.
 
+### XVIII. Indexable & Self-Organizing Repository
+
+Every directory in the project MUST be navigable by a human
+or agent reading only index files. The repository organizes
+itself — no folder exists without explaining its purpose.
+
+- **README per directory**: every directory MUST contain a
+  README.md that explains its purpose, contents, and
+  relationship to the project. A developer (or AI agent)
+  should understand any folder's role by reading its README
+  alone — without asking anyone
+- **Index-driven navigation**: the project root README
+  links to top-level directories. Each directory's README
+  links to its children. The result is a navigable tree
+  where no folder is an orphan
+- **Auto-organization**: when a new directory is created
+  (by human or agent), it MUST immediately get a README.
+  When files accumulate without structure, they MUST be
+  organized into named subdirectories with READMEs. Entropy
+  is actively countered — the repo gets more organized over
+  time, not less
+- **.gitignore governance**: files and directories that are
+  not part of the deployable site or version-controlled
+  artifacts MUST be gitignored. The `.gitignore` file is a
+  living document with comments explaining each exclusion.
+  No silent exclusions — every pattern has a reason
+- **Workspace separation**: user interaction files (inputs,
+  drafts, scratch work, session artifacts) live in
+  `workspace/` which is gitignored. The repo contains only
+  source code, specs, and governance artifacts. This
+  separation prevents the repo from accumulating transient
+  files that obscure its structure
+- **Staleness prevention**: directories older than 30 days
+  without updates are flagged during session protocol for
+  review. Empty directories are removed. Orphaned files are
+  relocated or deleted
+
+**Rationale**: A 63+ page site with specs, insights, admin
+interfaces, and workspace interactions can quickly become
+unnavigable. Index-driven organization ensures that the
+project remains understandable at any scale. README-per-
+directory is the cheapest possible documentation — it lives
+next to the code it describes and is maintained as part of
+the same commit. The workspace separation prevents the repo
+from becoming a dumping ground for transient files. This
+principle makes XII (Code Sustainability) concrete at the
+directory level.
+
+## Workspace
+
+The `workspace/` directory is the user's local interaction
+layer. It is **gitignored** — nothing in workspace/ is
+committed to the repository.
+
+### Purpose
+
+Workspace is where the user stages inputs, stores reference
+materials, and bridges between task tracking and spec work.
+It is the physical interface between the user and the
+development pipeline.
+
+### Structure
+
+```
+workspace/
+  README.md                    # Workspace index
+  tasks/                       # Bridge: tasklog.md ↔ active specs
+    README.md                  # Task routing index
+    TL-XXX-<slug>/            # Per-task working directory
+  estandares/                  # Internal style guides, brand refs
+  YYYY-MM-DD-<slug>/          # Dated session folders
+    README.md                  # Session purpose and contents
+    inputs/                    # Raw specs, repos, documents
+    outputs/                   # Generated artifacts
+    annexes/                   # Supporting material
+```
+
+### Rules
+
+- **Dated folders**: use `YYYY-MM-DD-<slug>` format for
+  session folders. The slug describes the session purpose
+  (e.g., `2026-03-23-firebase-cms-inputs`)
+- **Tasks bridge**: when a tasklog.md item requires working
+  files, they live in `workspace/tasks/TL-XXX-<slug>/`.
+  This connects the tracking system (tasklog.md) to the
+  physical files
+- **Inputs variety**: a session folder's `inputs/` may
+  contain repos, specs, PDFs, screenshots, data files,
+  or any material needed to start a workflow. The README
+  describes what each input is and how it's used
+- **Cleanup**: sessions older than 30 days are reviewed
+  during session protocol. Archive valuable outputs,
+  delete the rest
+- **Estandares**: internal style guides, brand calibration,
+  design kit references. These are reference materials for
+  the team, not deployable site content
+- **Every subfolder has a README**: no exceptions. Even a
+  one-file folder explains its purpose
+
+### Interaction Pattern
+
+1. User creates `workspace/YYYY-MM-DD-<slug>/`
+2. User drops inputs in `inputs/`
+3. Agent reads inputs, runs workflow (IIKit, discovery, etc.)
+4. Agent writes outputs to `outputs/` or to the repo specs
+5. User reviews, iterates, or starts next session
+
 ## Session Protocol
 
 Every new working session MUST follow this initialization
@@ -785,6 +886,13 @@ applicable gate before advancing.
 - Data-layer behavior (audit logs, schema validation,
   security rules) MUST be tested against the Emulator, not
   through browser E2E tests — match runner to nature
+- Every directory MUST have a README.md — no orphan folders
+- The `.gitignore` MUST have comments explaining each
+  exclusion pattern
+- `workspace/` is gitignored — user interaction files never
+  enter version control
+- Directories without updates for 30+ days are flagged for
+  review during session protocol
 - Both language variants (ES/EN) must be present before
   content is published — no partial translations visible
   to users
@@ -898,5 +1006,13 @@ personal preferences.
   debate, consult `insights/` for existing patterns. If a
   prior insight resolves the question, cite it and apply
   it — do not re-debate
+- **Indexability** (XVIII) is enforced on every commit that
+  creates a new directory — no folder merges without a
+  README. Auto-organization is a continuous duty, not a
+  periodic cleanup
+- **Workspace** is the user's interaction layer. It is
+  gitignored and governed by its own README. The repo stays
+  clean; the workspace stays flexible. Task bridge
+  (`workspace/tasks/`) connects tasklog.md to working files
 
-**Version**: 5.0.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-03-23
+**Version**: 5.1.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-03-23
