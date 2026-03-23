@@ -90,7 +90,7 @@ that user can edit programs but not manage other users.
 |------|-------------|-------------|-------------|-----------|
 | super_admin | Yes | Yes | Yes | Yes |
 | admin | No | Yes (all) | Yes | Yes |
-| editor | No | Yes (assigned) | Yes | No |
+| editor | No | Yes (all) | Yes | No |
 | viewer | No | No | Yes | No |
 
 ---
@@ -387,6 +387,12 @@ versions, restore a previous version.
 - Page management reads site structure at scan time, not
   real-time file watching [INFERENCE]
 - Firestore Spark plan supports required operations [CONFIG]
+
+## Clarifications
+
+### Session 2026-03-23
+
+- Q: What does "assigned" mean for editor content access? -> A: Editors can edit ALL content types (programs, pricing, translations) — no per-document assignment. Role separation is by privilege level, not content scope. Revisit if team exceeds 10 CMS users. [FR-006, US2, SC-002]
 
 ## Out of Scope
 

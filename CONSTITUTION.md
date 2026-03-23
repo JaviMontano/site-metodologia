@@ -1,13 +1,18 @@
 <!-- Sync Impact Report
-Version: 6.0.0 (10x Excellence Pass)
-Added: acceptance criteria, anti-patterns, edge cases per
-  principle. Principle precedence table. Assumptions & limits.
-Removed: Quality Standards section (redundant with I-XII).
-Compressed: Governance, Development Workflow, Session Protocol,
-  Operational Logs, Workspace.
-Origin: User requested 10x value elevation with max 2x length.
-  KISS/YAGNI — every sentence must justify its existence.
-Previous version: 5.4.1 (Phase Separation Cleanup)
+Version: 6.1.0 (TO-BE RBAC Governance)
+Added:
+  - VII: access governance sub-principles (least privilege,
+    separation of duties, irrevocable bootstrap)
+  - VI: reversibility sub-principle (destructive writes)
+  - VIII: explicit admin connectivity exception
+  - G2 gate: RBAC security rules testing
+Modified:
+  - Assumptions: 1-10 CMS users, 4 role levels, UI-managed
+Origin: Socratic debate — constitution must govern TO-BE
+  (RBAC CMS) not just AS-IS (binary admin). Debate found
+  3 tensions: access governance gap, missing reversibility,
+  stale assumptions.
+Previous version: 6.0.0 (10x Excellence Pass)
 Follow-up TODOs:
   - Set up GitHub branch protection rules on main + staging
   - Add GitHub Actions CI for staging PR gate
@@ -258,9 +263,18 @@ is duplicated between static files and the cloud backend.
 - Content schema must be documented and validated
 - Bilingual content (ES/EN) stores both variants together
 - Admin changes take effect immediately — no deploy step
+- **Reversibility**: every destructive write (update,
+  delete) MUST preserve the previous value so that
+  content can be restored. The audit trail is both a
+  record and a recovery mechanism
+- Content versions are immutable snapshots — restoring a
+  version creates a new write, never overwrites history
 
 **Rationale**: Dual sources create conflicts and stale
 data. Migration must be incremental to avoid big-bang risk.
+Reversibility ensures that content authority includes the
+ability to undo — a single source of truth must also be a
+recoverable source of truth.
 
 > **Acceptance criteria**:
 > - No content key exists in both static HTML and cloud
@@ -292,11 +306,29 @@ both statically and at runtime.
   by (1) static analysis and (2) runtime inspection
 - **Audit trail**: entries use fully qualified paths
   (e.g., `programs/diagnostico.description_es`)
+- **Access governance**:
+  - **Least privilege**: every role receives the minimum
+    permissions needed for its function. New users default
+    to the lowest-privilege role
+  - **Separation of duties**: the ability to manage users
+    MUST be restricted to a distinct privilege level from
+    content editing
+  - **Irrevocable bootstrap**: the system MUST maintain at
+    least one account with full administrative privileges
+    that cannot be demoted or removed via the UI
+  - **Role change auditability**: every role assignment or
+    change MUST be logged with who changed it, when, and
+    the previous role
+  - **Domain-scoped auto-provisioning**: when users are
+    auto-provisioned via domain rules, they MUST receive
+    the lowest-privilege role by default
 
 **Rationale**: A CMS is a write-capable system. Data-layer
 security is the last line of defense. Input sanitization
 prevents copy-paste contamination. Dual-layer verification
-follows defense-in-depth.
+follows defense-in-depth. Access governance ensures that
+role management itself is a controlled, audited process —
+not an afterthought bolted onto content permissions.
 
 > **Acceptance criteria**:
 > - Secrets scan clean on every commit (G0 gate)
@@ -305,10 +337,14 @@ follows defense-in-depth.
 >
 > **Anti-pattern**: Relying on client-side JS to hide admin
 > buttons instead of enforcing access in security rules.
+> Allowing any user to self-assign a higher role without
+> a distinct administrative privilege.
 >
 > **Edge case**: Rich-text fields (if ever justified per
 > XIV) use allowlist sanitization, not strip — but must be
-> explicitly declared in the schema.
+> explicitly declared in the schema. Bootstrap accounts
+> are the only exception to "no hardcoded config" — they
+> are a security invariant, not a convenience shortcut.
 
 ### VIII. Offline Resilience
 
@@ -333,8 +369,11 @@ make the site less reliable than the static version.
 > **Anti-pattern**: Showing a spinner indefinitely when
 > the backend times out instead of falling back to cache.
 >
-> **Edge case**: Admin interfaces may show connectivity
-> warnings — they require the backend to function.
+> **Edge case**: Admin interfaces (CMS backoffice) are
+> exempt from offline resilience — they require the
+> backend to function. They MUST show a clear connectivity
+> warning when the backend is unreachable, not silently
+> degrade.
 
 ### IX. Test-Driven Development
 
@@ -772,12 +811,15 @@ an insight (XVII).
 
 ## Assumptions & Limits
 
-- **Site scale**: 63+ pages, 1-3 admins, <10K daily
-  visitors
+- **Site scale**: 63+ pages, 1-10 CMS users across 4 role
+  levels, <10K daily visitors
+- **Role management**: via CMS UI for super admins, not
+  CLI scripts. Bootstrap accounts are the only exception
 - **Team**: 1 human + AI agents — no peer review
   available, gates compensate
 - **Hosting**: shared hosting with CDN — no custom
-  server-side logic
+  server-side logic. Serverless functions for privileged
+  operations (role assignment, claims management)
 - **Budget**: zero external services beyond BaaS and
   hosting
 - **Language**: Spanish-first (LatAm), English second.
@@ -786,8 +828,8 @@ an insight (XVII).
   no legacy mobile browsers
 
 These assumptions scope the principles. If the site grows
-to 500+ pages, 10+ admins, or 100K+ visitors, principles
-I, VII, VIII, and XVI may need re-evaluation.
+to 500+ pages, 20+ CMS users, or 100K+ visitors,
+principles I, VII, VIII, and XVI may need re-evaluation.
 
 ## Quality Gates
 
@@ -799,7 +841,7 @@ gate before advancing.
 |------|------|----------|
 | **G0** | Pre-flight | Secrets scan clean, branch created, constitution compliance confirmed |
 | **G1** | After spec | Spec complete (FR/SC/GWT), evidence tags, no unresolved clarifications |
-| **G2** | After plan | Data model, API contracts, security rules, BDD hash-locked, tokens referenced |
+| **G2** | After plan | Data model, API contracts, security rules (incl. RBAC), BDD hash-locked, tokens referenced, role governance verified |
 | **G3** | Deploy-ready | Tests pass, Lighthouse >= 90, emulator tests, a11y audit, brand scan clean |
 
 - Gates enforced by IIKit phase pipeline
@@ -876,4 +918,4 @@ development. It supersedes ad-hoc decisions.
 - **Indexability** (XVIII) enforced on every commit that
   creates a directory
 
-**Version**: 6.0.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-03-23
+**Version**: 6.1.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-03-23
