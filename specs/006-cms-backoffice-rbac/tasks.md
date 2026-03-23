@@ -210,26 +210,26 @@
 
 ### Documentation
 
-- [ ] T063 [P] Create `functions/README.md` — Cloud Functions overview, deploy instructions, env config setup (XVIII)
-- [ ] T064 [P] Create `admin/js/README.md` — module overview, tab routing, role gating (XVIII)
-- [ ] T065 [P] Add deprecation notice to `scripts/set-admin-claim.js` pointing to `set-user-role.js`
+- [x] T063 [P] Create `functions/README.md` — Cloud Functions overview, deploy instructions, env config setup (XVIII)
+- [x] T064 [P] Create `admin/js/README.md` — module overview, tab routing, role gating (XVIII)
+- [x] T065 [P] Add deprecation notice to `scripts/set-admin-claim.js` pointing to `set-user-role.js`
 
 ### Integration & E2E
 
-- [ ] T066 Update `tests/e2e/admin-flow.spec.js` — full RBAC journey (login → role check → edit → audit → logout) [TS-002, TS-003]
-- [ ] T067 Write E2E test for invite flow in `tests/e2e/rbac-roles.spec.js` [TS-014, TS-015]
-- [ ] T068 Run quickstart.md validation — execute all T1-T10 manual scenarios against emulator
+- [x] T066 Update `tests/e2e/admin-flow.spec.js` — full RBAC journey (login → role check → edit → audit → logout) [TS-002, TS-003]
+- [x] T067 Write E2E test for invite flow in `tests/e2e/rbac-roles.spec.js` [TS-014, TS-015]
+- [x] T068 Run quickstart.md validation — execute all T1-T10 manual scenarios against emulator
 
 ### Security Hardening
 
-- [ ] T069 Run secrets scan on all new files (G0 gate) — verify no API keys, emails, or domains hardcoded in source
-- [ ] T070 Verify Firestore rules deny all unauthorized paths via negative test cases [TS-071, TS-072, TS-073, TS-074]
+- [x] T069 Run secrets scan on all new files (G0 gate) — verify no API keys, emails, or domains hardcoded in source
+- [x] T070 Verify Firestore rules deny all unauthorized paths via negative test cases [TS-071, TS-072, TS-073, TS-074]
 
 ### Build & Deploy Prep
 
-- [ ] T071 [P] Update `package.json` — add `deploy:functions` script (build:admin + watch:admin already in T001, build:pages already in T061)
-- [ ] T072 Verify esbuild bundle includes all new modules (user-manager, audit-viewer, page-registry, profile-editor, idle-timer)
-- [ ] T073 Run full test suite: `npx vitest run` + `npx playwright test` — all green
+- [x] T071 [P] Update `package.json` — add `deploy:functions` script (build:admin + watch:admin already in T001, build:pages already in T061)
+- [x] T072 Verify esbuild bundle includes all new modules (user-manager, audit-viewer, page-registry, profile-editor, idle-timer)
+- [x] T073 Run full test suite: `npx vitest run` + `npx playwright test` — all green
 
 **Checkpoint**: Feature complete, all tests green, ready for G3 gate and staging PR.
 
