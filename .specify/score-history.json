@@ -32,5 +32,17 @@
       "low": 2,
       "total_findings": 8
     }
+  ],
+  "005-bilingual-nav-certification": [
+    {
+      "timestamp": "2026-03-23T12:22:00Z",
+      "score": 90,
+      "coverage_pct": 100,
+      "critical": 0,
+      "high": 0,
+      "medium": 5,
+      "low": 0,
+      "total_findings": 5
+    }
   ]
 }
