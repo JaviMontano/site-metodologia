@@ -518,10 +518,17 @@
     },
     "hero": {
       "badge": "Corporate Training",
-      "title": "Accelerate your Cash Flow with Artificial Intelligence",
+      "title": {
+        "highlight": "Cash Flow",
+        "sub": "with Artificial Intelligence"
+      },
       "description": "An AI-assisted commercial system that generates the necessary liquidity to fund your Organizational (R)Evolution.",
       "cta_primary": "Diagnosis + Workshop",
-      "cta_secondary": "See Bootcamp"
+      "cta_secondary": "See Bootcamp",
+      "cta": {
+        "primary": "Diagnosis + Workshop",
+        "secondary": "See Bootcamp"
+      }
     },
     "kpi": {
       "pipeline": "Pipeline Velocity",
@@ -531,7 +538,9 @@
     },
     "route": {
       "badge": "Companies Route",
-      "title": "Acceleration Route",
+      "title": {
+        "highlight": "Acceleration"
+      },
       "description": "A 3-step path designed to mitigate risk and maximize return."
     },
     "step1": {
@@ -559,7 +568,9 @@
     },
     "cotizador": {
       "badge": "B2B Calculator",
-      "title": "Calculate your Investment",
+      "title": {
+        "highlight": "Investment"
+      },
       "description": "Explore payment options and commitment discounts.",
       "cta": "Simulate Investment"
     },
@@ -631,10 +642,16 @@
     },
     "hero": {
       "badge": "(R)Evolution Route 2026",
-      "title": "Build your Digital, Professional and Strategic Sovereignty",
+      "title": {
+        "highlight": "Digital, Professional and Strategic Sovereignty"
+      },
       "description": "AI is not the destination, it is the vehicle. Define your strategy and take control.",
       "cta_primary": "Design my Investment",
-      "cta_secondary": "See the Full Route"
+      "cta_secondary": "See the Full Route",
+      "cta": {
+        "primary": "Design my Investment",
+        "secondary": "See the Full Route"
+      }
     },
     "kpi": {
       "bootcamps": "Tactical Bootcamps",
@@ -644,7 +661,9 @@
     },
     "catalog": {
       "badge": "B2C Catalog",
-      "title": "Choose your Path",
+      "title": {
+        "highlight": "Path"
+      },
       "description": "Each program brings you closer to digital, professional and strategic sovereignty."
     },
     "card": {
@@ -681,7 +700,9 @@
     },
     "cotizador": {
       "badge": "Personalized Investment",
-      "title": "Design your Route",
+      "title": {
+        "highlight": "Route"
+      },
       "description": "The more you commit to your evolution, the greater the support we give you.",
       "cta": "Open the Interactive Quoter"
     },

@@ -518,10 +518,17 @@
     },
     "hero": {
       "badge": "Formación Corporativa",
-      "title": "Acelere su Cash Flow con Inteligencia Artificial",
+      "title": {
+        "highlight": "Flujo de Caja",
+        "sub": "con Inteligencia Artificial"
+      },
       "description": "Un sistema comercial asistido por IA que genera la liquidez necesaria para financiar su (R)Evolución Organizacional.",
       "cta_primary": "Diagnóstico + Workshop",
-      "cta_secondary": "Ver Bootcamp"
+      "cta_secondary": "Ver Bootcamp",
+      "cta": {
+        "primary": "Diagnóstico + Taller",
+        "secondary": "Ver Bootcamp"
+      }
     },
     "kpi": {
       "pipeline": "Pipeline Velocity",
@@ -531,7 +538,9 @@
     },
     "route": {
       "badge": "Ruta Empresas",
-      "title": "Ruta de Aceleración",
+      "title": {
+        "highlight": "Aceleración"
+      },
       "description": "Un camino de 3 pasos diseñado para mitigar riesgo y maximizar retorno."
     },
     "step1": {
@@ -559,7 +568,9 @@
     },
     "cotizador": {
       "badge": "Cotizador B2B",
-      "title": "Calcule su Inversión",
+      "title": {
+        "highlight": "Inversión"
+      },
       "description": "Explore opciones de pago y descuentos por compromiso.",
       "cta": "Simular Inversión"
     },
@@ -631,10 +642,16 @@
     },
     "hero": {
       "badge": "Ruta de (R)Evolución 2026",
-      "title": "Construye tu Soberanía Digital, Profesional y Estratégica",
+      "title": {
+        "highlight": "Soberanía Digital, Profesional y Estratégica"
+      },
       "description": "La IA no es el destino, es el vehículo. Define tu estrategia y toma el control.",
       "cta_primary": "Diseñar mi Inversión",
-      "cta_secondary": "Ver la Ruta Completa"
+      "cta_secondary": "Ver la Ruta Completa",
+      "cta": {
+        "primary": "Diseñar mi Inversión",
+        "secondary": "Ver la Ruta Completa"
+      }
     },
     "kpi": {
       "bootcamps": "Bootcamps Tácticos",
@@ -644,7 +661,9 @@
     },
     "catalog": {
       "badge": "Catálogo B2C",
-      "title": "Elige tu Camino",
+      "title": {
+        "highlight": "Camino"
+      },
       "description": "Cada programa te acerca a la soberanía digital, profesional y estratégica."
     },
     "card": {
@@ -681,7 +700,9 @@
     },
     "cotizador": {
       "badge": "Inversión Personalizada",
-      "title": "Diseña tu Ruta",
+      "title": {
+        "highlight": "Ruta"
+      },
       "description": "Entre más te comprometas con tu evolución, mayor será el respaldo que te damos.",
       "cta": "Abrir el Cotizador Interactivo"
     },

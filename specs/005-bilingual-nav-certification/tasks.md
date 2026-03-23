@@ -67,10 +67,10 @@
 
 ## Phase 6: US3 — Level 1 Bilingual Coverage (P1)
 
-- [ ] T022 [P] [US3] Audit index.html for missing data-i18n keys and add translations to en.json/es.json [TS-017]
-- [ ] T023 [P] [US3] Audit ruta/index.html for missing data-i18n keys and add translations to en.json/es.json [TS-018]
-- [ ] T024 [P] [US3] Audit empresas/index.html for missing data-i18n keys and add translations to en.json/es.json [TS-019]
-- [ ] T025 [P] [US3] Audit personas/index.html for missing data-i18n keys and add translations to en.json/es.json [TS-020]
+- [x] T022 [P] [US3] Audit index.html for missing data-i18n keys and add translations to en.json/es.json [TS-017]
+- [x] T023 [P] [US3] Audit ruta/index.html for missing data-i18n keys and add translations to en.json/es.json [TS-018]
+- [x] T024 [P] [US3] Audit empresas/index.html for missing data-i18n keys and add translations to en.json/es.json [TS-019]
+- [x] T025 [P] [US3] Audit personas/index.html for missing data-i18n keys and add translations to en.json/es.json [TS-020]
 
 > **Parallel batch 4**: T022, T023, T024, T025 (independent pages, shared en.json but different key namespaces)
 > **Dependency**: Phase 6 depends on Phase 4 completion (certification suite must exist to validate coverage)
