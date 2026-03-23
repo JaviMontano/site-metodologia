@@ -2,8 +2,8 @@
 
 **Input**: Design documents from `/specs/004-firebase-cms-backend/`
 **Prerequisites**: plan.md, spec.md, research.md, data-model.md, contracts/, quickstart.md, tests/features/
-**Constitution**: v5.1.0 (TDD mandatory — IX)
-**Migration**: Sequential waves per XIV (Simple First)
+**Constitution**: v5.2.0 (TDD mandatory — IX, Sequential-first — XVI)
+**Migration**: Sequential waves per XIV (Simple First) + XVI (Sequential-First, WIP ≤ 3)
 
 ## Format: `[ID] [P?] [Story?] Description`
 
@@ -304,3 +304,4 @@ T001 → T006 → T010 → T011 → T012 → T029 → T030 → T039 → T040 →
 - Q: Is T002 (README) duplicated by T087? -> A: No — T002 creates placeholder (planned API), T087 updates with complete documentation post-implementation. [T002, T087]
 - Q: Where is config/settings.migrated_collections stored? -> A: Firestore document `config/settings`, updated via seed script or Firebase Console. [T085, T012, T019]
 - Q: Can T061 complete if Phase 6 runs parallel with Phase 4? -> A: Split T061 into T061a (admin-only tests, completes with Phase 6a) and T061b (integration tests, completes after Phase 4). [T061, T060, Phase 6]
+- Q: Are migration waves (Phase 4→5→7) sequential by technical dependency or by choice? -> A: Intentional risk control (Constitution XIV + XVI). Sequential execution reduces debugging surface — one content type fully validated before starting next. Not a technical dependency; the methods are independent. Sequential-first is the default (XVI v5.2.0). [Phase 4, Phase 5, Phase 7, Dependency Table, Critical Path]

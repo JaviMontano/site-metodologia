@@ -1,22 +1,26 @@
 <!-- Sync Impact Report
-Version: 5.1.0 (Workspace + Indexability + Auto-Organization)
-Added principles:
-  - XVIII. Indexable & Self-Organizing Repository
-Added sections:
-  - Workspace (new top-level section)
+Version: 5.2.0 (Sequential-First Workflow Discipline)
+Added principles: None (amendment to existing XVI)
+Added sections: None
 Modified sections:
-  - Quality Standards: added indexability and workspace rules
-  - Governance: added workspace and indexability governance
-  - .gitignore: workspace/ excluded from repo
-Previous version: 5.0.0 (Structural Evolution)
-Origin: User request for scalable workspace interaction layer,
-  estandares/ migration, and repo-wide indexability
+  - XVI: renamed from "Parallel-Ready Workflow" to
+    "Sequential-First, Parallel-Ready Workflow". Added
+    sequential-by-default rule, WIP limit (3 agents max),
+    forward-only progression, parallel eligibility criteria
+  - Governance: updated XVI reference to reflect sequential-
+    first discipline
+Previous version: 5.1.0 (Workspace + Indexability + Auto-Organization)
+Origin: Clarify session on tasks.md — user confirmed wave
+  sequentiality is intentional risk control (not technical
+  dependency). Requested constitutional anchoring of
+  sequential-first discipline with WIP limits
 Removed sections: None
 Follow-up TODOs:
   - Update plan.md with worktree branching strategy
   - Define BDD scenario coverage matrix per principle
   - Downstream specs may need testify re-run for new BDD scope
   - Add README.md to all existing directories lacking one
+  - Update tasks.md dependency rationale to cite XVI explicitly
 -->
 
 # Site MetodologIA Constitution
@@ -547,18 +551,49 @@ debate ensures that ambiguity is resolved by principled
 reasoning rather than arbitrary choice — every decision has
 a traceable rationale anchored in the constitution.
 
-### XVI. Parallel-Ready Workflow
+### XVI. Sequential-First, Parallel-Ready Workflow
 
-Development work MUST be structured for parallel execution
-across independent work streams using isolated branches.
+Development work follows a sequential-by-default discipline.
+Parallelism is a controlled exception, not the default mode.
+Tasks advance linearly along the critical path; concurrent
+execution is permitted only for tasks with zero shared
+dependencies.
 
+- **Sequential is the default**: when choosing between
+  sequential and parallel execution, always choose
+  sequential. The critical path is the backbone of every
+  plan; tasks execute in dependency order, one completing
+  before the next begins. This reduces debugging surface,
+  prevents compounding errors, and preserves the logical
+  framework of the plan
+- **WIP limit: 3 concurrent agents maximum**: no more than
+  3 agents may execute tasks simultaneously. Each agent
+  works on a task that has zero pre-dependencies, zero
+  co-dependencies, and zero shared state with the other
+  active tasks. If a candidate task shares any dependency
+  with an in-progress task, it waits — it does not start
+- **Forward-only progression**: tasks always move forward.
+  A completed task is never revisited unless a downstream
+  failure requires it (and that revisit is tracked as a
+  new task, not a rollback). No circular dependencies, no
+  speculative re-work, no "let's redo this while we wait"
+- **Parallel eligibility criteria**: a task may run in
+  parallel with other active tasks ONLY when ALL of the
+  following are true:
+  (1) it touches different files than all active tasks,
+  (2) it has no data dependency on any active task's output,
+  (3) it has no logical dependency on any active task's
+  outcome (e.g., a design decision that could change),
+  (4) its failure would not invalidate any active task's
+  work
 - **Branch-per-task isolation**: each task or feature is
   developed on its own branch, isolated from other
   in-progress work
-- **Worktree-based parallelism**: independent tasks may
-  execute simultaneously in separate worktrees, enabling
-  multi-agent or multi-developer parallel work without
-  merge conflicts
+- **Worktree-based parallelism**: when tasks meet the
+  parallel eligibility criteria above, they may execute
+  simultaneously in separate worktrees. Worktrees are
+  a mechanism for safe parallelism — they do not override
+  the sequential-first default
 - **Atomic, mergeable units**: each branch produces a
   self-contained change that can be merged independently.
   No branch should depend on another in-progress branch
@@ -573,15 +608,22 @@ across independent work streams using isolated branches.
   (Principle IX) and quality gates before merge. No force-
   pushing to shared branches
 
-**Rationale**: A multi-agent development workflow (human +
-AI agents working concurrently) requires work to be
-structured for safe parallelism. Worktree isolation prevents
-the "stepping on each other" problem. Contract-first
-integration prevents the "works in isolation, breaks on
-merge" problem. Atomic units prevent the "can't ship
-because branch X isn't ready" problem. This principle makes
-the Think First (XIII) and Simple First (XIV) disciplines
-scalable across multiple concurrent workers.
+**Rationale**: Parallelism is powerful but dangerous.
+Concurrent execution multiplies debugging surface, creates
+hidden state interactions, and produces merge conflicts that
+consume more time than sequential execution would have taken.
+The sequential-first discipline follows the critical path
+and logical framework: each task builds on verified
+foundations, not assumptions about concurrent work. The WIP
+limit of 3 agents is a practical ceiling — beyond 3
+concurrent streams, coordination overhead exceeds execution
+gains. Forward-only progression prevents the waste of
+circular rework. Parallel eligibility criteria ensure that
+when parallelism is used, it is genuinely safe — not merely
+convenient. This principle makes the Think First (XIII) and
+Simple First (XIV) disciplines scalable: sequential
+execution IS the simple approach; parallelism is the
+complexity that requires justification (XIV).
 
 ### XVII. Continuous Learning Loop
 
@@ -979,8 +1021,10 @@ personal preferences.
   README presence, and pattern adherence (Principle XII)
 - **BDD coverage** must span all applicable quality angles
   (XV) — narrow functional-only scenarios are insufficient
-- **Parallel workflow** discipline ensures branches are
-  atomic, contract-first, and short-lived (Principle XVI)
+- **Sequential-first workflow** (XVI) governs execution
+  order: sequential is the default, parallelism requires
+  zero shared dependencies, WIP is capped at 3 concurrent
+  agents, and tasks always advance forward — never circular
 - **Socratic debate** is the required mechanism for
   resolving ambiguities that have divergent implementation
   consequences. Each option is examined against
@@ -1015,4 +1059,4 @@ personal preferences.
   clean; the workspace stays flexible. Task bridge
   (`workspace/tasks/`) connects tasklog.md to working files
 
-**Version**: 5.1.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-03-23
+**Version**: 5.2.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-03-23
