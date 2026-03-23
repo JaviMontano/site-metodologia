@@ -132,7 +132,7 @@
 **Goal**: Authenticated admin editor at `/admin/` for programs, prices, and translations.
 **Independent Test**: Login as admin, edit program, save, verify on public page.
 
-### Tests (TDD)
+### Tests (TDD — E2E)
 
 - [ ] T046 [P] [US4] Write E2E test: unauthenticated user sees login screen in `tests/e2e/admin-flow.spec.js` [TS-017]
 - [ ] T047 [P] [US4] Write E2E test: admin sees all programs with bilingual content in `tests/e2e/admin-flow.spec.js` [TS-018]
@@ -143,15 +143,22 @@
 - [ ] T052 [P] [US4] Write E2E test: admin interface accessibility in `tests/e2e/admin-flow.spec.js` [TS-023]
 - [ ] T053 [P] [US4] Write E2E test: admin input sanitized before storage in `tests/e2e/admin-flow.spec.js` [TS-024]
 
+### Tests (TDD — Unit)
+
+- [ ] T053a [P] [US4] Write unit tests for AdminAPI (updateProgram, updatePricing, updateTranslations, audit log creation, input sanitization) in `tests/unit/admin-api.test.js` [TS-020, TS-024]
+- [ ] T053b [P] [US4] Write unit tests for program-editor (program list rendering, bilingual validation, save-with-audit flow) in `tests/unit/program-editor.test.js` [TS-018, TS-019]
+- [ ] T053c [P] [US4] Write unit tests for price-editor (numeric validation, B2C/B2B/premium field mapping) in `tests/unit/price-editor.test.js`
+- [ ] T053d [P] [US4] Write unit tests for i18n-editor (key browsing, search/filter, side-by-side rendering) in `tests/unit/i18n-editor.test.js`
+
 ### Implementation
 
-- [ ] T054 [US4] Implement AdminAPI module (updateProgram, updatePricing, updateTranslations, audit log creation, input sanitization) in `js/cms/admin-api.js` [TS-020, TS-024]
+- [ ] T054 [US4] Implement AdminAPI module (updateProgram, updatePricing, updateTranslations, audit log creation, input sanitization) in `js/cms/admin-api.js` — must pass T053a [TS-020, TS-024]
 - [ ] T055a [US4] Build admin shell page `admin/index.html` — login screen, auth gate (show login when unauthenticated, deny non-admin), basic page structure [TS-017, TS-021]
 - [ ] T055b [US4] Add tab navigation (Programs/Prices/Translations), ARIA roles (tablist, tab, tabpanel), and keyboard navigation (arrow keys, Home/End) to `admin/index.html` [TS-023]
 - [ ] T056 [US4] Implement admin-app.js — auth state handling, tab routing, admin claim check, non-admin denial in `admin/js/admin-app.js`
-- [ ] T057 [US4] Implement program-editor.js — 6-program list, side-by-side ES/EN editing, bilingual validation, save with audit log in `admin/js/program-editor.js` [TS-018, TS-019]
-- [ ] T058 [US4] Implement price-editor.js — B2C/B2B/premium editing, numeric validation in `admin/js/price-editor.js`
-- [ ] T059 [US4] Implement i18n-editor.js — translation key browser, search/filter, side-by-side editing in `admin/js/i18n-editor.js`
+- [ ] T057 [US4] Implement program-editor.js — 6-program list, side-by-side ES/EN editing, bilingual validation, save with audit log in `admin/js/program-editor.js` — must pass T053b [TS-018, TS-019]
+- [ ] T058 [US4] Implement price-editor.js — B2C/B2B/premium editing, numeric validation in `admin/js/price-editor.js` — must pass T053c
+- [ ] T059 [US4] Implement i18n-editor.js — translation key browser, search/filter, side-by-side editing in `admin/js/i18n-editor.js` — must pass T053d
 - [ ] T061a [US4] Run admin-only E2E tests T046-T053, verify all pass [TS-017, TS-018, TS-019, TS-020, TS-021, TS-022, TS-023, TS-024]
 
 **Checkpoint A**: Admin interface functional (standalone). Login, edit, save, audit log, validation — all verified. Can complete in parallel with Phase 4.
@@ -308,3 +315,4 @@ T001 → T006 → T010 → T011 → T012 → T029 → T030 → T039 → T040 →
 - Q: Are migration waves (Phase 4→5→7) sequential by technical dependency or by choice? -> A: Intentional risk control (Constitution XIV + XVI). Sequential execution reduces debugging surface — one content type fully validated before starting next. Not a technical dependency; the methods are independent. Sequential-first is the default (XVI v5.2.0). [Phase 4, Phase 5, Phase 7, Dependency Table, Critical Path]
 - Q: Is T055 (admin shell) too large for a single task? -> A: Yes. Split into T055a (shell + auth gate) and T055b (tab nav + ARIA + keyboard). One concern per task, one TDD cycle per task. Task atomicity rule added to Constitution XIV. [T055, T055a, T055b, Phase 6]
 - Q: Are hardcoded line numbers in T033/T044 fragile? -> A: Yes. Replace with semantic selectors (DOM structure, data attributes, regex on named patterns like `B2B_MULTIPLIERS`). Line numbers break when upstream tasks modify the same files. [T033, T044]
+- Q: Should admin editors (T057-T059) and AdminAPI (T054) have unit tests, or are E2E tests sufficient? -> A: C-full — unit tests for all 4 modules (T053a-T053d). Socratic debate confirmed: AdminAPI (sanitization, audit) and program-editor (bilingual validation) are high-risk logic that E2E doesn't isolate. price-editor and i18n-editor are marginal but kept for IX/XV consistency — low effort, complete TDD coverage. XIV tension resolved: E2E tests cover journeys, not edge cases of isolated logic. [T053a, T053b, T053c, T053d, T054, T057, T058, T059, Phase 6]
