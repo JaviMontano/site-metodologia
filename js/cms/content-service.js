@@ -71,6 +71,13 @@ export const ContentService = {
       return null;
     }
 
+    // Stale-while-revalidate: serve cache immediately if available
+    const cached = await CacheManager.get('programs', audience);
+    if (cached && !CacheManager.isStale(cached, cacheTtlMs)) {
+      return cached.data; // Fresh cache — no Firestore fetch needed
+    }
+
+    // Fetch from Firestore (background refresh if stale cache exists)
     try {
       const q = query(
         collection(db, 'programs'),
@@ -84,12 +91,12 @@ export const ContentService = {
         await CacheManager.set('programs', audience, programs);
         return programs;
       }
-    } catch {
-      // Firestore unavailable — fall through to cache
+    } catch (err) {
+      // T079: Graceful failure — log for dev observability, serve cache
+      console.warn('ContentService: Firestore unreachable for programs/', audience, err.message);
     }
 
-    // Cache fallback
-    const cached = await CacheManager.get('programs', audience);
+    // Serve stale cache if available
     if (cached) return cached.data;
 
     return null;
@@ -104,6 +111,11 @@ export const ContentService = {
       return null;
     }
 
+    const cached = await CacheManager.get('pricing', category);
+    if (cached && !CacheManager.isStale(cached, cacheTtlMs)) {
+      return cached.data;
+    }
+
     try {
       const docRef = doc(db, 'pricing', category);
       const snap = await getDoc(docRef);
@@ -112,11 +124,10 @@ export const ContentService = {
         await CacheManager.set('pricing', category, data);
         return data;
       }
-    } catch {
-      // Firestore unavailable
+    } catch (err) {
+      console.warn('ContentService: Firestore unreachable for pricing/', category, err.message);
     }
 
-    const cached = await CacheManager.get('pricing', category);
     if (cached) return cached.data;
 
     return null;
@@ -131,21 +142,24 @@ export const ContentService = {
       return null;
     }
 
+    const cached = await CacheManager.get('translations', lang);
+    if (cached && !CacheManager.isStale(cached, cacheTtlMs)) {
+      return cached.data;
+    }
+
     try {
       const docRef = doc(db, 'translations', lang);
       const snap = await getDoc(docRef);
       if (snap.exists()) {
         const data = snap.data();
-        // Strip _meta field per contract
         delete data._meta;
         await CacheManager.set('translations', lang, data);
         return data;
       }
-    } catch {
-      // Firestore unavailable
+    } catch (err) {
+      console.warn('ContentService: Firestore unreachable for translations/', lang, err.message);
     }
 
-    const cached = await CacheManager.get('translations', lang);
     if (cached) return cached.data;
 
     return null;
