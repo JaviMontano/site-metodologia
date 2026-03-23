@@ -84,6 +84,37 @@ function extractProgramsFromPage(htmlPath, audience) {
   }));
 }
 
+// --- T044: Pricing extractor ---
+
+function extractB2CPricing() {
+  // Read data-price attributes from cotizador.html
+  const html = readFileSync(resolve(process.cwd(), 'ruta/cotizador.html'), 'utf-8');
+  const priceMatches = [...html.matchAll(/data-price="([^"]+)"[^>]*data-price-value="(\d+)"/g)];
+
+  const b2cData = { programs: {}, coaching: {}, bootcamps: {} };
+  // If no data-price-value found, parse from the cotizador.js detailsData
+  const jsFile = readFileSync(resolve(process.cwd(), 'ruta/js/cotizador.js'), 'utf-8');
+
+  // Extract B2B_MULTIPLIERS
+  const b2bMatch = jsFile.match(/B2B_MULTIPLIERS\s*=\s*(\{[^}]+\})/);
+  const multipliers = b2bMatch ? new Function(`return ${b2bMatch[1]}`)() : {};
+
+  return {
+    b2c: b2cData,
+    b2b: { ...multipliers, updated_at: new Date(), updated_by: 'seed-script' },
+  };
+}
+
+registerExtractor('pricing', async () => {
+  const { b2c, b2b } = extractB2CPricing();
+  const now = new Date();
+  return [
+    { id: 'b2c_base', data: { ...b2c, currency: 'COP', updated_at: now, updated_by: 'seed-script' } },
+    { id: 'b2b_multipliers', data: b2b },
+    { id: 'premium', data: { skus: {}, updated_at: now, updated_by: 'seed-script' } },
+  ];
+});
+
 registerExtractor('programs', async () => {
   const empresas = extractProgramsFromPage('empresas/index.html', 'empresas');
   const personas = extractProgramsFromPage('personas/index.html', 'personas');
