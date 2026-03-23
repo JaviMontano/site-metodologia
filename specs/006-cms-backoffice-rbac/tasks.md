@@ -58,6 +58,10 @@
 - [ ] T015 [P] Write data model validation tests for `users/{uid}` schema in `tests/unit/data-model.test.js` [TS-075, TS-076, TS-077]
 - [ ] T016 [P] Write data model validation tests for `config/access`, `config/invites`, `audit_log` schemas in `tests/unit/data-model.test.js` [TS-078, TS-079, TS-080, TS-081, TS-082]
 
+### Tests — Auth Service (TDD)
+
+- [ ] T027 Write unit tests for updated `auth-service.js` in `tests/unit/auth-service.test.js` — `getRole()`, `hasPermission()`, legacy detection [TS-003, TS-004, TS-005]
+
 ### Implementation — Cloud Functions
 
 - [ ] T017 Implement `onUserFirstLogin` Auth trigger in `functions/index.js` — bootstrap check, invite check, domain check, lazy-sync (depends on T006, T007) [TS-041, TS-042, TS-043, TS-044, TS-045]
@@ -76,10 +80,6 @@
 - [ ] T024 [P] Update `scripts/seed-firestore.js` — seed `config/access` (allowed_domains, default_role), bootstrap accounts mirror [TS-075, TS-078]
 - [ ] T025 [P] Create `scripts/set-user-role.js` — RBAC-aware role assignment CLI script
 - [ ] T026 [P] Create `scripts/migrate-claims.js` — one-time migration from `admin:true` to `role:x` for existing users
-
-### Tests — Auth Service (TDD)
-
-- [ ] T027 Write unit tests for updated `auth-service.js` in `tests/unit/auth-service.test.js` — `getRole()`, `hasPermission()`, legacy detection [TS-003, TS-004, TS-005]
 
 **Checkpoint**: RBAC core operational — roles enforced in rules + UI. Run all integration tests against emulator.
 
@@ -101,7 +101,6 @@
 
 - [ ] T031 Implement `inviteUser` callable in `functions/index.js` — email validation, duplicate check, invite creation (depends on T006) [TS-054, TS-055]
 - [ ] T032 Implement `removeUserAccess` callable in `functions/index.js` — bootstrap guard, last-super-admin guard, role nullification (depends on T006) [TS-056]
-- [ ] T033 [P] Implement `cleanupExpiredAudit` scheduled function in `functions/index.js` — daily TTL cleanup
 
 ### Implementation — Admin UI Modules
 
@@ -190,6 +189,10 @@
 - [ ] T059 [US8] Update `js/cms/admin-api.js` — role-based audit entries with extended action types (role_change, login, logout, restore) [TS-037]
 - [ ] T060 [US8] Add login/logout event logging in `admin/js/admin-app.js` — write audit_log on `onAuthStateChanged` + `signOut` + `navigator.sendBeacon` on `beforeunload` [TS-037]
 
+### Implementation — Audit TTL
+
+- [ ] T033 [P] Implement `cleanupExpiredAudit` scheduled function in `functions/index.js` — daily TTL cleanup
+
 ### Implementation — Build Integration
 
 - [ ] T061 [P] Add `build:pages` npm script in `package.json` to run `scripts/build-page-registry.js`, integrate with `build:admin`
@@ -224,7 +227,7 @@
 
 ### Build & Deploy Prep
 
-- [ ] T071 [P] Update `package.json` — add `build:admin`, `watch:admin`, `build:pages`, `deploy:functions` scripts
+- [ ] T071 [P] Update `package.json` — add `deploy:functions` script (build:admin + watch:admin already in T001, build:pages already in T061)
 - [ ] T072 Verify esbuild bundle includes all new modules (user-manager, audit-viewer, page-registry, profile-editor, idle-timer)
 - [ ] T073 Run full test suite: `npx vitest run` + `npx playwright test` — all green
 
@@ -303,3 +306,12 @@ T001 → T005 → T006 → T017 → T020 → T023 → T034 → T039 → T066 →
 
 **MVP+1 = Phase 3** (9 tasks) — bilingual editing, price editor fix
 **MVP+2 = Phase 4** (12 tasks) — page registry, audit, version restore
+
+## Clarifications
+
+### Session 2026-03-23
+
+- Q: T027 (auth-service tests) is placed after T022 (auth-service implementation) — should it move before T022 to respect TDD? -> A: Yes, move T027 before T022 into the Phase 1 test block after T016. Restores Constitution IX TDD ordering. [T027, T022, T023]
+- Q: T033 (cleanupExpiredAudit) is in Phase 2 but plan.md clarification says Phase 4 — which phase? -> A: Move T033 to Phase 4 alongside audit viewer, matching plan.md. Keeps audit concerns co-located. [T033, T057, T058]
+- Q: T020 references 18 test specs — should it be split into smaller tasks? -> A: No, keep as-is. firestore.rules is a single declarative file with shared helper functions that deploys atomically. Splitting is artificial. [T020]
+- Q: T071 duplicates build:admin + watch:admin (T001) and build:pages (T061) — narrow scope? -> A: Yes, narrow T071 to only deploy:functions. The other scripts are already owned by T001 and T061. [T071, T001, T061]
