@@ -35,6 +35,61 @@ const db = getFirestore(app);
  */
 const extractors = {};
 
+// --- T033: Program extractor ---
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+import { JSDOM } from 'jsdom';
+
+function extractProgramsFromPage(htmlPath, audience) {
+  const html = readFileSync(resolve(process.cwd(), htmlPath), 'utf-8');
+  // Extract programsData JS object using regex
+  const match = html.match(/var\s+programsData\s*=\s*(\{[\s\S]*?\});\s*\n/);
+  if (!match) {
+    console.warn(`  Could not extract programsData from ${htmlPath}`);
+    return [];
+  }
+
+  // Evaluate the JS object (safe: static content we control)
+  let programsData;
+  try {
+    programsData = new Function(`return ${match[1]}`)();
+  } catch (err) {
+    console.warn(`  Failed to parse programsData from ${htmlPath}:`, err.message);
+    return [];
+  }
+
+  const now = new Date();
+  return Object.entries(programsData).map(([slug, data], index) => ({
+    id: `${audience}_${slug}`,
+    data: {
+      audience,
+      slug,
+      sort_order: index,
+      icon: data.icon,
+      icon_color: data.iconColor,
+      title_es: data.title,
+      title_en: data.title, // Placeholder — EN titles added manually
+      tagline_es: data.tagline,
+      tagline_en: data.tagline,
+      description_es: data.description,
+      description_en: data.description,
+      benefits_es: data.benefits,
+      benefits_en: data.benefits,
+      transformation_es: data.transformation,
+      transformation_en: data.transformation,
+      is_published: true,
+      updated_at: now,
+      updated_by: 'seed-script',
+    },
+  }));
+}
+
+registerExtractor('programs', async () => {
+  const empresas = extractProgramsFromPage('empresas/index.html', 'empresas');
+  const personas = extractProgramsFromPage('personas/index.html', 'personas');
+  return [...empresas, ...personas];
+});
+
 /**
  * Register a collection extractor.
  * @param {string} name - Collection name
