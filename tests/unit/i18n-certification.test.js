@@ -348,22 +348,30 @@ describe('i18n Bilingual Certification Suite', () => {
     });
   });
 
-  // --- T017: Zero-key page warning ---
-  describe('Zero-Key Page Warnings (FR-009)', () => {
-    it('pages with SiteHeader but zero data-i18n keys are reported as warnings', () => {
+  // --- T017 + T034: Zero-key page enforcement ---
+  describe('Zero-Key Page Enforcement (FR-009)', () => {
+    it('pages with SiteHeader but zero data-i18n keys must have data-skip-i18n', () => {
       const zeroKeyPages = siteHeaderPages.filter(page => {
         const keys = allHtmlKeys.get(page) || new Set();
         return keys.size === 0;
       });
 
-      if (zeroKeyPages.length > 0) {
-        console.warn(
-          `[WARN] ${zeroKeyPages.length} pages with SiteHeader but zero data-i18n keys:\n` +
-          zeroKeyPages.map(p => `  ${p}`).join('\n')
+      // After P3: pages without keys MUST have data-skip-i18n
+      const violations = [];
+      for (const page of zeroKeyPages) {
+        const filePath = join(ROOT, page);
+        const html = readFileSync(filePath, 'utf8');
+        if (!html.includes('data-skip-i18n')) {
+          violations.push(page);
+        }
+      }
+
+      if (violations.length > 0) {
+        expect.fail(
+          `${violations.length} pages with SiteHeader, zero data-i18n keys, and NO data-skip-i18n:\n` +
+          violations.map(p => `  ${p}`).join('\n')
         );
       }
-      // Warnings only in P1 — does not fail
-      expect(true).toBe(true);
     });
   });
 

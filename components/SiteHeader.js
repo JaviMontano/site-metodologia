@@ -62,6 +62,7 @@ class SiteHeader extends HTMLElement {
     }
 
     loadI18n(basePath) {
+        if (this.hasAttribute('data-skip-i18n')) return;
         if (!window.i18nLoaded) {
             const script = document.createElement('script');
             script.src = `${basePath}/js/i18n/i18n.js`;

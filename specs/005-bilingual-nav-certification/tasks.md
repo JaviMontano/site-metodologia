@@ -93,10 +93,10 @@
 ## Phase 8: US5 — i18n Efficiency Cleanup (P3)
 
 - [x] T030 [US5] Remove orphaned en.json keys identified by certification suite run [TS-028]
-- [ ] T031 [US5] Add data-skip-i18n attribute support to SiteHeader.loadI18n() — skip i18n.js loading when attribute present [TS-026]
-- [ ] T032 [US5] Add data-skip-i18n attribute to HTML pages that have zero translatable content [TS-026, TS-027]
-- [ ] T033 [US5] Verify no console errors on pages with data-skip-i18n [TS-027]
-- [ ] T034 [US5] Update certification suite to promote zero-key page warnings to failures after data-skip-i18n is available [TS-029]
+- [x] T031 [US5] Add data-skip-i18n attribute support to SiteHeader.loadI18n() — skip i18n.js loading when attribute present [TS-026]
+- [x] T032 [US5] Add data-skip-i18n attribute to HTML pages that have zero translatable content [TS-026, TS-027]
+- [x] T033 [US5] Verify no console errors on pages with data-skip-i18n [TS-027]
+- [x] T034 [US5] Update certification suite to promote zero-key page warnings to failures after data-skip-i18n is available [TS-029]
 
 > **Parallel batch 6**: T030, T031 (orphan cleanup and skip-attribute are independent)
 > **Dependencies**: T032 depends on T031 (needs attribute support); T033 depends on T032; T034 depends on T031
