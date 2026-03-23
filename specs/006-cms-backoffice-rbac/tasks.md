@@ -37,49 +37,49 @@
 
 ### Cloud Functions Setup
 
-- [ ] T006 Initialize `functions/` directory with `package.json` (firebase-functions v2, firebase-admin v12) and `.eslintrc.js` [TS-041]
-- [ ] T007 Create environment config structure for bootstrap accounts per Constitution XXI (`functions.config().bootstrap.accounts`) (depends on T006) [TS-049, TS-050]
+- [x] T006 Initialize `functions/` directory with `package.json` (firebase-functions v2, firebase-admin v12) and `.eslintrc.js` [TS-041]
+- [x] T007 Create environment config structure for bootstrap accounts per Constitution XXI (`functions.config().bootstrap.accounts`) (depends on T006) [TS-049, TS-050]
 
 ### Tests — Cloud Functions (TDD: write first, verify they fail)
 
-- [ ] T008 [P] Write unit tests for `onUserFirstLogin` Cloud Function in `tests/integration/cloud-functions.test.js` [TS-041, TS-042, TS-043, TS-044, TS-045]
-- [ ] T009 [P] Write unit tests for `setUserRole` Cloud Function in `tests/integration/cloud-functions.test.js` [TS-046, TS-047, TS-048, TS-049, TS-050]
-- [ ] T010 [P] Write unit tests for `migrateMyRole` Cloud Function in `tests/integration/cloud-functions.test.js` [TS-051, TS-052, TS-053]
+- [x] T008 [P] Write unit tests for `onUserFirstLogin` Cloud Function in `tests/integration/cloud-functions.test.js` [TS-041, TS-042, TS-043, TS-044, TS-045]
+- [x] T009 [P] Write unit tests for `setUserRole` Cloud Function in `tests/integration/cloud-functions.test.js` [TS-046, TS-047, TS-048, TS-049, TS-050]
+- [x] T010 [P] Write unit tests for `migrateMyRole` Cloud Function in `tests/integration/cloud-functions.test.js` [TS-051, TS-052, TS-053]
 
 ### Tests — Firestore Security Rules (TDD: write first, verify they fail)
 
-- [ ] T011 [P] Write RBAC security rule tests for `users/{uid}` collection in `tests/integration/firestore-rules.test.js` [TS-057, TS-058, TS-059, TS-060, TS-061]
-- [ ] T012 [P] Write RBAC security rule tests for `config/access` and `config/invites` in `tests/integration/firestore-rules.test.js` [TS-062, TS-063, TS-064, TS-065]
-- [ ] T013 [P] Write RBAC security rule tests for `audit_log` and `page_overrides` in `tests/integration/firestore-rules.test.js` [TS-066, TS-067, TS-068, TS-069, TS-070]
-- [ ] T014 [P] Write RBAC security rule tests for content collections (`programs`, `pricing`, `translations`) with legacy fallback in `tests/integration/firestore-rules.test.js` [TS-071, TS-072, TS-073, TS-074]
+- [x] T011 [P] Write RBAC security rule tests for `users/{uid}` collection in `tests/integration/firestore-rules.test.js` [TS-057, TS-058, TS-059, TS-060, TS-061]
+- [x] T012 [P] Write RBAC security rule tests for `config/access` and `config/invites` in `tests/integration/firestore-rules.test.js` [TS-062, TS-063, TS-064, TS-065]
+- [x] T013 [P] Write RBAC security rule tests for `audit_log` and `page_overrides` in `tests/integration/firestore-rules.test.js` [TS-066, TS-067, TS-068, TS-069, TS-070]
+- [x] T014 [P] Write RBAC security rule tests for content collections (`programs`, `pricing`, `translations`) with legacy fallback in `tests/integration/firestore-rules.test.js` [TS-071, TS-072, TS-073, TS-074]
 
 ### Tests — Data Model Validation (TDD)
 
-- [ ] T015 [P] Write data model validation tests for `users/{uid}` schema in `tests/unit/data-model.test.js` [TS-075, TS-076, TS-077]
-- [ ] T016 [P] Write data model validation tests for `config/access`, `config/invites`, `audit_log` schemas in `tests/unit/data-model.test.js` [TS-078, TS-079, TS-080, TS-081, TS-082]
+- [x] T015 [P] Write data model validation tests for `users/{uid}` schema in `tests/unit/data-model.test.js` [TS-075, TS-076, TS-077]
+- [x] T016 [P] Write data model validation tests for `config/access`, `config/invites`, `audit_log` schemas in `tests/unit/data-model.test.js` [TS-078, TS-079, TS-080, TS-081, TS-082]
 
 ### Tests — Auth Service (TDD)
 
-- [ ] T027 Write unit tests for updated `auth-service.js` in `tests/unit/auth-service.test.js` — `getRole()`, `hasPermission()`, legacy detection [TS-003, TS-004, TS-005]
+- [x] T027 Write unit tests for updated `auth-service.js` in `tests/unit/auth-service.test.js` — `getRole()`, `hasPermission()`, legacy detection [TS-003, TS-004, TS-005]
 
 ### Implementation — Cloud Functions
 
-- [ ] T017 Implement `onUserFirstLogin` Auth trigger in `functions/index.js` — bootstrap check, invite check, domain check, lazy-sync (depends on T006, T007) [TS-041, TS-042, TS-043, TS-044, TS-045]
-- [ ] T018 Implement `setUserRole` callable in `functions/index.js` — role assignment, bootstrap protection, last-super-admin guard, dual storage (depends on T006, T007) [TS-046, TS-047, TS-048, TS-049, TS-050]
-- [ ] T019 [P] Implement `migrateMyRole` callable in `functions/index.js` — legacy `admin:true` → `role:x` migration (depends on T006) [TS-051, TS-052, TS-053]
+- [x] T017 Implement `onUserFirstLogin` Auth trigger in `functions/index.js` — bootstrap check, invite check, domain check, lazy-sync (depends on T006, T007) [TS-041, TS-042, TS-043, TS-044, TS-045]
+- [x] T018 Implement `setUserRole` callable in `functions/index.js` — role assignment, bootstrap protection, last-super-admin guard, dual storage (depends on T006, T007) [TS-046, TS-047, TS-048, TS-049, TS-050]
+- [x] T019 [P] Implement `migrateMyRole` callable in `functions/index.js` — legacy `admin:true` → `role:x` migration (depends on T006) [TS-051, TS-052, TS-053]
 
 ### Implementation — Firestore Rules & Client Auth
 
-- [ ] T020 Update `firebase/firestore.rules` to RBAC v2 with helper functions (`isSuperAdmin`, `isEditorOrAbove`, etc.) + legacy fallback (depends on T017, T018) [TS-057, TS-058, TS-059, TS-060, TS-061, TS-062, TS-063, TS-064, TS-065, TS-066, TS-067, TS-068, TS-069, TS-070, TS-071, TS-072, TS-073, TS-074]
-- [ ] T021 Update `firebase/firestore.indexes.json` — add `audit_log` and `users` composite indexes per data-model.md
-- [ ] T022 Update `js/cms/auth-service.js` — replace `isAdmin()` with `getRole()`, `hasPermission(level)`, add legacy claim detection + `migrateMyRole` call [TS-003, TS-004, TS-005]
-- [ ] T023 Update `admin/js/admin-app.js` — role-based tab rendering, `onAuthStateChanged` domain re-check, role-gated UI (depends on T022) [TS-003, TS-004, TS-005, TS-006, TS-007, TS-008]
+- [x] T020 Update `firebase/firestore.rules` to RBAC v2 with helper functions (`isSuperAdmin`, `isEditorOrAbove`, etc.) + legacy fallback (depends on T017, T018) [TS-057, TS-058, TS-059, TS-060, TS-061, TS-062, TS-063, TS-064, TS-065, TS-066, TS-067, TS-068, TS-069, TS-070, TS-071, TS-072, TS-073, TS-074]
+- [x] T021 Update `firebase/firestore.indexes.json` — add `audit_log` and `users` composite indexes per data-model.md
+- [x] T022 Update `js/cms/auth-service.js` — replace `isAdmin()` with `getRole()`, `hasPermission(level)`, add legacy claim detection + `migrateMyRole` call [TS-003, TS-004, TS-005]
+- [x] T023 Update `admin/js/admin-app.js` — role-based tab rendering, `onAuthStateChanged` domain re-check, role-gated UI (depends on T022) [TS-003, TS-004, TS-005, TS-006, TS-007, TS-008]
 
 ### Implementation — Seed & Migration Scripts
 
-- [ ] T024 [P] Update `scripts/seed-firestore.js` — seed `config/access` (allowed_domains, default_role), bootstrap accounts mirror [TS-075, TS-078]
-- [ ] T025 [P] Create `scripts/set-user-role.js` — RBAC-aware role assignment CLI script
-- [ ] T026 [P] Create `scripts/migrate-claims.js` — one-time migration from `admin:true` to `role:x` for existing users
+- [x] T024 [P] Update `scripts/seed-firestore.js` — seed `config/access` (allowed_domains, default_role), bootstrap accounts mirror [TS-075, TS-078]
+- [x] T025 [P] Create `scripts/set-user-role.js` — RBAC-aware role assignment CLI script
+- [x] T026 [P] Create `scripts/migrate-claims.js` — one-time migration from `admin:true` to `role:x` for existing users
 
 **Checkpoint**: RBAC core operational — roles enforced in rules + UI. Run all integration tests against emulator.
 
