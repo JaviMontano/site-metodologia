@@ -105,8 +105,8 @@
 ### Implementation — Admin UI Modules
 
 - [ ] T034 [US2] Create `admin/js/user-manager.js` — user list table, search, role assignment dropdown, calling `setUserRole` (depends on T018) [TS-009, TS-010, TS-011]
-- [ ] T035 [US3] Add invite management UI to `admin/js/user-manager.js` — invite form, pending invites list, cancel invite (depends on T031) [TS-012, TS-013, TS-014, TS-015]
-- [ ] T036 [US3] Add domain allowlist management UI to `admin/js/user-manager.js` — add/remove domains, default role display (depends on T020) [TS-016, TS-017]
+- [ ] T035 [US3] Add invite management UI to `admin/js/user-manager.js` — invite form, pending invites list, cancel invite (depends on T031, T034) [TS-012, TS-013, TS-014, TS-015]
+- [ ] T036 [US3] Add domain allowlist management UI to `admin/js/user-manager.js` — add/remove domains, default role display (depends on T020, T034) [TS-016, TS-017]
 - [ ] T037 [US1] Create `admin/js/idle-timer.js` — track click/keypress/mousemove, `setTimeout(signOut, 8h)`, `sessionStorage` for refresh survival [TS-004]
 - [ ] T038 [US4] Create `admin/js/profile-editor.js` — display name, preferred language, avatar, last login, read-only role field [TS-018, TS-019, TS-020, TS-021]
 
@@ -175,8 +175,8 @@
 
 ### Implementation — Page Registry
 
-- [ ] T054 [P] [US6] Create `scripts/build-page-registry.js` — scan `**/*.html`, extract title/meta/data-i18n counts/level, output `admin/data/page-registry.json`
-- [ ] T055 [US6] Create `admin/js/page-registry.js` — table of pages with path, level (L1-L5), i18n coverage %, merge JSON + Firestore `page_overrides` (depends on T054) [TS-029, TS-030, TS-031]
+- [ ] T054 [P] [US6] Create `scripts/build-page-registry.js` — scan `**/*.html` excluding `admin/`, extract title/meta/data-i18n counts/level, output `admin/data/page-registry.json`
+- [ ] T055 [US6] Create `admin/js/page-registry.js` — table of pages with path, level (L1-L5), i18n coverage %, merge JSON + Firestore `page_overrides` (depends on T054, T020) [TS-029, TS-030, TS-031]
 - [ ] T056 [US6] Add page metadata editing to `admin/js/page-registry.js` — title/description/OG per language, save to `page_overrides/{path_hash}` [TS-031]
 
 ### Implementation — Audit Viewer
@@ -318,3 +318,6 @@ T001 → T005 → T006 → T017 → T020 → T023 → T034 → T039 → T066 →
 - Q: T007 is marked [P] but depends on T006 (functions/ dir init) — remove parallel marker? -> A: Yes, remove [P] — T007 depends on T006. Sequential is the honest dependency. [T007, T006]
 - Q: T060 uses action types defined by T059 but has no explicit dependency — add one? -> A: Yes, add (depends on T059) to T060. Prevents integration bugs. [T060, T059]
 - Q: T023 covers 6 test specs across 3 concerns (tabs, auth listener, role gating) — split? -> A: No, keep as-is. admin-app.js is a single orchestrator where concerns are tightly coupled through auth state. Splitting is artificial. [T023]
+- Q: T035 and T036 extend user-manager.js created by T034 but declare no dependency on T034 — add explicit dependency? -> A: Yes, add (depends on T034) to both. Prevents file-not-found if picked up before T034 completes. [T034, T035, T036]
+- Q: T054 scans `**/*.html` — should it include admin/ pages in the registry? -> A: No, exclude admin/. The registry tracks public site pages for i18n coverage and SEO metadata. Admin pages are internal tooling. [T054]
+- Q: T055 merges Firestore page_overrides but only depends on T054 — should it also depend on T020 (security rules)? -> A: Yes, add (depends on T054, T020). Prevents rule-denied errors during emulator development. [T055, T020]
