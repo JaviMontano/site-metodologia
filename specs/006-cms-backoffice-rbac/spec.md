@@ -271,8 +271,7 @@ versions, restore a previous version.
 
 ### Authentication and Login
 
-- **FR-001**: Admin page MUST load without console errors using
-  CDN-based Firebase SDK imports [US1]
+- **FR-001**: Admin page MUST load without console errors [US1]
 - **FR-002**: Admin page MUST display a branded login page with
   Google sign-in button [US1]
 - **FR-003**: System MUST authenticate via Google OAuth popup
@@ -408,6 +407,9 @@ versions, restore a previous version.
 - Q: How is the 8h session timeout enforced? -> A: Client-side idle tracking. JS timer resets on user interaction (click, keypress, navigation). After 8h idle, force signOut(). No server-side token revocation. [FR-004, US1]
 - Q: How are content versions stored for restore? -> A: Audit log IS the version history — no separate versions collection. Restore reconstructs from audit entries and creates a new write (never overwrites history). Aligns with VI (Content Authority) and XIV (Simple First). [FR-026, FR-027, US8, SC-007]
 - Q: When is a translation considered "stale"? -> A: Any save to an _es field marks the corresponding _en field as "needs review" (dirty flag). Flag resets when _en is saved. Empty _en fields show "translation needed". No timestamp comparison needed. [FR-018, US5, SC-004]
+- Q: Should FR-001 prescribe "CDN-based" imports? -> A: No — "CDN-based" is an implementation detail that belongs in plan.md (phase-separation). FR-001 updated to "Admin page MUST load without console errors" without prescribing delivery mechanism. [FR-001, US1, SC-001]
+- Q: Does FR-021 cover both in-app navigation and browser close? -> A: Yes — in-app navigation uses confirm dialog before tab switch; browser close uses `beforeunload` event. Both paths must warn if dirty state exists. [FR-021, US5, SC-004]
+- Q: Does XXI (Zero Hardcoding) apply to all FR constants (timeout, default role, TTL)? -> A: XXI scope: security invariants and business values (bootstrap accounts, domain allowlist, pricing) MUST be configurable. Domain constants (8h timeout, "viewer" default role, 90-day TTL) are acceptable as code constants at 1-10 CMS users — internal parameters, not admin-managed values. [FR-004, FR-010, FR-013, Constitution XXI]
 
 ## Out of Scope
 

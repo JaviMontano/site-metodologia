@@ -2,7 +2,7 @@
 
 ## Content Quality
 
-- [x] No implementation details in spec (no tech stack, no file paths, no code) [Clarity, Spec global]
+- [x] No implementation details in spec (no tech stack, no file paths, no code) [Clarity, Spec global] — GAP-004 resolved: FR-001 "CDN-based" removed (implementation detail belonged in plan.md)
 - [x] All requirements are testable (measurable outcomes, not vague goals) [Clarity, Spec FR-001–FR-028]
 - [x] User stories are independently testable (each delivers standalone value) [Completeness, Spec US1–US8]
 - [x] Evidence tags on assumptions ([CODE], [DOC], [INFERENCE], [CONFIG]) [Traceability, Spec Assumptions]
@@ -33,6 +33,14 @@
 - [x] Are FR-013 "hardcoded" accounts consistent with Constitution XXI (Zero Hardcoding)? [Consistency, Spec FR-013, Constitution XXI] — [Conflict] Spec FR-013 says "hardcode initial super_admin accounts" and the pre-configured accounts table says "Source: Hardcoded". Constitution XXI (v6.2.0, added after spec was drafted) mandates Zero Hardcoding. Plan clarifications resolve this: bootstrap accounts use deploy-time env config, not source code literals. **Spec needs update to align FR-013 with XXI.** → Resolved: see Gap Resolution below.
 - [x] Is the audit_log "Create: admin+" security rule (data-model) consistent with editors writing content audit entries? [Consistency, Spec FR-025, data-model audit_log] — Editors create content but audit entries are created by admin-api.js on behalf of authenticated users. The `admin+` rule means authenticated users with role >= editor can create audit entries. Consistent with role hierarchy.
 - [x] Is US3 scenario 4 ("block on next token refresh") consistent with FR-009/FR-011 which don't mention token refresh timing? [Consistency, Spec US3, FR-009, FR-011] — Edge case section specifies "block on next token refresh, not mid-session." FRs define the rules; edge case defines timing. Complementary, not conflicting.
+
+## Data Loss Prevention
+
+- [x] FR-021 unsaved changes indicator covers both in-app navigation and browser close [Coverage, Spec FR-021, US5] — In-app: confirm dialog before tab switch or navigation. Browser close: `beforeunload` event. Both paths must warn if dirty state exists.
+
+## Constitution XXI Compliance
+
+- [x] XXI (Zero Hardcoding) scope: security invariants and business values (bootstrap accounts, domain allowlist, pricing) MUST be configurable. Domain constants (8h timeout, "viewer" default role, 90-day TTL) are acceptable as code constants at 1-10 CMS users — these are internal parameters, not admin-managed values. [Consistency, Constitution XXI, FR-004, FR-010, FR-013]
 
 ## Acceptance Criteria Quality
 
