@@ -39,16 +39,16 @@
 
 ## Phase 4: US2 — Certification Suite Static (P1)
 
-- [ ] T009 [US2] Configure Strategy 3 auto-label pages: report as warnings, not failures in certification suite [TS-003]
-- [ ] T010 [US2] Create tests/unit/i18n-certification.test.js scaffold with Vitest describe blocks per certification-output.md contract [TS-008]
-- [ ] T011 [US2] Implement HTML parser: scan all public HTML files for data-i18n attribute values using regex extraction [TS-008]
-- [ ] T012 [US2] Implement missing key detection: cross-reference HTML data-i18n keys against en.json entries, fail on missing [TS-008]
-- [ ] T013 [P] [US2] Implement orphaned key detection: find en.json keys with no HTML data-i18n reference [TS-010]
-- [ ] T014 [US2] Implement three-condition translation validation: exists + non-empty + differs from es.json (with allowlist exemption) [TS-012, TS-013]
-- [ ] T015 [US2] Implement page level classification: auto-classify by directory pattern using data/i18n-levels.json with override support [TS-014]
-- [ ] T016 [US2] Implement coverage scoring per level (L1-L5) with level-appropriate pass/fail thresholds [TS-011]
-- [ ] T017 [US2] Implement zero-key page warning: report pages with SiteHeader but no data-i18n keys as warnings [TS-009, TS-015]
-- [ ] T018 [P] [US2] Implement floating nav label verification in rendered certification check [TS-016]
+- [x] T009 [US2] Configure Strategy 3 auto-label pages: report as warnings, not failures in certification suite [TS-003]
+- [x] T010 [US2] Create tests/unit/i18n-certification.test.js scaffold with Vitest describe blocks per certification-output.md contract [TS-008]
+- [x] T011 [US2] Implement HTML parser: scan all public HTML files for data-i18n attribute values using regex extraction [TS-008]
+- [x] T012 [US2] Implement missing key detection: cross-reference HTML data-i18n keys against en.json entries, fail on missing [TS-008]
+- [x] T013 [P] [US2] Implement orphaned key detection: find en.json keys with no HTML data-i18n reference [TS-010]
+- [x] T014 [US2] Implement three-condition translation validation: exists + non-empty + differs from es.json (with allowlist exemption) [TS-012, TS-013]
+- [x] T015 [US2] Implement page level classification: auto-classify by directory pattern using data/i18n-levels.json with override support [TS-014]
+- [x] T016 [US2] Implement coverage scoring per level (L1-L5) with level-appropriate pass/fail thresholds [TS-011]
+- [x] T017 [US2] Implement zero-key page warning: report pages with SiteHeader but no data-i18n keys as warnings [TS-009, TS-015]
+- [x] T018 [P] [US2] Implement floating nav label verification in rendered certification check [TS-016]
 
 > **Parallel batch 3**: T009, T013, T018 (warning config, orphan detection, and floating nav check are independent test blocks)
 > **Dependencies**: T009 depends on T010 (needs certification scaffold); T012 depends on T011 (needs parser); T014 depends on T012 (builds on key detection); T015 depends on T001 (needs levels manifest); T016 depends on T014, T015 (needs classification + validation)
