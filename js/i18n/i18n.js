@@ -202,7 +202,11 @@
       if (lang === currentLang) return Promise.resolve();
       currentLang = lang;
       storeLang(lang);
-      return applyTranslations(lang);
+      return applyTranslations(lang).then(function () {
+        document.dispatchEvent(new CustomEvent('langchange', {
+          detail: { lang: lang }
+        }));
+      });
     },
 
     translate: function (element) {

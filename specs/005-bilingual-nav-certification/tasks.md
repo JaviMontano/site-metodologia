@@ -23,7 +23,7 @@
 
 ## Phase 2: Foundational — Event Contract
 
-- [ ] T004 [US1] Modify js/i18n/i18n.js setLang() to dispatch langchange CustomEvent after applyTranslations resolves [TS-004]
+- [x] T004 [US1] Modify js/i18n/i18n.js setLang() to dispatch langchange CustomEvent after applyTranslations resolves [TS-004]
 - [ ] T005 [US1] Add langchange listener in components/SiteHeader.js setupFloatingNav() to re-read heading textContent into floating nav links [TS-005]
 
 > **Dependency**: T005 depends on T004 (listener needs event to exist)
