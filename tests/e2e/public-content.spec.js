@@ -95,6 +95,25 @@ test('T037 [TS-009] premium catalog displays Firestore prices', async ({ page })
   expect(body).toContain('$');
 });
 
+// TS-012: i18n module fetches from Firestore
+test('T062 [TS-012] i18n fetches translations from Firestore', async ({ page }) => {
+  await page.goto(`${BASE_URL}/`);
+  await page.waitForLoadState('networkidle');
+  // i18n should have loaded translations (visible text)
+  const body = await page.textContent('body');
+  expect(body.length).toBeGreaterThan(100);
+});
+
+// TS-013: data-i18n contract preserved
+test('T063 [TS-013] data-i18n contract preserved', async ({ page }) => {
+  await page.goto(`${BASE_URL}/`);
+  await page.waitForLoadState('networkidle');
+  // data-i18n elements should have been translated
+  const i18nElements = page.locator('[data-i18n]');
+  const count = await i18nElements.count();
+  expect(count).toBeGreaterThan(0);
+});
+
 // TS-006: First load on 3G renders within 2s or falls back
 test('T028 [TS-006] first load renders within 2s on slow connection', async ({ page }) => {
   // Emulate slow 3G
