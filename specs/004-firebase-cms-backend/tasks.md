@@ -40,19 +40,21 @@
 
 - [ ] T008 [P] Write unit tests for CacheManager (get, set, isStale, TTL logic) in `tests/unit/cache-manager.test.js`
 - [ ] T009 [P] Write unit tests for ContentService (init, getPrograms, getPricing, getTranslations, isReady, onReady, fallback chain) in `tests/unit/content-service.test.js`
+- [ ] T009b [P] Write unit tests for MigrationBridge (dual-source resolve, `migrated_collections` check, Firestore-first with static fallback, null when both fail) in `tests/unit/migration-bridge.test.js`
+- [ ] T009c [P] Write unit tests for AuthService (`isAdmin` claim check, `onAuthStateChanged` subscription, sign-out cleanup) in `tests/unit/auth-service.test.js`
 
 ### Implementation
 
 - [ ] T010 Implement Firebase app initialization in `js/cms/firebase-config.js` (public config only, ES module, no secrets) [TS-022]
 - [ ] T011 Implement CacheManager (IndexedDB via `idb`, get/set/isStale with TTL, structured stores for programs/pricing/translations) in `js/cms/cache-manager.js` — must pass T008
 - [ ] T012 Implement ContentService core (init, Firestore instance, `config/settings` read, `migrated_collections` check, ready state) in `js/cms/content-service.js` — must pass T009
-- [ ] T013 [P] Implement AuthService (Google sign-in, `isAdmin` via custom claims, `onAuthStateChanged`, `signOut`) in `js/cms/auth-service.js`
+- [ ] T013 [P] Implement AuthService (Google sign-in, `isAdmin` via custom claims, `onAuthStateChanged`, `signOut`) in `js/cms/auth-service.js` — must pass T009c
 - [ ] T014 [P] Write Firestore security rules in `firebase/firestore.rules` (public read on programs/pricing/translations, admin-only write with schema validation, audit_log append-only, config admin-only)
 - [ ] T015 [P] Create Firestore indexes in `firebase/firestore.indexes.json` (programs: audience + is_published + sort_order)
 - [ ] T016 Write security rules integration tests in `tests/integration/firestore-rules.test.js` — positive and negative scenarios for all collections [TS-032, TS-033, TS-034, TS-035, TS-036, TS-037, TS-038, TS-039]
 - [ ] T017 [P] Create seed script scaffold `scripts/seed-firestore.js` (base structure with Firestore emulator connection, collection iteration, CLI args — collection-specific extractors added by T033/T044/T068)
 - [ ] T018 [P] Create admin claim script `scripts/set-admin-claim.js` (Firebase Admin SDK, `--emulator` flag, `--email` arg)
-- [ ] T019 Implement MigrationBridge (dual-source resolver: check `migrated_collections`, Firestore-first with static fallback) in `js/cms/migration-bridge.js` [TS-030]
+- [ ] T019 Implement MigrationBridge (dual-source resolver: check `migrated_collections`, Firestore-first → cache → `null` terminal fallback — content-agnostic, consumers handle `null`) in `js/cms/migration-bridge.js` — must pass T009b [TS-030]
 
 **Checkpoint**: Core infrastructure tested and working. `npm test` passes. Emulator security rules validated.
 
@@ -93,7 +95,7 @@
 - [ ] T029 [US1] Implement `ContentService.getPrograms(audience)` method — Firestore query (audience + is_published, ordered by sort_order) → cache → null fallback chain
 - [ ] T030 [US1] Integrate content service into `empresas/index.html` — replace inline JS program objects with `ContentService.getPrograms('empresas')` call, render program cards from Firestore data
 - [ ] T031 [US1] Integrate content service into `personas/index.html` — replace inline JS program objects with `ContentService.getPrograms('personas')` call
-- [ ] T032 [US1] Implement static fallback in MigrationBridge for programs — when Firestore unavailable and no cache, preserve existing inline HTML rendering
+- [ ] T032 [US1] Implement program-specific null handler — when MigrationBridge returns `null` for programs, preserve existing inline HTML rendering (no-op: skip card re-render, keep DOM intact)
 - [ ] T033 [US1] Extend `scripts/seed-firestore.js` with program extractor — parse program data using semantic selectors (DOM structure, data attributes, or regex patterns on JS objects), verify seeded data in emulator
 - [ ] T034 [US1] Run E2E tests T024-T028, verify all pass [TS-001, TS-002, TS-004, TS-005, TS-006]
 
@@ -214,7 +216,7 @@
 ### Implementation
 
 - [ ] T078 [US5] Implement stale-while-revalidate pattern in ContentService — serve cached immediately, background fetch when stale, update cache + re-render on fresh data
-- [ ] T079 [US5] Implement graceful mid-session failure handling — catch Firestore errors silently, serve from cache, no user-visible errors
+- [ ] T079 [US5] Implement graceful mid-session failure handling — catch Firestore errors, log to `console.warn` for developer observability, serve from cache, no user-visible errors (no toasts/banners)
 - [ ] T080 [US5] Verify `config/settings.cache_ttl_ms` is respected across all content types (programs, pricing, translations)
 - [ ] T081 [US5] Run E2E tests T072-T077, verify all pass [TS-025, TS-026, TS-027, TS-028, TS-029, TS-030]
 
@@ -316,3 +318,7 @@ T001 → T006 → T010 → T011 → T012 → T029 → T030 → T039 → T040 →
 - Q: Is T055 (admin shell) too large for a single task? -> A: Yes. Split into T055a (shell + auth gate) and T055b (tab nav + ARIA + keyboard). One concern per task, one TDD cycle per task. Task atomicity rule added to Constitution XIV. [T055, T055a, T055b, Phase 6]
 - Q: Are hardcoded line numbers in T033/T044 fragile? -> A: Yes. Replace with semantic selectors (DOM structure, data attributes, regex on named patterns like `B2B_MULTIPLIERS`). Line numbers break when upstream tasks modify the same files. [T033, T044]
 - Q: Should admin editors (T057-T059) and AdminAPI (T054) have unit tests, or are E2E tests sufficient? -> A: C-full — unit tests for all 4 modules (T053a-T053d). Socratic debate confirmed: AdminAPI (sanitization, audit) and program-editor (bilingual validation) are high-risk logic that E2E doesn't isolate. price-editor and i18n-editor are marginal but kept for IX/XV consistency — low effort, complete TDD coverage. XIV tension resolved: E2E tests cover journeys, not edge cases of isolated logic. [T053a, T053b, T053c, T053d, T054, T057, T058, T059, Phase 6]
+- Q: MigrationBridge (T019) has no unit test — TDD violation? -> A: Add T009b for MigrationBridge unit tests (dual-source resolve, migrated_collections check, static fallback, null-when-both-fail). T019 must pass T009b. TS-030 E2E coverage in Phase 8 is insufficient for TDD compliance. [T009b, T019, T077, Phase 2]
+- Q: AuthService (T013) has no unit test — TDD violation? -> A: Add T009c for AuthService unit tests (isAdmin claim check, onAuthStateChanged subscription, sign-out cleanup). T013 must pass T009c. Consistent with IX/XV reasoning from T053a-d session. [T009c, T013, Phase 2]
+- Q: T019 and T032 both mention "static fallback in MigrationBridge" — scope overlap? -> A: Clarify boundary: T019 is content-agnostic data resolver (Firestore → cache → null). T032 is program-specific null handler (preserve inline HTML when null). MigrationBridge never touches DOM — consumers decide what null means. Socratic debate confirmed: separation of concerns (data vs render), XIV atomicity, and Phase 2/4 dependency direction all favor B. [T019, T032, Phase 2, Phase 4]
+- Q: T079 "catch Firestore errors silently" — does "silently" mean no logging? -> A: No. "Silently" = no user-visible errors (no toasts, banners, error screens). Errors MUST log to console.warn for developer observability. Cache fallback is the user-facing behavior; console.warn is the developer-facing signal. [T079, Phase 8]
