@@ -1,19 +1,23 @@
 <!-- Sync Impact Report
-Version: 4.1.0 (Socratic Hardening — sanitization, runner-agnostic BDD, dual-layer verification)
+Version: 5.0.0 (Structural Evolution — learning loop, insights, session protocol, operational logs)
+Added principles:
+  - XVII. Continuous Learning Loop: Socratic debates feed insights
+    into reusable decision patterns, captured in insights/ system
 Modified principles:
-  - VII. Secure by Default: added input sanitization default (strip,
-    not escape/allowlist) and dual-layer security verification
-  - XV. BDD Full-Spectrum Quality: added runner-agnostic step
-    definitions and Socratic debate protocol for ambiguity resolution
+  - VII. Secure by Default: added audit log qualified path requirement
+    (from TS-020 debate)
+Added sections:
+  - Session Protocol (new top-level section)
+  - Operational Logs (new top-level section — changelog, tasklog)
+  - Insights System (new top-level section — insights/ directory)
+  - XVII. Continuous Learning Loop (new principle in Work Philosophy)
 Modified sections:
-  - Quality Standards: added input sanitization and dual-layer
-    verification standards
-  - Governance: added Socratic debate as constitutional mechanism
-Previous version: 4.0.0 (Work Philosophy + BDD Full-Spectrum + Quality Gates)
-Origin: Socratic debates on TS-022, TS-024, TS-040 during clarify phase
-  - Debate 1: sanitization strategy (strip vs escape vs allowlist)
-  - Debate 2: static vs runtime verification (runner selection for
-    code invariants)
+  - Quality Standards: added audit log field qualification
+  - Governance: expanded with operational log and insights references
+Previous version: 4.1.0 (Socratic Hardening)
+Origin: TS-020 Socratic debate + user request for structural
+  scalability (insights, session protocol, continuous improvement)
+  - Debate 3: audit log verification strategy (Emulator, not Playwright)
 Removed sections: None
 Follow-up TODOs:
   - Update plan.md with worktree branching strategy
@@ -266,6 +270,13 @@ Security claims are verified both statically and at runtime.
   The marginal cost of the second layer is near-zero when
   E2E tests already exist; the marginal benefit is closing
   vectors that static analysis cannot detect
+- **Audit trail qualification**: audit log entries that
+  record "which field changed" MUST use a fully qualified
+  path that identifies collection, document, field name,
+  and variant without ambiguity (e.g.,
+  `programs/diagnostico.description_es`). A generic field
+  name is insufficient for recovery — the log must be
+  self-sufficient without additional context
 
 **Rationale**: A CMS is a write-capable system. Without
 server-side enforcement, any client-side restriction can be
@@ -578,6 +589,153 @@ because branch X isn't ready" problem. This principle makes
 the Think First (XIII) and Simple First (XIV) disciplines
 scalable across multiple concurrent workers.
 
+### XVII. Continuous Learning Loop
+
+Every decision, debate, and discovery feeds back into the
+system as a reusable insight. The project does not repeat
+mistakes or re-debate settled questions — it compounds
+knowledge.
+
+- **Socratic debate as decision engine**: when a decision
+  has 2+ options with divergent consequences, resolve it
+  through structured Socratic debate — test each option
+  against constitutional principles, eliminate by
+  contradiction, record the surviving answer with full
+  rationale. No ad-hoc decisions for consequential choices
+- **Three outputs per debate**: every debate produces
+  (1) the direct answer, (2) refinements to the original
+  question discovered during analysis, (3) coverage gaps
+  in adjacent territory. Capture all three
+- **Insights capture**: after every debate or significant
+  discovery, extract the reusable decision pattern and
+  record it in `insights/<domain>.md` with origin, pattern,
+  rationale, trigger conditions, and constitutional anchor.
+  Universal patterns go in `insights/universal.md`; domain-
+  specific patterns go in their domain file
+- **Constitution evolution**: when an insight reveals a
+  recurring ambiguity or a missing base definition, the
+  constitution MUST be amended to prevent the ambiguity
+  from recurring. The goal is that each debate makes future
+  debates unnecessary for the same class of decision
+- **Insight consultation before debate**: before starting a
+  new Socratic debate, check `insights/` for existing
+  patterns that may already resolve the question. If a
+  prior insight applies, cite it — do not re-debate
+- **No knowledge loss**: insights, clarifications, and
+  debate outcomes are never deleted — they are updated or
+  superseded with a reference to the replacement. The
+  audit trail of reasoning is as valuable as the code
+
+**Rationale**: A project that doesn't learn from its own
+decisions is condemned to re-debate them. The Socratic
+debates on TS-024, TS-022/TS-040, and TS-020 produced
+insights that now prevent entire categories of future
+ambiguity (sanitization defaults, runner selection, audit
+log design). This principle formalizes the feedback loop:
+debates → insights → constitution amendments → fewer
+debates needed. The compounding effect means the project
+gets faster and more precise over time, not slower.
+
+## Session Protocol
+
+Every new working session MUST follow this initialization
+sequence before any work begins. This ensures continuity
+across sessions and prevents context loss.
+
+### 1. Context Loading (automatic)
+
+Load the following files in order:
+1. `CLAUDE.md` — project instructions and agent rules
+2. `CONSTITUTION.md` — governance principles (this file)
+3. `insights/README.md` — insights index (load domain
+   files on-demand based on task context)
+4. `changelog.md` — recent changes and decisions
+5. `tasklog.md` — open tasks and pending work
+
+### 2. State Recovery
+
+After loading context:
+1. Read `changelog.md` for the last 5 entries — understand
+   what happened in recent sessions
+2. Read `tasklog.md` for all open items — identify pending
+   work, blockers, and stale tasks
+3. Check `insights/` for any insights tagged as "needs
+   validation" or "tentative"
+4. Check git status and recent commits on current branch
+
+### 3. Pending Closure
+
+Before accepting new work, proactively propose closing
+pending items:
+1. List all open tasks from `tasklog.md` with their age
+2. For each: recommend close, continue, or archive with
+   reasoning
+3. Identify stale items (>7 days without progress) and
+   flag them
+4. Confirm with user before closing or archiving anything
+
+### 4. Next Steps Proposal
+
+After pending items are resolved (or deferred by user):
+1. Analyze the current feature state (IIKit dashboard,
+   branch status, phase progress)
+2. Suggest 2-3 concrete next steps ranked by impact
+3. Include at least one improvement/idea beyond the
+   current task (from insights gaps, constitution TODOs,
+   or observed patterns)
+4. Wait for user direction — never start work without
+   explicit confirmation
+
+**Rationale**: AI sessions start with zero context. Without
+a protocol, the first 10 minutes are spent re-establishing
+what was done and what's next. This protocol frontloads
+context recovery so productive work begins immediately. The
+pending closure step prevents task accumulation — open items
+that never close become invisible technical debt. The next
+steps proposal ensures the user always has options, not just
+a blank prompt.
+
+## Operational Logs
+
+The project maintains two operational logs for cross-session
+continuity. These are living documents, not archives.
+
+### changelog.md
+
+Records significant decisions, completions, and changes.
+Each entry includes date, what changed, why, and
+constitutional principles involved.
+
+Format:
+```markdown
+## YYYY-MM-DD
+- **[type]**: description — rationale [Principle X, Y]
+```
+
+Types: `decision`, `completion`, `amendment`, `insight`,
+`blocker`, `discovery`
+
+### tasklog.md
+
+Tracks open work items that span sessions. Each item has a
+status, owner, and age.
+
+Format:
+```markdown
+| ID | Task | Status | Owner | Opened | Notes |
+|----|------|--------|-------|--------|-------|
+```
+
+Statuses: `open`, `in-progress`, `blocked`, `deferred`
+
+Rules:
+- Items older than 14 days without progress MUST be
+  reviewed and either closed, deferred, or re-prioritized
+- Completed items are moved to a `## Completed` section
+  (retained for 30 days, then archived)
+- The session protocol (above) reviews this log at the
+  start of every session
+
 ## Quality Gates
 
 Quality gates formalize the checkpoints adopted from the
@@ -621,6 +779,12 @@ applicable gate before advancing.
 - Security invariants (no secrets, no unauthorized access
   patterns, centralized data access) must pass both static
   scan and runtime verification in CI
+- Audit log field references must be qualified paths — not
+  generic names. A log entry must enable recovery without
+  supplementary context
+- Data-layer behavior (audit logs, schema validation,
+  security rules) MUST be tested against the Emulator, not
+  through browser E2E tests — match runner to nature
 - Both language variants (ES/EN) must be present before
   content is published — no partial translations visible
   to users
@@ -716,5 +880,23 @@ personal preferences.
   contradiction. The surviving option is integrated with
   full rationale. Debates are recorded in clarification
   artifacts for auditability
+- **Continuous learning** (XVII) mandates that every debate
+  and discovery produces reusable insights captured in
+  `insights/`. Constitution amendments follow when insights
+  reveal recurring ambiguity classes. The project compounds
+  knowledge — it never re-debates a settled class of
+  decision
+- **Operational logs** (`changelog.md`, `tasklog.md`) are
+  maintained across sessions. The session protocol ensures
+  they are reviewed at every session start, preventing
+  context loss and task accumulation
+- **Session protocol** is mandatory: load context → recover
+  state → close pending items → propose next steps. No
+  work begins without context recovery. No session ends
+  without logging significant decisions
+- **Insights before debate**: before initiating a Socratic
+  debate, consult `insights/` for existing patterns. If a
+  prior insight resolves the question, cite it and apply
+  it — do not re-debate
 
-**Version**: 4.1.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-03-23
+**Version**: 5.0.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-03-23
