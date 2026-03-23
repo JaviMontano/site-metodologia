@@ -70,7 +70,8 @@ const detailsData = {
     }
 };
 
-const B2B_MULTIPLIERS = { program: 13.33333333, foundation: 5.29411765, bootcamp: 15, diagnostic: 1 };
+/* eslint-disable no-var -- exposed to CMS module for Firestore override */
+var B2B_MULTIPLIERS = { program: 13.33333333, foundation: 5.29411765, bootcamp: 15, diagnostic: 1 };
 
 // === STATE ===
 let pricingMode = 'B2C';

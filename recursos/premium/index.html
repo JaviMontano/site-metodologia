@@ -421,5 +421,33 @@
             if (typeof icons !== 'undefined') icons.createIcons();
         });
     </script>
+
+    <!-- CMS Premium Pricing Integration -->
+    <script type="module">
+    import { getFirebaseApp } from '../../js/cms/firebase-config.js';
+    import { ContentService } from '../../js/cms/content-service.js';
+
+    async function loadCmsPremiumPricing() {
+        try {
+            const app = getFirebaseApp();
+            await ContentService.init({ app });
+
+            const premium = await ContentService.getPricing('premium');
+            if (!premium?.skus) return;
+
+            // Update pricing table cells that contain COP prices
+            document.querySelectorAll('[data-premium-sku]').forEach(el => {
+                const sku = el.getAttribute('data-premium-sku');
+                if (premium.skus[sku]?.price_cop != null) {
+                    const price = premium.skus[sku].price_cop;
+                    el.textContent = '$' + price.toLocaleString('es-CO');
+                }
+            });
+        } catch {
+            // Firestore unavailable — static prices preserved
+        }
+    }
+    loadCmsPremiumPricing();
+    </script>
 </body>
 </html>

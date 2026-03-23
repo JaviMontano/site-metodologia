@@ -1219,5 +1219,44 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- Ruta Mode Toggle Script -->
 <script src="js/ruta-mode.js"></script>
 
+<!-- CMS Pricing Integration -->
+<script type="module">
+import { getFirebaseApp } from '../js/cms/firebase-config.js';
+import { ContentService } from '../js/cms/content-service.js';
+
+async function loadCmsPricing() {
+    try {
+        const app = getFirebaseApp();
+        await ContentService.init({ app });
+
+        // Update data-price attributes with Firestore B2C prices
+        const b2c = await ContentService.getPricing('b2c_base');
+        if (b2c) {
+            document.querySelectorAll('[data-price]').forEach(el => {
+                const key = el.getAttribute('data-price');
+                // Look up price by nested path (e.g., "programs.empoderamiento")
+                const parts = key.split('.');
+                let val = b2c;
+                for (const p of parts) {
+                    val = val?.[p];
+                }
+                if (val?.price != null) {
+                    el.setAttribute('data-price-value', String(val.price));
+                }
+            });
+        }
+
+        // Update B2B multipliers
+        const b2b = await ContentService.getPricing('b2b_multipliers');
+        if (b2b && typeof B2B_MULTIPLIERS !== 'undefined') {
+            Object.assign(B2B_MULTIPLIERS, b2b);
+        }
+    } catch {
+        // Firestore unavailable — static prices preserved
+    }
+}
+loadCmsPricing();
+</script>
+
 </body>
 </html>

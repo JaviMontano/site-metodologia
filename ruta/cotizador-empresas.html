@@ -1638,5 +1638,26 @@ document.addEventListener('DOMContentLoaded', () => {
 <script src="../js/modal-system.js" defer></script>
 <script src="js/cotizador-empresas.js"></script>
 
+<!-- CMS Pricing Integration -->
+<script type="module">
+import { getFirebaseApp } from '../js/cms/firebase-config.js';
+import { ContentService } from '../js/cms/content-service.js';
+
+async function loadCmsPricing() {
+    try {
+        const app = getFirebaseApp();
+        await ContentService.init({ app });
+
+        const b2b = await ContentService.getPricing('b2b_multipliers');
+        if (b2b && typeof B2B_MULTIPLIERS !== 'undefined') {
+            Object.assign(B2B_MULTIPLIERS, b2b);
+        }
+    } catch {
+        // Firestore unavailable — static multipliers preserved
+    }
+}
+loadCmsPricing();
+</script>
+
 </body>
 </html>
