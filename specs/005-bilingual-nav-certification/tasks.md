@@ -55,12 +55,12 @@
 
 ## Phase 5: US2 — Certification Suite Rendered (P1)
 
-- [ ] T019 [US2] Create tests/e2e/bilingual-certification.spec.js scaffold with Playwright test blocks [TS-016, TS-017]
-- [ ] T020a [US2] Implement Layer 1 for index.html: verify data-i18n elements render en.json values in EN mode [TS-017]
-- [ ] T020b [P] [US2] Implement Layer 1 for ruta/index.html: verify data-i18n elements render en.json values in EN mode [TS-018]
-- [ ] T020c [P] [US2] Implement Layer 1 for empresas/index.html: verify data-i18n elements render en.json values in EN mode [TS-019]
-- [ ] T020d [P] [US2] Implement Layer 1 for personas/index.html: verify data-i18n elements render en.json values in EN mode [TS-020]
-- [ ] T021 [US2] Implement Layer 2: regex scan visible text outside data-i18n elements for Spanish patterns from data/i18n-spanish-patterns.json [TS-021]
+- [x] T019 [US2] Create tests/e2e/bilingual-certification.spec.js scaffold with Playwright test blocks [TS-016, TS-017]
+- [x] T020a [US2] Implement Layer 1 for index.html: verify data-i18n elements render en.json values in EN mode [TS-017]
+- [x] T020b [P] [US2] Implement Layer 1 for ruta/index.html: verify data-i18n elements render en.json values in EN mode [TS-018]
+- [x] T020c [P] [US2] Implement Layer 1 for empresas/index.html: verify data-i18n elements render en.json values in EN mode [TS-019]
+- [x] T020d [P] [US2] Implement Layer 1 for personas/index.html: verify data-i18n elements render en.json values in EN mode [TS-020]
+- [x] T021 [US2] Implement Layer 2: regex scan visible text outside data-i18n elements for Spanish patterns from data/i18n-spanish-patterns.json [TS-021]
 
 > **Parallel batch**: T020a, T020b, T020c, T020d (same logic per page, independent assertions)
 > **Dependency**: T021 depends on T020a-T020d (Layer 2 runs after Layer 1 passes); T021 depends on T003 (needs patterns file for regex scan)
