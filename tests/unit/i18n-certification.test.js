@@ -223,6 +223,10 @@ describe('i18n Bilingual Certification Suite', () => {
         allUsedKeys.add(`${ns}.nav.sections_label`);
         allUsedKeys.add(`${ns}.nav.home`);
       }
+      // Shared fallback keys used by components or language toggle
+      const sharedKeys = ['nav.sections_label', 'nav.home', 'toggle.label',
+        'footer.powered'];
+      for (const k of sharedKeys) allUsedKeys.add(k);
 
       const orphaned = allEnKeys.filter(k => !allUsedKeys.has(k));
       if (orphaned.length > 0) {

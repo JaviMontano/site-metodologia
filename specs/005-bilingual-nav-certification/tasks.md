@@ -77,22 +77,22 @@
 
 ## Phase 7: US4 — Level 2-5 Coverage Expansion (P2)
 
-- [ ] T026a [US4] Add data-i18n keys and translations for empresas/diagnostico-gratuito.html to reach 100% coverage [TS-022]
-- [ ] T026b [P] [US4] Add data-i18n keys and translations for empresas/bootcamp-ventas-ia.html to reach 100% coverage [TS-022]
-- [ ] T026c [P] [US4] Add data-i18n keys and translations for empresas/workshop-venta-amplificada.html to reach 100% coverage [TS-022]
-- [ ] T026d [P] [US4] Add data-i18n keys and translations for personas/autodiagnostico.html to reach 100% coverage [TS-022]
-- [ ] T026e [P] [US4] Add data-i18n keys and translations for personas/bootcamp-amplificacion-profesional.html to reach 100% coverage [TS-022]
-- [ ] T026f [P] [US4] Add data-i18n keys and translations for personas/consultive-workshops-estrategia-personal.html to reach 100% coverage [TS-022]
-- [ ] T027 [P] [US4] Add data-i18n keys and translations for L3 pages (recursos index pages) to reach >=90% coverage [TS-023]
-- [ ] T028 [P] [US4] Add data-i18n keys and translations for L4 pages (resource detail) — headings, CTAs, nav elements [TS-024]
-- [ ] T029 [P] [US4] Add data-i18n keys and translations for L5 pages (contacto, nosotros, legal) to reach 100% coverage [TS-025]
+- [x] T026a [US4] Add data-i18n keys and translations for empresas/diagnostico-gratuito.html to reach 100% coverage [TS-022]
+- [x] T026b [P] [US4] Add data-i18n keys and translations for empresas/bootcamp-ventas-ia.html to reach 100% coverage [TS-022]
+- [x] T026c [P] [US4] Add data-i18n keys and translations for empresas/workshop-venta-amplificada.html to reach 100% coverage [TS-022]
+- [x] T026d [P] [US4] Add data-i18n keys and translations for personas/autodiagnostico.html to reach 100% coverage [TS-022]
+- [x] T026e [P] [US4] Add data-i18n keys and translations for personas/bootcamp-amplificacion-profesional.html to reach 100% coverage [TS-022]
+- [x] T026f [P] [US4] Add data-i18n keys and translations for personas/consultive-workshops-estrategia-personal.html to reach 100% coverage [TS-022]
+- [x] T027 [P] [US4] Add data-i18n keys and translations for L3 pages (recursos index pages) to reach >=90% coverage [TS-023]
+- [x] T028 [P] [US4] Add data-i18n keys and translations for L4 pages (resource detail) — headings, CTAs, nav elements [TS-024]
+- [x] T029 [P] [US4] Add data-i18n keys and translations for L5 pages (contacto, nosotros, legal) to reach 100% coverage [TS-025]
 
 > **Parallel batch 5**: T026a-T026f, T027, T028, T029 (independent pages/levels)
 > **Dependency**: Phase 7 depends on Phase 4 (needs certification suite to validate)
 
 ## Phase 8: US5 — i18n Efficiency Cleanup (P3)
 
-- [ ] T030 [US5] Remove orphaned en.json keys identified by certification suite run [TS-028]
+- [x] T030 [US5] Remove orphaned en.json keys identified by certification suite run [TS-028]
 - [ ] T031 [US5] Add data-skip-i18n attribute support to SiteHeader.loadI18n() — skip i18n.js loading when attribute present [TS-026]
 - [ ] T032 [US5] Add data-skip-i18n attribute to HTML pages that have zero translatable content [TS-026, TS-027]
 - [ ] T033 [US5] Verify no console errors on pages with data-skip-i18n [TS-027]
