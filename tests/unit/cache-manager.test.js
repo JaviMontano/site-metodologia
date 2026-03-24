@@ -3,7 +3,10 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 // Mock idb since we're in Node environment
 const mockStore = new Map();
 const mockClearFn = vi.fn();
-const VALID_STORES = ['programs', 'pricing', 'translations'];
+const VALID_STORES = [
+  'programs', 'pricing', 'translations',
+  'resources', 'resource_categories', 'page_content', 'curriculum', 'site_config',
+];
 
 const mockDb = {
   get(storeName, key) {
@@ -103,7 +106,7 @@ describe('CacheManager', () => {
   describe('invalidateAll', () => {
     it('should clear all known stores', async () => {
       await CacheManager.invalidateAll();
-      expect(mockClearFn).toHaveBeenCalledTimes(3);
+      expect(mockClearFn).toHaveBeenCalledTimes(8);
     });
 
     it('should skip stores not present in IndexedDB', async () => {
@@ -112,7 +115,7 @@ describe('CacheManager', () => {
       mockDb.objectStoreNames.contains = (name) => name !== 'translations';
 
       await CacheManager.invalidateAll();
-      expect(mockClearFn).toHaveBeenCalledTimes(2); // programs + pricing only
+      expect(mockClearFn).toHaveBeenCalledTimes(7); // 8 stores minus translations
 
       mockDb.objectStoreNames.contains = origContains;
     });

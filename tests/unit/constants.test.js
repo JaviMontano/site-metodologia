@@ -37,7 +37,8 @@ describe('constants', () => {
     expect(typeof CACHE_DB_NAME).toBe('string');
     expect(typeof CACHE_DB_VERSION).toBe('number');
     expect(Array.isArray(CACHE_STORES)).toBe(true);
-    expect(CACHE_STORES).toEqual(['programs', 'pricing', 'translations']);
+    expect(CACHE_STORES.slice(0, 3)).toEqual(['programs', 'pricing', 'translations']);
+    expect(CACHE_STORES).toHaveLength(8);
   });
 
   it('should export DEFAULT_CACHE_TTL_MS as 1 hour in ms', () => {
