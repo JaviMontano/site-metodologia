@@ -156,7 +156,7 @@ WORDS = {
     "argumenta": "Construye argumento solido: tesis clara, 3 puntos de soporte con evidencia, anticipacion de contra-argumentos, conclusion. Cada afirmacion con dato o razonamiento explicito.",
     "predice": "Proyecta 3 escenarios basados en la informacion actual: optimista, probable, pesimista. Cada uno con condiciones, probabilidad estimada e implicaciones. No adivinar — extrapolar con fundamento.",
     "mapea": "Crea un mapa visual del concepto: elementos, relaciones, jerarquias, dependencias, flujos. Formato: texto estructurado compatible con Mermaid o diagrama ASCII.",
-    "prioriza_pareto": "Aplica principio 80/20: identifica el 20% de acciones/factores que producen el 80% del resultado. Presenta como lista priorizada con justificacion por item.",
+    "pareto": "Aplica principio 80/20: identifica el 20% de acciones/factores que producen el 80% del resultado. Presenta como lista priorizada con justificacion por item.",
     "verifica": "Verifica cada afirmacion contra fuentes. Marca: verificado / requiere fuente / potencialmente incorrecto. Para lo no verificable, indica nivel de confianza (alto/medio/bajo).",
     "operacionaliza": "Convierte el plan abstracto en operaciones concretas: quien hace que, cuando, con que, como se mide, donde se documenta. Cero ambiguedad. Todo ejecutable manana.",
     "sintetiza": "De multiples fuentes o inputs, produce 1 documento unificado. Solo lo que importa. Elimina redundancias, resuelve contradicciones, mantiene la esencia. Max 1 pagina.",
