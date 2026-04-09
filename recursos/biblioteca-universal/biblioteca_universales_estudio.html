@@ -643,6 +643,9 @@ const CATEGORIES = {
   'solucion':      {label:'Solucion',         color:'#67e8f9', icon:'puzzle'}
 };
 
+// ── HELPERS ──
+function getCfg(c) { return CATEGORIES[c] || { label: c, color: '#94a3b8', icon: 'file-text' }; }
+
 // ── STATE ──
 let allPrompts = [];
 let activeCat = 'all';
