@@ -143,6 +143,25 @@ WORDS = {
     "desafia": "Challenge mode. Ataca la propuesta desde 3 angulos: viabilidad tecnica, viabilidad financiera, viabilidad operativa. Busca fallas, supuestos no validados y riesgos ocultos. Se constructivo pero implacable.",
     "calibra": "Ajusta tono, profundidad y formato a la audiencia especificada. Si la audiencia es C-level: conciso, estrategico, orientado a decision. Si es tecnica: detallado, preciso, con evidencia. Si es general: accesible, con ejemplos.",
     # segmenta removed (covered by letter d=desglosa), consolida removed (covered by letter u=unifica)
+    # ─── RESTORED + NEW WORDS to reach 42 total ───
+    "resume": "Resume en formato ejecutivo: max 3 parrafos. Parrafo 1: conclusion y recomendacion principal. Parrafo 2: evidencia y fundamento clave. Parrafo 3: proximos pasos concretos con responsable y fecha.",
+    "traduce": "Traduce al otro idioma manteniendo tono, intencion y matices culturales. Espanol a ingles profesional. Ingles a espanol latinoamericano profesional. Preserva terminos tecnicos. Solo la traduccion.",
+    "profundiza": "Expande con nivel de experto senior: datos, ejemplos concretos, casos de estudio, matices no explorados, perspectivas contrarias. 3x mas valor que el contenido actual.",
+    "simplifica": "Reduce a lo esencial. Cada palabra debe ganarse su lugar. Elimina redundancias. Si se puede decir en 1 oracion, no uses 3. El resultado debe ser mas corto que el input.",
+    "contextualiza": "Situa en contexto: antecedentes historicos, marco teorico, tendencias relevantes, y por que importa AHORA. Conecta con el panorama general sin perder foco en lo especifico.",
+    "cuantifica": "Convierte lo cualitativo en cuantitativo. Cada afirmacion con numero, porcentaje, rango o estimacion fundamentada. Si no hay dato exacto, proporciona orden de magnitud.",
+    "visualiza": "Describe como representar visualmente: que tipo de grafico, mapa, diagrama o infografia. Especifica layout, paleta, jerarquia. El visual debe comunicar sin texto adicional.",
+    "personaliza": "Adapta a mi contexto profesional especifico. No respuestas genericas — cada recomendacion debe considerar mi rol, sector, equipo, herramientas y restricciones reales.",
+    "estructura": "Organiza en estructura piramidal: conclusion primero, argumentos de soporte despues, evidencia al final. Cada nivel responde al 'por que' del nivel superior. MECE.",
+    "argumenta": "Construye argumento solido: tesis clara, 3 puntos de soporte con evidencia, anticipacion de contra-argumentos, conclusion. Cada afirmacion con dato o razonamiento explicito.",
+    "predice": "Proyecta 3 escenarios basados en la informacion actual: optimista, probable, pesimista. Cada uno con condiciones, probabilidad estimada e implicaciones. No adivinar — extrapolar con fundamento.",
+    "mapea": "Crea un mapa visual del concepto: elementos, relaciones, jerarquias, dependencias, flujos. Formato: texto estructurado compatible con Mermaid o diagrama ASCII.",
+    "prioriza_pareto": "Aplica principio 80/20: identifica el 20% de acciones/factores que producen el 80% del resultado. Presenta como lista priorizada con justificacion por item.",
+    "verifica": "Verifica cada afirmacion contra fuentes. Marca: verificado / requiere fuente / potencialmente incorrecto. Para lo no verificable, indica nivel de confianza (alto/medio/bajo).",
+    "operacionaliza": "Convierte el plan abstracto en operaciones concretas: quien hace que, cuando, con que, como se mide, donde se documenta. Cero ambiguedad. Todo ejecutable manana.",
+    "sintetiza": "De multiples fuentes o inputs, produce 1 documento unificado. Solo lo que importa. Elimina redundancias, resuelve contradicciones, mantiene la esencia. Max 1 pagina.",
+    "segmenta": "Divide en segmentos manejables con criterio logico. Cada segmento: nombre, alcance, dependencias, entregable parcial. Presenta como plan de trabajo segmentado.",
+    "escenarios": "Genera 3 escenarios alternativos para la situacion: conservador, base, agresivo. Para cada uno: supuestos, implicaciones, acciones recomendadas, probabilidad estimada.",
     "prototipa": "Version minima viable. Lo suficiente para validar la idea o concepto. Rapido, funcional, descartable. Identifica: que valida este prototipo y que NO valida.",
     "escala": "Toma lo que funciona y disenalo para 10x volumen. Identifica: que se rompe al escalar, que necesita cambiar, que automatizar. Presenta plan de escalamiento progresivo.",
     "aterriza": "De lo abstracto a lo concreto. Cada concepto se traduce en: accion especifica, fecha, responsable, entregable medible. Cero generalidades.",
@@ -2078,6 +2097,20 @@ try:
     print("Expansion C loaded.")
 except ImportError:
     print("Warning: expansion_v4c.py not found.")
+
+try:
+    from expansion_v4d import register_expansion_d
+    register_expansion_d(qspec)
+    print("Expansion D loaded.")
+except ImportError:
+    print("Warning: expansion_v4d.py not found.")
+
+try:
+    from expansion_v4e import register_expansion_e
+    register_expansion_e(qspec)
+    print("Expansion E loaded.")
+except ImportError:
+    print("Warning: expansion_v4e.py not found.")
 
 # ═══════════════════════════════════════════════════════════════
 # ASSEMBLY: Build the final JSON
