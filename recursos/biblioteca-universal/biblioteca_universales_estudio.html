@@ -439,6 +439,118 @@ html.dark .toast { background: #0b2545; }
   font-family: var(--font-note); font-size: .78rem;
   color: var(--text-muted); border-top: 1px solid var(--border);
 }
+
+/* ═══ NEW SECTIONS: Storytelling, Education, Authors ═══ */
+
+/* ── STORYTELLING (before/after) ── */
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+@media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; } }
+.story-card {
+  padding: 2rem; border-radius: var(--radius-lg);
+  border: 1px solid var(--border); transition: var(--transition);
+}
+.story-card.before { background: rgba(220,38,38,.03); border-left: 5px solid #ef4444; }
+.story-card.after { background: rgba(16,185,129,.03); border-left: 5px solid #10b981; }
+html.dark .story-card.before { background: rgba(220,38,38,.08); }
+html.dark .story-card.after { background: rgba(16,185,129,.08); }
+.story-label {
+  font-family: var(--font-note); font-size: .68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em; margin-bottom: .75rem;
+  display: flex; align-items: center; gap: .5rem;
+}
+.story-label.red { color: #ef4444; }
+.story-label.green { color: #10b981; }
+.story-card li {
+  font-size: .92rem; color: var(--text-sec); line-height: 1.7;
+  margin-bottom: .5rem; padding-left: .25rem;
+}
+.story-highlight {
+  margin-top: 2rem; padding: 1.5rem 2rem; border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(18,37,98,.04), rgba(255,215,0,.04));
+  border: 1px solid var(--border); text-align: center;
+}
+html.dark .story-highlight { background: linear-gradient(135deg, rgba(255,215,0,.06), rgba(19,125,197,.06)); }
+.story-highlight p {
+  font-family: var(--font-head); font-weight: 700; font-size: 1.1rem;
+  color: var(--navy); font-style: italic;
+}
+html.dark .story-highlight p { color: var(--gold); }
+
+/* ── EDUCATION (prompting steps) ── */
+.edu-steps { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+.edu-step {
+  display: flex; gap: 1.25rem; padding: 1.5rem;
+  border-radius: var(--radius-md); background: var(--white);
+  border: 1px solid var(--border); transition: var(--transition);
+}
+html.dark .edu-step { background: var(--bg-card); }
+.edu-step:hover { border-color: var(--blue); transform: translateX(4px); }
+.edu-num {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--gold); color: var(--navy);
+  font-family: var(--font-head); font-weight: 800; font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.edu-step h4 { font-size: 1rem; margin-bottom: .25rem; color: var(--text); }
+.edu-step p { font-size: .88rem; color: var(--text-sec); line-height: 1.6; }
+
+/* ── CONCEPT CARDS (prompting/meta-prompting) ── */
+.concept-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+@media (max-width: 768px) { .concept-grid { grid-template-columns: 1fr; } }
+.concept-card {
+  padding: 2rem; border-radius: var(--radius-lg);
+  background: var(--white); border: 1px solid var(--border);
+  box-shadow: var(--shadow-card); transition: var(--transition);
+}
+html.dark .concept-card { background: var(--bg-card); }
+.concept-card:hover { transform: translateY(-4px); }
+.concept-icon {
+  width: 56px; height: 56px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+}
+.concept-card h3 { margin-bottom: .5rem; }
+.concept-card p { font-size: .92rem; color: var(--text-sec); line-height: 1.7; }
+
+/* ── AUTHOR CARDS ── */
+.author-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; max-width: 900px; }
+@media (max-width: 768px) { .author-grid { grid-template-columns: 1fr; } }
+.author-card {
+  padding: 2rem; border-radius: var(--radius-lg);
+  background: var(--white); border: 1px solid var(--border);
+  box-shadow: var(--shadow-card); transition: var(--transition); position: relative;
+}
+html.dark .author-card { background: var(--bg-card); }
+.author-card:hover { transform: translateY(-4px); }
+.author-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+.author-img {
+  width: 72px; height: 72px; border-radius: 50%;
+  border: 3px solid var(--gold); overflow: hidden; flex-shrink: 0;
+}
+.author-img img { width: 100%; height: 100%; object-fit: cover; }
+.author-name { font-family: var(--font-head); font-size: 1.15rem; font-weight: 800; color: var(--text); }
+.author-role { font-family: var(--font-note); font-size: .78rem; font-weight: 600; color: var(--gold-dark); }
+html.dark .author-role { color: var(--gold); }
+.author-bio { font-size: .88rem; color: var(--text-sec); line-height: 1.7; margin-bottom: 1rem; }
+.author-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+.author-tag {
+  font-family: var(--font-note); font-size: .62rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .05em;
+  padding: .2rem .5rem; border-radius: 100px;
+  background: rgba(19,125,197,.06); color: var(--blue); border: 1px solid rgba(19,125,197,.12);
+}
+.author-icon {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  opacity: .15; color: var(--gold);
+}
+
+/* ── MODAL CONCEPT (educational modals) ── */
+.concept-trigger {
+  cursor: pointer; color: var(--blue); font-weight: 600;
+  text-decoration: underline; text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+.concept-trigger:hover { color: var(--gold); }
 </style>
 </head>
 <body>
@@ -469,7 +581,144 @@ html.dark .toast { background: #0b2545; }
 
 <hr class="divider">
 
-<!-- ═══ S3: FORMATO SPEC ═══ -->
+<!-- ═══ S3: STORYTELLING — LA TRANSFORMACION ═══ -->
+<section id="story" class="container">
+  <h2>La Diferencia es el Metodo</h2>
+  <p style="color:var(--text-sec);max-width:750px">Dos profesionales con la misma herramienta. Uno produce resultados inconsistentes, gasta horas iterando y nunca sabe si el output es bueno. El otro produce entregables de calidad ejecutiva en minutos, con precision replicable. La diferencia no es talento — es metodo.</p>
+  <div class="story-grid">
+    <div class="story-card before">
+      <div class="story-label red"><i data-lucide="alert-triangle" style="width:16px;height:16px"></i> SIN METODO</div>
+      <ul style="list-style:none;padding:0">
+        <li>&#10060; Prompts vagos que producen resultados aleatorios</li>
+        <li>&#10060; Cada vez empieza de cero — nada es reutilizable</li>
+        <li>&#10060; No sabe si el output es bueno hasta que alguien lo revisa</li>
+        <li>&#10060; Depende de la suerte: a veces funciona, a veces no</li>
+        <li>&#10060; Gasta 80% del tiempo editando lo que la IA produjo</li>
+      </ul>
+    </div>
+    <div class="story-card after">
+      <div class="story-label green"><i data-lucide="check-circle" style="width:16px;height:16px"></i> CON METODO SPEC</div>
+      <ul style="list-style:none;padding:0">
+        <li>&#9989; Instrucciones precisas que producen resultados consistentes</li>
+        <li>&#9989; Biblioteca de prompts reutilizables y parametrizables</li>
+        <li>&#9989; Checklist de auto-auditoria integrado en cada prompt</li>
+        <li>&#9989; Resultados predecibles: mismo input, misma calidad</li>
+        <li>&#9989; El output sale listo para usar — sin edicion</li>
+      </ul>
+    </div>
+  </div>
+  <div class="story-highlight">
+    <p>"La brecha entre hacer mucho y lograr mucho se cierra con metodo."</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══ S4: QUE ES EL PROMPTING ═══ -->
+<div class="section-bg">
+<section id="prompting" class="container">
+  <h2>Que es el Prompting</h2>
+  <p style="color:var(--text-sec);max-width:750px">El <strong>prompting</strong> es el arte y la ciencia de comunicarte con inteligencia artificial. No es "pedirle cosas a un chatbot" — es disenar instrucciones que produzcan resultados profesionales, consistentes y listos para usar.</p>
+  <div class="concept-grid">
+    <div class="concept-card">
+      <div class="concept-icon" style="background:rgba(19,125,197,.08)">
+        <i data-lucide="message-square" style="width:28px;height:28px;color:var(--blue)"></i>
+      </div>
+      <h3>Prompting Basico</h3>
+      <p>Escribir instrucciones en lenguaje natural para que la IA ejecute una tarea. Es el punto de partida — util pero limitado. Los resultados varian con cada ejecucion y dependen de la habilidad del usuario para comunicar.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-icon" style="background:rgba(255,215,0,.08)">
+        <i data-lucide="sparkles" style="width:28px;height:28px;color:var(--gold-dark)"></i>
+      </div>
+      <h3>Prompting de Alto Rendimiento</h3>
+      <p>Instrucciones estructuradas con contexto, rol, formato y criterios de exito. Produce resultados <strong>predecibles y replicables</strong>. La diferencia entre pedir un deseo y especificar un resultado.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<hr class="divider">
+
+<!-- ═══ S5: QUE ES EL META-PROMPTING ═══ -->
+<section id="metaprompting" class="container">
+  <h2>Que es el Meta-Prompting</h2>
+  <p style="color:var(--text-sec);max-width:750px">Si el prompting es escribir una buena instruccion, el <strong>meta-prompting</strong> es disenar el sistema que genera buenas instrucciones. Es la habilidad multiplicadora: un buen prompt crea valor una vez; un buen meta-prompt crea valor infinitas veces.</p>
+  <div class="concept-grid">
+    <div class="concept-card">
+      <div class="concept-icon" style="background:rgba(168,139,250,.08)">
+        <i data-lucide="wand-2" style="width:28px;height:28px;color:#a78bfa"></i>
+      </div>
+      <h3>Prompts que generan Prompts</h3>
+      <p>En vez de escribir cada instruccion manualmente, disenas <strong>templates parametrizables</strong> que se adaptan a diferentes contextos. Un meta-prompt de investigacion se convierte en 100 prompts de investigacion especificos con solo cambiar los parametros.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-icon" style="background:rgba(16,185,129,.08)">
+        <i data-lucide="git-branch" style="width:28px;height:28px;color:#10b981"></i>
+      </div>
+      <h3>Pipeline de Co-Creacion</h3>
+      <p>Un flujo de 10 pasos (nuestro Pipeline 0-9) que transforma una idea vaga en un entregable profesional. Cada paso tiene su comando: <strong>Priming &#8594; Entender &#8594; Definir &#8594; Planificar &#8594; Ejecutar &#8594; Robustecer &#8594; Simplificar &#8594; Validar &#8594; Entregar &#8594; Cristalizar</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══ S6: BEST PRACTICES ═══ -->
+<div class="section-bg">
+<section id="practices" class="container">
+  <h2>Best Practices de Prompting</h2>
+  <p style="color:var(--text-sec);max-width:750px">Las practicas que separan al usuario casual del profesional de alto rendimiento:</p>
+  <div class="edu-steps">
+    <div class="edu-step">
+      <div class="edu-num">1</div>
+      <div>
+        <h4>Contexto antes que tarea</h4>
+        <p>Sin contexto, la IA inventa. Siempre empieza con el <strong>para que</strong> (situacion prospectiva) antes del <strong>que</strong> (pedido). El contexto calibra toda la respuesta.</p>
+      </div>
+    </div>
+    <div class="edu-step">
+      <div class="edu-num">2</div>
+      <div>
+        <h4>Rol calibra profundidad</h4>
+        <p>Definir un <strong>arquetipo experto</strong> con profesion real y experiencia especifica. "Actua como Analista Senior con 15 anos" produce resultados mas profundos que "ayudame con esto".</p>
+      </div>
+    </div>
+    <div class="edu-step">
+      <div class="edu-num">3</div>
+      <div>
+        <h4>Parametrizar para reutilizar</h4>
+        <p>Usa <strong>{{PLACEHOLDERS}}</strong> en tus prompts para hacerlos reutilizables. Un prompt parametrizado se ejecuta 100 veces; uno fijo, solo una.</p>
+      </div>
+    </div>
+    <div class="edu-step">
+      <div class="edu-num">4</div>
+      <div>
+        <h4>Protocolo antes de ejecucion</h4>
+        <p>Instruye a la IA a <strong>interpretar, planificar y luego ejecutar</strong>. Esto previene outputs superficiales y garantiza que la IA piense antes de actuar.</p>
+      </div>
+    </div>
+    <div class="edu-step">
+      <div class="edu-num">5</div>
+      <div>
+        <h4>Criterio de exito medible</h4>
+        <p>Define <strong>como se ve "listo"</strong> antes de empezar. Un checklist de auto-auditoria integrado en el prompt asegura calidad sin revision humana adicional.</p>
+      </div>
+    </div>
+    <div class="edu-step">
+      <div class="edu-num">6</div>
+      <div>
+        <h4>Cristalizar para escalar</h4>
+        <p>Despues de lograr un buen resultado, haz <strong>ingenieria inversa</strong>: extrae un prompt reutilizable. El proceso de hoy construye el atajo de manana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<hr class="divider">
+
+<!-- ═══ S7: FORMATO SPEC (enhanced) ═══ -->
 <div class="section-bg">
 <section id="spec" class="container">
   <h2>El Formato SPEC</h2>
@@ -557,7 +806,57 @@ html.dark .toast { background: #0b2545; }
 
 <hr class="divider">
 
-<!-- ═══ S6: DESCARGAS ═══ -->
+<!-- ═══ AUTHORS ═══ -->
+<div class="section-bg">
+<section id="authors" class="container">
+  <h2>Mentes Detras de la Biblioteca</h2>
+  <p style="color:var(--text-sec);max-width:750px">Ingenieria de prompts y metodologias de alto rendimiento.</p>
+  <div class="author-grid">
+    <div class="author-card">
+      <i data-lucide="feather" class="author-icon" style="width:48px;height:48px"></i>
+      <div class="author-top">
+        <div class="author-img">
+          <img src="https://github.com/ejemplo-deo-repo/img/blob/main/javier-montano.webp?raw=true" alt="Javier Montano" loading="lazy">
+        </div>
+        <div>
+          <div class="author-name">Javier Montano</div>
+          <div class="author-role">Chief Empowerment Officer</div>
+        </div>
+      </div>
+      <p class="author-bio">Arquitecto de sistemas y metodologias que transforman potencial en resultados. Especialista en integracion estrategica de IA y metodologias de alto rendimiento. Creador de MetodologIA y del formato SPEC.</p>
+      <div class="author-tags">
+        <span class="author-tag">Prompt Engineering</span>
+        <span class="author-tag">SPEC Format</span>
+        <span class="author-tag">Meta-Prompting</span>
+        <span class="author-tag">Estrategia IA</span>
+      </div>
+    </div>
+    <div class="author-card">
+      <i data-lucide="cpu" class="author-icon" style="width:48px;height:48px"></i>
+      <div class="author-top">
+        <div class="author-img" style="border-color:#00FFFF">
+          <img src="https://github.com/ejemplo-deo-repo/img/blob/main/german-sepulveda.png?raw=true" alt="German Sepulveda" loading="lazy">
+        </div>
+        <div>
+          <div class="author-name">German Sepulveda</div>
+          <div class="author-role" style="color:#00FFFF">Chief Ecosystem Officer</div>
+        </div>
+      </div>
+      <p class="author-bio">Constructor de ecosistemas que conectan talento, vision y proposito. Especialista en desarrollo de agentes IA, testing de calidad y mantenimiento del ecosistema de asistentes de MetodologIA.</p>
+      <div class="author-tags">
+        <span class="author-tag">Ecosistema IA</span>
+        <span class="author-tag">QA de Agentes</span>
+        <span class="author-tag">Custom GPTs</span>
+        <span class="author-tag">Gemini Gems</span>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<hr class="divider">
+
+<!-- ═══ DESCARGAS ═══ -->
 <section id="downloads" class="container">
   <h2>Descargar Biblioteca</h2>
   <div class="dl-grid">
