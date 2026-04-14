@@ -336,6 +336,34 @@ Un visitante accede al home desde iPhone SE (xs), iPhone 15 (sm), iPad portrait 
 - **FR-080**: El home MUST leer `utm_content` y cuando sea `diagnostico`, `recurso` u `oferta`, destacar visualmente la ruta correspondiente con un halo/glow gold sutil, sin cambiar la jerarquía base.
 - **FR-081**: El home MUST detectar la cookie `mdg_returning` y mutar el CTA primario a "Continuar tu ruta" + link directo al diagnóstico con estado restaurado.
 
+**Backoffice CMS — gestión sin código**
+
+- **FR-100**: El sistema MUST exponer un backoffice en `/admin/` (autenticado con Firebase Auth + custom claim `admin:true`) que permita gestionar sin tocar código: productos, servicios, precios, URLs, traducciones, recursos, testimonios, páginas, bloques de contenido, imágenes, SEO metadata, feature flags, y variantes de experimentos.
+- **FR-101**: El backoffice MUST proveer CRUD completo sobre las colecciones Firestore: `products`, `services`, `programs`, `pricing`, `resources`, `testimonials`, `pages`, `blocks`, `assets`, `seo`, `flags`, `experiments`, `translations`, `leads`, `diagnostics`, `settings`.
+- **FR-102**: Cada entidad editable MUST tener un **schema descriptor** (JSON Schema almacenado en `settings/schemas/{entity}`) que define campos, tipos, validaciones, etiquetas ES/EN y help text — permitiendo que el backoffice renderice formularios dinámicos sin hardcodear UI por entidad (patrón "schema-driven admin").
+- **FR-103**: El backoffice MUST soportar **bloques de contenido reutilizables** (`blocks/{slug}`) tipo WordPress Gutenberg: hero, feature, testimonial, CTA-group, pricing-table, FAQ, image, video, rich-text, HTML raw (sandboxed). Los bloques se componen en páginas vía referencias ordenadas.
+- **FR-104**: Las páginas del sitio (`pages/{slug}`) MUST modelarse como documento con: título, slug, locale, SEO metadata, array ordenado de bloques con overrides, estado (draft/scheduled/published), fecha publicación, autor, versionado.
+- **FR-105**: Las URLs MUST ser editables — cada `pages/{slug}` define su `path` canónico + array de `redirects` (array de paths antiguos). Un router client-side en el home y páginas dinámicas resuelve slug→path usando un índice cacheado.
+- **FR-106**: Los precios MUST vivir en `pricing/{id}` con: moneda, valor base, descuentos, fecha vigencia desde/hasta, multi-moneda (COP/USD/MXN/EUR), estado activo/archivado, producto/servicio asociado.
+- **FR-107**: Las traducciones MUST vivir en `translations/{locale}/{namespace}/{key}` reemplazando el fetch estático de `js/i18n/dictionaries/*.json` cuando el flag `cms-i18n` esté activo — con fallback estático si Firestore no responde.
+- **FR-108**: El backoffice MUST soportar **versionado y rollback**: cada escritura a una entidad CMS crea un documento en `{entity}_versions/{id}/{versionId}` con snapshot completo, autor, timestamp y diff resumen. El admin puede ver historial y restaurar.
+- **FR-109**: El backoffice MUST soportar **audit log** inmutable en `audit/{eventId}` con: actor (uid), acción (create/update/delete/publish), entidad, antes/después hash, IP, user-agent, timestamp server.
+- **FR-110**: El backoffice MUST proveer **workflow de publicación**: estados `draft → in-review → scheduled → published → archived` con roles (`editor`, `reviewer`, `publisher`, `admin`) controlados por custom claims.
+- **FR-111**: El backoffice MUST soportar **upload de assets** (imágenes, PDFs) a Firebase Storage en `assets/{uuid}/{filename}`, con transformación client-side (resize, WebP conversion via Canvas API) antes de subir, y URL pública vía Storage rules.
+- **FR-112**: El backoffice MUST soportar **preview** — cada entidad editable tiene un modo "ver como publicado" que renderiza el home/página con el draft sin publicar, usando query param `?preview={token}` firmado.
+- **FR-113**: El backoffice MUST exponer un **dashboard** con métricas live desde Firestore: leads últimos 7/30 días, diagnósticos completados, top recursos, conversion funnel.
+- **FR-114**: El backoffice MUST permitir **export** (JSON, CSV) de `leads/`, `diagnostics/`, `audit/` para uso offline y backup.
+- **FR-115**: El backoffice MUST soportar **feature flags** (`flags/{key}`) con targeting por locale, deviceClass, utm, cohort — consumidos por el home para activar variantes sin redeploy.
+- **FR-116**: El backoffice MUST soportar **experimentos A/B** (`experiments/{id}`) con: nombre, hipótesis, variantes, assignment rule, fecha inicio/fin, métrica de éxito — consumidos por el home para asignar variantes determinísticas por sessionId.
+- **FR-117**: El backoffice MUST soportar **internacionalización del propio admin UI** (ES/EN) usando los mismos tokens i18n que el sitio público.
+- **FR-118**: El backoffice MUST respetar el design system Neo-Swiss Light/Dark, reutilizando los mismos tokens y componentes que el sitio público.
+- **FR-119**: El sistema MUST mantener **schema migrations** declarativas en `settings/migrations/{version}` ejecutadas por script admin-only al boot, para evolucionar entidades sin romper data existente.
+- **FR-120**: El sistema MUST aplicar **security rules** Firestore que:
+  - Permiten lectura pública a `products`, `services`, `programs`, `pricing`, `resources` (status=published), `pages` (status=published), `blocks`, `translations`, `flags`, `experiments`, `seo`, `testimonials`.
+  - Permiten escritura solo a uids con custom claim `admin:true` o `editor:true`.
+  - Permiten escritura propia a `leads/{uid}` y `diagnostics/{uid}` solo desde la sesión que creó el doc.
+  - Niegan todo lo demás por defecto.
+
 **Performance**
 
 - **FR-090**: El home MUST cargar el LCP en ≤2.5s en 4G (slow 3G Fast simulación) y ≤1.5s en desktop cable.
@@ -356,6 +384,19 @@ Un visitante accede al home desde iPhone SE (xs), iPhone 15 (sm), iPad portrait 
 
 ### 4.3 Key Entities
 
+- **Product**: `{id, slug, title_i18n, description_i18n, type:"course|workshop|bootcamp|consulting|service", segmento, pricingRef, assets[], tags[], status, createdAt, updatedAt, version}`
+- **Service**: `{id, slug, title_i18n, description_i18n, deliverables_i18n[], duration, pricingRef, segmento, status}`
+- **Program**: extiende Product con `{cohortes[], curriculum[], instructor, certificacion}`
+- **Pricing**: `{id, productRef, currency, amount, discounts[], validFrom, validUntil, plans[], status}`
+- **Page**: `{slug, locale, title_i18n, seo:{title,description,og,canonical}, blocks:[{blockRef,order,overrides}], status, publishedAt, author, version}`
+- **Block**: `{id, type:"hero|feature|testimonial|cta-group|pricing-table|faq|image|video|rich-text|html", schema, content_i18n, status}`
+- **Asset**: `{uuid, filename, mimeType, size, storagePath, publicUrl, width, height, alt_i18n, tags[], uploadedBy, uploadedAt}`
+- **Translation**: `{locale, namespace, key, value, updatedBy, updatedAt}`
+- **Flag**: `{key, value, targeting:{locales[],deviceClasses[],utm[],cohorts[]}, enabled, updatedAt}`
+- **Experiment**: `{id, name, hypothesis, variants:[{id,weight,config}], assignment:"session|user", metric, status, startedAt, endsAt}`
+- **Schema**: `{entity, version, fields:[{name,type,required,validation,label_i18n,help_i18n}]}`
+- **AuditEvent**: `{eventId, actorUid, action, entity, entityId, before, after, diffSummary, ip, userAgent, serverTimestamp}`
+- **Setting**: `{key, value_i18n?, scope:"global|env", updatedBy, updatedAt}`
 - **Lead**: `{uid, email, name, segmento, fuente, locale, createdAt, updatedAt, consent, programaInterest?}`
 - **Diagnóstico**: `{uid, leadUid, steps:[{id,answer}], resultado:{nivel,recomendacion}, locale, deviceClass, fuente, startedAt, completedAt, status:"in-progress"|"completed"|"abandoned"}`
 - **Recurso**: `{id, tipo, estado:"free"|"premium", locale, previewUrl, fullUrl}` (existente en el CMS).
@@ -411,7 +452,6 @@ Un visitante accede al home desde iPhone SE (xs), iPhone 15 (sm), iPad portrait 
 
 ## 7. Out of Scope
 
-- Backoffice/CRM para gestionar leads (usar Firestore Studio / export manual como interim).
 - Integración email marketing (Mailchimp, Brevo) — fuera del MVP, se hace en fase 2.
 - A/B testing framework — la infraestructura se prepara (`variant` en eventos) pero no se lanzan experimentos en el v1.
 - Nuevas páginas de programas educativos — solo reutilización.
@@ -436,7 +476,465 @@ Un visitante accede al home desde iPhone SE (xs), iPhone 15 (sm), iPad portrait 
 
 ---
 
-## 9. Clarifications
+## 9. Architecture — Backend-for-Frontend (Firebase BaaS + Hostinger Static)
+
+### 9.1 Principios
+
+- **BaaS (Backend-as-a-Service)**: Firebase es el backend completo — Firestore (datos), Auth (identidad), Storage (assets), Analytics (eventos), App Check (anti-abuso), Remote Config (flags opcionales). Sin servidor propio.
+- **Static frontend on Hostinger**: HTML/CSS/JS + Web Components desplegados vía git pull, consumiendo Firebase desde el cliente con security rules como control de acceso único.
+- **BFF light = smart client**: el cliente implementa caché (stale-while-revalidate con IndexedDB), fallback estático, resolvedor dual-source, y lógica de presentación. No hay capa intermedia.
+- **Schema-driven admin**: el backoffice en `/admin/` renderiza UI dinámica a partir de JSON Schemas en `settings/schemas/*`, permitiendo extender sin tocar código.
+- **Content-as-data**: cada página del sitio es una composición ordenada de bloques reutilizables almacenados en Firestore. Editar = publicar.
+
+### 9.2 C4 Level 1 — System Context
+
+```mermaid
+C4Context
+  title System Context — MetodologIA Site v2
+
+  Person(visitor, "Visitante", "B2C/B2B, LatAm, mobile-first")
+  Person(lead, "Lead", "Visitante con diagnóstico completado")
+  Person(editor, "Editor / Admin", "Javier + equipo contenido")
+
+  System(site, "MetodologIA Site", "Home landing + catálogo + diagnóstico + backoffice CMS")
+
+  System_Ext(firebase, "Firebase (Google)", "Firestore / Auth / Storage / Analytics / App Check")
+  System_Ext(hostinger, "Hostinger", "Static hosting + CDN + SSL")
+  System_Ext(ga, "Google Analytics", "GA4 complementario (opcional)")
+  System_Ext(fonts, "Google Fonts", "Poppins / Montserrat")
+
+  Rel(visitor, site, "Navega, explora, inicia diagnóstico", "HTTPS")
+  Rel(lead, site, "Retoma diagnóstico, descarga recursos", "HTTPS + cookie")
+  Rel(editor, site, "Gestiona contenido, precios, URLs", "HTTPS + Google Auth")
+  Rel(site, firebase, "Lee/escribe datos, autentica, sube assets", "HTTPS + SDK")
+  Rel(site, hostinger, "Servido estático", "HTTPS")
+  Rel(site, ga, "Eventos (opcional)", "HTTPS")
+  Rel(site, fonts, "Tipografías", "HTTPS")
+```
+
+### 9.3 C4 Level 2 — Container Diagram
+
+```mermaid
+C4Container
+  title Container Diagram — MetodologIA Site v2
+
+  Person(visitor, "Visitante")
+  Person(editor, "Editor / Admin")
+
+  System_Boundary(site, "MetodologIA Site") {
+    Container(public, "Public Frontend", "HTML + CSS + Vanilla JS + Web Components", "Home, catálogos, diagnóstico, páginas dinámicas")
+    Container(admin, "Backoffice CMS", "HTML + Vanilla JS + schema-driven forms", "Gestión sin código de productos, precios, páginas, traducciones")
+    Container(shared, "CMS Client SDK", "ES modules en js/cms/*", "content-service, cache-manager, auth-service, admin-api, migration-bridge")
+    ContainerDb(idb, "IndexedDB Cache", "idb", "Stale-while-revalidate cache, 7d TTL")
+    Container(sw, "Service Worker", "JS", "Offline fallback, precache del shell")
+  }
+
+  System_Boundary(firebase, "Firebase BaaS") {
+    ContainerDb(fs, "Firestore", "NoSQL", "products, pages, leads, diagnostics, audit, ...")
+    Container(auth, "Firebase Auth", "OAuth + custom claims", "Google sign-in, admin/editor claims")
+    ContainerDb(storage, "Firebase Storage", "Object store", "Assets: imágenes, PDFs")
+    Container(analytics, "Firebase Analytics", "Events API", "Conversion funnel, device class, locale")
+    Container(appcheck, "App Check", "Attestation", "reCAPTCHA Enterprise v3 anti-abuso")
+    Container(rules, "Security Rules", "DSL", "Reglas declarativas por colección")
+  }
+
+  Rel(visitor, public, "Navega", "HTTPS")
+  Rel(editor, admin, "Edita", "HTTPS + Google Auth")
+  Rel(public, shared, "importa")
+  Rel(admin, shared, "importa")
+  Rel(shared, idb, "lee/escribe cache")
+  Rel(shared, fs, "lee datos CMS publicados", "Firestore SDK")
+  Rel(shared, auth, "autentica editores", "Auth SDK")
+  Rel(admin, storage, "sube assets", "Storage SDK")
+  Rel(shared, analytics, "dispara eventos", "Analytics SDK")
+  Rel(shared, appcheck, "firma requests", "App Check SDK")
+  Rel(fs, rules, "valida acceso")
+  Rel(public, sw, "registra")
+```
+
+### 9.4 C4 Level 3 — Component Diagram (Public Frontend + CMS Client SDK)
+
+```mermaid
+flowchart TB
+  subgraph PublicFrontend["Public Frontend (pages)"]
+    Home["index.html — Home v2"]
+    Diag["diagnostico/ — flujo 6 pasos"]
+    Catalog["recursos/ — catálogo"]
+    Dyn["dynamic-page.html — router de pages"]
+    Components["Web Components: SiteHeader, SiteFooter, ThemeToggle, DiagnosticStepper, BlockRenderer"]
+  end
+
+  subgraph AdminFrontend["Backoffice CMS (/admin/)"]
+    AdminShell["AdminShell"]
+    EntityList["EntityList (schema-driven table)"]
+    EntityForm["EntityForm (schema-driven form)"]
+    BlockEditor["BlockEditor (drag & drop bloques)"]
+    AssetLibrary["AssetLibrary (upload + preview)"]
+    AuditViewer["AuditViewer"]
+    DashboardPanel["Dashboard (metrics)"]
+  end
+
+  subgraph SDK["CMS Client SDK (js/cms/)"]
+    Init["init.js — bootstrap"]
+    ContentSvc["content-service.js — fetch + SWR"]
+    CacheMgr["cache-manager.js — IndexedDB"]
+    AuthSvc["auth-service.js — Google sign-in + claims"]
+    AdminAPI["admin-api.js — writes + validation + audit"]
+    Bridge["migration-bridge.js — dual-source (CMS↔static)"]
+    SchemaReg["schema-registry.js — carga schemas dinámicos"]
+    FlagsSvc["flags-service.js — feature flags"]
+    ExpSvc["experiment-service.js — A/B assignment"]
+    Analytics["analytics.js — eventos tipados"]
+  end
+
+  Home --> Bridge
+  Home --> Components
+  Home --> FlagsSvc
+  Home --> ExpSvc
+  Home --> Analytics
+  Diag --> ContentSvc
+  Diag --> AdminAPI
+  Diag --> Analytics
+  Catalog --> ContentSvc
+  Dyn --> ContentSvc
+  Dyn --> SchemaReg
+
+  AdminShell --> AuthSvc
+  EntityList --> ContentSvc
+  EntityForm --> SchemaReg
+  EntityForm --> AdminAPI
+  BlockEditor --> AdminAPI
+  AssetLibrary --> AdminAPI
+  AuditViewer --> ContentSvc
+  DashboardPanel --> ContentSvc
+
+  ContentSvc --> CacheMgr
+  ContentSvc --> Bridge
+  AdminAPI --> AuthSvc
+  Init --> ContentSvc
+  Init --> AuthSvc
+  Init --> FlagsSvc
+```
+
+### 9.5 Data Model — Firestore Collections
+
+```
+firestore/
+├── products/{productId}             # bootcamps, workshops, courses
+├── services/{serviceId}             # consultoría, auditoría
+├── programs/{programId}             # extiende products
+├── pricing/{pricingId}              # precios multi-moneda
+├── pages/{pageSlug}                 # páginas del sitio
+├── blocks/{blockId}                 # bloques reutilizables
+├── assets/{assetUuid}               # metadata imágenes/PDFs
+├── resources/{resourceId}           # catálogo recursos
+├── testimonials/{testimonialId}
+├── translations/{locale}/ns/{key}
+├── flags/{flagKey}
+├── experiments/{expId}
+├── seo/{pageSlug}
+├── leads/{leadUid}                  # PII — write own only
+├── diagnostics/{diagUid}            # PII — write own only
+├── audit/{eventId}                  # immutable
+├── settings/
+│   ├── schemas/{entity}             # JSON Schemas descriptores
+│   ├── migrations/{version}         # migraciones declarativas
+│   └── config/global                # nombre sitio, idiomas, dominios
+└── {entity}_versions/{id}/{vId}     # historial de cambios
+```
+
+### 9.6 Security Rules (resumen declarativo)
+
+| Colección | Lectura | Escritura |
+|---|---|---|
+| `products`, `services`, `programs`, `pricing`, `pages`, `blocks`, `resources`, `testimonials`, `translations`, `flags`, `experiments`, `seo`, `assets` | pública si `status==published` | solo `admin==true` o `editor==true` |
+| `leads/{uid}`, `diagnostics/{uid}` | solo el uid dueño o `admin==true` | crear: solo el uid autenticado anónimamente (session match); update: solo dueño; delete: deny |
+| `audit/{eventId}` | solo `admin==true` | server-write only (triggered por Cloud Function si aparece) — en MVP write desde admin client con validación estricta |
+| `settings/schemas/{entity}` | pública (necesaria para admin) | solo `admin==true` |
+| `{entity}_versions/{id}/{vId}` | solo `admin==true` | solo `admin==true` al hacer update |
+
+### 9.7 Deployment Topology
+
+```
+┌─────────────────────┐       git pull        ┌─────────────────────┐
+│  GitHub origin/main │───────────────────────▶│  Hostinger VPS      │
+│  (CI lint+test)     │                        │  /public_html/      │
+└─────────────────────┘                        │  + CDN + SSL        │
+                                               └──────────┬──────────┘
+                                                          │ HTTPS
+                                                          ▼
+                                               ┌─────────────────────┐
+                                               │     Visitante       │
+                                               └──────────┬──────────┘
+                                                          │ Firebase SDK
+                                                          ▼
+                                               ┌─────────────────────┐
+                                               │  Firebase (Google)  │
+                                               │  Firestore + Auth + │
+                                               │  Storage + Analytics│
+                                               │  + App Check        │
+                                               └─────────────────────┘
+```
+
+---
+
+## 10. Sequence Diagrams — Flujos Críticos
+
+### 10.1 Visita inicial al home (public read path)
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant V as Visitante
+  participant H as Hostinger CDN
+  participant I as index.html
+  participant SW as ServiceWorker
+  participant B as migration-bridge
+  participant CM as cache-manager (IDB)
+  participant CS as content-service
+  participant FS as Firestore
+  participant AN as Analytics
+
+  V->>H: GET /
+  H-->>V: HTML + critical CSS inline
+  V->>SW: register
+  V->>I: bootstrap JS
+  I->>B: resolvePage("home")
+  B->>CM: cache.get("pages/home")
+  alt cache hit fresh
+    CM-->>B: page doc
+    B-->>I: render blocks
+  else stale
+    CM-->>B: stale doc
+    B-->>I: render stale (SWR)
+    B->>CS: fetch fresh
+    CS->>FS: get pages/home where status=published
+    FS-->>CS: page doc
+    CS->>CM: cache.put
+    CS-->>B: fresh doc
+    B-->>I: re-render if diff
+  else miss
+    B->>CS: fetch
+    CS->>FS: get pages/home
+    FS-->>CS: page doc
+    CS->>CM: cache.put
+    CS-->>B: doc
+    B-->>I: render
+  end
+  I->>AN: event home_view {locale, deviceClass, source}
+```
+
+### 10.2 Completar diagnóstico (write path con App Check)
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant V as Visitante
+  participant D as diagnostico page
+  participant LS as localStorage
+  participant AC as AppCheck
+  participant AU as FirebaseAuth
+  participant FS as Firestore
+  participant AN as Analytics
+
+  V->>D: click "Iniciar diagnóstico"
+  D->>LS: init state {step:1}
+  AN-->>V: diagnostic_start
+
+  loop pasos 1..5
+    V->>D: responder paso
+    D->>LS: persist answers
+    AN-->>V: diagnostic_step_N
+  end
+
+  V->>D: paso 6 (email + nombre + consent)
+  D->>AU: signInAnonymously()
+  AU-->>D: uid anónimo
+  D->>AC: getToken()
+  AC-->>D: appCheckToken
+  D->>FS: create leads/{uid} {email,name,segment,locale,consent}
+  FS-->>D: ok
+  D->>FS: create diagnostics/{uid} {leadUid,steps,resultado}
+  FS-->>D: ok
+  D->>LS: clear in-progress
+  D->>V: set cookie mdg_returning=sha256(email)
+  AN-->>V: diagnostic_completed
+  D-->>V: show result + next CTA
+```
+
+### 10.3 Editor publica un cambio de precio
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant E as Editor
+  participant A as /admin/ UI
+  participant AU as FirebaseAuth
+  participant SR as schema-registry
+  participant AA as admin-api
+  participant FS as Firestore
+  participant AUD as audit
+  participant VER as pricing_versions
+
+  E->>A: login con Google
+  A->>AU: signInWithPopup
+  AU-->>A: idToken + claims {editor:true}
+  E->>A: abrir Pricing → P-042
+  A->>FS: get pricing/P-042
+  FS-->>A: doc v7
+  A->>SR: getSchema("pricing")
+  SR-->>A: schema
+  A->>E: render form con schema
+  E->>A: edita amount 1200→1350 USD
+  A->>A: validate contra schema
+  E->>A: click "Publicar"
+  A->>AA: update("pricing","P-042", before, after)
+  AA->>FS: update pricing/P-042 (v8)
+  FS-->>AA: ok
+  AA->>VER: create pricing_versions/P-042/v8 {snapshot,diff,author}
+  AA->>AUD: create audit/{eventId} {actor,action:update,entity:pricing,before,after}
+  AA-->>A: ok
+  A-->>E: toast "Publicado"
+  Note over FS: clientes consumen nuevo precio<br/>en siguiente fetch (SWR ≤60s)
+```
+
+### 10.4 Rollback de una página
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant E as Admin
+  participant A as /admin/ UI
+  participant FS as Firestore
+  participant VER as pages_versions
+  participant AUD as audit
+
+  E->>A: abre pages/home historial
+  A->>VER: list pages_versions/home
+  VER-->>A: [v12,v11,v10,...]
+  E->>A: click "Restaurar v11"
+  A->>VER: get pages_versions/home/v11
+  VER-->>A: snapshot v11
+  A->>A: confirm dialog
+  E->>A: confirmar
+  A->>FS: update pages/home = snapshot v11 (bumped v13)
+  A->>VER: create pages_versions/home/v13 {restoredFrom:v11}
+  A->>AUD: audit {action:"restore",from:v11,to:v13}
+  A-->>E: toast "Restaurado"
+```
+
+---
+
+## 11. BPMN Functional Flows
+
+### 11.1 Flujo: Captura de Lead vía Diagnóstico
+
+```mermaid
+flowchart LR
+  S((Start: Visitante llega al home)) --> A{¿Tiene cookie<br/>mdg_returning?}
+  A -- sí --> A1[Mostrar CTA<br/>"Continuar tu ruta"]
+  A -- no --> A2[Mostrar CTA<br/>"Iniciar diagnóstico"]
+  A1 --> B[Restaurar estado<br/>desde localStorage]
+  A2 --> C[Click CTA]
+  B --> D[Flujo diagnóstico<br/>6 pasos]
+  C --> D
+  D --> E{¿Visitante<br/>completa?}
+  E -- abandona --> F[Persistir estado<br/>en localStorage 24h]
+  F --> G[Evento diagnostic_abandoned]
+  G --> Z1((End: visitante sale))
+  E -- completa --> H[Paso final:<br/>email + nombre + consent]
+  H --> I{¿Consent<br/>aceptado?}
+  I -- no --> J[Mostrar explicación<br/>+ mailto fallback]
+  J --> Z2((End: lead no capturado))
+  I -- sí --> K[signInAnonymously]
+  K --> L[Crear leads/uid<br/>en Firestore]
+  L --> M[Crear diagnostics/uid<br/>en Firestore]
+  M --> N[Setear cookie<br/>mdg_returning]
+  N --> O[Mostrar resultado<br/>+ CTA siguiente]
+  O --> P[Evento diagnostic_completed]
+  P --> Z3((End: lead cualificado))
+```
+
+### 11.2 Flujo: Publicación de Contenido desde el Backoffice
+
+```mermaid
+flowchart LR
+  S((Start: Editor quiere cambio)) --> A[Login Google]
+  A --> B{¿Claim<br/>editor/admin?}
+  B -- no --> B1[Denegar + mensaje]
+  B1 --> Z1((End: denegado))
+  B -- sí --> C[Abrir /admin/]
+  C --> D[Seleccionar entidad<br/>products|pages|pricing|...]
+  D --> E[Cargar schema<br/>desde settings/schemas]
+  E --> F[Cargar doc actual<br/>desde Firestore]
+  F --> G[Editar en form<br/>schema-driven]
+  G --> H[Validación client-side]
+  H --> I{¿Valida?}
+  I -- no --> G
+  I -- sí --> J{¿Estado<br/>destino?}
+  J -- draft --> K[Guardar draft]
+  J -- in-review --> L[Asignar reviewer<br/>+ notificar]
+  J -- scheduled --> M[Guardar con publishAt futuro]
+  J -- published --> N[Publicar ahora]
+  K --> O[Crear version snapshot]
+  L --> O
+  M --> O
+  N --> O
+  O --> P[Escribir audit event]
+  P --> Q[Invalidar cache<br/>en clientes SWR]
+  Q --> R[Toast confirmación]
+  R --> Z2((End: cambio live))
+```
+
+### 11.3 Flujo: Resolución Dual-Source (CMS ↔ Static Fallback)
+
+```mermaid
+flowchart LR
+  S((Start: página necesita dato)) --> A[content-service.fetch key]
+  A --> B[cache-manager.get]
+  B --> C{¿Hit?}
+  C -- fresh<br/>≤60s --> C1[Return cache]
+  C -- stale<br/>>60s ≤7d --> C2[Return stale + trigger refetch]
+  C -- miss --> D[Firestore fetch]
+  C2 --> D
+  D --> E{¿Firestore<br/>responde?}
+  E -- sí 200 --> F[Validar contra schema]
+  F --> G{¿Valida?}
+  G -- sí --> H[Update cache]
+  H --> I[Return fresh data]
+  G -- no --> J[Log error<br/>mantener stale]
+  J --> K{¿Hay<br/>stale?}
+  K -- sí --> K1[Return stale]
+  K -- no --> L[Return static fallback<br/>desde js/i18n/*]
+  E -- no<br/>offline/error --> K
+  C1 --> Z((End: dato entregado))
+  I --> Z
+  K1 --> Z
+  L --> Z
+```
+
+---
+
+## 12. Clarifications
+
+### Session 2026-04-14 (v3 — BFF architecture + Backoffice CMS + C4/BPMN)
+
+- Q: ¿Backend dedicado o BaaS? → A: Firebase BaaS (Firestore + Auth + Storage + Analytics + App Check), cero servidor propio [§9.1, NFR-001]
+- Q: ¿CMS propio o headless externo? → A: CMS propio schema-driven sobre Firestore, reutilizando `js/cms/` y `/admin/` ya existentes, extendido con schema registry + block editor + asset library + versioning + audit + flags + experimentos [FR-100..FR-120]
+- Q: ¿Modelo de páginas? → A: Content-as-data — cada página es composición ordenada de bloques reutilizables, editable sin código [FR-103, FR-104]
+- Q: ¿URLs editables? → A: Sí — campo `path` en `pages/{slug}` + array `redirects` resuelto por router client-side [FR-105]
+- Q: ¿Multi-moneda en precios? → A: Sí — `pricing/{id}` soporta COP/USD/MXN/EUR con vigencias [FR-106]
+- Q: ¿Traducciones en Firestore o estáticas? → A: Híbrido con flag `cms-i18n` — Firestore cuando esté activo, estático como fallback [FR-107]
+- Q: ¿Versionado y rollback? → A: Sí, snapshot por versión en `{entity}_versions/{id}/{vId}` + UI de historial [FR-108]
+- Q: ¿Audit log inmutable? → A: Sí, en colección `audit/` con hash antes/después, solo lectura admin [FR-109]
+- Q: ¿Workflow de publicación? → A: Sí — draft/in-review/scheduled/published/archived con roles vía custom claims [FR-110]
+- Q: ¿Upload de assets? → A: Firebase Storage + transformación client-side (Canvas WebP) antes de subir [FR-111]
+- Q: ¿Preview de drafts? → A: Sí, modo `?preview={token}` firmado [FR-112]
+- Q: ¿Dashboard de métricas en admin? → A: Sí, live queries sobre leads/diagnostics/audit [FR-113]
+- Q: ¿Export de datos? → A: JSON y CSV desde admin [FR-114]
+- Q: ¿Feature flags y A/B? → A: Sí, colecciones `flags/` y `experiments/` consumidas por el home [FR-115, FR-116]
+- Q: ¿Anti-abuso? → A: Firebase App Check (reCAPTCHA Enterprise v3) sobre writes PII [§9.2]
+- Q: ¿Diagramas requeridos? → A: C4 L1+L2+L3 (Mermaid), sequence (4 flujos críticos), BPMN (3 flujos funcionales), topology deployment [§9, §10, §11]
 
 ### Session 2026-04-14 (v2 Socratic refinement)
 
