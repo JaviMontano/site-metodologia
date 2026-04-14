@@ -450,6 +450,7 @@ Feature 009 ships with `scripts/seed.js` that populates `programs/`, `resources/
   - `fallback` pill (gray): static fallback served (Firestore gated by flag or unreachable on first load)
 - **FR-098**: A Playwright test in `tests/e2e/offline-pill.spec.js` MUST stub Firestore to fail and assert the `offline` pill appears on the home within 3 seconds.
 - **FR-099**: The pills are `aria-live="polite"` so screen readers announce cache state changes.
+- **FR-099b** *(añadido en v6, derivado de backcasting §3.1 gap A)*: Los 3 toggles globales (locale, theme, audience — FR-200..FR-206) MUST coexistir en el header con las offline/syncing/fallback pills (FR-097..FR-099) sin obstruirlas visualmente ni funcionalmente. Las pills MUST permanecer visibles en el mismo landmark del header independientemente del estado de los toggles, con contraste ≥3:1 en ambos themes (light y dark). *(Deriva de Constitution VIII SWR + Explicit Offline UX.)*
 
 ### 4.5 Diagnóstico Logic (declarative rules)
 
