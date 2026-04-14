@@ -1,205 +1,282 @@
-# Implementation Plan: Home como Landing Vendedora (3 CTAs Primarios)
+# Implementation Plan: Home + 13-Page IA Scaffolding (v2)
 
-**Branch**: `009-home-landing-sales` | **Date**: 2026-04-14 | **Spec**: [spec.md](./spec.md)
-**Input**: Feature specification from `/specs/009-home-landing-sales/spec.md`
+**Branch**: `009-home-landing-sales` | **Date**: 2026-04-14 | **Revised**: 2026-04-14 (v2 — post-sitemap feedback loop)
+**Spec**: [spec.md](./spec.md) · **Sitemap/IA**: [sitemap.md](./sitemap.md)
+**Input**: Feature specification + IA spec
 **Constitution**: v7.0.0 (Cloud-First Content-as-Data) — hard gate enforced
 
 ## Summary
 
-Reemplazar el home dark-startup actual por una landing vendedora Neo-Swiss Light con pirámide de intención (CTA primario dominante: diagnóstico; secundarios: recursos, oferta educativa), 100% responsive xs→2xl, cumpliendo WCAG 2.1 AA, con stack static-first HTML/CSS/Vanilla JS + Web Components + Firebase BaaS consumido desde cliente (SWR + offline pills + static fallback). Todo el contenido CMS se consume read-only desde `js/cms/` existente; la única escritura es append-only a `leads/{uid}` y `diagnostics/{uid}` bajo Firebase Auth anónimo + App Check. El backoffice completo (FR-100..FR-120) queda fuera de scope — feature 010.
+Entregar el home v2 Neo-Swiss Light **+ el esqueleto de las 13 páginas del sitio** (Sitemap §2) con nav/footer unificados, redirects legacy, y el flujo de diagnóstico completo como única ruta funcional profunda. Todas las demás páginas se entregan como **shells mínimos** (hero + proof + CTA + layout consistente) que cumplen el contrato de IA y el design system, pero cuyo contenido profundo se itera en features 011+. El backoffice CMS sigue fuera (→010).
 
-**Enfoque técnico**: reutilizar el SDK CMS existente (`js/cms/*`), los Web Components `SiteHeader`/`SiteFooter`, el módulo `js/i18n/` y el pipeline Tailwind prebuilt (`dist/output.css`). Añadir 3 Web Components nuevos (`ThemeToggle`, `DiagnosticStepper`, `BlockRenderer`), un `estilos/critical.css` hand-authored, un `scripts/seed.js` para `programs/`/`resources/`/`testimonials/`, y `estilos/home-v2.css` que redefine tokens Neo-Swiss Light + dark mirror. El diagnóstico implementa la tabla declarativa de spec §4.5 en un módulo puro `js/diagnostic/logic.js` que los `.feature` scenarios pueden ejercitar sin DOM.
+Este plan es **v2**: reemplaza al plan v1 tras el ciclo socrático del sitemap (§5 + §7). Reducciones clave vs v1:
+
+- **Componentes nuevos**: 6 → **1** (`DiagnosticStepper` como clase JS, no WC). Theme toggle y offline pill se integran en HTML directamente; no son WC.
+- **Módulos `js/diagnostic/`**: 3 → **2** (`logic.js` + `controller.js`).
+- **Critical CSS**: archivo dedicado → **inline `<style>` en `<head>`** de cada page template.
+- **Seed**: script nuevo → **extender** `scripts/seed-firestore.js` existente.
+- **Tests E2E**: 6 suites → **3** (`home.spec.js`, `offline.spec.js`, `diagnostic.spec.js`).
+- **Tests integration**: 2 → **1** (`security-rules.spec.js`).
+
+Total archivos nuevos netos: ~20 → **~10**. Reducción **50%**.
 
 ## Technical Context
 
-**Language/Version**: HTML5 + CSS3 (custom properties + Tailwind 3.x prebuilt) + Vanilla JavaScript ES2022 modules + Web Components v1
-**Primary Dependencies**: Firebase JS SDK v10 (Firestore, Auth, Storage, Analytics, App Check), existente `js/cms/` SDK, existente `js/i18n/`, `idb` 8.x (wrapper IndexedDB, ya en árbol), Lucide icons (existente `js/icons.js`)
-**Storage**: Firestore (read: `programs`, `resources`, `testimonials`, `pages/home` opcional; write append-only: `leads/{uid}`, `diagnostics/{uid}`). `localStorage` para tema + diagnóstico en curso (TTL 24h). IndexedDB vía `cache-manager.js` para SWR con TTL 7d. Cookie `mdg_returning` (SHA-256 email, 180d). Cookie `mdg_consent` (analytics opt-in).
-**Testing**: Vitest (unit, módulos puros: `diagnostic/logic.js`, i18n helpers, scoring), Playwright (e2e: responsive, offline pill, i18n switch, critical CSS fold, contrast audit, diagnóstico end-to-end con Firestore emulator), Firebase Emulator Suite (integration: rules + auth anon + append-only)
-**Target Platform**: Navegadores evergreen — Chrome 110+, Safari 15+, Firefox 110+, Edge 110+, iOS Safari 15+, Chrome Android 110+. Hosting estático Hostinger VPS (git pull SSH :65002) + Cloudflare CDN.
-**Project Type**: Static web (single project, mobile-first, SSR=none)
-**Performance Goals**: LCP ≤2.5s en 4G Fast / ≤1.5s en cable, TBT <200ms, CLS <0.1, INP <200ms, bundle inicial (HTML + critical CSS inline) <250 KB, total con lazy <800 KB
-**Constraints**: Zero server-side runtime (NFR-001). Cero hardcoding (Constitution XXI). Append-only PII (Constitution XXII). Feature-bounded: CMS backoffice out (Constitution XXIII). Reusar assets existentes (FR-095). Degradación sin JS funcional (FR-063).
-**Scale/Scope**: ~8 secciones del home + flujo diagnóstico 6 pasos + re-theming del header/footer globales + seed de 3 colecciones (~30 docs). Audiencia: tráfico público LatAm (ES primario, EN secundario). <5k sessions/día baseline.
+**Language/Version**: HTML5 + CSS3 (custom properties + Tailwind 3.x prebuilt) + Vanilla JavaScript ES2022 modules
+**Primary Dependencies**: Firebase JS SDK v10 (Firestore, Auth, Storage, Analytics, App Check); existente `js/cms/` SDK; existente `js/i18n/`; `idb` wrapper (ya en árbol); Lucide icons (existente `js/icons.js`). **Cero dependencias nuevas**.
+**Storage**: Firestore (read public-published: `programs`, `resources`, `testimonials`; write append-only: `leads/{uid}`, `diagnostics/{uid}`); `localStorage` (theme, diagnóstico TTL 24h); IndexedDB via `cache-manager.js` (SWR 7d); cookies (`mdg_consent`, `mdg_returning`).
+**Testing**: Vitest (unit — pure modules), Firebase Emulator Suite (security rules), Playwright (E2E — 3 suites consolidadas).
+**Target Platform**: Navegadores evergreen (spec NFR-003). Hosting estático Hostinger VPS + Cloudflare CDN.
+**Project Type**: Static web — single project, mobile-first, zero build runtime.
+**Performance Goals**: LCP ≤2.5s 4G / ≤1.5s cable; TBT <200ms; CLS <0.1; INP <200ms. Bundle inicial <250 KB inline. (Spec FR-090..FR-094.)
+**Constraints**: 13 páginas hard constraint (Sitemap §2). Zero server-side runtime (NFR-001). Append-only PII (Const. XXII). Feature-bounded CMS (Const. XXIII, →010). Cero hardcoding (Const. XXI).
+**Scale/Scope**: 13 páginas (1 funcional profunda + 12 shells mínimos) + flujo diagnóstico 6 pasos + nav/footer unificados + legacy redirects. Audiencia LatAm ES/EN. <5k sessions/día baseline.
 
 ## Constitution Check
 
-*GATE: Hard check (Constitution v7.0.0) — debe pasar antes de Phase 0 research y re-verificar tras Phase 1 design.*
+*GATE: Hard — Constitution v7.0.0. Passed en v1; re-validado para v2 con el scope ampliado a 13 shells.*
 
-| Principio | Cumplimiento en esta feature | Evidencia |
-|---|---|---|
-| I. BaaS-First, Zero Server | ✅ Firebase único backend; sin proxy/server propio | NFR-001, FR-013, spec §9.1 |
-| II. Accessibility-First | ✅ WCAG 2.1 AA declarativo; focus order; reduced-motion; srcset | FR-061..FR-065 |
-| III. SEO Integrity | ✅ HTML estático navegable sin JS; metadata dinámica via `pages/home` con fallback; canonical | FR-063, spec §11.3 |
-| IV. Component Consistency | ✅ Reuso `SiteHeader`/`SiteFooter`; nuevos WC siguen naming | FR-095, plan componentes |
-| V. Brand Separation | ✅ Sólo brand MetodologIA en outputs y assets | N/A (single brand site) |
-| VI. Cloud-First + Static Fallback | ✅ Dual-source via `migration-bridge.js`; static fallback en `index.html` + `js/i18n/dictionaries/*` | FR-015, spec §9.1, §11.3 |
-| VII. Secure by Default | ✅ App Check sobre writes PII; anonymous auth; security rules append-only | FR-015, NFR-005, NFR-006 |
-| VIII. SWR + Offline UX | ✅ `cache-manager.js` SWR + pills (`offline`/`syncing`/`fallback`) con `aria-live` | FR-097..FR-099 |
-| IX. TDD | ✅ Testify antes de tasks; `diagnostic/logic.js` TDD-first, scenarios desde spec §4.5 | plan phase ordering |
-| X. Design System Governance | ✅ Sólo tokens CSS custom properties, idénticos a cartillas; `estilos/variables.css` extendido | FR-040..FR-045 |
-| XI. Brand Voice | ✅ Copy ES/EN revisado vs tone guide MetodologIA | FR-060, US-1..US-5 |
-| XII. Sustainability | ✅ Cero deps nuevas; reuso `dist/output.css` y módulos existentes | FR-095 |
-| XIII. Think First | ✅ Spec v5 socráticamente refinada; phase discipline | spec §1, §12 |
-| XIV. Simple First | ✅ Vanilla JS + WC, sin framework, sin server | NFR-001 |
-| XV. BDD Full-Spectrum | ✅ `.feature` files per US-1..US-5 en phase 04-testify | deferred to 04 |
-| XVI. Sequential-First | ✅ Spec→plan→checklist→testify→tasks→analyze→implement | IIKit pipeline |
-| XVII. Continuous Learning | ✅ `insights/` pattern reuse (socratic, dual-source) | spec §1 ref |
-| XVIII. Indexable Repo | ✅ Sin nuevos top-level dirs; todo bajo `estilos/`, `js/`, `components/`, `specs/`, `tests/` | plan estructura |
-| XIX. User-Reported Bug Protocol | N/A (new feature) | — |
-| XX. Branch-to-Env Parity | ✅ `feature/009-home-landing-sales` from `staging` → PR staging → PR main → SSH | CLAUDE.md branching |
-| XXI. Zero Hardcoding | ✅ Tokens CSS + i18n dictionaries + `js/cms/` + tabla diagnóstico en Firestore o JSON bundled | FR-040, FR-060, spec §4.5 |
-| XXII. PII-Append-Only | ✅ `leads/`, `diagnostics/` append-only bajo anonymous uid; sin client-side merge | FR-017, spec §9.6 |
-| XXIII. Feature-Bounded | ✅ Backoffice CMS fuera (→010); 009 solo consume read-only + escribe propias colecciones | FR-100..FR-120 movidos |
+| Principio | v1 | v2 | Nota |
+|---|---|---|---|
+| I. BaaS-First, Zero Server | ✅ | ✅ | 13 shells siguen siendo estáticos; cero server |
+| II. Accessibility-First | ✅ | ✅ | Cada shell hereda skip-link, focus order, landmarks |
+| III. SEO Integrity | ✅ | ✅✅ | 13 URLs estables, sitemap.xml, canonicals — mejora vs v1 |
+| IV. Component Consistency | ✅ | ✅ | SiteHeader/SiteFooter unificados entre 13 pages |
+| V. Brand Separation | ✅ | ✅ | Single brand |
+| VI. Cloud-First + Static Fallback | ✅ | ✅ | Shells son HTML estático navegable sin JS |
+| VII. Secure by Default | ✅ | ✅ | App Check solo donde hay writes (diagnostico, contacto, insights, recursos premium) |
+| VIII. SWR + Offline UX | ✅ | ✅ | Offline pill en nav de todas las 13 pages |
+| IX. TDD | ✅ | ✅ | Testify solo para los módulos puros y security rules; shells no requieren tests unitarios (son HTML estático) |
+| X. Design System Governance | ✅ | ✅✅ | Los 13 shells usan exactamente los mismos tokens; oportunidad de enforcement |
+| XI. Brand Voice | ✅ | ✅ | Copy ES/EN revisado página por página |
+| XII. Sustainability | ✅ | ✅✅ | v2 es más sostenible que v1 (menos archivos, menos tests, menos deps) |
+| XIII. Think First | ✅ | ✅ | Ciclo socrático del sitemap cumple XIII |
+| XIV. Simple First | ⚠️ | ✅✅ | **v1 era over-engineered; v2 corrige** |
+| XV. BDD Full-Spectrum | ✅ | ✅ | `.feature` para diagnóstico + security rules |
+| XVI. Sequential-First | ✅ | ✅ | Spec→sitemap→plan→checklist→testify→tasks |
+| XVII. Continuous Learning | ✅ | ✅ | Sitemap §5 alimenta `insights/` patterns |
+| XVIII. Indexable Repo | ✅ | ✅✅ | 13 directorios canónicos, sin duplicados ni órfanos |
+| XIX. Bug Protocol | N/A | N/A | — |
+| XX. Branch-to-Env Parity | ✅ | ✅ | Mismo flujo |
+| XXI. Zero Hardcoding | ✅ | ✅ | Tokens + i18n + `diagnostic-logic.json` |
+| XXII. PII-Append-Only | ✅ | ✅ | Writes solo en diagnostico, contacto, insights, recursos premium |
+| XXIII. Feature-Bounded | ✅ | ✅ | CMS backoffice → 010; content deep-dive → features 011+ |
 
-**Resultado del gate**: ✅ **PASS** — sin violaciones. No se requiere Complexity Tracking.
+**Gate v2**: ✅ **PASS**. Sin violaciones. Sin Complexity Tracking.
 
 ## Project Structure
 
-### Documentation (this feature)
+### Documentation
 
 ```text
 specs/009-home-landing-sales/
-├── spec.md              # Feature specification (v5 — locked pre-plan)
-├── plan.md              # This file
-├── research.md          # Phase 0 output — decisiones ya baked-in desde spec v1..v5
-├── data-model.md        # Phase 1 output — entidades leídas/escritas por 009
-├── quickstart.md        # Phase 1 output — escenarios manuales + E2E
+├── spec.md              # Feature specification v5 (locked)
+├── sitemap.md           # IA + Socratic debate + 13-page inventory (NEW)
+├── plan.md              # This file (v2, revised)
+├── research.md          # Phase 0 — Socratic decisions archived
+├── data-model.md        # Phase 1 — entities touched by 009
+├── quickstart.md        # Phase 1 — manual + automated validation
 ├── contracts/
-│   ├── firestore-rules.md        # Reglas append-only + public-read por colección
-│   ├── analytics-events.md       # Schema tipado de FR-070..FR-072
-│   └── diagnostic-logic.json     # Tabla declarativa FR §4.5 machine-readable
-├── checklists/          # Phase 03 — pendiente
-└── tasks.md             # Phase 05 — NO creado por /iikit-02-plan
+│   ├── firestore-rules.md
+│   ├── analytics-events.md
+│   └── diagnostic-logic.json
+├── checklists/
+└── tasks.md             # Phase 05
 ```
 
-### Source Code (repository root)
-
-Reuso máximo del árbol existente; nuevos archivos marcados con `+`, modificados con `~`.
+### Source Code — final state (reuso máximo, `+` nuevo, `~` modificado, `−` removido)
 
 ```text
-index.html                          ~ reescrito: hero Neo-Swiss Light, 5 secciones, critical CSS inline
+# Páginas (13 shells — Sitemap §2)
+index.html                          ~ P1 Home v2 — hero + 3 CTAs + programas + proof + cierre
+diagnostico/index.html              + P2 Diagnóstico — 6 pasos + resultado + App Check write
+empresas/index.html                 ~ P3 B2B landing — hero + proof + programas?audiencia=empresa + CTA
+personas/index.html                 ~ P4 B2C landing — análogo
+programas/index.html                + P5 Catálogo + detalle via ?slug (top-5 pre-rendered)
+recursos/index.html                 ~ P6 Catálogo + detalle via ?slug + modal premium
+metodo/index.html                   + P7 Método (redirect-target para legacy vision.html)
+casos/index.html                    + P8 Casos de éxito con filtros
+nosotros/index.html                 ~ P9 About minimalista (reescrito)
+insights/index.html                 + P10 Shell + form early-access
+contacto/index.html                 ~ P11 Form + datos + write append-only lead
+legal/index.html                    + P12 Consolidado con #privacidad #terminos #cookies
+404.html                            + P13 Not found + buscador
+
+# Legacy redirects
+vision.html                         − removido (redirect .htaccess → /metodo/)
+servicios/index.html                − removido (redirect .htaccess → /programas/)
+ruta/index.html                     − removido (redirect .htaccess → /diagnostico/)
+sitemap.html                        − removido (reemplazado por sitemap.xml)
+.htaccess                           ~ añadir redirects 301 + rewrite para ?slug
+
+# Sitemap
+sitemap.xml                         + generado por script, 12 URLs (404 excluida)
+
+# Estilos — tokens + layouts; sin archivo critical.css separado
 estilos/
-├── variables.css                   ~ tokens Neo-Swiss Light default + dark mirror alineados a cartillas
-├── base.css                        ~ resets mobile-first, clamp() typography, safe-area insets
-├── home.css                        ~ layout del home v2 (hero, programas, prueba social, cierre)
-├── components.css                  ~ CTAs, cards, sections, pills offline
-└── critical.css                    + hand-authored above-the-fold (tokens + hero + CTA primario + tipografía)
+├── variables.css                   ~ tokens Neo-Swiss Light + dark mirror + marker /* CRITICAL FOLD */
+├── base.css                        ~ resets + clamp + safe-area
+├── home.css                        ~ layout del home v2
+├── components.css                  ~ CTAs, cards, pills offline (clase plana)
+├── empresas.css                    ~ ajustes B2B
+├── personas.css                    ~ ajustes B2C
+└── (otros .css existentes)         (sin cambios estructurales; solo re-importan tokens)
 
+# Componentes — mínimos
 components/
-├── SiteHeader.js                   ~ theme toggle integrado, nav ES/EN, respeta tokens nuevos
-├── SiteFooter.js                   ~ links + cierre CTAs responsivos
-├── ThemeToggle.js                  + WC persiste mdg_theme, respeta prefers-color-scheme
-├── DiagnosticStepper.js            + WC 6 pasos + progress bar + a11y focus trap
-├── BlockRenderer.js                + WC opcional para hidratar pages/home blocks desde Firestore
-└── OfflinePill.js                  + WC aria-live para estados offline/syncing/fallback (FR-097)
+├── SiteHeader.js                   ~ nav 5 items + CTA dorado + theme toggle embebido + lang toggle
+├── SiteFooter.js                   ~ sitemap 12 items + social + idioma + consent reset
+└── DiagnosticStepper.js            + clase JS (no Web Component): monta en <section id="stepper">
 
-js/
-├── cms/                            (existente, sin cambios estructurales)
-│   ├── init.js                     ~ bootstrap adaptado al home v2 (flags + analytics consent)
-│   ├── content-service.js          (reuso — SWR read)
-│   ├── cache-manager.js            (reuso — IndexedDB)
-│   ├── auth-service.js             ~ expone signInAnon() para diagnóstico
-│   ├── admin-api.js                (reuso — write append-only leads/diagnostics)
-│   └── migration-bridge.js         (reuso — dual-source read path)
-├── diagnostic/
-│   ├── logic.js                    + módulo puro: scoring, thresholds, recomendación i18n (desde §4.5)
-│   ├── state.js                    + persistencia localStorage TTL 24h + reanudación
-│   └── render.js                   + glue DOM para DiagnosticStepper WC
-├── i18n/
-│   ├── index.js                    (reuso)
-│   └── dictionaries/
-│       ├── home.es.json            + copy v2 ES (hero, CTAs, programas, cierre)
-│       └── home.en.json            + copy v2 EN
-├── analytics/
-│   └── events.js                   + wrapper tipado FR-070..FR-072 + consent gating (mdg_consent)
-└── theme/
-    └── toggle.js                   + helper usado por ThemeToggle WC y SSR-less init
+# Lógica de diagnóstico
+js/diagnostic/
+├── logic.js                        + puro: lee diagnostic-logic.json, calcula score/nivel/recomendación
+└── controller.js                   + glue DOM + localStorage TTL 24h + Firestore write + mailto fallback
 
+# Analítica (delgado, tipado)
+js/analytics/events.js              + wrapper FR-070..FR-072 + consent gating (mdg_consent)
+
+# Theme (helper plano — usado por SiteHeader inline)
+js/theme/toggle.js                  + helper set/get mdg_theme + prefers-color-scheme fallback
+
+# i18n
+js/i18n/dictionaries/
+├── home.es.json                    + copy v2
+├── home.en.json                    +
+├── diagnostico.es.json             +
+├── diagnostico.en.json             +
+├── empresas.es.json, ...           + (13 páginas × 2 idiomas = hasta 26 archivos; los que no cambian reutilizan base)
+└── (namespaces existentes)         (reuso)
+
+# Scripts
 scripts/
-├── seed.js                         + seed idempotente programs/ resources/ testimonials/ desde JSON manifest local
-└── seed.manifest.json              + source de seed (reemplaza base.es en workspace inputs)
+├── seed-firestore.js               ~ EXTENDER: añadir bloques programs/, testimonials/, resources (si falta)
+├── generate-sitemap-xml.js         + lee repo + programs/ + recursos/ + insights/ → sitemap.xml
+└── (scripts existentes)            (sin cambios)
 
+# Firebase
 firebase/
-├── firestore.rules                 ~ append-only para leads/ diagnostics/ + public-read programs/ resources/ testimonials/
-└── firestore.indexes.json          ~ índice por (status, locale, order) para programs/resources
+├── firestore.rules                 ~ append-only leads/ diagnostics/ + public-read programs/ resources/ testimonials/
+└── firestore.indexes.json          ~ composite (status, order) para programs/resources/testimonials
 
+# Tests — consolidados
 tests/
 ├── unit/
-│   ├── diagnostic-logic.spec.js    + Vitest: scoring, thresholds, recomendaciones i18n
-│   ├── diagnostic-state.spec.js    + Vitest: TTL localStorage + reanudar
-│   ├── analytics-events.spec.js    + Vitest: gating por consent, shape payload
-│   └── theme-toggle.spec.js        + Vitest: persistencia mdg_theme + prefers-color-scheme
+│   ├── diagnostic-logic.spec.js    + Vitest — scoring, thresholds, i18n recomendaciones
+│   └── analytics-events.spec.js    + Vitest — gating consent, shape payload, PII scrub
 ├── integration/
-│   ├── home-firestore.spec.js      + emulador: SWR path + append-only write leads/diagnostics
-│   └── security-rules.spec.js      + emulador: reglas per-collection
+│   └── security-rules.spec.js      + emulador — per-collection rules (append-only, auth, App Check)
 └── e2e/
-    ├── home-responsive.spec.js     + Playwright: xs/sm/md/lg/xl/2xl + landscape mobile (FR-050..FR-055)
-    ├── home-critical-css.spec.js   + Playwright: first paint fold sin FOUC
-    ├── home-i18n.spec.js           + Playwright: switch ES/EN, data-i18n coverage
-    ├── home-offline-pill.spec.js   + Playwright: stub Firestore fail → pill <3s (FR-098)
-    ├── home-a11y.spec.js           + Playwright + axe: WCAG AA fold
-    └── diagnostico-end-to-end.spec.js + Playwright: 6 pasos + resultado + append-only doc
+    ├── home.spec.js                + Playwright — responsive (6 viewports) + critical CSS fold + i18n switch + axe a11y
+    ├── offline.spec.js             + Playwright — stub Firestore fail → pill <3s → recuperación
+    └── diagnostic.spec.js          + Playwright — 6 pasos + resultado + append-only doc + mailto fallback
 ```
 
-**Structure Decision**: Static single-project. No introducimos `src/` ni bundler — el repo permanece como sitio vanilla desplegado por `git pull`. Los módulos JS son ES2022 nativos servidos directamente. El bundler Tailwind sigue siendo la única build step (`npx tailwindcss -i estilos/tailwind.css -o dist/output.css`). Todos los tests usan el repo-root como raíz de import (Vitest y Playwright ya configurados).
+**Structure Decision**: Static single-project. **Nada de `src/`**, nada de bundler runtime, nada de framework. Tailwind prebuilt sigue siendo la única build step opcional. Los 13 shells comparten `components/SiteHeader.js` + `components/SiteFooter.js` cargados como `<script type="module">` en cada page — esto es el único mecanismo de consistencia cross-page.
 
-## Architecture (resumen, detalle en spec §9)
+## Architecture (reutiliza spec §9, sin cambios)
 
-- **C4 L1/L2/L3**: spec §9.2–§9.4 (Mermaid). No se duplica aquí.
-- **Data model**: spec §9.5 + `data-model.md` (entidades efectivamente leídas/escritas por 009).
-- **Security rules**: spec §9.6 + `contracts/firestore-rules.md`.
-- **Sequence flows**: spec §10.1 (home read path) y §10.2 (diagnóstico write path) son los normativos para TDD.
-- **Deployment**: spec §9.7 — sin cambios topológicos.
+El contrato BaaS + static fallback + append-only PII de spec §9 sigue vigente. El cambio en v2 es **cobertura**: donde v1 aplicaba a 1 página (home) y 1 ruta (diagnóstico), v2 aplica a 13 páginas con el mismo patrón. No hay componentes nuevos de arquitectura.
+
+**Dynamic templates** (Sitemap §3): `/programas/`, `/recursos/`, `/insights/` implementan client-side routing con `URLSearchParams`. Listing view es el default; detail view se activa si hay `?slug=X`. Top-5 slugs por section viven como `<template data-slug="X">` inline en el HTML; el resto se hidrata desde Firestore via `content-service.js` existente.
+
+**Redirects legacy** (Sitemap Q15, D2): `.htaccess` con 8 reglas 301:
+```apache
+RewriteEngine On
+RewriteRule ^vision\.html$ /metodo/ [R=301,L]
+RewriteRule ^servicios/?$ /programas/ [R=301,L]
+RewriteRule ^ruta/?$ /diagnostico/?utm_source=legacy-ruta [R=301,L]
+RewriteRule ^sitemap\.html$ /sitemap.xml [R=301,L]
+ErrorDocument 404 /404.html
+# Trailing slash enforcement for 13 canonical paths
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(empresas|personas|programas|recursos|metodo|casos|nosotros|insights|contacto|legal|diagnostico)$ /$1/ [R=301,L]
+```
 
 ## Tessl Tile Discovery
 
-Tessl se detecta instalado en el repo (`.tessl/` presente). Candidatos de tiles (consulta diferida a `/iikit-03-checklist` ya que el stack es vanilla-first y la mayoría de tiles aplican a frameworks):
+Sin cambios. No se instalan tiles en Phase 02. Revisita en checklist.
 
-| Tecnología | Tile candidato | Acción |
-|---|---|---|
-| Firebase Firestore rules | `tessl-labs/firebase-security-rules` (si existe) | Evaluar en checklist |
-| Playwright responsive | Tessl default `playwright` tile | Reusar si disponible |
-| Web Components a11y | No tile candidato | N/A |
-| Tailwind prebuilt | No tile específico | N/A |
+## Phase 0 — Research
 
-**Nota**: Dado que el repo prioriza sustentabilidad (XII) y el stack es vanilla, **no instalamos tiles en phase 02**. Se revisita en `/iikit-03-checklist` una vez el dashboard liste tiles relevantes. Sin eval scores que registrar.
+`research.md` v1 sigue vigente. Adicional para v2:
 
-## Phase 0 — Research (resolved)
+- **R10 — 13-page constraint rationale**: ver Sitemap §5 Q14, Q15. Alcance cerrado por principio F.
+- **R11 — Shell-first vs content-first**: ver Sitemap §7 D1. Decisión: shell-first (lectura estricta).
+- **R12 — Dynamic templates vs static slugs**: ver Sitemap §5 Q8, D5. Decisión: template + pre-render top-5.
 
-Las NEEDS CLARIFICATION están resueltas en las sesiones 2026-04-14 v2..v5 del spec (§12). No quedan unknowns de tecnología; por ende `research.md` captura los trade-offs ya decididos como referencia, no como resolución pendiente. Ver `research.md`.
+(Registro adicional se añadirá a `research.md` en el commit de v2.)
 
-## Phase 1 — Design & Contracts (this run)
+## Phase 1 — Design & Contracts
 
-1. **`data-model.md`** — extrae sólo las entidades tocadas por 009 (subset de spec §4.3 y §9.5): `Programa`, `Recurso`, `Testimonial`, `Pagina (home)`, `Lead`, `Diagnostico`. Incluye estados, transiciones append-only y campos PII.
-2. **`contracts/firestore-rules.md`** — versión declarativa de las reglas que irán a `firebase/firestore.rules` (read público si `status==published`; write append-only bajo `request.auth.uid` en `leads/{uid}` y `diagnostics/{uid}`).
-3. **`contracts/analytics-events.md`** — payload tipado para FR-070..FR-072, con gating por `mdg_consent`.
-4. **`contracts/diagnostic-logic.json`** — machine-readable de spec §4.5 (preguntas, pesos, thresholds, recomendaciones), fuente única para `js/diagnostic/logic.js` y los `.feature` scenarios.
-5. **`quickstart.md`** — pasos manuales (dev local + emulator) + mapping a E2E suites.
-6. **Actualizar contexto de agente** — `update-agent-context.sh claude`.
+Entregables Phase 1 (ya existen desde v1, re-validados para v2):
 
-## Phase 2 — Constitution Re-check (post-design)
+1. **`data-model.md`** — sin cambios en las entidades; añadir nota de que `casos/` se deriva de `testimonials/` con campo `caso_completo` hasta feature 010.
+2. **`contracts/firestore-rules.md`** — sin cambios; sigue siendo append-only puro.
+3. **`contracts/analytics-events.md`** — añadir eventos `contact_form_submit`, `insights_subscribe`, `resource_premium_unlock` (ya incluido) al catálogo.
+4. **`contracts/diagnostic-logic.json`** — sin cambios.
+5. **`sitemap.md`** — NUEVO, generado en esta sesión (§ §1–§11 del archivo).
+6. **`quickstart.md`** — actualizar matriz manual para cubrir navegación entre las 13 páginas + redirects legacy + 404.
+7. **`sitemap.xml`** — generado por `scripts/generate-sitemap-xml.js` en la primera seed.
+8. **Agent context** — re-ejecutar `update-agent-context.sh claude` tras v2.
 
-Tras generar data-model + contracts, re-validar contra todos los principios. Foco especial en:
-- **XXI Zero Hardcoding**: confirmar que `contracts/diagnostic-logic.json` es la única fuente de la tabla (no duplicada en JS).
-- **XXII PII Append-Only**: confirmar que `contracts/firestore-rules.md` prohibe `update`/`delete` sobre `leads/` y `diagnostics/`.
-- **VIII SWR + Offline UX**: confirmar que `OfflinePill.js` y los escenarios en `quickstart.md` cubren los 3 estados.
+## Phase 2 — Constitution Re-check (post-design v2)
+
+Revalidar contra:
+- **XXI Zero Hardcoding**: verificar que los 13 shells no embebían copy crudo — todo via `data-i18n` o Firestore.
+- **XXII PII Append-Only**: ampliar tests a `contacto/` (ahora también escribe `leads/`) y `insights/` (subscriptions).
+- **VIII SWR + Offline UX**: pill de offline debe aparecer en **todas** las 13 pages, no solo home.
 
 ## Phase Separation Validation
 
-Auditado el plan por leakage de gobernanza:
-- ❌ Sin principios nuevos (todos viven en CONSTITUTION.md)
-- ❌ Sin policies transversales (e.g., "siempre usar X en todo el repo")
-- ✅ Solo decisiones tácticas del alcance de 009
+Auditado:
+- ❌ Sin principios nuevos (toda la gobernanza sigue en CONSTITUTION.md).
+- ❌ Sin policy transversal nueva — el 13-page constraint es un constraint de **esta feature**, no del proyecto.
+- ✅ Decisiones tácticas de 009 únicamente.
+- ✅ `sitemap.md` es un **design artifact** (HOW a nivel IA), no un spec (WHAT). Vive en `specs/009-home-landing-sales/` porque es input de este plan, no input del spec original.
 
-Auditado por leakage de spec (qué vs cómo):
-- Las descripciones del plan son HOW (archivos, componentes, módulos, pipelines)
-- Los FR siguen siendo la fuente del WHAT en `spec.md`
+## Scope boundary — lo que NO entrega v2
+
+Lista explícita para prevenir scope creep:
+
+- ❌ Contenido profundo de `/metodo/`, `/casos/`, `/nosotros/`, `/insights/` — features 011+.
+- ❌ Backoffice CMS — feature 010.
+- ❌ Búsqueda cross-page (`/404.html` tiene un placeholder, no funcionalidad real).
+- ❌ Internacionalización de URLs (no `/en/empresas/`; EN se activa via `?lang=en` + `data-i18n`).
+- ❌ Sitemap.xml dinámico en runtime — se regenera en CI por script, sirve estático.
+- ❌ A/B testing en shells — solo en home y diagnóstico.
+- ❌ Animaciones beyond `prefers-reduced-motion`-safe.
 
 ## Complexity Tracking
 
-> Vacío — el gate constitucional pasó sin desviaciones.
+> Vacío en v2 tras la simplificación.
 
 | Violation | Why Needed | Simpler Alternative Rejected Because |
 |-----------|------------|-------------------------------------|
 | _(none)_ | — | — |
+
+## Open decisions (from Sitemap §8) requiring user confirmation before Phase 05-tasks
+
+1. **D1**: Lectura estricta (13 shells + home/diagnostico profundos) vs expandida (13 pages completas).
+2. **D2–D8**: Los 7 restantes de Sitemap §8.
+
+Sin confirmación, el plan v2 queda en "proposed — awaiting sign-off". Tasks (Phase 05) no arrancan hasta que D1 se decida.
+
+## Feedback loop summary (sitemap ↔ plan)
+
+**sitemap.md → plan.md**:
+- §5 Q13 derivó principio H (simplificación) → plan v2 reduce archivos ~50%.
+- §2 inventario 13-page → plan v2 amplía cobertura de 1 page a 13 shells.
+- §5 Q8 dynamic templates → plan v2 define client-side router con pre-render selectivo.
+- §5 Q15 legacy `/ruta/` → plan v2 añade `.htaccess` redirects.
+- §6 principio A nav 5 items → plan v2 especifica el header con 5 + CTA.
+- §7 cut over-engineering → plan v2 consolida tests y elimina `BlockRenderer`, `ThemeToggle WC`, `OfflinePill WC`, `critical.css` archivo, `seed.js` script, `state.js`, `render.js`.
+
+**plan.md → sitemap.md**:
+- Constraint Constitution v7 XXIII (feature-bounded) → sitemap §7 propone lectura estricta (shells + 2 pages profundas).
+- Constraint Constitution XIV (simple first) → sitemap §5 Q13 socráticamente valida los cuts.
+- Reuso de `js/cms/` existente (plan §Dependencies) → sitemap §3 dynamic templates usan `content-service.js` sin inventar SDK nuevo.
+- Test pyramid de research R9 (TDD) → sitemap §7 acepta consolidación a 3 E2E suites (no compromete TDD porque los módulos puros siguen teniendo unit coverage).
+
+El loop converge: sitemap y plan están mutuamente consistentes y ambos están bajo el techo constitucional.
