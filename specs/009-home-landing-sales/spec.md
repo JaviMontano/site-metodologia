@@ -159,7 +159,7 @@ Evidencia en inputs:
 
 ---
 
-## 3. User Stories *(mandatory)*
+## User Stories *(mandatory)*
 
 ### US-1 — Diagnóstico Gratuito como CTA Primario (Priority: P1)
 
@@ -262,7 +262,7 @@ Un visitante accede al home desde iPhone SE (xs), iPhone 15 (sm), iPad portrait 
 
 ---
 
-## 4. Requirements *(mandatory)*
+## Requirements *(mandatory)*
 
 ### 4.1 Functional Requirements
 
@@ -487,7 +487,7 @@ Feature 009 ships with `scripts/seed.js` that populates `programs/`, `resources/
 
 ---
 
-## 5. Success Criteria *(mandatory)*
+## Success Criteria *(mandatory)*
 
 ### 5.1 Measurable Outcomes (con baselines declarados)
 
