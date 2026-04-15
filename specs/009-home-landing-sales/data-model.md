@@ -1,6 +1,8 @@
-# Data Model — 009-home-landing-sales
+# Data Model — 009-home-landing-sales (v3)
 
 **Scope**: Only the entities actually **read** or **written** by feature 009. The full CMS catalog (Block, Page, Asset, Flag, Experiment, AuditEvent, etc.) lives in spec §4.3 / §9.5 and is the scope of feature `010-backoffice-cms`.
+
+**v3 additions**: `AudienceState` and `ContentSlot` (client-side only, from adaptive-blueprint.md §3).
 
 ## Read-only (public-published, seeded manually or via `scripts/seed.js`)
 
@@ -113,6 +115,41 @@ No intermediate writes to Firestore. No `"in_progress"` doc ever created — pri
 - `mdg_consent`: set on banner accept/reject; 180d; gates analytics emission.
 - `mdg_returning`: set once on diagnostic completion; 180d; SHA-256(email); switches primary CTA copy.
 - `mdg_theme`: `"light"|"dark"`; localStorage, no expiry; respects `prefers-color-scheme` as fallback.
+
+## Client-side only (from adaptive-blueprint.md §3 — never persisted to Firestore)
+
+### `AudienceState` (in-memory + localStorage)
+
+Drives the audience axis of the 3-toggle adaptive blueprint. Never written to Firestore — stays client-side per Constitution XXII (PII isolation). The `segmento` field in `leads/{uid}` is the **only** audience signal that reaches Firestore, and only at diagnostic completion.
+
+| Field | Type | Storage | Notes |
+|---|---|---|---|
+| `audience` | `"persona" \| "empresa" \| "unknown"` | localStorage `mdg_audience` | Default: `"unknown"` |
+| `locale` | `"es" \| "en"` | localStorage `mdg_lang` | Default: navigator.language or `"es"` |
+| `theme` | `"light" \| "dark"` | localStorage `mdg_theme` | Default: `prefers-color-scheme` or `"light"` |
+| `locked` | boolean | in-memory only | `true` on `/empresas/` and `/personas/` (intrinsic audience pages) |
+
+**Provenance cascade** (spec FR-200, adaptive-blueprint.md §3.1):
+1. URL path (`/empresas/` → `empresa`, `/personas/` → `persona`)
+2. Diagnostic result (`segmento` → mapped)
+3. Explicit toggle (header affordance)
+4. `localStorage` persist
+5. Default `"unknown"`
+
+### `ContentSlot` (DOM attributes — declarative)
+
+Each page shell contains `[data-audience-variant]` and `[data-audience-filter]` attributes on HTML elements. The `js/audience/controller.js` reads `AudienceState` and shows/hides elements declaratively. No Firestore interaction.
+
+| Attribute | Values | Behavior |
+|---|---|---|
+| `data-audience-variant="persona"` | `persona \| empresa \| unknown` | Element visible only when state matches |
+| `data-audience-filter="empresa"` | `persona \| empresa` | Element hidden when state matches (inverse) |
+| `data-locale="es"` | `es \| en` | Locale-specific content slot |
+
+**Invariants**:
+- Every slot MUST have a fallback for `audience=unknown` (FR-204)
+- Theme NEVER affects content slots — only CSS variables (FR-203)
+- Transition between states ≤100ms (FR-215)
 
 ## Collections NOT touched by 009
 

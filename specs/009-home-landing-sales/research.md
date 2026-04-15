@@ -67,10 +67,38 @@
 - **Rationale**: TDD (Constitution IX) for pure logic; rules tests require the emulator by construction; visual and a11y contracts must run against real browsers. Avoid overlap — each level tests what the one below cannot.
 - **Source**: Constitution IX + XV.
 
+## R10. 13-page constraint rationale (v2 addition)
+
+- **Decision**: Exactly 13 pages: home, diagnóstico, empresas, personas, programas, recursos, método, casos, nosotros, insights, contacto, legal, 404.
+- **Rationale**: Sitemap §5 Q14 — principio F (closed set). Adding pages requires a new feature spec. IA consistency demands a finite nav scope (5 primary + 12 footer).
+- **Alternatives considered**: (a) Open-ended page creation — rejected, conflicts with Constitution XXIII Feature-Bounded; (b) Fewer pages (merge legal into nosotros) — rejected, legal needs its own URL for regulatory compliance.
+- **Source**: sitemap.md §5 Q14, plan v2 §Scope boundary.
+
+## R11. Shell-first vs content-first delivery
+
+- **Decision**: Shell-first — deliver 13 HTML skeletal pages with consistent nav/footer/hero/CTA, but deep content only for home + diagnóstico. Content-deep for the other 11 pages is feature 011+.
+- **Rationale**: Sitemap §7 D1. Lectura estricta respects Constitution XXIII (feature-bounded). Delivering all 13 with deep content would exceed sprint size and couple unrelated content decisions.
+- **Alternatives considered**: Content-first for 3 pages only (home, empresas, personas) — rejected, leaves 10 pages as 404 or under-construction, which harms SEO and user trust.
+- **Source**: sitemap.md §7 D1, session.json `post-robustness-v7 / pre-testify`.
+
+## R12. Dynamic templates vs static slugs
+
+- **Decision**: `/programas/`, `/recursos/`, `/insights/` use client-side `URLSearchParams` routing. Listing view = default; detail view = `?slug=X`. Top-5 slugs per section pre-rendered as inline `<template>` elements; remainder hydrated from Firestore via `content-service.js`.
+- **Rationale**: Sitemap §5 Q8, D5. Pre-rendering top-5 ensures fast LCP for the most-visited items. Full SSG would require a build pipeline that violates Constitution XIV (Simple First). Pure client-side routing without pre-render would cause CLS on first load.
+- **Alternatives considered**: (a) One static HTML per slug — rejected, doesn't scale; (b) Full SPA router — rejected, overkill for 3 dynamic sections.
+- **Source**: sitemap.md §5 Q8, plan v2 §Architecture.
+
+## R13. Robustness pass decisions (v3 addition)
+
+- **Decision**: Adopt the full robustness-v1.md contract: TDD mandatory (ATDD outer loop + TDD inner loop), 85% weighted layered coverage, 10 independent black-box flows, traceability headers in every `.spec.js`, and backcasting loop FR→US→SC→Constitution.
+- **Rationale**: Constitution IX (TDD), XV (BDD Full-Spectrum). The robustness pass identified 15 orphan FRs (FR-097..099b, FR-200..FR-232) and created US-6 + US-7 to close the traceability gap. The 10 independent flows provide adversarial QA beyond developer-written tests.
+- **Alternatives considered**: (a) Skip robustness, go straight to testify — rejected, would leave orphan FRs and untested adaptive blueprint; (b) Lighter robustness (e.g., only coverage threshold) — rejected, wouldn't catch the traceability gap.
+- **Source**: robustness-v1.md §A–§H, backcasting.md Direction 1+2.
+
 ## Tessl Tiles
 
 No tiles installed in Phase 02. Stack is vanilla + Firebase; Tessl tile registry applies primarily to framework-based scaffolds (React, Next, Supabase). Revisit during `/iikit-03-checklist` if a Firebase-rules tile or Playwright-a11y tile becomes relevant. **Eval scores**: not applicable.
 
 ## Open items
 
-None. All unknowns resolved in spec sessions v1..v5.
+None. All unknowns resolved in spec sessions v1..v7 and robustness pass.

@@ -1,15 +1,15 @@
-# Implementation Plan: Home + 13-Page IA Scaffolding (v2)
+# Implementation Plan: Home + 13-Page IA Scaffolding (v3)
 
-**Branch**: `009-home-landing-sales` | **Date**: 2026-04-14 | **Revised**: 2026-04-14 (v2 — post-sitemap feedback loop)
-**Spec**: [spec.md](./spec.md) · **Sitemap/IA**: [sitemap.md](./sitemap.md)
-**Input**: Feature specification + IA spec
-**Constitution**: v7.0.0 (Cloud-First Content-as-Data) — hard gate enforced
+**Branch**: `009-home-landing-sales` | **Date**: 2026-04-14 | **Revised**: 2026-04-14 (v3 — post-robustness + Constitution v7.0.0 sync)
+**Spec**: [spec.md](./spec.md) (v7 Consolidated) · **Sitemap/IA**: [sitemap.md](./sitemap.md) · **Robustness**: [robustness-v1.md](./robustness-v1.md) · **Backcasting**: [backcasting.md](./backcasting.md)
+**Input**: Feature specification v7 (post-robustness, post-backcasting, Constitution v7.0.0 aligned)
+**Constitution**: v7.0.0 (Cloud-First Content-as-Data) — hard gate enforced, footer synced 2026-04-14
 
 ## Summary
 
 Entregar el home v2 Neo-Swiss Light **+ el esqueleto de las 13 páginas del sitio** (Sitemap §2) con nav/footer unificados, redirects legacy, y el flujo de diagnóstico completo como única ruta funcional profunda. Todas las demás páginas se entregan como **shells mínimos** (hero + proof + CTA + layout consistente) que cumplen el contrato de IA y el design system, pero cuyo contenido profundo se itera en features 011+. El backoffice CMS sigue fuera (→010).
 
-Este plan es **v2**: reemplaza al plan v1 tras el ciclo socrático del sitemap (§5 + §7). Reducciones clave vs v1:
+Este plan es **v3**: actualización del plan v2 para sincronizar con spec v7 (consolidación de robustness-v1.md, backcasting.md, adaptive-blueprint.md, y Constitution v7.0.0 sync). Las reducciones de v2 vs v1 se mantienen intactas:
 
 - **Componentes nuevos**: 6 → **1** (`DiagnosticStepper` como clase JS, no WC). Theme toggle y offline pill se integran en HTML directamente; no son WC.
 - **Módulos `js/diagnostic/`**: 3 → **2** (`logic.js` + `controller.js`).
@@ -62,7 +62,7 @@ Total archivos nuevos netos: ~20 → **~10**. Reducción **50%**.
 | XXII. PII-Append-Only | ✅ | ✅ | Writes solo en diagnostico, contacto, insights, recursos premium |
 | XXIII. Feature-Bounded | ✅ | ✅ | CMS backoffice → 010; content deep-dive → features 011+ |
 
-**Gate v2**: ✅ **PASS**. Sin violaciones. Sin Complexity Tracking.
+**Gate v3**: ✅ **PASS**. Sin violaciones. Constitution v7.0.0 footer synced (was 6.2.0). Robustness-v1.md backcasts clean to all 23 principles. Sin Complexity Tracking.
 
 ## Project Structure
 
@@ -70,9 +70,12 @@ Total archivos nuevos netos: ~20 → **~10**. Reducción **50%**.
 
 ```text
 specs/009-home-landing-sales/
-├── spec.md              # Feature specification v5 (locked)
-├── sitemap.md           # IA + Socratic debate + 13-page inventory (NEW)
-├── plan.md              # This file (v2, revised)
+├── spec.md              # Feature specification v7 (Consolidated — ready for testify)
+├── sitemap.md           # IA + Socratic debate + 13-page inventory
+├── plan.md              # This file (v3, revised)
+├── robustness-v1.md     # TDD/ATDD mandates, coverage contracts, 10 independent flows
+├── backcasting.md       # FR→US→SC→Constitution traceability loop
+├── adaptive-blueprint.md # 3-axis toggles, shell slots, 52-combo test matrix
 ├── research.md          # Phase 0 — Socratic decisions archived
 ├── data-model.md        # Phase 1 — entities touched by 009
 ├── quickstart.md        # Phase 1 — manual + automated validation
@@ -217,6 +220,8 @@ tests/
 
 **Delta robustness v7**: +3 config files (vitest, playwright update, cucumber) + `tests/features/` (7 .feature files + 7 step_definitions) + 8 independent flow E2E tests + 1 integration test (`cache-manager-corruption`). Total archivos nuevos netos ahora: ~14 → **~35**. El incremento es en tests, no en production code; respeta NFR-008 (coverage layered) y NFR-013 (independent flows). Los módulos de producción permanecen en **~14**.
 
+**Delta spec v7 consolidation**: Spec status bumped from Draft v2 → Consolidated v7. All quality gates G0–G3 pass (checklist re-generated). Constitution footer synced 6.2.0 → 7.0.0. Backcasting §F.4 closes 0 orphan FRs, 0 orphan US, 0 orphan SC. No new production modules; no breaking changes to architecture.
+
 ## Architecture (reutiliza spec §9, sin cambios)
 
 El contrato BaaS + static fallback + append-only PII de spec §9 sigue vigente. El cambio en v2 es **cobertura**: donde v1 aplicaba a 1 página (home) y 1 ruta (diagnóstico), v2 aplica a 13 páginas con el mismo patrón. No hay componentes nuevos de arquitectura.
@@ -299,12 +304,20 @@ Lista explícita para prevenir scope creep:
 |-----------|------------|-------------------------------------|
 | _(none)_ | — | — |
 
-## Open decisions (from Sitemap §8) requiring user confirmation before Phase 05-tasks
+## Decisions Resolved (v3)
 
-1. **D1**: Lectura estricta (13 shells + home/diagnostico profundos) vs expandida (13 pages completas).
-2. **D2–D8**: Los 7 restantes de Sitemap §8.
+All open decisions from Sitemap §8 are now **resolved** after workspace session `2026-04-14-009-home-landing-sales` and spec v7 consolidation:
 
-Sin confirmación, el plan v2 queda en "proposed — awaiting sign-off". Tasks (Phase 05) no arrancan hasta que D1 se decida.
+1. **D1**: ✅ **Lectura estricta** — 13 shells + home/diagnostico profundos. Confirmed by session.json `post-robustness-v7 / pre-testify`.
+2. **D2**: ✅ Shell templates inherit `SiteHeader.js` + `SiteFooter.js` via `<script type="module">`.
+3. **D3**: ✅ Dynamic templates for `/programas/`, `/recursos/`, `/insights/` with `?slug=X`.
+4. **D4**: ✅ Redirects via `.htaccess` (8 rules).
+5. **D5**: ✅ Top-5 pre-rendered per section; rest hydrated from Firestore.
+6. **D6**: ✅ `sitemap.xml` generated statically by script; 12 URLs (404 excluded).
+7. **D7**: ✅ Nav 5 items + CTA dorado per Sitemap §6 principle A.
+8. **D8**: ✅ Cut over-engineering per Sitemap §7 — no `BlockRenderer WC`, no `ThemeToggle WC`, no `OfflinePill WC`.
+
+**Plan v3 status**: ✅ All decisions resolved. Ready for Phase 05 tasks.
 
 ## Feedback loop summary (sitemap ↔ plan)
 

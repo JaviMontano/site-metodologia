@@ -5,15 +5,22 @@
       "Visitante": "client",
       "index.html": "client",
       "Web Components": "client",
+      "DiagnosticStepper": "client",
       "Service Worker": "client",
       "CMS Client SDK": "client",
+      "AudienceState": "client",
+      "ContentSlot": "client",
+      "i18n Resolver": "client",
+      "Event Bus": "client",
       "IndexedDB Cache": "storage",
+      "localStorage": "storage",
       "Hostinger CDN": "external",
       "Firestore": "storage",
       "Firebase Auth": "external",
       "Firebase Storage": "storage",
       "Firebase Analytics": "external",
-      "App Check": "external"
+      "App Check": "external",
+      "Cloudflare CDN": "external"
     },
     "evalScores": {}
   },

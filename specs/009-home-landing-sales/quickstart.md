@@ -1,6 +1,6 @@
-# Quickstart — 009-home-landing-sales
+# Quickstart — 009-home-landing-sales (v3)
 
-Hands-on walkthrough for the home v2 landing. Validates the three CTAs, responsive fold, i18n, offline pill, and the diagnostic end-to-end — locally against Firebase Emulator and against the deployed site.
+Hands-on walkthrough for the home v2 landing + 13-page shell scaffolding. Validates the three CTAs, responsive fold, i18n, offline pill, adaptive blueprint matrix, and the diagnostic end-to-end — locally against Firebase Emulator and against the deployed site.
 
 ## Prereqs
 
@@ -80,23 +80,35 @@ Run each of these by hand before flipping `/iikit-05-tasks` to `in-progress`.
 ## Automated validation (→ `npm test` shortcuts)
 
 ```bash
-# Unit (pure modules)
+# Unit (pure modules — NFR-008 weighted layered)
 npx vitest run tests/unit/diagnostic-logic.spec.js
-npx vitest run tests/unit/diagnostic-state.spec.js
 npx vitest run tests/unit/analytics-events.spec.js
-npx vitest run tests/unit/theme-toggle.spec.js
+npx vitest run tests/unit/audience-state.spec.js
+npx vitest run tests/unit/i18n-resolver.spec.js
 
 # Integration (emulator must be running)
-npx vitest run tests/integration/home-firestore.spec.js
 npx vitest run tests/integration/security-rules.spec.js
 
-# E2E (dev server must be running at :3000, emulator at :4000)
-npx playwright test tests/e2e/home-responsive.spec.js
-npx playwright test tests/e2e/home-critical-css.spec.js
-npx playwright test tests/e2e/home-i18n.spec.js
-npx playwright test tests/e2e/home-offline-pill.spec.js
-npx playwright test tests/e2e/home-a11y.spec.js
-npx playwright test tests/e2e/diagnostico-end-to-end.spec.js
+# E2E core (dev server must be running at :3000, emulator at :4000)
+npx playwright test tests/e2e/home.spec.js
+npx playwright test tests/e2e/offline.spec.js
+npx playwright test tests/e2e/diagnostic.spec.js
+
+# E2E adaptive blueprint (52-combo matrix, NFR-012 budget <3min)
+npx playwright test tests/e2e/adaptive-blueprint.spec.js
+
+# E2E independent flows (robustness-v1.md §E)
+npx playwright test tests/e2e/flow-linkedin-b2b.spec.js
+npx playwright test tests/e2e/flow-mobile-flaky.spec.js
+npx playwright test tests/e2e/flow-keyboard-a11y.spec.js
+npx playwright test tests/e2e/flow-seo-crawler.spec.js
+npx playwright test tests/e2e/flow-lgpd-audit.spec.js
+npx playwright test tests/e2e/flow-theme-chaos.spec.js
+npx playwright test tests/e2e/flow-social-share.spec.js
+npx playwright test tests/e2e/seed-roundtrip.spec.js
+
+# BDD features (ATDD outer loop — NFR-009)
+npx cucumber-js tests/features/
 ```
 
 ## Deploy verification (after PR to `main` + SSH git pull)
