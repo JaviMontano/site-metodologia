@@ -1150,4 +1150,4 @@ development. It supersedes ad-hoc decisions.
 - **Indexability** (XVIII) enforced on every commit that
   creates a directory
 
-**Version**: 6.2.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-03-23
+**Version**: 7.0.0 | **Ratified**: 2026-03-22 | **Last Amended**: 2026-04-14

@@ -2,8 +2,8 @@
 
 **Feature Branch**: `009-home-landing-sales`
 **Created**: 2026-04-14
-**Revised**: 2026-04-14 (v2 — Socratic refinement + responsive + stack constraints)
-**Status**: Draft v2
+**Revised**: 2026-04-14 (v7 — re-specify consolidation: robustness pass + backcasting + Constitution v7.0.0 alignment)
+**Status**: Consolidated v7 (Ready for /iikit-04-testify)
 **Input (v1)**: "Requiero crear una versión nueva de mi sitio web, pero mucho más vendedora. El home es una landing que invita a (1) iniciar un diagnóstico gratuito, (2) usar un recurso, o (3) conocer nuestra oferta educativa. El branding esperado está demostrado en las cartillas/playbooks Neo-Swiss del workspace."
 **Input (v2 amendment)**: Full responsive (mobile/tablet/desktop native), stack desplegable en Hostinger (HTML/CSS/JS), debate socrático para afinar intención, mejorar requerimiento y trazar mejor especificación, revisando `workspace/2026-04-10-site-reconstruction/inputs`.
 
