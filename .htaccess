@@ -72,7 +72,7 @@
     # script-src: Allows self, inline (needed for hydration), and trusted CDNs.
     # object-src: 'none' blocks plugins (Flash/Java).
     # base-uri: 'self' prevents base tag hijacking.
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://unpkg.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.metodologia.info; object-src 'none'; media-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://unpkg.com https://www.googletagmanager.com https://www.gstatic.com https://apis.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.metodologia.info https://firestore.googleapis.com https://www.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com; object-src 'none'; media-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';"
     
     # Permissions Policy (FKA Feature Policy)
     Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
