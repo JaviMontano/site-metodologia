@@ -73,40 +73,40 @@
 
 ### Tests
 
-- [ ] T021 [P] [US-6] Write unit test `tests/unit/slot-resolver.spec.js` — 5-level fallback cascade (≥95%) [TS-048]
-- [ ] T022 [P] [US-6] Write unit test `tests/unit/triple-toggle.spec.js` — 3 switches, persistence, events (≥95%) [TS-047, TS-099]
-- [ ] T023 [P] [US-6] Write unit test `tests/unit/sidebar.spec.js` — section rendering, active state, drawer (≥70%) [TS-093, TS-094, TS-096, TS-097]
+- [x] T021 [P] [US-6] Write unit test `tests/unit/slot-resolver.spec.js` — 5-level fallback cascade (≥95%) [TS-048]
+- [x] T022 [P] [US-6] Write unit test `tests/unit/triple-toggle.spec.js` — 3 switches, persistence, events (≥95%) [TS-047, TS-099]
+- [x] T023 [P] [US-6] Write unit test `tests/unit/sidebar.spec.js` — section rendering, active state, drawer (≥70%) [TS-093, TS-094, TS-096, TS-097]
 
 ### Implementation — i18n & Analytics
 
-- [ ] T024 [US-6] Create i18n dictionaries: `js/i18n/dictionaries/home.json` (4 variants per slot) + `js/i18n/dictionaries/common.json` (nav 3 items, footer 12 pages, sidebar labels, toggle labels, skip-link, missing-key fallbacks) [TS-048, TS-073]
-- [ ] T025 [US-6] Add section config i18n keys to `js/i18n/dictionaries/common.json` — 168 keys (84 sections × 2 locales) [TS-098]
-- [ ] T026 [US-6] Implement `js/analytics/consent.js` — cookie banner logic + `mdg_consent` (two-tier: banner=analytics, PII=checkbox) [TS-075, TS-076, TS-077, TS-078, TS-079]
-- [ ] T027 [US-6] Implement `js/analytics/events.js` — typed event emitter + consent gating + audience field + `audience_switched` event + unit test (≥95%) [TS-074, TS-075]
+- [x] T024 [US-6] Create i18n dictionaries: `js/i18n/dictionaries/home.json` (4 variants per slot) + `js/i18n/dictionaries/common.json` (nav 3 items, footer 12 pages, sidebar labels, toggle labels, skip-link, missing-key fallbacks) [TS-048, TS-073]
+- [x] T025 [US-6] Add section config i18n keys to `js/i18n/dictionaries/common.json` — 168 keys (84 sections × 2 locales) [TS-098]
+- [x] T026 [US-6] Implement `js/analytics/consent.js` — cookie banner logic + `mdg_consent` (two-tier: banner=analytics, PII=checkbox) [TS-075, TS-076, TS-077, TS-078, TS-079]
+- [x] T027 [US-6] Implement `js/analytics/events.js` — typed event emitter + consent gating + audience field + `audience_switched` event + unit test (≥95%) [TS-074, TS-075]
 
 ### Implementation — Core Shell
 
-- [ ] T028 [US-6] Implement `js/blueprint/slot-resolver.js` — 5-level audience/locale fallback cascade, zero raw keys (depends on T009, T024) [TS-048]
-- [ ] T029 [US-6] Implement `js/blueprint/slug-router.js` — client-side `?slug=X` for 3 dynamic templates (programas/recursos/insights), pre-render top-5 for SEO (depends on T028) [TS-052]
-- [ ] T030 [US-6] Implement `js/audience/controller.js` — toggle + slot hydration, `data-audience-variant`/`data-audience-filter`, <100ms re-render (depends on T009, T028, T007) [TS-043, TS-047]
+- [x] T028 [US-6] Implement `js/blueprint/slot-resolver.js` — 5-level audience/locale fallback cascade, zero raw keys (depends on T009, T024) [TS-048]
+- [x] T029 [US-6] Implement `js/blueprint/slug-router.js` — client-side `?slug=X` for 3 dynamic templates (programas/recursos/insights), pre-render top-5 for SEO (depends on T028) [TS-052]
+- [x] T030 [US-6] Implement `js/audience/controller.js` — toggle + slot hydration, `data-audience-variant`/`data-audience-filter`, <100ms re-render (depends on T009, T028, T007) [TS-043, TS-047]
 
 ### Implementation — Web Components
 
-- [ ] T031 [US-6] Create `components/TripleToggle.js` — 3 `role="switch"` toggles (theme/locale/audience), always visible `position:fixed; bottom:1rem; left:1rem; z-index:45`, <100ms transitions, `aria-live` announcements, emit `mdg:state-changed` (depends on T007, T009, T010) [TS-043, TS-047, TS-049, TS-099]
-- [ ] T032 [US-6] Create `components/SiteSidebar.js` — 7-section numbered nav, scroll-spy integration, mobile drawer (hamburger/backdrop/Escape), re-render on `langchange` (depends on T012, T013, T007) [TS-044, TS-045, TS-093, TS-094, TS-095, TS-096, TS-097, TS-098]
-- [ ] T033 [US-6] Create `components/ConsentBanner.js` — LGPD analytics consent (depends on T026) [TS-075]
-- [ ] T034 [US-6] Create `components/OfflinePill.js` — cache state indicator with `aria-live="polite"` (depends on T007) [TS-072, TS-051]
-- [ ] T035 [US-6] Simplify `components/SiteHeader.js` — remove ALL toggles + floating nav (~280 lines removed). New: logo + "Ruta" (gold CTA) + "Servicios" + "Contacto" + hamburger (mobile). ~120 lines. (depends on T032) [TS-044, TS-045]
+- [x] T031 [US-6] Create `components/TripleToggle.js` — 3 `role="switch"` toggles (theme/locale/audience), always visible `position:fixed; bottom:1rem; left:1rem; z-index:45`, <100ms transitions, `aria-live` announcements, emit `mdg:state-changed` (depends on T007, T009, T010) [TS-043, TS-047, TS-049, TS-099]
+- [x] T032 [US-6] Create `components/SiteSidebar.js` — 7-section numbered nav, scroll-spy integration, mobile drawer (hamburger/backdrop/Escape), re-render on `langchange` (depends on T012, T013, T007) [TS-044, TS-045, TS-093, TS-094, TS-095, TS-096, TS-097, TS-098]
+- [x] T033 [US-6] Create `components/ConsentBanner.js` — LGPD analytics consent (depends on T026) [TS-075]
+- [x] T034 [US-6] Create `components/OfflinePill.js` — cache state indicator with `aria-live="polite"` (depends on T007) [TS-072, TS-051]
+- [x] T035 [US-6] Simplify `components/SiteHeader.js` — remove ALL toggles + floating nav (~280 lines removed). New: logo + "Ruta" (gold CTA) + "Servicios" + "Contacto" + hamburger (mobile). ~120 lines. (depends on T032) [TS-044, TS-045]
 
 ### Implementation — Shell Bootstrap
 
-- [ ] T036 [US-6] Implement `js/blueprint/shell.js` — page shell bootstrap: init SiteSidebar, TripleToggle, OfflinePill, ConsentBanner, slot resolution, theme restore via inline `<script>` (anti-FOUC), bus wiring (depends on T028, T030, T031, T032, T033, T034, T035) [TS-044, TS-045, TS-046]
+- [x] T036 [US-6] Implement `js/blueprint/shell.js` — page shell bootstrap: init SiteSidebar, TripleToggle, OfflinePill, ConsentBanner, slot resolution, theme restore via inline `<script>` (anti-FOUC), bus wiring (depends on T028, T030, T031, T032, T033, T034, T035) [TS-044, TS-045, TS-046]
 
 ### E2E
 
-- [ ] T037 [US-6] Write E2E `tests/e2e/adaptive-blueprint.spec.js` — 52-combo matrix, zero raw keys, <100ms toggles, sidebar on 12 pages, ARIA [TS-043, TS-044, TS-045, TS-046, TS-047, TS-048, TS-049, TS-050, TS-051, TS-093, TS-094, TS-095, TS-096, TS-097, TS-098, TS-099]
-- [ ] T038 [US-6] Write E2E `tests/e2e/triple-toggle.spec.js` — theme/locale/audience instant switch, persistence across reload, ARIA switch semantics, mobile bottom-left position [TS-043, TS-047, TS-049, TS-099]
-- [ ] T039 [US-6] Write E2E `tests/e2e/sidebar-navigation.spec.js` — scroll-spy on 12 pages, active state tracking, mobile drawer open/close/Escape, section click with header offset [TS-093, TS-094, TS-095, TS-096, TS-097, TS-098]
+- [x] T037 [US-6] Write E2E `tests/e2e/adaptive-blueprint.spec.js` — 52-combo matrix, zero raw keys, <100ms toggles, sidebar on 12 pages, ARIA [TS-043, TS-044, TS-045, TS-046, TS-047, TS-048, TS-049, TS-050, TS-051, TS-093, TS-094, TS-095, TS-096, TS-097, TS-098, TS-099]
+- [x] T038 [US-6] Write E2E `tests/e2e/triple-toggle.spec.js` — theme/locale/audience instant switch, persistence across reload, ARIA switch semantics, mobile bottom-left position [TS-043, TS-047, TS-049, TS-099]
+- [x] T039 [US-6] Write E2E `tests/e2e/sidebar-navigation.spec.js` — scroll-spy on 12 pages, active state tracking, mobile drawer open/close/Escape, section click with header offset [TS-093, TS-094, TS-095, TS-096, TS-097, TS-098]
 
 **Checkpoint**: Full shell operational — sidebar + triple toggle + simplified header + slot resolution. 52-combo matrix passing.
 
