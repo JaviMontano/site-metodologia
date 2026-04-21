@@ -12,7 +12,15 @@
  *
  * [TS-103, TS-104]
  */
-import { MigrationBridge } from '../cms/migration-bridge.js';
+// MigrationBridge loaded lazily — cache-manager.js uses bare 'idb' specifier
+// which fails without a bundler. Graceful degradation: dictionary-only resolution.
+let MigrationBridge = null;
+try {
+  const mod = await import('../cms/migration-bridge.js');
+  MigrationBridge = mod.MigrationBridge;
+} catch {
+  // migration-bridge unavailable — Firestore slot resolution disabled
+}
 
 const DEFAULT_LOCALE = 'es';
 const DEFAULT_AUDIENCE = 'persona';
@@ -66,7 +74,7 @@ export function resolveSlot(pageSlug, slotId, audience, locale, options = {}) {
   const { dictionaries = {}, firestoreSlots = {}, cmsEnabled = false } = options;
 
   // Level 1: Firestore override (via migration-bridge cms-i18n flag or explicit cmsEnabled)
-  const useFirestore = cmsEnabled || MigrationBridge.isEnabled('cms-i18n');
+  const useFirestore = cmsEnabled || (MigrationBridge?.isEnabled?.('cms-i18n') ?? false);
   if (useFirestore) {
     const fsPage = firestoreSlots[pageSlug];
     if (fsPage) {
@@ -121,7 +129,7 @@ export function resolveSlot(pageSlug, slotId, audience, locale, options = {}) {
  * @returns {Promise<Object>} { slotId: { slotId, variants } } or {}
  */
 export async function loadFirestoreSlots(pageSlug, firestoreFetcher) {
-  if (!MigrationBridge.isEnabled('cms-i18n')) {
+  if (!MigrationBridge?.isEnabled?.('cms-i18n')) {
     return {};
   }
 
