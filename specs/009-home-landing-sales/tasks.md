@@ -119,22 +119,22 @@
 
 ### Tests
 
-- [ ] T040 [P] [US-1] Write unit test `tests/unit/diagnostic-state.spec.js` (≥95%) [TS-005, TS-014, TS-015]
-- [ ] T041 [P] [US-1] Write integration test `tests/integration/security-rules.spec.js` — Emulator (leads/ + diagnostics/) [TS-007, TS-008, TS-009, TS-010]
+- [x] T040 [P] [US-1] Write unit test `tests/unit/diagnostic-state.spec.js` (≥95%) [TS-005, TS-014, TS-015]
+- [x] T041 [P] [US-1] Write integration test `tests/integration/security-rules.spec.js` — Emulator (leads/ + diagnostics/) [TS-007, TS-008, TS-009, TS-010]
 
 ### Implementation
 
-- [ ] T042 [US-1] Implement `js/diagnostic/state.js` — localStorage state machine with 24h TTL (depends on T007) [TS-005, TS-014]
-- [ ] T043 [US-1] Implement `js/diagnostic/controller.js` — DOM orchestration + optimistic result + deferred sync R14 (depends on T008, T042, T027) [TS-003, TS-004, TS-005, TS-006, TS-007, TS-010, TS-088, TS-089, TS-090, TS-091, TS-092]
-- [ ] T044 [US-1] Create `components/DiagnosticStepper.js` — 6-step wizard with progress bar (depends on T043) [TS-003, TS-011, TS-012, TS-013, TS-014, TS-015]
-- [ ] T045 [P] [US-1] Create `estilos/diagnostic.css` — stepper + result screen styles [TS-026]
-- [ ] T046 [US-1] Create `diagnostico/index.html` — 7 sections for sidebar, DiagnosticStepper + shell.js, accepts `?audiencia=` [TS-001, TS-002, TS-003]
-- [ ] T047 [P] [US-1] Create i18n dictionary `js/i18n/dictionaries/diagnostico.json` (4 variants) [TS-073]
-- [ ] T048 [US-1] Update `firebase/firestore.rules` — add leads/ + diagnostics/ rules per contracts (consumer PII only; slots/ rules deferred to T078) [TS-007, TS-008, TS-009, TS-010]
-- [ ] T049 [P] [US-1] Update `firebase/firestore.indexes.json` — composite indexes [DOC]
-- [ ] T050 [US-1] Redesign `index.html` — home v2 with 7 sections (propuesta, diagnostico, recursos, programas, metodo, prueba-social, contacto), full structure per FR-005: hero + proof + 3 routes + programs (static cards) + closing + footer. Inline critical.css, defer output.css. [TS-001, TS-002, TS-006, TS-016, TS-022, TS-080, TS-081, TS-082]
-- [ ] T051 [US-1] Write E2E `tests/e2e/diagnostic-flow.spec.js` [TS-003, TS-004, TS-005, TS-006]
-- [ ] T052 [US-1] Write E2E `tests/e2e/home-fold.spec.js` — CTA visible in 6 viewports [TS-001, TS-002]
+- [x] T042 [US-1] Implement `js/diagnostic/state.js` — localStorage state machine with 24h TTL (depends on T007) [TS-005, TS-014]
+- [x] T043 [US-1] Implement `js/diagnostic/controller.js` — DOM orchestration + optimistic result + deferred sync R14 (depends on T008, T042, T027) [TS-003, TS-004, TS-005, TS-006, TS-007, TS-010, TS-088, TS-089, TS-090, TS-091, TS-092]
+- [x] T044 [US-1] Create `components/DiagnosticStepper.js` — 6-step wizard with progress bar (depends on T043) [TS-003, TS-011, TS-012, TS-013, TS-014, TS-015]
+- [x] T045 [P] [US-1] Create `estilos/diagnostic.css` — stepper + result screen styles [TS-026]
+- [x] T046 [US-1] Create `diagnostico/index.html` — 7 sections for sidebar, DiagnosticStepper + shell.js, accepts `?audiencia=` [TS-001, TS-002, TS-003]
+- [x] T047 [P] [US-1] Create i18n dictionary `js/i18n/dictionaries/diagnostico.json` (4 variants) [TS-073]
+- [x] T048 [US-1] Update `firebase/firestore.rules` — add leads/ + diagnostics/ rules per contracts (consumer PII only; slots/ rules deferred to T078) [TS-007, TS-008, TS-009, TS-010]
+- [x] T049 [P] [US-1] Update `firebase/firestore.indexes.json` — composite indexes [DOC]
+- [x] T050 [US-1] Redesign `index.html` — home v2 with 7 sections (propuesta, diagnostico, recursos, programas, metodo, prueba-social, contacto), full structure per FR-005: hero + proof + 3 routes + programs (static cards) + closing + footer. Inline critical.css, defer output.css. [TS-001, TS-002, TS-006, TS-016, TS-022, TS-080, TS-081, TS-082]
+- [x] T051 [US-1] Write E2E `tests/e2e/diagnostic-flow.spec.js` [TS-003, TS-004, TS-005, TS-006]
+- [x] T052 [US-1] Write E2E `tests/e2e/home-fold.spec.js` — CTA visible in 6 viewports [TS-001, TS-002]
 
 **Checkpoint**: Primary conversion flow operational
 
