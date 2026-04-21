@@ -151,7 +151,7 @@
 
 ### Tier A — Rewrite existing pages (each with 7 sections for sidebar)
 
-- [ ] T054 [US-7] Rewrite `empresas/index.html` — Neo-Swiss shell, 7 sections (b2b, programas, diagnostico, recursos, casos, metodo, contacto), audience=empresa locked (FR-206), preserve JSON-LD [TS-052, TS-058]
+- [ ] T054 [US-7] Rewrite `empresas/index.html` — Neo-Swiss shell, 7 sections (b2b, programas, diagnostico, recursos, casos, metodo, contacto), audience=empresa locked (FR-245), preserve JSON-LD [TS-052, TS-058]
 - [ ] T055 [US-7] Rewrite `personas/index.html` — Neo-Swiss shell, 7 sections, audience=persona locked [TS-052, TS-058]
 - [ ] T056 [US-7] Rewrite `recursos/index.html` — Neo-Swiss shell, 7 sections (biblioteca, playbooks, herramientas, premium, prompts, automatizacion, comunidad), preserve subcategory links [TS-052, TS-058]
 - [ ] T057 [US-7] Rewrite `nosotros/index.html` — Neo-Swiss shell, 7 sections, absorb ecosistema.html + mision.html [TS-052, TS-058]

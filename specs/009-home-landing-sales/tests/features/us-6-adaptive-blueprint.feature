@@ -14,7 +14,7 @@ Feature: Adaptive Blueprint with Sidebar + Triple Toggle
 
   # ── Triple Toggle (FR-245..FR-249) ──
 
-  @TS-043 @FR-247 @SC-013 @P1 @acceptance
+  @TS-043 @FR-246 @FR-247 @SC-013 @P1 @acceptance
   Scenario: Audience toggle updates content in <100ms
     Given a visitor on "/programas/" with mdg_audience=persona
     When they click the audience toggle in the bottom-left triple toggle

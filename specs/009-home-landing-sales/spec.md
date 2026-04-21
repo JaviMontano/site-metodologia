@@ -250,7 +250,7 @@ Un visitante accede al home desde iPhone SE (xs), iPhone 15 (sm), iPad portrait 
 
 ### US-6 — Blueprint Adaptativo de 3 Ejes (Priority: P1)
 
-*Añadida en v7 robustness pass, reescrita en v8 (sidebar architecture). FR-200..FR-232 [SUPERSEDED by FR-240..FR-253]. Cubre FR-240..FR-253 y FR-099b.*
+*Añadida en v7 robustness pass, reescrita en v8 (sidebar architecture). Cubre FR-240..FR-253 y FR-099b.*
 
 Un visitante llega al sitio en cualquier página de las 13 y ve una experiencia coherente con: (a) un sidebar izquierdo fijo con 7 secciones numeradas por página con scroll-spy (inspirado en `Montano_Javier_Canonical.html`), (b) un header simplificado con logo + 3 nav items (Ruta, Servicios, Contacto), y (c) un triple toggle siempre visible en la esquina inferior izquierda para cambiar tema (light/dark), idioma (ES/EN) y audiencia (persona/empresa) a un click, sin recargar, sin flicker, en <100ms. La experiencia de cambiar el tono del contenido, el idioma o el look and feel a un click es requerimiento clave. Cada texto en el sitio existe en 4 variantes (ES×persona, ES×empresa, EN×persona, EN×empresa) gestionables desde un admin Firestore-backed.
 
@@ -370,7 +370,7 @@ Un administrador (Javier) accede a `/admin/content-editor.html` tras login con G
 - **FR-043**: El home MUST usar el sistema tipográfico de 3 niveles: `--font-head 'Poppins'` (headings), `--font-body 'Montserrat'` (body), `--font-note 'Trebuchet MS'` (notes, labels, micro-copy).
 - **FR-044**: El home MUST usar radios `--radius-sm 6px`, `--radius-md 12px`, `--radius-lg 20px`, `--radius-xl 32px` y shadows `--shadow-card`, `--shadow-glow` idénticos a las cartillas.
 - **FR-045**: El home MUST persistir el modo activo (light/dark) en `localStorage` como `mdg_theme`, respetando `prefers-color-scheme` como fallback.
-- **FR-046** *(añadido en v6, derivado de backcasting §3.1 gap B)*: Cada variante de copy por audience (`persona` vs `empresa`) MUST pasar un audit manual de brand voice antes de merge, validando que (a) persona mantiene tono cercano e inspiracional, (b) empresa mantiene tono seguro y basado en resultados, (c) ambas preservan los principios de voz de marca MetodologIA (claridad > cleverness, evidencia > hype, humano > corporativo). El checklist de review del PR MUST incluir sección "Voice audit — persona + empresa" por cada dictionary modificado. *(Deriva de Constitution XI Brand Voice Integrity.)*
+- **FR-046** *(añadido en v6, derivado de backcasting §3.1 gap B)*: Cada variante de copy por audience (`persona` vs `empresa`) MUST pasar un audit manual de brand voice antes de merge, validando un checklist de 5 puntos: (1) persona mantiene tono cercano e inspiracional, (2) empresa mantiene tono seguro y basado en resultados, (3) ambas preservan los principios de voz de marca MetodologIA (claridad > cleverness, evidencia > hype, humano > corporativo), (4) cero términos de la red-list (Constitution XI) presentes en el copy, (5) cada CTA es accionable (enlaza a página o acción concreta). **Pass = 5/5 checks**; cualquier fallo bloquea merge hasta corrección. El checklist de review del PR MUST incluir sección "Voice audit — persona + empresa" por cada dictionary modificado. *(Deriva de Constitution XI Brand Voice Integrity.)*
 
 **Responsive y diseño nativo**
 
@@ -491,9 +491,9 @@ Un administrador (Javier) accede a `/admin/content-editor.html` tras login con G
 - **AudienceState** *(client-only, never persisted to Firestore)*: `{value: "persona"|"empresa"|"unknown", provenance: "url"|"localStorage"|"landing"|"diagnostic"|"utm"|"default", updatedAt, locked: boolean}` — ver adaptive-blueprint.md §3
 - **ContentSlot**: `{slot, pageSlug, variants: {[audience]: {[locale]: {headline, subheadline, cta_label, cta_href, ...}}}}` — bundled en `js/i18n/dictionaries/{pageSlug}.json` en 009; migra a Firestore `slots/{pageSlug}` en 010 — ver adaptive-blueprint.md §2.2
 
-### 4.4 v7 Constitutional Alignment
+### 4.4 Constitutional Alignment (v7.1.0)
 
-> Added in v4 clarification session per Constitution v7.0.0 (BaaS-First + Feature-Bounded Architecture + SWR+Offline UX). This section is a MUST for every feature under v7.
+> Added in v4 clarification session per Constitution v7.0.0; updated to v7.1.0 (added XXIV Adaptive Blueprint Personalization). This section is a MUST for every feature under v7+.
 
 #### Firebase services used (Constitution I)
 
@@ -535,6 +535,10 @@ Feature 009 ships with `scripts/seed.js` that populates `programs/`, `resources/
 - **FR-099**: The pills are `aria-live="polite"` so screen readers announce cache state changes.
 - **FR-099b** *(v8: reescrito para sidebar architecture)*: Las offline/syncing/fallback pills (FR-097..FR-099) MUST permanecer visibles en el header o al inicio del `<main>` content, sin ser obstruidas por el sidebar ni el triple toggle. Contraste ≥3:1 en ambos themes. *(Deriva de Constitution VIII SWR + Explicit Offline UX.)*
 
+#### Adaptive Blueprint Personalization (Constitution XXIV)
+
+This feature satisfies XXIV via the 3-axis orthogonal system: locale (ES/EN) affects text only via `data-i18n`; theme (light/dark) affects CSS custom properties only; audience (persona/empresa) affects copy and listing filters only. Single homologated shell with sidebar (FR-240..FR-244) + triple toggle (FR-245..FR-249). Validated by 52-combo matrix test (SC-014). Content manageable without redeploy via admin editor (FR-250..FR-253).
+
 **Sidebar y navegación intra-página** *(v8 — sidebar architecture, inspirado en Montano_Javier_Canonical.html)*
 
 - **FR-240**: Cada una de las 12 páginas (excl. 404) MUST tener un sidebar izquierdo fijo (`components/SiteSidebar.js`) con exactamente 7 secciones numeradas (01–07), cada una con icono SVG, label i18n y link anchor `#section-id`. El sidebar usa scroll-spy (IntersectionObserver) para marcar la sección activa con `is-active` class. En desktop (≥960px): sidebar visible, 260px ancho, `position: fixed`. En mobile (<960px): off-canvas drawer con hamburger toggle, backdrop, Escape para cerrar.
@@ -543,7 +547,7 @@ Feature 009 ships with `scripts/seed.js` that populates `programs/`, `resources/
 - **FR-243**: El scroll-spy MUST usar `rootMargin: '-40% 0px -50% 0px'` con `threshold: 0` para determinar la sección activa. Smooth scroll al hacer click en un link del sidebar con offset de `var(--header-h) + 12px`.
 - **FR-244**: Las 7 secciones por página se definen en `js/sidebar/sections-config.js` y sus labels se resuelven via i18n (`{pageSlug}.sections.{sectionId}` × 2 locales = 168 keys).
 
-**Triple toggle siempre visible** *(v8 — reemplaza FR-200..FR-206)*
+**Triple toggle siempre visible** *(v8)*
 
 - **FR-245**: El sitio MUST presentar un triple toggle (`components/TripleToggle.js`) SIEMPRE visible en la esquina inferior izquierda (`position: fixed; bottom: 1rem; left: 1rem; z-index: 45`), independientemente del estado del sidebar. En desktop se alinea visualmente con el borde inferior del sidebar pero NO está dentro de él.
 - **FR-246**: El triple toggle contiene 3 botones `role="switch"` con `aria-checked`:
