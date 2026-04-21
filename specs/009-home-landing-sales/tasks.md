@@ -130,7 +130,7 @@
 - [ ] T045 [P] [US-1] Create `estilos/diagnostic.css` — stepper + result screen styles [TS-026]
 - [ ] T046 [US-1] Create `diagnostico/index.html` — 7 sections for sidebar, DiagnosticStepper + shell.js, accepts `?audiencia=` [TS-001, TS-002, TS-003]
 - [ ] T047 [P] [US-1] Create i18n dictionary `js/i18n/dictionaries/diagnostico.json` (4 variants) [TS-073]
-- [ ] T048 [US-1] Update `firebase/firestore.rules` — add leads/ + diagnostics/ + slots/ rules per contracts [TS-007, TS-008, TS-009, TS-010, TS-105, TS-106]
+- [ ] T048 [US-1] Update `firebase/firestore.rules` — add leads/ + diagnostics/ rules per contracts (consumer PII only; slots/ rules deferred to T078) [TS-007, TS-008, TS-009, TS-010]
 - [ ] T049 [P] [US-1] Update `firebase/firestore.indexes.json` — composite indexes [DOC]
 - [ ] T050 [US-1] Redesign `index.html` — home v2 with 7 sections (propuesta, diagnostico, recursos, programas, metodo, prueba-social, contacto), full structure per FR-005: hero + proof + 3 routes + programs (static cards) + closing + footer. Inline critical.css, defer output.css. [TS-001, TS-002, TS-006, TS-016, TS-022, TS-080, TS-081, TS-082]
 - [ ] T051 [US-1] Write E2E `tests/e2e/diagnostic-flow.spec.js` [TS-003, TS-004, TS-005, TS-006]
@@ -152,10 +152,10 @@
 ### Tier A — Rewrite existing pages (each with 7 sections for sidebar)
 
 - [ ] T054 [US-7] Rewrite `empresas/index.html` — Neo-Swiss shell, 7 sections (b2b, programas, diagnostico, recursos, casos, metodo, contacto), audience=empresa locked (FR-245), preserve JSON-LD [TS-052, TS-058]
-- [ ] T055 [US-7] Rewrite `personas/index.html` — Neo-Swiss shell, 7 sections, audience=persona locked [TS-052, TS-058]
-- [ ] T056 [US-7] Rewrite `recursos/index.html` — Neo-Swiss shell, 7 sections (biblioteca, playbooks, herramientas, premium, prompts, automatizacion, comunidad), preserve subcategory links [TS-052, TS-058]
-- [ ] T057 [US-7] Rewrite `nosotros/index.html` — Neo-Swiss shell, 7 sections, absorb ecosistema.html + mision.html [TS-052, TS-058]
-- [ ] T058 [US-7] Rewrite `contacto/index.html` — Neo-Swiss shell, 7 sections, preserve JSON-LD ContactPage [TS-052, TS-058]
+- [ ] T055 [P] [US-7] Rewrite `personas/index.html` — Neo-Swiss shell, 7 sections, audience=persona locked [TS-052, TS-058]
+- [ ] T056 [P] [US-7] Rewrite `recursos/index.html` — Neo-Swiss shell, 7 sections (biblioteca, playbooks, herramientas, premium, prompts, automatizacion, comunidad), preserve subcategory links [TS-052, TS-058]
+- [ ] T057 [P] [US-7] Rewrite `nosotros/index.html` — Neo-Swiss shell, 7 sections, absorb ecosistema.html + mision.html [TS-052, TS-058]
+- [ ] T058 [P] [US-7] Rewrite `contacto/index.html` — Neo-Swiss shell, 7 sections, preserve JSON-LD ContactPage [TS-052, TS-058]
 
 ### Tier B — Create new pages (each with 7 sections)
 
@@ -171,7 +171,7 @@
 
 ### Shared infrastructure
 
-- [ ] T065 [US-7] Create 11 i18n dictionaries `js/i18n/dictionaries/{pageSlug}.json` — ~132 content keys + 168 section label keys (4 variants per content slot) [TS-073, TS-048]
+- [ ] T065 [P] [US-7] Create 11 i18n dictionaries `js/i18n/dictionaries/{pageSlug}.json` — 168 section labels derived from sections-config.js (mechanical) + 132 content keys requiring brand voice FR-046 (creative copywriting). Total ~300 keys, 4 variants per content slot [TS-073, TS-048]
 - [ ] T066 [US-7] Create `scripts/generate-sitemap-xml.js` — 12-URL sitemap with hreflang (es/en) [TS-052]
 - [ ] T067 [US-7] Modify `components/SiteFooter.js` — 12-page link list per sitemap.md [TS-058, TS-059]
 - [ ] T068 [US-7] Write integration test `tests/integration/home-firestore.spec.js` — Emulator: SWR + append-only [TS-072]
@@ -191,7 +191,7 @@
 
 ### Implementation
 
-- [ ] T071 [US-5] Responsive CSS refinement: 6-breakpoint mobile-first, clamp() typography, safe-area insets, landscape compact hero, sidebar collapse at 960px without layout shift [TS-033, TS-034, TS-035, TS-036, TS-038, TS-039, TS-040, TS-041, TS-042]
+- [ ] T071 [US-5] Responsive CSS refinement: 6-breakpoint mobile-first, clamp() typography, safe-area insets, landscape compact hero, sidebar collapse at 960px without layout shift. TDD inner loop: implement one TS at a time, verify E2E per TS before next [TS-033, TS-034, TS-035, TS-036, TS-038, TS-039, TS-040, TS-041, TS-042]
 - [ ] T072 [US-5] Add `srcset` WebP/AVIF + fallback + `loading="lazy"` + `aspect-ratio` [TS-040, TS-085, TS-086]
 - [ ] T073 [US-5] Touch targets ≥44×44px (xs/sm), ≥48×48px (md+), ≥8px spacing [TS-033, TS-037]
 - [ ] T074 [US-5] Write E2E `tests/e2e/home-i18n.spec.js` — ES↔EN switch, zero raw keys [TS-073, TS-074]
@@ -213,7 +213,7 @@
 
 - [ ] T076 [US-8] Create `admin/content-editor.html` — page picker grid (13 cards) + slot editor UI with 4 textareas per slot (ES×persona, ES×empresa, EN×persona, EN×empresa) [TS-100, TS-101]
 - [ ] T077 [US-8] Create `admin/content-editor.js` — Firestore CRUD for `slots/{pageSlug}`, schema: `{ slotId, variants: { "persona.es", "persona.en", "empresa.es", "empresa.en" } }`, save per slot (depends on T048 for rules) [TS-102]
-- [ ] T078 [US-8] Update `firebase/firestore.rules` — add `slots/{pageSlug}` rules: admin write (custom claim), public read (published) [TS-105, TS-106]
+- [ ] T078 [US-8] Update `firebase/firestore.rules` — add `slots/{pageSlug}` rules: public read (published) + admin write (custom claim `admin: true`). Owns all slots/ rules (T048 does NOT touch slots/) [TS-105, TS-106]
 - [ ] T079 [US-8] Update `js/cms/migration-bridge.js` — enable `cms-i18n` flag: read from Firestore `slots/{pageSlug}` when documents exist, fallback to static JSON [TS-103, TS-104]
 - [ ] T080 [US-8] Update `js/blueprint/slot-resolver.js` — integrate migration-bridge for Firestore-first slot resolution with static fallback [TS-103, TS-104]
 - [ ] T081 [US-8] Write E2E `tests/e2e/admin-content-editor.spec.js` — login → select page → edit 4 variants → save → verify Firestore + public render [TS-100, TS-101, TS-102, TS-103, TS-107]
@@ -268,13 +268,15 @@ Phase 1 (Setup) → Phase 2 (Foundation: 7 leaf modules)
     → Phase 3 (US-4: Tokens + Layout System)
         → Phase 4 (US-6: Sidebar + TripleToggle + Shell)
             ├→ Phase 5 (US-1: Diagnostic + Home)
+            │   └→ Phase 8 (US-8: Admin Content Editor) *T077+ blocked by T048*
             ├→ Phase 6 (US-7: 13-Page Shell)
-            ├→ Phase 7 (US-5: Responsive)
-            └→ Phase 8 (US-8: Admin Content Editor)
-                ├→ Phase 9 (US-2: Resources)
-                └→ Phase 10 (US-3: Programs)
-                    → Phase 11 (Polish)
+            └→ Phase 7 (US-5: Responsive)
+                Phase 8 ├→ Phase 9 (US-2: Resources)
+                        └→ Phase 10 (US-3: Programs)
+                            → Phase 11 (Polish)
 ```
+
+> **Note**: Phase 8 T075/T076 can start in parallel with Phase 5, but T077+ are blocked by T048 (firestore rules). Phase 6 and Phase 7 are fully parallel with Phase 5.
 
 ### Critical Path
 
@@ -291,8 +293,10 @@ T001 → T007 → T015 → T017 → T028 → T036 → T050 → T054 → T076 →
 | 3 | C | T014, T016, T018, T019 (after T015) |
 | 4 | D | T021, T022, T023, T024, T025 (after Phase 3) |
 | 5 | E | T040, T041, T045, T047, T049 (after Phase 4) |
+| 6-A | E2 | T055, T056, T057, T058 (after T054 establishes rewrite pattern) |
 | 6-B | F | T059, T060, T061, T062, T063 (all new pages, independent) |
-| 8 | G | T075 parallel with T076 |
+| 6-infra | F2 | T065 (i18n dictionaries, parallel with page creation) |
+| 8 | G | T075, T076 parallel with Phase 5; T077+ blocked by T048 |
 
 ### Story Independence
 
@@ -332,3 +336,15 @@ Phases 7–11 add: responsive polish, admin editor, resources, programs, cross-c
 - Admin content editor writes to Firestore `slots/{pageSlug}`, site reads via migration-bridge.js
 - Triple toggle always visible fixed bottom-left (z-index 45), even with sidebar closed on mobile
 - Header simplified: logo + Ruta (gold CTA) + Servicios + Contacto — NO toggles
+
+---
+
+## Clarifications
+
+### Session 2026-04-21 (v4 — Socratic debate: 5 task ambiguities)
+
+- Q: T048 and T078 both modify firestore.rules for slots/ — who owns slots/ rules? → A: T048 scope = leads/ + diagnostics/ only (consumer PII). T078 owns all slots/ rules (public read + admin write). TS-105/TS-106 removed from T048, remain on T078. Rationale: slots/ is 100% content editor concern (US-8), not diagnostic concern (US-1). [T048, T078, TS-105, TS-106, Constitution XXIII]
+- Q: Phase dependency diagram shows Phase 8 branching from Phase 4, but T077 depends on T048 (Phase 5) — which is correct? → A: Phase 8 has partial dependency on Phase 5. T075/T076 can start in parallel with Phase 5; T077+ blocked by T048. Diagram corrected. [Phase 5, Phase 8, T077, T048, Constitution XVI]
+- Q: Tier A page rewrites (T054-T058) affect different files — should T055-T058 be [P]? → A: Yes. T054 establishes the rewrite pattern (critical path); T055-T058 replicate it in parallel. All 4 criteria of XVI satisfied. [T054, T055, T056, T057, T058, Constitution XVI]
+- Q: T065 creates ~300 i18n keys in one task — should it split? → A: No split, but add [P] marker. Output is homogeneous (JSON files), structure repetitive. Scope note added: 168 labels (mechanical from sections-config.js) + 132 content keys (creative copywriting, FR-046 applies). [T065, FR-046, Constitution XIV]
+- Q: T071 covers 9 TS references in one responsive CSS task — too large? → A: Maintained as single task. CSS responsive is cohesive; splitting generates merge conflicts in same files. Added TDD inner loop note: implement one TS at a time. [T071, Constitution IX, Constitution XIV]
