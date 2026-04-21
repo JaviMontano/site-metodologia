@@ -202,7 +202,42 @@
 
   <script type="module">
     import { initShell } from '../js/blueprint/shell.js';
+    import { trackEvent } from '../js/analytics/events.js';
+
     initShell({ pageSlug: 'recursos' });
+
+    // --- Analytics: resource_open on category link clicks ---
+    document.querySelectorAll('nav[aria-label="Subcategorias de recursos"] a').forEach(link => {
+      link.addEventListener('click', () => {
+        trackEvent('resource_open', {
+          resource_category: link.textContent.trim(),
+          resource_href: link.getAttribute('href'),
+        });
+      });
+    });
+
+    // --- Analytics: resource_premium_unlock via ModalSystem ---
+    document.querySelectorAll('[href*="premium"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        // Only intercept premium CTA links that should gate
+        if (link.closest('#premium') || link.closest('.home-hero__cta-group')) {
+          e.preventDefault();
+          if (window.ModalSystem && window.ModalSystem.openPremiumGate) {
+            window.ModalSystem.openPremiumGate({
+              resourceId: 'premium-catalog',
+              resourceTitle: 'Acceso Premium',
+              onUnlock(email) {
+                trackEvent('resource_premium_unlock', {
+                  resource_id: 'premium-catalog',
+                  email_provided: true,
+                });
+                window.location.href = link.getAttribute('href');
+              },
+            });
+          }
+        }
+      });
+    });
   </script>
 </body>
 </html>
