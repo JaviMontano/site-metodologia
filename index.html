@@ -104,27 +104,27 @@
       <!-- Section 1: Propuesta de Valor / Hero -->
       <section id="propuesta" class="home-section home-hero" aria-labelledby="propuesta-heading">
         <div class="home-hero__content">
-          <span class="home-hero__badge" data-i18n="home.hero.badge" data-slot="hero-badge">
+          <span class="home-hero__badge" data-i18n="home.hero.badge" data-slot="hero.badge">
             Edicion 2026
           </span>
-          <h1 id="propuesta-heading" class="home-hero__title" data-slot="hero-title">
+          <h1 id="propuesta-heading" class="home-hero__title" data-slot="hero.title">
             <span data-i18n="home.hero.title_line1">Success as a</span>
             <span class="home-hero__title--accent" data-i18n="home.hero.title_line2">Service</span>
           </h1>
-          <p class="home-hero__subtitle" data-slot="hero-subtitle" data-i18n="home.hero.subtitle">
+          <p class="home-hero__subtitle" data-slot="hero.subtitle" data-i18n="home.hero.subtitle">
             Metodologia probada para alcanzar la
             <strong>Soberania Digital, Profesional y Estrategica</strong>.
           </p>
 
           <!-- CTA Pyramid: P1 gold, P2 outline, P3 link -->
           <div class="home-hero__cta-group">
-            <a href="diagnostico/" class="home-hero__cta home-hero__cta--p1" data-slot="cta-primary" data-i18n="home.hero.cta_diagnostico">
+            <a href="diagnostico/" class="home-hero__cta home-hero__cta--p1" data-slot="hero.cta" data-i18n="home.hero.cta_diagnostico">
               Diagnostico Gratuito
             </a>
-            <a href="ruta/index.html" class="home-hero__cta home-hero__cta--p2" data-slot="cta-secondary" data-i18n="home.hero.cta_ruta">
+            <a href="ruta/index.html" class="home-hero__cta home-hero__cta--p2" data-slot="propuesta.cta" data-i18n="home.hero.cta_ruta">
               Explorar la Ruta
             </a>
-            <a href="#metodo" class="home-hero__cta home-hero__cta--p3" data-slot="cta-tertiary" data-i18n="home.hero.cta_metodo">
+            <a href="#metodo" class="home-hero__cta home-hero__cta--p3" data-slot="metodo.cta" data-i18n="home.hero.cta_metodo">
               Conocer el metodo
             </a>
           </div>
@@ -170,12 +170,12 @@
 
         <!-- Audience variant hints for slot-resolver -->
         <div class="home-hero__variant" data-audience-variant="persona" hidden>
-          <p data-slot="hero-subtitle">
+          <p data-slot="hero.subtitle">
             Disena tu futuro profesional con metodologia e IA.
           </p>
         </div>
         <div class="home-hero__variant" data-audience-variant="empresa" hidden>
-          <p data-slot="hero-subtitle">
+          <p data-slot="hero.subtitle">
             Escale su operacion sin caos. Modelos operativos probados.
           </p>
         </div>
@@ -190,17 +190,17 @@
           Descubre tu nivel metodologico en minutos. Recibe un plan personalizado con pasos concretos.
         </p>
         <div class="home-diagnostico__features">
-          <div class="home-diagnostico__feature" data-slot="diag-feature-1">
+          <div class="home-diagnostico__feature" data-slot="diagnostico.title">
             <span class="home-diagnostico__icon" aria-hidden="true">1</span>
             <h3 data-i18n="home.diagnostico.f1_title">Responde 5 dimensiones</h3>
             <p data-i18n="home.diagnostico.f1_desc">Madurez, dolor, urgencia, equipo y segmento.</p>
           </div>
-          <div class="home-diagnostico__feature" data-slot="diag-feature-2">
+          <div class="home-diagnostico__feature" data-slot="diagnostico.subtitle">
             <span class="home-diagnostico__icon" aria-hidden="true">2</span>
             <h3 data-i18n="home.diagnostico.f2_title">Obtiene tu perfil</h3>
             <p data-i18n="home.diagnostico.f2_desc">Radar de competencias con nivel detallado.</p>
           </div>
-          <div class="home-diagnostico__feature" data-slot="diag-feature-3">
+          <div class="home-diagnostico__feature" data-slot="diagnostico.cta">
             <span class="home-diagnostico__icon" aria-hidden="true">3</span>
             <h3 data-i18n="home.diagnostico.f3_title">Recibe recomendaciones</h3>
             <p data-i18n="home.diagnostico.f3_desc">Plan de accion priorizado y siguiente paso sugerido.</p>
@@ -219,16 +219,16 @@
         <p class="home-section__lead" data-i18n="home.recursos.lead">
           Guias, plantillas, herramientas y frameworks listos para usar.
         </p>
-        <div class="home-recursos__grid" data-slot="recursos-grid">
-          <div class="home-recursos__card" data-slot="recurso-1">
+        <div class="home-recursos__grid">
+          <div class="home-recursos__card" data-slot="recursos.title">
             <h3 data-i18n="home.recursos.c1_title">Guias Practicas</h3>
             <p data-i18n="home.recursos.c1_desc">Paso a paso para implementar metodologias de alto rendimiento.</p>
           </div>
-          <div class="home-recursos__card" data-slot="recurso-2">
+          <div class="home-recursos__card" data-slot="recursos.subtitle">
             <h3 data-i18n="home.recursos.c2_title">Plantillas</h3>
             <p data-i18n="home.recursos.c2_desc">Documentos listos para adaptar a tu contexto.</p>
           </div>
-          <div class="home-recursos__card" data-slot="recurso-3">
+          <div class="home-recursos__card" data-slot="recursos.cta">
             <h3 data-i18n="home.recursos.c3_title">Herramientas IA</h3>
             <p data-i18n="home.recursos.c3_desc">Prompts, agentes y flujos automatizados.</p>
           </div>
@@ -247,7 +247,7 @@
           Formacion estructurada para personas y equipos que buscan resultados medibles.
         </p>
         <!-- Dynamic ProgramCard WC — Firestore programs/ binding (US-3 T088) -->
-        <div class="home-programas__grid" data-slot="programas-grid" id="programas-grid">
+        <div class="home-programas__grid" id="programas-grid">
           <program-card
             name-es="Bootcamp Individual" name-en="Individual Bootcamp"
             audiencia="persona" duracion="8 semanas"
@@ -286,23 +286,23 @@
         <p class="home-section__lead" data-i18n="home.metodo.lead">
           Cuatro fases para transformar tu forma de trabajar de manera sostenible.
         </p>
-        <ol class="home-metodo__steps" data-slot="metodo-steps">
-          <li class="home-metodo__step" data-slot="metodo-step-1">
+        <ol class="home-metodo__steps">
+          <li class="home-metodo__step" data-slot="metodo.title">
             <span class="home-metodo__step-num" aria-hidden="true">01</span>
             <h3 data-i18n="home.metodo.s1_title">Diagnosticar</h3>
             <p data-i18n="home.metodo.s1_desc">Medir tu punto de partida con precision.</p>
           </li>
-          <li class="home-metodo__step" data-slot="metodo-step-2">
+          <li class="home-metodo__step" data-slot="metodo.subtitle">
             <span class="home-metodo__step-num" aria-hidden="true">02</span>
             <h3 data-i18n="home.metodo.s2_title">Disenar</h3>
             <p data-i18n="home.metodo.s2_desc">Crear tu plan de ruta personalizado.</p>
           </li>
-          <li class="home-metodo__step" data-slot="metodo-step-3">
+          <li class="home-metodo__step" data-slot="metodo.cta">
             <span class="home-metodo__step-num" aria-hidden="true">03</span>
             <h3 data-i18n="home.metodo.s3_title">Implementar</h3>
             <p data-i18n="home.metodo.s3_desc">Ejecutar con acompanamiento y metricas.</p>
           </li>
-          <li class="home-metodo__step" data-slot="metodo-step-4">
+          <li class="home-metodo__step" data-slot="metodo.cta">
             <span class="home-metodo__step-num" aria-hidden="true">04</span>
             <h3 data-i18n="home.metodo.s4_title">Optimizar</h3>
             <p data-i18n="home.metodo.s4_desc">Iterar y escalar lo que funciona.</p>
@@ -318,8 +318,8 @@
         <p class="home-section__lead" data-i18n="home.social.lead">
           Lo que dicen quienes ya transformaron su forma de trabajar.
         </p>
-        <div class="home-social__grid" data-slot="testimonials-grid">
-          <blockquote class="home-social__testimonial" data-slot="testimonial-1">
+        <div class="home-social__grid">
+          <blockquote class="home-social__testimonial" data-slot="prueba-social.title">
             <p data-i18n="home.social.t1_quote">
               "El diagnostico me mostro exactamente donde estaba perdiendo tiempo. En 4 semanas reduje fricciones un 60%."
             </p>
@@ -327,7 +327,7 @@
               <cite data-i18n="home.social.t1_author">-- Profesional independiente, Bogota</cite>
             </footer>
           </blockquote>
-          <blockquote class="home-social__testimonial" data-slot="testimonial-2">
+          <blockquote class="home-social__testimonial" data-slot="prueba-social.subtitle">
             <p data-i18n="home.social.t2_quote">
               "Implementamos el metodo en 3 equipos. La alineacion mejoro desde la primera semana."
             </p>
@@ -335,7 +335,7 @@
               <cite data-i18n="home.social.t2_author">-- Director de Operaciones, empresa SaaS</cite>
             </footer>
           </blockquote>
-          <blockquote class="home-social__testimonial" data-slot="testimonial-3">
+          <blockquote class="home-social__testimonial" data-slot="prueba-social.cta">
             <p data-i18n="home.social.t3_quote">
               "Los recursos y plantillas nos ahorraron meses de trabajo. Calidad desde el dia uno."
             </p>
@@ -354,11 +354,11 @@
         <p class="home-section__lead" data-i18n="home.contacto.lead">
           Conversemos sobre como acelerar tus resultados con metodologia e IA.
         </p>
-        <div class="home-contacto__actions" data-slot="contacto-actions">
-          <a href="diagnostico/" class="home-contacto__cta home-contacto__cta--primary" data-slot="contacto-cta-1" data-i18n="home.contacto.cta_diagnostico">
+        <div class="home-contacto__actions">
+          <a href="diagnostico/" class="home-contacto__cta home-contacto__cta--primary" data-slot="contacto.cta" data-i18n="home.contacto.cta_diagnostico">
             Comenzar Diagnostico
           </a>
-          <a href="mailto:contacto@metodologia.info" class="home-contacto__cta home-contacto__cta--secondary" data-slot="contacto-cta-2" data-i18n="home.contacto.cta_email">
+          <a href="mailto:contacto@metodologia.info" class="home-contacto__cta home-contacto__cta--secondary" data-slot="contacto.subtitle" data-i18n="home.contacto.cta_email">
             Escribenos
           </a>
         </div>

@@ -27,23 +27,38 @@ import { on } from '../state/bus.js';
 import { initLegacyRouter, checkRedirect } from '../redirects/legacy-router.js';
 
 /**
+ * Fetch a JSON dictionary, returning {} on failure.
+ * @param {string} url
+ * @returns {Promise<object>}
+ */
+async function fetchJSON(url) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return {};
+    return await res.json();
+  } catch {
+    return {};
+  }
+}
+
+/**
+ * Resolve the base path for dictionary URLs relative to the page.
+ * Pages at root use './js/i18n/...', pages in subdirs use '../js/i18n/...'
+ */
+function dictBasePath() {
+  const depth = window.location.pathname.replace(/\/+$/, '').split('/').length - 1;
+  return depth > 1 ? '../' : './';
+}
+
+/**
  * Initialise the page shell.
  *
  * @param {object} options
- * @param {string} options.pageSlug      — page identifier for slot resolution
- * @param {object} options.dictionaries  — i18n dictionary tree
- * @param {object} [options.firestoreSlots] — CMS overrides from Firestore
- * @param {boolean} [options.cmsEnabled] — whether Firestore slots are active
- * @param {string} [options.locale]      — current locale (default "es")
+ * @param {string} options.pageSlug — page identifier for slot resolution
  */
-export function initShell(options = {}) {
-  const {
-    pageSlug,
-    dictionaries = {},
-    firestoreSlots = {},
-    cmsEnabled = false,
-    locale = 'es',
-  } = options;
+export async function initShell(options = {}) {
+  const { pageSlug } = options;
+  const locale = document.documentElement.lang || 'es';
 
   // ------------------------------------------------------------------
   // 1. Check legacy redirects — bail early if the URL should redirect
@@ -56,31 +71,38 @@ export function initShell(options = {}) {
 
   // ------------------------------------------------------------------
   // 2. Anti-FOUC theme restore is handled by inline <script> in HTML.
-  //    Nothing to do here — step kept as documentation of the sequence.
   // ------------------------------------------------------------------
 
   // ------------------------------------------------------------------
-  // 3. Initialise theme module (interactive toggle, system preference)
+  // 3. Initialise theme module
   // ------------------------------------------------------------------
   initTheme();
 
   // ------------------------------------------------------------------
-  // 4. Initialise audience controller (slot hydration + toggle wiring)
+  // 4. Load i18n dictionaries for this page
+  // ------------------------------------------------------------------
+  const base = dictBasePath();
+  const [pageDict, commonDict] = await Promise.all([
+    fetchJSON(`${base}js/i18n/dictionaries/${pageSlug}.json`),
+    fetchJSON(`${base}js/i18n/dictionaries/common.json`),
+  ]);
+
+  // Build dictionaries object keyed by pageSlug for slot-resolver
+  const dictionaries = {
+    [pageSlug]: pageDict,
+    common: commonDict,
+  };
+
+  // ------------------------------------------------------------------
+  // 5. Initialise audience controller (slot hydration + toggle wiring)
   // ------------------------------------------------------------------
   initAudienceController({
     pageSlug,
     locale,
     dictionaries,
-    firestoreSlots,
-    cmsEnabled,
+    firestoreSlots: {},
+    cmsEnabled: false,
   });
-
-  // ------------------------------------------------------------------
-  // 5. Custom elements — all self-register on import. The guards below
-  //    are a safety net against double-define if scripts load twice.
-  //    (SiteHeader already has an internal guard; others rely on the
-  //    import-once semantics of ES modules.)
-  // ------------------------------------------------------------------
 
   // ------------------------------------------------------------------
   // 6. Wire bus events
@@ -100,13 +122,13 @@ export function initShell(options = {}) {
     const audience = getAudience();
     hydrateSlots(pageSlug, audience, newLocale, {
       dictionaries,
-      firestoreSlots,
-      cmsEnabled,
+      firestoreSlots: {},
+      cmsEnabled: false,
     });
   });
 
   // ------------------------------------------------------------------
-  // 7. Legacy router as fallback (handles any remaining /ruta/* paths)
+  // 7. Legacy router as fallback
   // ------------------------------------------------------------------
   initLegacyRouter();
 }

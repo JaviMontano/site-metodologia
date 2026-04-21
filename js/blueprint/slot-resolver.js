@@ -86,28 +86,37 @@ export function resolveSlot(pageSlug, slotId, audience, locale, options = {}) {
   const page = dictionaries[pageSlug];
   if (!page) return `[MISSING: ${slotId}]`;
 
-  const slot = page[slotId];
+  // Support dotted slot IDs: "hero.title" → section="hero", field="title"
+  const parts = slotId.split('.');
+  const section = parts[0];
+  const field = parts.length > 1 ? parts.slice(1).join('.') : null;
+
+  const slot = page[section];
   if (!slot) return `[MISSING: ${slotId}]`;
 
-  // Level 2: Exact match
-  if (slot[audience]?.[locale] !== undefined) {
-    return slot[audience][locale];
+  // Resolve helper: extract leaf value (string or nested field)
+  function leaf(node) {
+    if (node === undefined || node === null) return undefined;
+    if (field && typeof node === 'object') return node[field];
+    if (typeof node === 'string') return node;
+    return undefined;
   }
+
+  // Level 2: Exact match
+  const l2 = leaf(slot[audience]?.[locale]);
+  if (l2 !== undefined) return l2;
 
   // Level 3: Locale fallback (same audience, default locale)
-  if (slot[audience]?.[DEFAULT_LOCALE] !== undefined) {
-    return slot[audience][DEFAULT_LOCALE];
-  }
+  const l3 = leaf(slot[audience]?.[DEFAULT_LOCALE]);
+  if (l3 !== undefined) return l3;
 
   // Level 4: Audience fallback (default audience, original locale)
-  if (slot[DEFAULT_AUDIENCE]?.[locale] !== undefined) {
-    return slot[DEFAULT_AUDIENCE][locale];
-  }
+  const l4 = leaf(slot[DEFAULT_AUDIENCE]?.[locale]);
+  if (l4 !== undefined) return l4;
 
   // Level 5: Double fallback (default audience + default locale)
-  if (slot[DEFAULT_AUDIENCE]?.[DEFAULT_LOCALE] !== undefined) {
-    return slot[DEFAULT_AUDIENCE][DEFAULT_LOCALE];
-  }
+  const l5 = leaf(slot[DEFAULT_AUDIENCE]?.[DEFAULT_LOCALE]);
+  if (l5 !== undefined) return l5;
 
   return `[MISSING: ${slotId}]`;
 }
