@@ -7,7 +7,7 @@
 
     # ── Legacy 301 Redirects (T005 / plan.md v6 §3) ──────────────
     # Specific page redirects (must precede catch-all rules)
-    RewriteRule ^vision\.html$                          /metodo/  [R=301,L]
+    RewriteRule ^vision\.html$                          /vision/  [R=301,L]
     RewriteRule ^metodologia\.html$                     /metodo/  [R=301,L]
     RewriteRule ^empresas/diagnostico-gratuito\.html$   /diagnostico/?audiencia=empresa  [R=301,L]
     RewriteRule ^personas/autodiagnostico\.html$        /diagnostico/?audiencia=persona  [R=301,L]

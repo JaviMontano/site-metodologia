@@ -14,6 +14,7 @@ const FOOTER_I18N = {
     col_aprender: 'Aprender',
     col_conectar: 'Conectar',
     home: 'Inicio',
+    vision: 'Visión',
     diagnostico: 'Diagnóstico',
     empresas: 'Empresas',
     personas: 'Personas',
@@ -25,6 +26,7 @@ const FOOTER_I18N = {
     insights: 'Insights',
     contacto: 'Contacto',
     legal: 'Legal',
+    sitemap: 'Mapa del Sitio',
     quote: '"La excelencia no se compra, se diseña. Se cocrea y se comparte."',
     copyright: '© 2026 MetodologIA. Copyleft.',
     powered: 'Success as a Service · Powered by Pristino Agent',
@@ -38,6 +40,7 @@ const FOOTER_I18N = {
     col_aprender: 'Learn',
     col_conectar: 'Connect',
     home: 'Home',
+    vision: 'Vision',
     diagnostico: 'Diagnostic',
     empresas: 'For Companies',
     personas: 'For Individuals',
@@ -49,6 +52,7 @@ const FOOTER_I18N = {
     insights: 'Insights',
     contacto: 'Contact',
     legal: 'Legal',
+    sitemap: 'Sitemap',
     quote: '"Excellence is not bought, it is designed. Co-created and shared."',
     copyright: '© 2026 MetodologIA. Copyleft.',
     powered: 'Success as a Service · Powered by Pristino Agent',
@@ -93,7 +97,7 @@ class SiteFooter extends HTMLElement {
           <!-- Explorar -->
           ${col(t.col_explorar, [
             ['/', t.home],
-            ['/diagnostico/', t.diagnostico],
+            ['/vision/', t.vision],
             ['/empresas/', t.empresas],
             ['/personas/', t.personas],
           ])}
@@ -109,9 +113,9 @@ class SiteFooter extends HTMLElement {
           <!-- Conectar -->
           ${col(t.col_conectar, [
             ['/nosotros/', t.nosotros],
-            ['/insights/', t.insights],
             ['/contacto/', t.contacto],
             ['/legal/', t.legal],
+            ['/sitemap.html', t.sitemap],
           ])}
         </div>
 
@@ -138,6 +142,7 @@ class SiteFooter extends HTMLElement {
         <!-- Bottom -->
         <div class="site-footer__bottom">
           <span data-cms="footer.copyright">${t.copyright}</span>
+          <a class="site-footer__link" href="/sitemap.html">${t.sitemap}</a>
           <span>${t.powered}</span>
         </div>
       </div>
