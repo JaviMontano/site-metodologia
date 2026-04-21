@@ -1,9 +1,10 @@
 # Spec Quality Checklist — 009-home-landing-sales (v7 re-specify)
 
 **Generated**: 2026-04-14
-**Extended**: 2026-04-21 (plan v5 + cross-artifact consistency)
-**Constitution**: v7.0.0 (synchronized)
+**Extended**: 2026-04-21 (plan v5 + cross-artifact consistency + backcasting + testify traceability)
+**Constitution**: v7.0.0 (synchronized; v7.1.0 amendment proposed, pending approval)
 **Spec Version**: v7 (post-robustness consolidation)
+**Testify Phase**: 92 TS scenarios across 8 .feature files (hash-locked)
 
 ---
 
@@ -25,7 +26,7 @@
 - [x] **RC-04**: Total Functional Requirements: ~100+ (FR-001..FR-120, FR-200..FR-232)
 - [x] **RC-05**: All FRs use MUST/SHOULD/MAY language consistently
 - [x] **RC-06**: Non-Functional Requirements defined: NFR-001..NFR-013
-- [x] **RC-07**: Success Criteria defined and measurable: SC-001..SC-019
+- [x] **RC-07**: Success Criteria defined and measurable: SC-001..SC-022 (22 total)
 - [x] **RC-08**: Edge cases documented (§2 Edge Cases: 10 scenarios)
 - [x] **RC-09**: Constraints documented: C-001..C-006
 - [x] **RC-10**: Assumptions documented: A-001..A-006
@@ -104,4 +105,60 @@
 | G2 — Phase separation clean | ✅ PASS | Exemptions justified |
 | G3 — Ready for next phase | ✅ PASS | All 54 items checked, 3 cross-artifact fixes applied |
 
-**Overall**: ✅ **READY** — Proceed to `/iikit-04-testify`
+**Overall**: ✅ **READY** — Proceed to `/iikit-05-tasks`
+
+## I. Testify Traceability (Backcasting-Informed)
+
+*Added 2026-04-21 post-testify + Socratic debate. Verifies the backcasting loop FR→TS→SC is closed.*
+
+- [x] **BT-01**: Every in-scope FR (FR-001..FR-099b, FR-200) has ≥1 TS scenario? [Completeness, Backcasting Direction 1] — 50/52 FRs covered; FR-006..FR-009 are non-existent gap numbers (spec jumps FR-005 → FR-010), not actual gaps
+- [x] **BT-02**: Every automatable SC (SC-005..SC-007, SC-010..SC-022) has ≥1 @SC-xxx tag in .feature files? [Traceability, Backcasting §4] — 16/16 automatable SCs have TS coverage
+- [x] **BT-03**: Post-launch SCs (SC-001, SC-002, SC-008, SC-009) are explicitly deferred to GA4 baseline capture (T-000 in plan)? [Clarity, Spec §5.1] — All 4 reference `[baseline: T-000 GA4 capture]`; SC-008 requires moderated usability test
+- [x] **BT-04**: Meta/CI SCs (SC-018 coverage floor, SC-019 backcasting loop) have enforcement mechanisms outside .feature files? [Completeness, NFR-008, Backcasting §4] — SC-018 enforced by CI merge gate; SC-019 verified by this checklist + backcasting.md convergence test
+- [x] **BT-05**: Zero orphan TS scenarios (every @FR-xxx and @SC-xxx tag maps to a real spec ID)? [Consistency, Testify phase] — 92/92 scenarios verified, 0 orphans
+- [x] **BT-06**: Assertion integrity hash is locked in context.json + git note? [Integrity, NFR-007 TDD] — Hash `16a9e91...` stored in both locations
+- [x] **BT-07**: FR-046 (brand voice audit) acknowledged as manual-only (no automation possible) with mitigation via PR checklist? [Gap, Backcasting §3.1 Gap B] — Manual audit item in PR review template; not a .feature scenario
+- [x] **BT-08**: FR-099b (offline pill coexists with toggles) has TS coverage? [Completeness, Backcasting §3.1 Gap A] — Covered by TS-051
+
+## J. Two-Tier Consent Domain (Socratic Debate Gap A)
+
+*Added 2026-04-21 — verifies the orthogonality of Analytics consent and PII consent is fully specified.*
+
+- [x] **TC-01**: Are the two consent tiers (Analytics banner + PII checkbox) specified as independent mechanisms? [Clarity, FR-072, FR-012, Spec v5 clarification] — v5 clarification (line 1110): "reject blocks ONLY Analytics events; PII consent is independent"
+- [x] **TC-02**: Is the consent rejection path tested for all event types (home_view, CTA clicks, diagnostic events)? [Scenario Coverage, FR-072] — TS-084 (home_view), TS-086 (CTA clicks), TS-085 (diagnostic_completed)
+- [x] **TC-03**: Is the positive path (reject analytics + accept PII → lead persists) explicitly tested? [Edge Case, FR-072 + FR-012] — TS-085 verifies lead+diagnostic persist to Firestore when analytics rejected
+- [x] **TC-04**: Is the degraded path (reject analytics + Firestore unavailable → mailto fallback) tested? [Edge Case, FR-015 + FR-072] — TS-087 covers this combination
+- [x] **TC-05**: Does the spec clarify that consent rejection MUST NOT block any functional flow (diagnostic, resources, programs)? [Clarity, FR-072] — v5 clarification explicit: "el home renderiza normalmente; el diagnóstico funciona end-to-end"
+
+## K. Diagnostic Stepper Domain (Socratic Debate Gap B)
+
+*Added 2026-04-21 — verifies back-navigation, score recalculation, and step 6 validation are fully specified.*
+
+- [x] **DS-01**: Is back-navigation behavior specified (in-app back preserves answers in localStorage)? [Completeness, FR-011, FR-014] — TS-088 tests back-nav preservation; spec §4.5 "orden fijo" + FR-014 localStorage with 24h TTL
+- [x] **DS-02**: Is score recalculation on answer change specified? [Completeness, FR-012, Spec §4.5] — TS-089 tests weight delta + nivel change; §4.5 "suma de weights de pasos 1..5 → rango 0..15" is pure function
+- [x] **DS-03**: Is step 6 name validation (2-80 chars) specified and tested? [Completeness, Spec §1.5, FR-012] — TS-090 tests 1-char name rejection; spec §1.5 "Nombre obligatorio, 2–80 chars"
+- [x] **DS-04**: Is step 6 consent checkbox required and tested? [Completeness, FR-012] — TS-091 tests unchecked checkbox rejection; FR-012 "checkbox obligatorio con link a política"
+- [x] **DS-05**: Is PII memory-only behavior (never localStorage) specified and tested? [Security, NFR-006] — TS-092 tests PII preserved in memory on back-nav; NFR-006 "email nunca en logs de cliente"
+- [x] **DS-06**: Are all 6 diagnostic scoring boundaries tested (0, 4, 5, 9, 10, 15)? [Data Variety, Spec §4.5] — TS-011 Scenario Outline covers all 6 boundary values
+
+## L. Adaptive Blueprint Domain (Socratic Debate Gap C+D)
+
+*Added 2026-04-21 — verifies 52-combination matrix and CSS measurement precision.*
+
+- [x] **AB-01**: Is the TS-050 parametric matrix assertion precise (regex for keys, scrollWidth for overflow, textContent for slots)? [Clarity, SC-014, SC-015] — Tightened in Socratic debate: 3 concrete invariants replace vague "layout correct"
+- [x] **AB-02**: Is the CSS measurement approach specified (getComputedStyle on documentElement, hex canonical, px canonical)? [Clarity, FR-040..FR-045] — TS-027, TS-028, TS-031 tightened with measurement method
+- [x] **AB-03**: Does TS-032 use measurable timing (<100ms via performance.now()) instead of subjective "without flash"? [Clarity, SC-013] — Rewritten in Socratic debate with performance.now() assertion
+- [x] **AB-04**: Is the toggle UI pattern specified as role="radiogroup" per FR-201? [Completeness, adaptive-blueprint.md FR-201] — FR-201: `role="radiogroup"` with two `role="radio"` (or `<button aria-pressed>` pair)
+- [x] **AB-05**: Does the xs/sm collapse pattern ("Preferencias" button with aria-expanded) have a TS? [Completeness, FR-200] — TS-045 covers collapse to button with aria-expanded
+- [x] **AB-06**: Is theme orthogonality (CSS-only, never content) tested? [Consistency, Backcasting XXIV invariant 1] — TS-049 verifies hero/proof/CTA content does NOT change on theme toggle
+
+## M. Updated Readiness Verdict
+
+| Gate | Status | Notes |
+|------|--------|-------|
+| G0 — Spec exists | ✅ PASS | 1,162 lines, v7 consolidated |
+| G1 — Constitution aligned | ✅ PASS | §4.4 + backcasting.md (XXIV pending approval) |
+| G1.5 — Checklist reviewed | ✅ PASS | 84 items, 84/84 checked, 0 deferred |
+| G2 — Phase separation clean | ✅ PASS | Exemptions justified |
+| G2.5 — Testify complete | ✅ PASS | 92 TS scenarios, 8 .feature files, hash-locked |
+| G3 — Ready for next phase | ✅ PASS | All gates green |
