@@ -147,11 +147,11 @@
 
 ### Tests
 
-- [ ] T053 [P] [US-7] Write E2E `tests/e2e/sitemap-redirects.spec.js` — sitemap (12 URLs) + 17 legacy 301s + nav 3 items + footer 12 pages [TS-052, TS-053, TS-054, TS-055, TS-056, TS-057, TS-058, TS-059]
+- [x] T053 [P] [US-7] Write E2E `tests/e2e/sitemap-redirects.spec.js` — sitemap (12 URLs) + 17 legacy 301s + nav 3 items + footer 12 pages [TS-052, TS-053, TS-054, TS-055, TS-056, TS-057, TS-058, TS-059]
 
 ### Tier A — Rewrite existing pages (each with 7 sections for sidebar)
 
-- [ ] T054 [US-7] Rewrite `empresas/index.html` — Neo-Swiss shell, 7 sections (b2b, programas, diagnostico, recursos, casos, metodo, contacto), audience=empresa locked (FR-245), preserve JSON-LD [TS-052, TS-058]
+- [x] T054 [US-7] Rewrite `empresas/index.html` — Neo-Swiss shell, 7 sections (b2b, programas, diagnostico, recursos, casos, metodo, contacto), audience=empresa locked (FR-245), preserve JSON-LD [TS-052, TS-058]
 - [ ] T055 [P] [US-7] Rewrite `personas/index.html` — Neo-Swiss shell, 7 sections, audience=persona locked [TS-052, TS-058]
 - [ ] T056 [P] [US-7] Rewrite `recursos/index.html` — Neo-Swiss shell, 7 sections (biblioteca, playbooks, herramientas, premium, prompts, automatizacion, comunidad), preserve subcategory links [TS-052, TS-058]
 - [ ] T057 [P] [US-7] Rewrite `nosotros/index.html` — Neo-Swiss shell, 7 sections, absorb ecosistema.html + mision.html [TS-052, TS-058]
@@ -167,7 +167,7 @@
 
 ### Tier C — Consolidate
 
-- [ ] T064 [US-7] Create `legal/index.html` — consolidate privacidad + terminos into single page with 3 anchors (#privacidad, #terminos, #cookies), 7 sections [TS-052, TS-058]
+- [x] T064 [US-7] Create `legal/index.html` — consolidate privacidad + terminos into single page with 3 anchors (#privacidad, #terminos, #cookies), 7 sections [TS-052, TS-058]
 
 ### Shared infrastructure
 
