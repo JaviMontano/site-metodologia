@@ -1,11 +1,11 @@
 /**
  * MetodologIA Blueprint Layout System
- * Sidebar + Header + Main — 009-home-landing-sales
+ * Supplementary layout utilities — 009-home-landing-sales
  *
- * Tokens consumed from variables.css:
- *   --sidebar-w, --header-h, --gutter, --ease,
- *   --ns-bg, --ns-bg-soft, --ns-text, --ns-border,
- *   --z-nav
+ * Header, sidebar, hamburger, backdrop, and triple-toggle styles
+ * live in neoswiss-system.css (canonical source of truth).
+ * This file provides ONLY body defaults, layout scaffolding,
+ * touch-target rules, skip-link, and safe-area insets for .main.
  */
 
 /* ═══════════════════════════════════════════════════════════════
@@ -16,35 +16,24 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   BASE — body + html defaults for Neo-Swiss theme
+   BASE — body + html defaults (uses --brand-* from neoswiss-system)
    ═══════════════════════════════════════════════════════════════ */
 body {
-  background-color: var(--ns-bg, #F9FAFB);
-  color: var(--ns-text, #1F2833);
-  font-family: var(--font-body, 'Montserrat', -apple-system, sans-serif);
+  background: var(--brand-dark, #f5f7fa);
+  color: var(--brand-text, #0a122a);
+  font-family: 'Inter', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
   line-height: 1.6;
 }
 
-[data-theme="dark"] body {
-  background-color: var(--ns-bg, #0B2545);
-  color: var(--ns-text, #F0F4F8);
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-head, 'Poppins', -apple-system, sans-serif);
-  color: var(--ns-navy, #122562);
+  color: var(--brand-text, #0a122a);
   line-height: 1.2;
 }
 
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3 {
-  color: var(--ns-text, #F0F4F8);
-}
-
 a {
-  color: var(--ns-blue, #137DC5);
+  color: var(--brand-gold, #b88700);
   text-decoration: none;
 }
 
@@ -53,26 +42,10 @@ a:hover {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   HEADER — fixed top bar
-   Targets both the custom element tag and inner .site-header class
+   HEADER INTERNALS — MetodologIA-specific nav markup
+   (neoswiss-system.css has the canonical's __brand/__text/__cta;
+    these rules cover our __nav/__links/__link/__cta-gold layout)
    ═══════════════════════════════════════════════════════════════ */
-site-header,
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--header-h, 72px);
-  z-index: var(--z-nav, 50);
-  background: var(--ns-bg, #F9FAFB);
-  border-bottom: 1px solid var(--ns-border, rgba(18,37,98,0.08));
-  display: flex;
-  align-items: center;
-  padding-inline: var(--gutter);
-  box-sizing: border-box;
-}
-
-/* --- Header internals --------------------------------------------------- */
 .site-header__nav {
   display: flex;
   align-items: center;
@@ -82,16 +55,16 @@ site-header,
 }
 
 .site-header__logo {
-  font-family: var(--font-head, 'Poppins', sans-serif);
+  font-family: 'Poppins', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--ns-navy, #122562);
+  color: var(--brand-text, #0a122a);
   text-decoration: none;
   flex-shrink: 0;
 }
 
 .site-header__logo-ia {
-  color: var(--ns-gold, #FFD700);
+  color: var(--brand-gold, #ffd700);
 }
 
 .site-header__links {
@@ -99,48 +72,51 @@ site-header,
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: var(--spacing-6, 1.5rem);
+  gap: 1.5rem;
   align-items: center;
 }
 
 @media (min-width: 960px) {
-  .site-header__links {
-    display: flex;
-  }
+  .site-header__links { display: flex; }
 }
 
 .site-header__link {
-  font-family: var(--font-body, 'Montserrat', sans-serif);
+  font-family: 'Inter', 'Montserrat', sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--ns-text-sec, #4A5568);
+  color: var(--brand-text-soft, #334155);
   text-decoration: none;
-  padding: var(--spacing-2) var(--spacing-3);
-  border-radius: var(--ns-radius-sm, 6px);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
   transition: color 0.2s, background 0.2s;
 }
 
 .site-header__link:hover {
-  color: var(--ns-navy, #122562);
-  background: var(--ns-border, rgba(18,37,98,0.08));
+  color: var(--brand-text, #0a122a);
+  background: var(--brand-border, rgba(10,18,42,.08));
   text-decoration: none;
 }
 
 .site-header__cta-gold {
-  font-family: var(--font-head, 'Poppins', sans-serif);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--ns-navy, #122562);
-  background: var(--ns-gold, #FFD700);
-  padding: var(--spacing-2) var(--spacing-4);
-  border-radius: var(--ns-radius-lg, 20px);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1.1rem;
+  background: var(--brand-gold, #ffd700);
+  color: var(--brand-dark, #0a122a);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  border-radius: 8px;
   text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 44px;
+  white-space: nowrap;
+  transition: box-shadow 0.3s, transform 0.2s;
 }
 
 .site-header__cta-gold:hover {
+  box-shadow: 0 0 24px rgba(255, 215, 0, 0.4);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
   text-decoration: none;
 }
 
@@ -151,35 +127,14 @@ site-header,
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--ns-navy, #122562);
-  padding: var(--spacing-2);
+  color: var(--brand-text, #0a122a);
+  padding: 0.5rem;
   min-width: 44px;
   min-height: 44px;
 }
 
 @media (min-width: 960px) {
-  .site-header__hamburger {
-    display: none;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   SIDEBAR — fixed left panel (desktop), off-canvas (mobile)
-   Targets both the custom element tag and inner .site-sidebar class
-   ═══════════════════════════════════════════════════════════════ */
-site-sidebar,
-.site-sidebar {
-  position: fixed;
-  top: var(--header-h, 72px);
-  left: 0;
-  width: var(--sidebar-w, 260px);
-  height: calc(100vh - var(--header-h, 72px));
-  z-index: 40;
-  overflow-y: auto;
-  background: var(--ns-bg-soft, #F0F0EC);
-  border-right: 1px solid var(--ns-border, rgba(18,37,98,0.08));
-  box-sizing: border-box;
-  transition: transform var(--ease) 0.3s;
+  .site-header__hamburger { display: none; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -208,113 +163,42 @@ site-sidebar,
   scroll-margin-top: calc(var(--header-h, 72px) + 1rem);
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   SIDEBAR BACKDROP — mobile overlay
-   ═══════════════════════════════════════════════════════════════ */
-.sidebar-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 39;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity var(--ease) 0.3s, visibility var(--ease) 0.3s;
-}
-
-.sidebar-backdrop.is-visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   HAMBURGER — mobile menu toggle
-   ═══════════════════════════════════════════════════════════════ */
-.hamburger {
-  display: none;
-  z-index: 51;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  color: var(--ns-text);
-  font-size: 1.5rem;
-  line-height: 1;
+section[id] {
+  scroll-margin-top: calc(var(--header-h, 72px) + 1rem);
 }
 
 /* ═══════════════════════════════════════════════════════════════
    SAFE-AREA INSETS — notched phones (env() fallback to 0px)
+   Only .main — header/sidebar safe-area lives in neoswiss-system
    ═══════════════════════════════════════════════════════════════ */
-site-header,
-.site-header {
-  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
-  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
-}
-
 .main {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-site-sidebar,
-.site-sidebar {
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-
 /* ═══════════════════════════════════════════════════════════════
-   DESKTOP LAYOUT (lg: ≥960px) — sidebar visible, no layout shift
+   DESKTOP LAYOUT (lg: ≥960px) — sidebar visible, main offset
    ═══════════════════════════════════════════════════════════════ */
 @media (min-width: 960px) {
   .main {
     padding-left: var(--sidebar-w, 260px);
-    /* Prevent layout shift on sidebar collapse/expand */
     transition: padding-left 0.3s var(--ease, cubic-bezier(.4,0,.2,1));
   }
-
-  site-sidebar,
-  .site-sidebar {
-    transform: translateX(0);
-  }
-
-  .hamburger {
-    display: none;
-  }
-
-  .sidebar-backdrop {
-    display: none;
-  }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   MOBILE LAYOUT (<960px) — sidebar off-canvas, zero layout shift
+   MOBILE LAYOUT (<960px) — main stays full-width
    ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 959.98px) {
-  site-sidebar,
-  .site-sidebar {
-    transform: translateX(-100%);
-    will-change: transform;
-  }
-
-  site-sidebar.is-open,
-  .site-sidebar.is-open {
-    transform: translateX(0);
-  }
-
   .main {
     padding-left: 0;
-    /* Sidebar opens as overlay — main stays put, no layout shift */
     transition: none;
-  }
-
-  .hamburger {
-    display: block;
   }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   BREAKPOINT REFINEMENTS — 6-breakpoint mobile-first
+   BREAKPOINT REFINEMENTS — container width progression
    xs(0) sm(480) md(640) lg(960) xl(1280) 2xl(1536)
    ═══════════════════════════════════════════════════════════════ */
-
-/* xs: base — already mobile-first above */
 
 /* sm: 480px — slightly wider gutter */
 @media (min-width: 480px) {
@@ -348,39 +232,6 @@ site-sidebar,
    GLOBAL TOUCH TARGETS (T073) — WCAG 2.5.8
    xs/sm: ≥44x44px | md+: ≥48x48px | ≥8px spacing
    ═══════════════════════════════════════════════════════════════ */
-
-/* Base: buttons, links in nav, interactive controls */
-.hamburger,
-site-sidebar a,
-.site-sidebar a,
-site-sidebar button,
-.site-sidebar button {
-  min-height: 44px;
-  min-width: 44px;
-  display: inline-flex;
-  align-items: center;
-}
-
-/* Sidebar nav links: comfortable spacing */
-site-sidebar nav a,
-.site-sidebar nav a,
-site-sidebar nav button,
-.site-sidebar nav button {
-  padding-block: 0.5rem;
-  gap: 8px; /* minimum 8px between adjacent targets */
-}
-
-/* md+: upgrade global touch targets to 48px */
-@media (min-width: 640px) {
-  .hamburger,
-  site-sidebar a,
-  .site-sidebar a,
-  site-sidebar button,
-  .site-sidebar button {
-    min-height: 48px;
-    min-width: 48px;
-  }
-}
 
 /* Skip-link touch target */
 .skip-link {

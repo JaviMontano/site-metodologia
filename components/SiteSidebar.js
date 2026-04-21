@@ -33,6 +33,7 @@ class SiteSidebar extends HTMLElement {
 
   connectedCallback() {
     this._pageSlug = this.dataset.page || slugFromURL();
+    this.classList.add('sidebar');
     this.setAttribute('role', 'navigation');
     this._loadLabels().then(() => {
       this.render();

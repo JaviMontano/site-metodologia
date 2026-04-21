@@ -2,7 +2,7 @@
  * SiteHeader — Simplified NeoSwiss header (T035)
  * Logo + 3 nav items (Ruta gold CTA, Servicios, Contacto) + hamburger (mobile)
  * No toggles, no floating nav, no segment switcher.
- * Styles: estilos/blueprint.css (.site-header)
+ * Styles: estilos/neoswiss-system.css (.site-header)
  * i18n: data-i18n attributes, reads document.documentElement.lang
  *
  * @license Copyleft
@@ -16,6 +16,9 @@ const HEADER_I18N = {
 
 class SiteHeader extends HTMLElement {
   connectedCallback() {
+    // Apply .site-header on the custom element so neoswiss-system.css
+    // targets a single node (no doubled position:fixed from tag + class).
+    this.classList.add('site-header');
     this.render();
     this.setupHamburger();
   }
@@ -30,7 +33,7 @@ class SiteHeader extends HTMLElement {
     const t = HEADER_I18N[this.lang];
 
     this.innerHTML = /* html */ `
-      <header class="site-header" role="banner">
+      <header role="banner">
         <nav class="site-header__nav" aria-label="Principal">
           <!-- Logo -->
           <a href="/" class="site-header__logo" aria-label="MetodologIA — Inicio">
