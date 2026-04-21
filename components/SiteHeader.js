@@ -2,8 +2,8 @@
  * SiteHeader — Global site navigation bar
  *
  * Layout: hamburger(mobile) | logo + brand | nav links(desktop) | CTA
- * Nav links: Inicio, Rutas, Servicios, Contacto
- * Theme toggle lives in TripleToggle (bottom-right)
+ * Nav: Visión, Recursos, Programas, Contacto
+ * CTA: "Conversemos"
  *
  * @license Copyleft
  * @copyright MetodologIA
@@ -17,10 +17,16 @@ const LOGO_SVG = `<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/
 </svg>`;
 
 const I18N = {
-  es: { cta: 'Primera Conversación', ctaShort: 'Contacto',
-        nav_inicio: 'Inicio', nav_rutas: 'Rutas', nav_servicios: 'Servicios', nav_contacto: 'Contacto' },
-  en: { cta: 'First Conversation', ctaShort: 'Contact',
-        nav_inicio: 'Home', nav_rutas: 'Routes', nav_servicios: 'Services', nav_contacto: 'Contact' },
+  es: {
+    cta: 'Conversemos', ctaShort: 'Conversemos',
+    nav_vision: 'Visión', nav_recursos: 'Recursos',
+    nav_programas: 'Programas', nav_contacto: 'Contacto',
+  },
+  en: {
+    cta: "Let's Talk", ctaShort: "Let's Talk",
+    nav_vision: 'Vision', nav_recursos: 'Resources',
+    nav_programas: 'Programs', nav_contacto: 'Contact',
+  },
 };
 
 class SiteHeader extends HTMLElement {
@@ -40,7 +46,6 @@ class SiteHeader extends HTMLElement {
     const t = I18N[this.lang];
     const path = window.location.pathname;
 
-    // Determine active nav item
     const isActive = (href) => {
       if (href === '/') return path === '/' || path === '/index.html';
       return path.startsWith(href);
@@ -66,15 +71,14 @@ class SiteHeader extends HTMLElement {
       </a>
 
       <nav class="site-header__nav" aria-label="Navegación principal">
-        ${navLink('/', t.nav_inicio)}
-        ${navLink('/diagnostico/', t.nav_rutas)}
-        ${navLink('/programas/', t.nav_servicios)}
+        ${navLink('/vision/', t.nav_vision)}
+        ${navLink('/recursos/', t.nav_recursos)}
+        ${navLink('/programas/', t.nav_programas)}
         ${navLink('/contacto/', t.nav_contacto)}
       </nav>
 
       <a class="site-header__cta" href="/contacto/">
-        <span class="site-header__cta-long">${t.cta}</span>
-        <span class="site-header__cta-short">${t.ctaShort}</span>
+        ${t.cta} →
       </a>
     `;
   }

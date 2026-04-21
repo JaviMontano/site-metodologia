@@ -62,8 +62,8 @@ class SiteSidebar extends HTMLElement {
     // Mobile CTA (visible only ≤640px via CSS)
     const cta = document.createElement('a');
     cta.className = 'sidebar__cta';
-    cta.href = '/diagnostico/';
-    cta.textContent = this._lang === 'en' ? 'Risk-Free Diagnostic →' : 'Diagnóstico Sin Riesgo →';
+    cta.href = '/contacto/';
+    cta.textContent = this._lang === 'en' ? "Let's Talk →" : 'Conversemos →';
     this.appendChild(cta);
 
     // Sidebar head (canonical: .sidebar__head)
