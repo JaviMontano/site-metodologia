@@ -241,23 +241,32 @@
         <p class="home-section__lead" data-i18n="home.programas.lead">
           Formacion estructurada para personas y equipos que buscan resultados medibles.
         </p>
-        <!-- Static cards for now; US-3 replaces with program-card WC -->
-        <div class="home-programas__grid" data-slot="programas-grid">
-          <article class="home-programas__card" data-slot="programa-1" data-audience-variant="persona">
-            <h3 data-i18n="home.programas.p1_title">Bootcamp Individual</h3>
-            <p data-i18n="home.programas.p1_desc">8 semanas intensivas para dominar tu metodologia personal con IA.</p>
-            <span class="home-programas__tag" data-i18n="home.programas.p1_tag">Personas</span>
-          </article>
-          <article class="home-programas__card" data-slot="programa-2" data-audience-variant="empresa">
-            <h3 data-i18n="home.programas.p2_title">Workshop Empresarial</h3>
-            <p data-i18n="home.programas.p2_desc">Sesiones in-company para alinear equipos en formas de trabajo de alto rendimiento.</p>
-            <span class="home-programas__tag" data-i18n="home.programas.p2_tag">Empresas</span>
-          </article>
-          <article class="home-programas__card" data-slot="programa-3">
-            <h3 data-i18n="home.programas.p3_title">Mentoria Continua</h3>
-            <p data-i18n="home.programas.p3_desc">Acompanamiento mensual con metricas de progreso y ajuste de ruta.</p>
-            <span class="home-programas__tag" data-i18n="home.programas.p3_tag">Ambos</span>
-          </article>
+        <!-- Dynamic ProgramCard WC — Firestore programs/ binding (US-3 T088) -->
+        <div class="home-programas__grid" data-slot="programas-grid" id="programas-grid">
+          <program-card
+            name-es="Bootcamp Individual" name-en="Individual Bootcamp"
+            audiencia="persona" duracion="8 semanas"
+            resultado-es="Domina tu metodologia personal con IA."
+            resultado-en="Master your personal methodology with AI."
+            cta-href="ruta/index.html"
+            cta-text-es="Saber mas" cta-text-en="Learn more">
+          </program-card>
+          <program-card
+            name-es="Workshop Empresarial" name-en="Enterprise Workshop"
+            audiencia="empresa" duracion="2 dias"
+            resultado-es="Alinea equipos en formas de trabajo de alto rendimiento."
+            resultado-en="Align teams around high-performance work methods."
+            cta-href="ruta/index.html"
+            cta-text-es="Saber mas" cta-text-en="Learn more">
+          </program-card>
+          <program-card
+            name-es="Mentoria Continua" name-en="Ongoing Mentorship"
+            audiencia="ambos" duracion="Mensual"
+            resultado-es="Metricas de progreso y ajuste de ruta continuo."
+            resultado-en="Progress metrics and continuous route adjustment."
+            cta-href="ruta/index.html"
+            cta-text-es="Saber mas" cta-text-en="Learn more">
+          </program-card>
         </div>
         <a href="ruta/index.html" class="home-section__cta" data-i18n="home.programas.cta">
           Explorar programas
@@ -363,7 +372,41 @@
 
   <script type="module">
     import { initShell } from './js/blueprint/shell.js';
+    import './components/ProgramCard.js';
+
     initShell({ pageSlug: 'home' });
+
+    // --- Firestore programs/ binding (US-3 T088) ---
+    // Attempt to hydrate program cards from Firestore; static fallback stays if unavailable.
+    (async () => {
+      try {
+        if (!window.firebase || !window.firebase.firestore) return;
+        const db = window.firebase.firestore();
+        const snap = await db.collection('programs').where('active', '==', true).orderBy('order').get();
+        if (snap.empty) return;
+
+        const grid = document.getElementById('programas-grid');
+        if (!grid) return;
+        grid.innerHTML = '';
+
+        snap.forEach(doc => {
+          const d = doc.data();
+          const card = document.createElement('program-card');
+          card.setAttribute('name-es', d.name_es || '');
+          card.setAttribute('name-en', d.name_en || '');
+          card.setAttribute('audiencia', d.audiencia || 'ambos');
+          card.setAttribute('duracion', d.duracion || '');
+          card.setAttribute('resultado-es', d.resultado_es || '');
+          card.setAttribute('resultado-en', d.resultado_en || '');
+          card.setAttribute('cta-href', d.cta_href || 'ruta/index.html');
+          card.setAttribute('cta-text-es', d.cta_text_es || 'Saber mas');
+          card.setAttribute('cta-text-en', d.cta_text_en || 'Learn more');
+          grid.appendChild(card);
+        });
+      } catch (err) {
+        console.debug('[home] programs/ Firestore hydration skipped:', err.message);
+      }
+    })();
   </script>
 </body>
 </html>
