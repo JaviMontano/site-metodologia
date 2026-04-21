@@ -84,7 +84,7 @@ Todos los gaps de v1 ya fueron resueltos:
 
 ### 3.2 Direction 2 → PENDING user approval
 
-- [ ] **CONSTITUTION.md**: añadir principio XXIV con wording v8 (sidebar + triple toggle + admin) — **pendiente de aprobación del usuario**
+- [x] **CONSTITUTION.md**: principio XXIV añadido con wording abstracto (invariantes duraderos, sin detalles de implementación). Aprobado via Socratic debate (Elena/Diego/Carlos). v7.1.0.
 
 ---
 
@@ -94,9 +94,9 @@ Todos los gaps de v1 ya fueron resueltos:
 - [x] Cada gap de Direction 1 tiene FR resuelto en spec v8
 - [x] Test de sistemicidad Direction 2 ejecutado (4/4 "sí")
 - [x] Wording de amendment en §2 listo para commit
-- [ ] Usuario ha dado approval sobre Constitution v7.1.0 (**pendiente**)
+- [x] Usuario ha dado approval sobre Constitution v7.1.0 (Socratic debate → Opción A: wording abstracto)
 
-**Status del loop**: **95% cerrado**. El 5% restante es el approval del usuario sobre la Constitution amendment.
+**Status del loop**: **100% cerrado**.
 
 ---
 

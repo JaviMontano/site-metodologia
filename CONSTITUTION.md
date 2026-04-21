@@ -1,32 +1,28 @@
 <!-- Sync Impact Report
-Version: 7.0.0 (Cloud-First Content-as-Data)
-Breaking changes:
-  - I (rewritten): "BaaS-First, Zero Server" — Firebase
-    explicit as single backend; no abstract "managed BaaS"
-  - VI (rewritten): "Cloud-First with Declarative Static
-    Fallback" — dual-source bridge is permanent, not a
-    migration step
-  - VIII (rewritten): "SWR + Explicit Offline UX" —
-    cache-manager.js SWR required, offline pill mandatory
-  - X (extended): Neo-Swiss Light default + Dark mirror +
-    theme persistence; typography trio updated
-  - XXII (NEW): PII-Append-Only — no client-side merges
-    across anonymous uids
-  - XXIII (NEW): Feature-Bounded Architecture — backoffice
-    lives in dedicated features
-Non-breaking: II, III, IV, V, VII, IX, XI-XXI unchanged
-Origin: Feature 009-home-landing-sales introduced
-  BaaS-first + Content-as-Data + Neo-Swiss Light as
-  systemic changes affecting all future specs. The split
-  of backoffice CMS to feature 010 proved that consumer
-  features and admin features require separate scoping.
-Previous version: 6.2.0 (Zero Hardcoding Principle)
+Version: 7.1.0 (Adaptive Blueprint Personalization)
+Breaking changes: none
+Additive changes:
+  - XXIV (NEW): Adaptive Blueprint Personalization —
+    three-axis orthogonal personalization (locale/theme/
+    audience), single shell with intra-page navigation,
+    declarative slot cascade, instant transitions,
+    client-only state, content manageable without redeploy.
+Non-breaking: all principles I-XXIII unchanged
+Origin: Feature 009-home-landing-sales v8 introduced
+  sidebar architecture + triple toggle + admin content
+  editor as systemic patterns affecting all future features
+  that touch public pages. Backcasting Direction 2 validated
+  the pattern as constitutional (4/4 systemicity test).
+  Socratic debate (Elena/Diego/Carlos) refined wording to
+  abstract invariants, removing implementation details
+  (sidebar width, toggle position, section count) which
+  belong in plan.md.
+Previous version: 7.0.0 (Cloud-First Content-as-Data)
 Follow-up TODOs:
-  - Refresh PREMISE.md to v7 alignment (done in same commit)
-  - Re-scan specs/009 against v7 for residual drift
-  - Schedule feature 010-backoffice-cms
-  - Defer Firestore Security Rules linter to 010 kickoff
-  - Add "Collections touched" table to feature spec template
+  - Refresh PREMISE.md to v7.1 alignment
+  - Create insights/adaptive-blueprint-pattern.md (XVII)
+  - Add blueprint compliance row to feature spec template
+  - Feature 010 MUST expose slot editor enforcing cascade
 -->
 
 # Site MetodologIA Constitution
@@ -1021,6 +1017,80 @@ work on different features with different review cycles.
 > one-off admin seed script (`scripts/seed-X.js`) to
 > populate a new collection before the backoffice lands.
 > Seed scripts are not a backoffice.
+
+### XXIV. Adaptive Blueprint Personalization
+
+Every public page MUST render from a **single homologated
+shell** whose content adapts declaratively to the active
+combination of three orthogonal axes:
+
+- **Locale** (`es`/`en`): affects text via `data-i18n` and
+  external dictionaries. NEVER affects layout or styling.
+- **Theme** (`light`/`dark`): affects **exclusively** CSS
+  custom properties. NEVER affects content, copy, or slot
+  resolution.
+- **Audience** (`persona`/`empresa`/`unknown`): affects
+  copy, proof, CTAs, and listing filters via typed content
+  slots. NEVER affects CSS tokens.
+
+**Invariants**:
+
+1. **Orthogonality** — theme is CSS-only; locale + audience
+   are content-only. No combinatorial CSS per audience, no
+   combinatorial content per theme.
+2. **Homologated shell** — all public pages share the same
+   HTML skeleton with standard landmarks (header, intra-page
+   navigation, main, footer). Variation allowed: which
+   content slots are present. Variation prohibited:
+   alternative layouts, custom headers/footers.
+3. **Intra-page navigation** — every page (except error
+   pages) MUST provide structured section navigation
+   enabling visitors to explore page content non-linearly.
+4. **Fallback cascade** — content slots resolve through a
+   multi-level cascade (exact match → audience-neutral →
+   locale-fallback → default). No raw key MUST ever appear
+   in the production DOM.
+5. **Instant transitions** — toggling any axis MUST complete
+   the DOM update in <100ms without page reload.
+6. **Client-only state** — locale, theme, and audience
+   preferences live in client storage. None is PII.
+7. **Always-accessible toggles** — axis switches MUST be
+   accessible at all times without requiring navigation to
+   a settings page or opening a menu.
+8. **Verifiable coverage** — every new page MUST be added
+   to the parametric E2E test matrix (N pages × locales ×
+   audiences), validated for zero raw keys and instant
+   transitions. No skips.
+9. **Content manageable without redeploy** — text content
+   MUST be editable through a Firestore-backed admin
+   interface with static JSON fallback, so copy changes
+   do not require git push + deploy.
+
+**Rationale**: Without this principle, future features
+could (a) create pages with divergent layouts breaking UX
+consistency, (b) hardcode copy without audience variants
+which segments communication poorly, (c) mix theme with
+content which explodes variant combinatorics, (d) forget
+to include new pages in the parametric test which allows
+silent drift, (e) require redeploy for every copy change
+which bottlenecks content operations.
+
+> **Acceptance criteria**:
+> - Every feature with public content verifies blueprint
+>   compliance in its Constitution Check table
+> - E2E parametric matrix runs in CI and blocks merge
+> - Content slots exist in locale × audience variants
+> - Admin editor enables copy changes without redeploy
+>
+> **Anti-patterns**:
+> - Creating a page with its own `<header>` instead of the
+>   shared header component
+> - Writing `if (theme === 'dark') show(darkLogo)` in JS —
+>   theme switching belongs in CSS
+> - Creating `/empresas/programas/` as a separate page for
+>   "the business version of programs" when audience state
+>   + content slots solve this declaratively
+> - Requiring a deploy to fix a typo in hero copy
 
 ## Principle Precedence
 
