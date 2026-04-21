@@ -194,7 +194,7 @@
 - [x] T071 [US-5] Responsive CSS refinement: 6-breakpoint mobile-first, clamp() typography, safe-area insets, landscape compact hero, sidebar collapse at 960px without layout shift. TDD inner loop: implement one TS at a time, verify E2E per TS before next [TS-033, TS-034, TS-035, TS-036, TS-038, TS-039, TS-040, TS-041, TS-042]
 - [x] T072 [US-5] Add `srcset` WebP/AVIF + fallback + `loading="lazy"` + `aspect-ratio` [TS-040, TS-085, TS-086]
 - [x] T073 [US-5] Touch targets ≥44×44px (xs/sm), ≥48×48px (md+), ≥8px spacing [TS-033, TS-037]
-- [ ] T074 [US-5] Write E2E `tests/e2e/home-i18n.spec.js` — ES↔EN switch, zero raw keys [TS-073, TS-074]
+- [x] T074 [US-5] Write E2E `tests/e2e/home-i18n.spec.js` — ES↔EN switch, zero raw keys [TS-073, TS-074]
 
 **Checkpoint**: All 6 viewports pass 12-point checklist
 
@@ -240,7 +240,7 @@
 
 **Goal**: Dynamic ProgramCard WC + Firestore on home
 
-- [ ] T087 [US-3] Create `components/ProgramCard.js` — name_i18n, audiencia, duracion, resultado_i18n, CTA href [TS-022, TS-023]
+- [x] T087 [US-3] Create `components/ProgramCard.js` — name_i18n, audiencia, duracion, resultado_i18n, CTA href [TS-022, TS-023]
 - [ ] T088 [US-3] Replace static program cards in `index.html` with ProgramCard WC from Firestore `programs/` [TS-022, TS-024, TS-025]
 - [ ] T089 [US-3] Write E2E for program section [TS-022, TS-023, TS-024, TS-025]
 
