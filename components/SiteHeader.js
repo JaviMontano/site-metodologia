@@ -9,7 +9,7 @@
  * @copyright MetodologIA
  */
 
-import { getTheme, toggleTheme } from '../js/theme/toggle.js';
+import { getTheme, toggleTheme } from '../js/theme/toggle.js?v=2';
 
 const LOGO_SVG = `<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MetodologIA">
   <defs><linearGradient id="hdrGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A122A"/><stop offset="100%" stop-color="#1e293b"/></linearGradient></defs>
