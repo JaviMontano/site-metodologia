@@ -2,25 +2,19 @@
   "tdd_determination": "mandatory",
   "planview": {
     "nodeClassifications": {
-      "Visitante": "client",
-      "index.html": "client",
+      "Visitor Browser": "client",
+      "13 HTML Pages": "client",
+      "JS Modules": "client",
       "Web Components": "client",
-      "DiagnosticStepper": "client",
-      "Service Worker": "client",
-      "CMS Client SDK": "client",
-      "AudienceState": "client",
-      "ContentSlot": "client",
-      "i18n Resolver": "client",
-      "Event Bus": "client",
-      "IndexedDB Cache": "storage",
-      "localStorage": "storage",
-      "Hostinger CDN": "external",
+      "CSS": "client",
+      "js/cms/ SDK": "client",
+      "IndexedDB": "storage",
       "Firestore": "storage",
       "Firebase Auth": "external",
-      "Firebase Storage": "storage",
+      "Firebase Storage": "external",
       "Firebase Analytics": "external",
       "App Check": "external",
-      "Cloudflare CDN": "external"
+      "Hostinger": "external"
     },
     "evalScores": {}
   },
