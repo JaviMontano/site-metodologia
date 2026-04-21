@@ -55,7 +55,7 @@
 
 ### Implementation
 
-- [ ] T015 [US-4] Update `estilos/variables.css` — Neo-Swiss Light/Dark token sets (FR-041, FR-042, FR-044) [TS-026, TS-027, TS-028]
+- [ ] T015 [US-4] Update `estilos/variables.css` — Neo-Swiss Light/Dark token sets (FR-041, FR-042, FR-044) [TS-026, TS-027, TS-028, TS-031]
 - [ ] T016 [P] [US-4] Create `estilos/critical.css` — hand-authored fold CSS (FR-092, FR-096) [TS-063]
 - [ ] T017 [US-4] Create `estilos/blueprint.css` — full sidebar + header + main layout system: `.site-header` fixed top, `.site-sidebar` fixed left 260px (off-canvas <960px), `.main` padding-top/left, `.container` max-860px, `.section` with scroll-spy targets. Sidebar drawer + backdrop + hamburger on mobile. [TS-044, TS-045, TS-093]
 - [ ] T018 [P] [US-4] Create `estilos/sidebar.css` — sidebar nav styles, `is-active` highlight, numbered links, icon alignment, scroll-spy visual feedback [TS-093, TS-094]
@@ -191,7 +191,7 @@
 
 ### Implementation
 
-- [ ] T071 [US-5] Responsive CSS refinement: 6-breakpoint mobile-first, clamp() typography, safe-area insets, landscape compact hero, sidebar collapse at 960px without layout shift [TS-033, TS-034, TS-035, TS-036, TS-038, TS-039, TS-040]
+- [ ] T071 [US-5] Responsive CSS refinement: 6-breakpoint mobile-first, clamp() typography, safe-area insets, landscape compact hero, sidebar collapse at 960px without layout shift [TS-033, TS-034, TS-035, TS-036, TS-038, TS-039, TS-040, TS-041, TS-042]
 - [ ] T072 [US-5] Add `srcset` WebP/AVIF + fallback + `loading="lazy"` + `aspect-ratio` [TS-040, TS-085, TS-086]
 - [ ] T073 [US-5] Touch targets ≥44×44px (xs/sm), ≥48×48px (md+), ≥8px spacing [TS-033, TS-037]
 - [ ] T074 [US-5] Write E2E `tests/e2e/home-i18n.spec.js` — ES↔EN switch, zero raw keys [TS-073, TS-074]

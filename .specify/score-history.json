@@ -97,6 +97,16 @@
       "medium": 3,
       "low": 3,
       "total_findings": 6
+    },
+    {
+      "timestamp": "2026-04-21T15:22:44Z",
+      "score": 100,
+      "coverage_pct": 88,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0,
+      "total_findings": 0
     }
   ]
 }

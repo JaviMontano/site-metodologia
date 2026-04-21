@@ -250,7 +250,7 @@ Un visitante accede al home desde iPhone SE (xs), iPhone 15 (sm), iPad portrait 
 
 ### US-6 — Blueprint Adaptativo de 3 Ejes (Priority: P1)
 
-*Añadida en v7 robustness pass — ver robustness-v1.md §F.4. Cubre los FR-200..FR-232 y FR-099b que quedaban huérfanos.*
+*Añadida en v7 robustness pass, reescrita en v8 (sidebar architecture). FR-200..FR-232 [SUPERSEDED by FR-240..FR-253]. Cubre FR-240..FR-253 y FR-099b.*
 
 Un visitante llega al sitio en cualquier página de las 13 y ve una experiencia coherente con: (a) un sidebar izquierdo fijo con 7 secciones numeradas por página con scroll-spy (inspirado en `Montano_Javier_Canonical.html`), (b) un header simplificado con logo + 3 nav items (Ruta, Servicios, Contacto), y (c) un triple toggle siempre visible en la esquina inferior izquierda para cambiar tema (light/dark), idioma (ES/EN) y audiencia (persona/empresa) a un click, sin recargar, sin flicker, en <100ms. La experiencia de cambiar el tono del contenido, el idioma o el look and feel a un click es requerimiento clave. Cada texto en el sitio existe en 4 variantes (ES×persona, ES×empresa, EN×persona, EN×empresa) gestionables desde un admin Firestore-backed.
 
@@ -606,14 +606,14 @@ Feature 009 ships with `scripts/seed.js` that populates `programs/`, `resources/
 
 > **Nota**: Los SC marcados `[baseline: T-000 GA4 capture, 30-day window]` se miden contra un baseline GA4 capturado en la tarea T-000 del plan (últimos 30 días del home actual). El valor numérico se completa post-captura; el target (e.g., +2×) es fijo.
 
-- **SC-001**: **CTR total** — ≥40% de visitas al home hacen clic en uno de los 3 CTAs `[baseline: T-000 GA4 capture, 30-day window, target +2×]`.
-- **SC-002**: **CTR diagnóstico** — ≥15% de visitas al home inician el diagnóstico `[baseline: T-000 GA4 capture, 30-day window]`.
+- **SC-001**: **CTR total** — ≥40% de visitas al home hacen clic en uno de los 3 CTAs `[baseline: T-000 GA4 capture, 30-day window, target +2×]`. *(Post-launch metric: measured via GA4 dashboard 30 days after deploy, not automatable in BDD.)*
+- **SC-002**: **CTR diagnóstico** — ≥15% de visitas al home inician el diagnóstico `[baseline: T-000 GA4 capture, 30-day window]`. *(Post-launch metric: measured via GA4 dashboard 30 days after deploy, not automatable in BDD.)*
 - **SC-003**: **Completion rate diagnóstico** — ≥60% de los diagnósticos iniciados terminan con lead registrado.
 - **SC-004**: **Tiempo mediano de diagnóstico** — ≤3 minutos (medido desde `diagnostic_start` hasta `diagnostic_completed`).
 - **SC-005**: **LCP** — ≤2.5s en 4G (Lighthouse throttled), ≤1.5s desktop cable, en xs/sm/md/lg/xl/2xl.
 - **SC-006**: **Consistencia visual cartillas ↔ home** — ≥95% en auditoría lado-a-lado (mismos custom properties, mismos patrones componentes, mismo sistema tipográfico).
 - **SC-007**: **Lighthouse** — ≥90 en Performance, Accessibility, Best Practices, SEO en mobile y desktop.
-- **SC-008**: **Usabilidad** — ≥90% de usuarios en prueba moderada identifican los 3 caminos y eligen uno en ≤10 segundos.
+- **SC-008**: **Usabilidad** — ≥90% de usuarios en prueba moderada identifican los 3 caminos y eligen uno en ≤10 segundos. *(Manual moderated test, not automatable in BDD. Validated post-launch.)*
 
 **Añadidos en v7 robustness pass (ver robustness-v1.md §F.5)**
 
@@ -622,8 +622,8 @@ Feature 009 ships with `scripts/seed.js` that populates `programs/`, `resources/
 - **SC-015**: **Zero raw i18n keys** — cero ocurrencias de keys crudas (`{pageSlug}.{slot}.{...}`) en el DOM renderizado de producción, en cualquier combinación. Enforced por aserción regex en cada E2E.
 - **SC-016**: **13 páginas exactas** — el recuento físico de páginas canónicas (archivos `index.html` y `404.html` bajo root, excluyendo `dist/`, `node_modules/`, subdirectorios detail) MUST ser exactamente 13. Enforced por `scripts/count-pages.js` en pre-commit.
 - **SC-017**: **Lead source traceability** — 100% de los leads escritos a `leads/{uid}` MUST tener un campo `fuente` no vacío mapeable a uno de los 3 CTAs (valores enumerados: `home-diagnostic`, `home-resource-premium`, `contact-form`, `insights-subscribe`, `diagnostic-mailto-fallback`). Verificado en `tests/integration/security-rules.spec.js`.
-- **SC-018**: **Coverage floor** — el pipeline CI MUST enforzar los thresholds de NFR-008. Merge bloqueado si coverage global <85% o si un módulo pure <100%.
-- **SC-019**: **Backcasting closed loop** — cada FR del spec MUST tener trazabilidad explícita a ≥1 US, cada US a ≥1 SC, cada SC a ≥1 Constitution principle. Matriz verificable en robustness-v1.md §F.1-F.3, sin orphans.
+- **SC-018**: **Coverage floor** — el pipeline CI MUST enforzar los thresholds de NFR-008. Merge bloqueado si coverage global <85% o si un módulo pure <100%. *(CI gate, enforced by vitest.config.js thresholds, not BDD scenario.)*
+- **SC-019**: **Backcasting closed loop** — cada FR del spec MUST tener trazabilidad explícita a ≥1 US, cada US a ≥1 SC, cada SC a ≥1 Constitution principle. Matriz verificable en robustness-v1.md §F.1-F.3, sin orphans. *(Process gate, verified by /iikit-06-analyze, not BDD scenario.)*
 - **SC-009**: **Conversión total leads** — uplift ≥2× vs baseline en los primeros 30 días post-lanzamiento `[baseline: T-000 GA4 capture, 30-day window]`.
 - **SC-010**: **Cobertura i18n** — 0 cadenas sin traducir en auditoría automática ES y EN.
 - **SC-011**: **Matriz responsive** — 6/6 viewports (xs/sm/md/lg/xl/2xl) pasan el checklist de 12 puntos de US-5.
@@ -1129,9 +1129,9 @@ flowchart LR
 
 Todas las 13 páginas (sitemap §2) comparten un único **blueprint homologado** cuyos slots se adaptan declarativamente a la combinación activa de 3 toggles globales: **Locale** (ES/EN), **Theme** (light/dark), **Audience** (persona/empresa/unknown). Theme afecta solo tokens CSS (ortogonal al contenido); Locale + Audience afectan copy vía cascada de fallback.
 
-La especificación completa — FRs FR-200..FR-232, diagrama de shell, slots canónicos, cascada de resolución, provenance de audience state, test plan parametrizado 52 combinaciones — vive en **[adaptive-blueprint.md](./adaptive-blueprint.md)** y es input obligatorio de `plan.md` y `data-model.md`. Las entidades nuevas (`AudienceState`, `ContentSlot`) se integran a §4.3 Key Entities; los FRs se integran a §4.1 tras FR-099.
+La especificación completa — FRs FR-240..FR-253 *(v8, reemplazan FR-200..FR-232 [SUPERSEDED])*, diagrama de shell con sidebar + triple toggle, slots canónicos, cascada de resolución, provenance de audience state, test plan parametrizado 52 combinaciones — vive en **[adaptive-blueprint.md](./adaptive-blueprint.md)** y es input obligatorio de `plan.md` y `data-model.md`. Las entidades nuevas (`AudienceState`, `ContentSlot`) se integran a §4.3 Key Entities; los FRs se integran a §4.1 tras FR-099b.
 
-Este es el patrón "single blueprint, adaptive slots": un shell, 8 combinaciones (2×2×2), cero páginas duplicadas. Los dos únicos nodos con audiencia intrínseca (`/empresas/`, `/personas/`) siguen siendo páginas separadas (decision Sitemap §5 Q1) pero exponen el toggle global como "switch to the other" (FR-206).
+Este es el patrón "single blueprint, adaptive slots": un shell con sidebar de 7 secciones + triple toggle bottom-left, 8 combinaciones (2×2×2), cero páginas duplicadas. Los dos únicos nodos con audiencia intrínseca (`/empresas/`, `/personas/`) siguen siendo páginas separadas (decision Sitemap §5 Q1) pero exponen el toggle global como "switch to the other" (FR-245, ex-FR-206 [SUPERSEDED]).
 
 ---
 
