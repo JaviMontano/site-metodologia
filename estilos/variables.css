@@ -169,4 +169,12 @@
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
   --shadow-glow-gold: 0 0 30px rgba(255, 240, 51, 0.3);
   --shadow-glow-cyan: 0 0 30px rgba(34, 211, 238, 0.3);
+
+  /* ═══════════════════════════════════════════════════════════════
+     LAYOUT TOKENS (009 — Sidebar Architecture v8)
+     ═══════════════════════════════════════════════════════════════ */
+  --sidebar-w: 260px;
+  --header-h: 72px;
+  --gutter: clamp(1rem, 3vw, 2rem);
+  --ease: cubic-bezier(.4, 0, .2, 1);
 }
