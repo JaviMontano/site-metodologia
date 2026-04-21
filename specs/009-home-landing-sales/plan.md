@@ -2,7 +2,7 @@
 
 **Branch**: `009-home-landing-sales` | **Date**: 2026-04-21 | **Spec**: [spec.md](./spec.md)
 **Input**: Feature specification from `specs/009-home-landing-sales/spec.md` (v7 consolidated)
-**Version**: v4 (regenerated from blank template by `/iikit-02-plan`)
+**Version**: v5 (v4 + Socratic debates: write failure modes R14, shell contract R15)
 
 ## Summary
 
@@ -347,13 +347,33 @@ Import relationships between new modules and existing SDK. Arrows = `import`. Le
 
 ### Data flow — Write path (diagnostic → lead)
 
+**Happy path:**
+
 1. User starts diagnostic → `diagnostic/state.js` saves progress to localStorage
 2. User completes step 6 (PII) → `auth-service.js` signs in anonymously
 3. `diagnostic/controller.js` builds `diagnostic` + `lead` docs per data-model contract
-4. App Check token attached → Firestore create (`diagnostics/{uid}`, `leads/{uid}`)
-5. Security rules validate: uid match, append-only, field constraints
-6. `analytics/events.js` fires `diagnostic_completed` (if consent)
-7. `mdg_returning` cookie set (SHA-256 of email)
+4. localStorage: save complete responses + computed result (`synced: false`)
+5. **Screen: show result immediately** (pure function from `diagnostic/logic.js`, zero network dependency)
+6. App Check token attached → Firestore create (`diagnostics/{uid}`, `leads/{uid}`) — **background, non-blocking**
+7. On success: mark `synced: true` in localStorage; fire `diagnostic_completed` analytics event (if consent)
+8. `mdg_returning` cookie set (SHA-256 of email)
+
+**Failure path — Optimistic Result + Deferred Sync (R14):**
+
+If step 6 fails (network down, auth failure, App Check invalid, Firestore quota):
+
+1. User **already sees result** (step 5 executed before write attempt)
+2. localStorage marked `pending_sync: true` + `sync_attempt_ts` + `sync_failures: 1`
+3. **No error shown** — user is viewing their result at peak commitment moment
+4. On next page load (any page with `shell.js`): detect `pending_sync`, retry write
+5. Retry strategy: max 3 attempts, exponential backoff (1s → 4s → 16s)
+6. On retry success: clear `pending_sync`, fire delayed `diagnostic_completed` analytics
+7. After 3 failures: show **sync pill** (reuses `OfflinePill.js` pattern, FR-097..FR-099):
+   `"Tu diagnóstico está guardado localmente. Se sincronizará cuando haya conexión."`
+   — not a modal, not blocking, consistent with existing offline UX
+8. `mdg_returning` cookie set regardless of sync status (email available locally)
+
+**Accepted risks:** localStorage cleared before sync = lead lost (~0.001%); incognito + close = lead lost (acceptable: user opted out of persistence). Dedup remains deferred to 010 (R3).
 
 ### Key design decisions (from research.md)
 
@@ -372,6 +392,8 @@ Import relationships between new modules and existing SDK. Arrows = `import`. Le
 | R11 | Shell-first delivery; deep content = home + diagnostic only | XIV Simple First |
 | R12 | Client-side slug routing, top-5 pre-rendered | XIV Simple First |
 | R13 | Full robustness contract (ATDD + 85% + 10 flows) | IX TDD, XV BDD |
+| R14 | Optimistic Result + Deferred Sync for write failures | VIII SWR, XIV Simple First |
+| R15 | Shell = Minimal Landing Pattern (hero + escape routes + closing), zero Firestore | XIV Simple First, III SEO |
 
 ## Scope Boundary
 
@@ -379,7 +401,7 @@ Import relationships between new modules and existing SDK. Arrows = `import`. Le
 
 - Home page redesign (`index.html`) — full Neo-Swiss Light + 3 CTAs
 - Diagnostic flow (`diagnostico/index.html`) — 6-step wizard + Firestore persist
-- 13-page shell scaffold (consistent header/footer/toggles/blueprint)
+- 13-page shell scaffold (consistent header/footer/toggles/blueprint) — see Shell Contract below
 - Adaptive blueprint (locale/theme/audience toggles)
 - Design tokens in `estilos/variables.css` (Light default + Dark mirror)
 - Security rules for `leads/`, `diagnostics/`, `programs/`, `resources/`, `testimonials/`
@@ -389,6 +411,27 @@ Import relationships between new modules and existing SDK. Arrows = `import`. Le
 - Consent banner (LGPD-light)
 - Offline/syncing/fallback pills
 - Full test suite (unit + integration + E2E + BDD features)
+
+### Shell Contract — Minimal Landing Pattern (R15)
+
+The 11 non-home/non-diagnostic pages render as **minimal landing pages**, not placeholders. Each shell page renders exactly:
+
+| Slot | Required | Source | Content |
+|---|---|---|---|
+| `hero` | Yes | i18n dictionary `{pageSlug}.hero.{audience}` | Section headline + 1 audience-aware paragraph |
+| `proof` | Optional | i18n dictionary (only if data exists) | Omitted on most shells |
+| `oferta` | No | — | — |
+| `escape_routes` | Yes | i18n dictionary `{pageSlug}.escape_routes.{audience}` | 2 CTAs: diagnóstico + recursos (audience-contextualized) |
+| `closing` | Yes | i18n dictionary `{pageSlug}.closing.{audience}` | CTA primario (diagnóstico) |
+
+**Rules:**
+- Zero Firestore reads — all shell content lives in i18n dictionaries (static JSON)
+- Zero new JS logic — slots resolved by existing `slot-resolver.js` + adaptive blueprint cascade (§2.3)
+- Nav does not distinguish shells from full pages — all 13 pages are equally legitimate sections
+- SEO: `<meta name="description">` + canonical URL + sitemap.xml inclusion satisfies Constitution III
+- Deep content for shells arrives in Feature 011+ — shells are the **scaffolding**, not placeholders
+
+**Dictionary requirement:** Each of the 11 shell pages needs entries in `js/i18n/dictionaries/{pageSlug}.json` for `hero`, `escape_routes`, and `closing` slots × 2 audiences × 2 locales. This is copywriting work, not code — estimated 11 × 3 slots × 2 × 2 = 132 i18n keys.
 
 ### Out of scope (deferred)
 
@@ -497,3 +540,8 @@ If the home v2 launch causes conversion drop, critical bug, or visual regression
 
 - Q: ¿Faltan dependencias explícitas entre módulos JS nuevos? → A: Añadir DAG de dependencias con clasificación leaf/mid/top layer y relaciones import explícitas. Leaf modules (bus.js, logic.js, state.js, toggle.js, legacy-router.js) implementables primero en paralelo. [§Module Dependency Graph, §Structure Decision]
 - Q: ¿Estrategia de rollback si home v2 falla en producción? → A: Git revert del merge commit en main + redeploy. Datos Firestore (leads/, diagnostics/) preservados (append-only, sin conflicto de schema). Criterios: >50% drop conversión = rollback inmediato; bug crítico = hotfix 4h o rollback; Lighthouse <70 = hotfix 24h o rollback. [§Rollback Strategy, R-01, R-04, Constitution XX]
+
+### Session 2026-04-21 (v5 — /iikit-clarify Socratic debates)
+
+- Q: ¿Qué ocurre cuando falla el write a Firestore tras completar el diagnóstico (auth fail, network down, App Check inválido)? → A: Optimistic Result + Deferred Sync (R14). Resultado mostrado inmediato (pure function, zero network). Write en background; si falla, localStorage backup con pending_sync flag. Retry en próxima carga (max 3, exponential backoff). Tras 3 fallos, sync pill sutil (reutiliza OfflinePill, FR-097..FR-099). Nunca modal ni bloqueo en momento de máximo compromiso. [§Data flow — Write path, R14, FR-097, FR-098, FR-099, US-1 SC-4, Constitution VIII, Constitution XIV]
+- Q: ¿Qué renderizan las 11 shell pages (non-home, non-diagnostic) cuando el usuario navega a ellas? → A: Minimal Landing Pattern (R15). Cada shell renderiza hero (headline + 1 párrafo audience-aware) + escape_routes (2 CTAs a diagnóstico/recursos) + closing (CTA primario). Zero Firestore reads, zero lógica nueva — todo resuelto por diccionarios i18n existentes via slot-resolver.js. Nav no distingue shells de páginas completas. SEO satisfecho con meta tags + canonical + sitemap.xml. Contenido profundo = Feature 011+. Requiere 132 i18n keys (11 pages × 3 slots × 2 audiences × 2 locales). [§Shell Contract, §Scope Boundary, R15, R11, Constitution III, Constitution XIV]
