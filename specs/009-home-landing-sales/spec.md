@@ -1148,3 +1148,7 @@ Este es el patrón "single blueprint, adaptive slots": un shell, 8 combinaciones
 - Q: ¿Recurso premium double opt-in? → A: No, solo email + nombre [FR-022]
 - Q: ¿Modo oscuro persistente? → A: Sí, localStorage + prefers-color-scheme fallback [FR-045]
 - Q: ¿Consent LGPD/GDPR? → A: Banner light, checkbox obligatorio en diagnóstico, cookie `mdg_consent` [FR-012, FR-072]
+
+### Session 2026-04-20 (v7 — /iikit-clarify)
+
+- Q: ¿Manejo de baselines marcados como [BASELINE-TBD] en los SC? → A: Opción A. Capturar de GA4 en la Fase 1 como tarea técnica previa (T-000) antes de implementar, para asegurar precisión. [SC-001, SC-002, SC-009, A-001]
