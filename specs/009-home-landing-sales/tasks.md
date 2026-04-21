@@ -51,16 +51,16 @@
 
 ### Tests
 
-- [ ] T014 [P] [US-4] Write E2E `tests/e2e/home-critical-css.spec.js` — first paint without FOUC [TS-063]
+- [x] T014 [P] [US-4] Write E2E `tests/e2e/home-critical-css.spec.js` — first paint without FOUC [TS-063]
 
 ### Implementation
 
-- [ ] T015 [US-4] Update `estilos/variables.css` — Neo-Swiss Light/Dark token sets (FR-041, FR-042, FR-044) [TS-026, TS-027, TS-028, TS-031]
-- [ ] T016 [P] [US-4] Create `estilos/critical.css` — hand-authored fold CSS (FR-092, FR-096) [TS-063]
-- [ ] T017 [US-4] Create `estilos/blueprint.css` — full sidebar + header + main layout system: `.site-header` fixed top, `.site-sidebar` fixed left 260px (off-canvas <960px), `.main` padding-top/left, `.container` max-860px, `.section` with scroll-spy targets. Sidebar drawer + backdrop + hamburger on mobile. [TS-044, TS-045, TS-093]
-- [ ] T018 [P] [US-4] Create `estilos/sidebar.css` — sidebar nav styles, `is-active` highlight, numbered links, icon alignment, scroll-spy visual feedback [TS-093, TS-094]
-- [ ] T019 [P] [US-4] Create `estilos/triple-toggle.css` — fixed bottom-left position, translucent pill, 3 stacked buttons, touch targets ≥44px, shadow, z-index 45, no body overlap [TS-099, TS-048]
-- [ ] T020 [US-4] Update `estilos/home.css` — home v2 layout with Neo-Swiss tokens, clamp() typography, 6-breakpoint grid [TS-029, TS-030, TS-038]
+- [x] T015 [US-4] Update `estilos/variables.css` — Neo-Swiss Light/Dark token sets (FR-041, FR-042, FR-044) [TS-026, TS-027, TS-028, TS-031]
+- [x] T016 [P] [US-4] Create `estilos/critical.css` — hand-authored fold CSS (FR-092, FR-096) [TS-063]
+- [x] T017 [US-4] Create `estilos/blueprint.css` — full sidebar + header + main layout system: `.site-header` fixed top, `.site-sidebar` fixed left 260px (off-canvas <960px), `.main` padding-top/left, `.container` max-860px, `.section` with scroll-spy targets. Sidebar drawer + backdrop + hamburger on mobile. [TS-044, TS-045, TS-093]
+- [x] T018 [P] [US-4] Create `estilos/sidebar.css` — sidebar nav styles, `is-active` highlight, numbered links, icon alignment, scroll-spy visual feedback [TS-093, TS-094]
+- [x] T019 [P] [US-4] Create `estilos/triple-toggle.css` — fixed bottom-left position, translucent pill, 3 stacked buttons, touch targets ≥44px, shadow, z-index 45, no body overlap [TS-099, TS-048]
+- [x] T020 [US-4] Update `estilos/home.css` — home v2 layout with Neo-Swiss tokens, clamp() typography, 6-breakpoint grid [TS-029, TS-030, TS-038]
 
 **Checkpoint**: Full layout system + visual tokens ready
 
