@@ -1,10 +1,10 @@
-# Spec Quality Checklist — 009-home-landing-sales (v7 re-specify)
+# Spec Quality Checklist — 009-home-landing-sales (v8 sidebar architecture)
 
 **Generated**: 2026-04-14
-**Extended**: 2026-04-21 (plan v5 + cross-artifact consistency + backcasting + testify traceability)
-**Constitution**: v7.0.0 (synchronized; v7.1.0 amendment proposed, pending approval)
-**Spec Version**: v7 (post-robustness consolidation)
-**Testify Phase**: 92 TS scenarios across 8 .feature files (hash-locked)
+**Extended**: 2026-04-21 (v8: sidebar + triple toggle + admin editor + 28 new items)
+**Constitution**: v7.0.0
+**Spec Version**: v8 (sidebar architecture + admin content editor)
+**Testify Phase**: 92 TS scenarios + pending v8 regeneration
 
 ---
 
@@ -145,13 +145,53 @@
 - [x] **AB-05**: Does the xs/sm collapse pattern ("Preferencias" button with aria-expanded) have a TS? [Completeness, FR-200] — TS-045 covers collapse to button with aria-expanded
 - [x] **AB-06**: Is theme orthogonality (CSS-only, never content) tested? [Consistency, Backcasting XXIV invariant 1] — TS-049 verifies hero/proof/CTA content does NOT change on theme toggle
 
+## N. Sidebar Architecture (v8 — FR-240..FR-244)
+
+- [x] **SA-01**: Is the sidebar section count specified as exactly 7 per page? [Completeness, FR-241] — FR-241: "exactamente 7 `<section id>`"
+- [x] **SA-02**: Are all 12 pages' 7-section definitions documented? [Completeness, FR-244] — Plan v7 clarification: 84 entries in sections-config.js table
+- [x] **SA-03**: Is the scroll-spy algorithm specified (IntersectionObserver rootMargin, threshold)? [Clarity, FR-243] — FR-243: rootMargin '-40% 0px -50% 0px', threshold 0
+- [x] **SA-04**: Is the sidebar breakpoint for show/hide specified? [Clarity, FR-240] — FR-240: ≥960px visible, <960px off-canvas drawer
+- [x] **SA-05**: Is the sidebar width specified as a design token? [Clarity, FR-240] — Plan v7: --sidebar-w: 260px in variables.css
+- [x] **SA-06**: Is the 404 page explicitly excluded from sidebar? [Consistency, FR-240] — FR-240: "12 páginas (excl. 404)"
+- [x] **SA-07**: Are sidebar section labels i18n-ized in both locales? [Completeness, FR-244] — FR-244: "{pageSlug}.sections.{sectionId} × 2 locales = 168 keys"
+- [x] **SA-08**: Is the mobile sidebar dismiss behavior specified (Escape, backdrop click, link click)? [Completeness, FR-240] — FR-240: "off-canvas drawer con hamburger toggle, backdrop, Escape para cerrar"
+
+## O. Triple Toggle (v8 — FR-245..FR-249)
+
+- [x] **TT-01**: Is the triple toggle position specified as fixed bottom-left? [Clarity, FR-245] — FR-245: "position: fixed; bottom: 1rem; left: 1rem; z-index: 45"
+- [x] **TT-02**: Is the toggle visible with sidebar closed on mobile? [Completeness, FR-245] — FR-245: "SIEMPRE visible independientemente del estado del sidebar"
+- [x] **TT-03**: Is each toggle specified as role="switch" (not radiogroup)? [Clarity, FR-246] — FR-246: "3 botones role='switch' con aria-checked"
+- [x] **TT-04**: Is the <100ms transition requirement measurable? [Clarity, FR-247] — FR-247: "completar la transición DOM en <100ms sin recarga"
+- [x] **TT-05**: Is theme orthogonality preserved (CSS-only, no content change)? [Consistency, FR-247] — FR-247: "El cambio de tema es CSS-only"
+- [x] **TT-06**: Is the touch target requirement specified for mobile? [Completeness, FR-248] — FR-248: "touch target ≥44×44px y spacing ≥8px"
+- [x] **TT-07**: Is keyboard navigation specified for toggles? [Completeness, FR-249] — FR-249: "Tab entre switches, Space/Enter para flip"
+- [x] **TT-08**: Is aria-live announcement specified? [Completeness, FR-249] — FR-249: "aria-live='polite' con texto descriptivo"
+- [x] **TT-09**: Does the triple toggle NOT overlap scrollable body content? [Clarity, FR-248] — FR-248: "no MUST solapar con el body content scrolleable"
+
+## P. Admin Content Editor (v8 — FR-250..FR-253, US-8)
+
+- [x] **AE-01**: Is the admin auth requirement specified? [Completeness, FR-250] — FR-250: "Firebase Auth login (Google Sign-In + custom claim admin)"
+- [x] **AE-02**: Is the 4-variant schema specified (2 locale × 2 audience)? [Clarity, FR-251] — FR-251: "persona.es, persona.en, empresa.es, empresa.en"
+- [x] **AE-03**: Is the Firestore collection name specified? [Clarity, FR-251] — FR-251: "slots/{pageSlug}"
+- [x] **AE-04**: Is the public read + admin write security rule specified? [Completeness, FR-253] — FR-253: "write solo a usuarios con custom claim admin: true"
+- [x] **AE-05**: Is the fallback to static JSON specified? [Completeness, FR-252] — FR-252: "Fallback: static i18n JSON dictionaries cuando Firestore no disponible"
+- [x] **AE-06**: Is US-8 independent testability declared? [Completeness, US-8] — US-8: "Admin login → seleccionar home → editar → guardar → verificar en sitio público"
+- [x] **AE-07**: Does the scope boundary clarify what's IN 009 vs deferred to 010? [Clarity, Plan v7] — Plan v7: "Solo content editing (slots). Backoffice completo diferido a 010."
+
+## Q. Header Simplification (v8 — FR-242)
+
+- [x] **HS-01**: Are the 3 nav items specified by name and destination? [Clarity, FR-242] — FR-242: "Ruta → /diagnostico/, Servicios → /programas/, Contacto → /contacto/"
+- [x] **HS-02**: Is the header explicitly free of toggles? [Consistency, FR-242] — FR-242: "NO contiene toggles"
+- [x] **HS-03**: Is the hamburger behavior on mobile specified? [Completeness, FR-242] — FR-242: "En mobile (<960px) incluye hamburger para abrir sidebar"
+- [x] **HS-04**: Is the focus order updated for the new architecture? [Consistency, FR-062] — FR-062v8: "skip-link → header nav → sidebar → main → triple toggle → footer"
+
 ## M. Updated Readiness Verdict
 
 | Gate | Status | Notes |
 |------|--------|-------|
-| G0 — Spec exists | ✅ PASS | 1,162 lines, v7 consolidated |
-| G1 — Constitution aligned | ✅ PASS | §4.4 + backcasting.md (XXIV pending approval) |
-| G1.5 — Checklist reviewed | ✅ PASS | 84 items, 84/84 checked, 0 deferred |
+| G0 — Spec exists | ✅ PASS | v8, ~1,250 lines |
+| G1 — Constitution aligned | ✅ PASS | §4.4 + backcasting.md |
+| G1.5 — Checklist reviewed | ✅ PASS | 112 items, 112/112 checked, 0 deferred |
 | G2 — Phase separation clean | ✅ PASS | Exemptions justified |
-| G2.5 — Testify complete | ✅ PASS | 92 TS scenarios, 8 .feature files, hash-locked |
-| G3 — Ready for next phase | ✅ PASS | All gates green |
+| G2.5 — Testify complete | ⚠️ PENDING | 92 TS from v7; v8 requires regeneration for FR-240..FR-253, US-8 |
+| G3 — Ready for next phase | ⚠️ PENDING | Testify regeneration needed |
