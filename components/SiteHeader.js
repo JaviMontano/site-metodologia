@@ -60,7 +60,8 @@ class SiteHeader extends HTMLElement {
       <a href="/" class="site-header__brand" aria-label="MetodologIA — Inicio">
         <span class="site-header__logo-wrap" aria-hidden="true">${LOGO_SVG}</span>
         <span class="site-header__text">
-          <span class="site-header__name">MetodologIA</span>
+          <span class="site-header__name">Metodolog<span style="color:var(--brand-gold)">IA</span></span>
+          <span class="site-header__role">Aceleremos su Estrateg<span style="color:var(--brand-gold);font-weight:900">IA</span></span>
         </span>
       </a>
 

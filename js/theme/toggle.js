@@ -3,14 +3,14 @@
  * and prefers-color-scheme fallback.
  *
  * Storage key: mdg_theme
- * Default: "dark" (Neo-Swiss Dark — canonical design system default)
+ * Default: "light" (Brand decision — light mode default)
  */
 
 const STORAGE_KEY = 'mdg_theme';
 const LIGHT = 'light';
 const DARK = 'dark';
 
-let currentTheme = DARK;
+let currentTheme = LIGHT;
 const subscribers = new Set();
 
 /**
@@ -28,7 +28,7 @@ function resolveTheme() {
     if (mq.matches) return DARK;
   }
 
-  return DARK;
+  return LIGHT;
 }
 
 function applyTheme(theme) {

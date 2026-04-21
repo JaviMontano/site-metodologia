@@ -82,7 +82,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Inter', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(15.5px, 1vw, 16.5px);
   line-height: 1.7;
   color: var(--brand-text);
@@ -142,7 +142,7 @@ strong {
 /* === 3. TYPOGRAPHY CLASSES === */
 
 .mono {
-  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
 }
 
 .eyebrow {
@@ -425,7 +425,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 
 /* Ecosystem hover-reveal (desktop only) */
 .site-header__ecosystem {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 9px;
   font-weight: 600;
   letter-spacing: .12em;
@@ -530,7 +530,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 .sidebar__ecosystem {
   padding: .75rem .85rem;
   margin-top: .5rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 10px;
   color: var(--brand-muted);
   letter-spacing: .08em;
@@ -623,7 +623,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .sidebar__head {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .28em;
@@ -674,7 +674,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .sidebar__link-num {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 11px;
   font-weight: 600;
   color: var(--brand-muted);
@@ -855,7 +855,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .section-foot__label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 9.5px;
   font-weight: 700;
   letter-spacing: .25em;
@@ -1020,7 +1020,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .info-dialog__body .kv dt {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 9.5px;
   font-weight: 700;
   letter-spacing: .2em;
@@ -1036,7 +1036,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 
 .info-dialog__term {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .2em;
@@ -1217,7 +1217,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 
 .accels__kicker {
   grid-column: 1 / -1;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .25em;
@@ -1298,7 +1298,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .accel__label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .18em;
@@ -1367,7 +1367,7 @@ html[data-theme="light"] .site-header__nav-link--active {
   padding: 4px 12px;
   background: var(--brand-gold);
   color: var(--brand-dark);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 9.5px;
   font-weight: 800;
   letter-spacing: .28em;
@@ -1409,7 +1409,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .accel-hero__label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .28em;
@@ -1450,7 +1450,7 @@ html[data-theme="light"] .site-header__nav-link--active {
   background: rgba(255, 215, 0, .1);
   border: 1px solid rgba(255, 215, 0, .3);
   border-radius: 999px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 10.5px;
   font-weight: 600;
   color: var(--brand-gold);
@@ -1544,7 +1544,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .accel-tile__label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 9.5px;
   font-weight: 700;
   letter-spacing: .25em;
@@ -1571,7 +1571,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 .accel-tile__foot {
   margin-top: auto;
   padding-top: .5rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 9.5px;
   color: var(--brand-gold);
   letter-spacing: .1em;
@@ -1602,7 +1602,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .principle__num {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: .25em;
@@ -1649,7 +1649,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .tl-item__meta {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 10.5px;
   font-weight: 600;
   letter-spacing: .08em;
@@ -1697,7 +1697,7 @@ html[data-theme="light"] .site-header__nav-link--active {
   padding: .45rem .8rem;
   border: 1px solid var(--brand-border);
   border-radius: 7px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 12px;
   font-weight: 500;
   color: var(--brand-text-soft);
@@ -1740,7 +1740,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .skills-group__label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .22em;
@@ -1823,7 +1823,7 @@ html[data-theme="light"] .site-header__nav-link--active {
   border: 1px solid rgba(255, 215, 0, .28);
   border-radius: 8px;
   background: rgba(255, 215, 0, .06);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: .14em;
@@ -1893,7 +1893,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .axis__label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 9.5px;
   font-weight: 700;
   letter-spacing: .22em;
@@ -1964,7 +1964,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .form-item__meta {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 11px;
   color: var(--brand-muted);
   letter-spacing: .04em;
@@ -2010,7 +2010,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .ref__link {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 11px;
   font-weight: 600;
   color: var(--brand-gold);
@@ -2068,7 +2068,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 }
 
 .site-footer__col-head {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .2em;
@@ -2122,7 +2122,7 @@ html[data-theme="light"] .site-header__nav-link--active {
 .site-footer__stat-label {
   display: block;
   margin-top: .3rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: .15em;

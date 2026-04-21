@@ -63,7 +63,7 @@ class SiteSidebar extends HTMLElement {
     const cta = document.createElement('a');
     cta.className = 'sidebar__cta';
     cta.href = '/diagnostico/';
-    cta.textContent = this._lang === 'en' ? 'Free Diagnostic →' : 'Diagnóstico Gratuito →';
+    cta.textContent = this._lang === 'en' ? 'Risk-Free Diagnostic →' : 'Diagnóstico Sin Riesgo →';
     this.appendChild(cta);
 
     // Sidebar head (canonical: .sidebar__head)

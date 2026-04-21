@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0A122A">
   <meta name="color-scheme" content="dark">
   <title>MetodologIA — Success as a Service</title>
-  <meta name="description" content="Metodología probada para personas y equipos. Diagnóstico gratuito, recursos y programas de excelencia.">
+  <meta name="description" content="Metodología probada para personas y equipos. Diagnóstico sin riesgo, recursos y programas de excelencia.">
   <link rel="canonical" href="https://metodologia.info/">
   <link rel="manifest" href="manifest.json">
   <meta name="robots" content="index, follow">
@@ -17,7 +17,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://metodologia.info/">
   <meta property="og:title" content="MetodologIA — Success as a Service">
-  <meta property="og:description" content="Metodología probada para personas y equipos. Diagnóstico gratuito, recursos y programas de excelencia.">
+  <meta property="og:description" content="Metodología probada para personas y equipos. Diagnóstico sin riesgo, recursos y programas de excelencia.">
   <meta property="og:image" content="https://metodologia.info/og-image.png">
 
   <!-- Twitter -->
@@ -67,19 +67,19 @@
     }
   </script>
 
-  <!-- Anti-FOUC theme restore (dark default) -->
+  <!-- Anti-FOUC theme restore (light default) -->
   <script>
     const t = localStorage.getItem('mdg_theme');
-    if (t === 'light') document.documentElement.dataset.theme = 'light';
-    // Dark is default — no attribute needed (CSS :root is dark)
+    if (t === 'dark') document.documentElement.dataset.theme = 'dark';
+    else document.documentElement.dataset.theme = 'light';
   </script>
 
   <!-- Fonts (same as canonical) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Montserrat:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Montserrat:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Montserrat:wght@400;600;700&display=swap"></noscript>
 
   <!-- Design system (canonical patterns) + minimal page overrides -->
   <link rel="stylesheet" href="estilos/neoswiss-system.css?v=3">
@@ -111,7 +111,7 @@
 
         <div class="home-hero__ctas">
           <a href="diagnostico/" class="home-cta home-cta--primary" data-cms="home.hero.cta_diagnostico">
-            Diagnóstico Gratuito →
+            Diagnóstico Sin Riesgo →
           </a>
           <a href="recursos/" class="home-cta home-cta--secondary" data-cms="home.hero.cta_ruta">
             Explorar la Ruta
@@ -173,7 +173,7 @@
         </div>
 
         <a href="diagnostico/" class="home-cta home-cta--primary" style="margin-top:1.5rem;display:inline-flex;" data-cms="home.diagnostico.cta">
-          Iniciar diagnóstico gratuito →
+          Iniciar diagnóstico sin riesgo →
         </a>
       </div>
     </section>
@@ -375,7 +375,7 @@
           </a>
         </div>
         <p class="muted" style="font-size:.85rem;margin-top:1rem;" data-cms="home.contacto.note">
-          Sin compromiso. Respuesta en menos de 24 horas.
+          Sin fricción. Respuesta en 2 días hábiles.
         </p>
       </div>
     </section>

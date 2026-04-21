@@ -86,7 +86,7 @@ class SiteFooter extends HTMLElement {
         <div class="site-footer__grid">
           <!-- Brand -->
           <div>
-            <div class="site-footer__brand-name">MetodologIA</div>
+            <div class="site-footer__brand-name">Metodolog<span style="color:var(--brand-gold)">IA</span></div>
             <p class="site-footer__brand-tagline" data-cms="footer.quote">${t.quote}</p>
           </div>
 
