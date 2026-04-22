@@ -120,7 +120,7 @@
           <div class="stats__cell"><span class="stats__num">4</span><span class="stats__label">Founders</span></div>
           <div class="stats__cell"><span class="stats__num">+10</span><span class="stats__label">Embajadores</span></div>
           <div class="stats__cell"><span class="stats__num">+50</span><span class="stats__label">Nodos</span></div>
-          <div class="stats__cell"><span class="stats__num" style="color:var(--brand-gold);">100 ✓</span><span class="stats__label">Estándar</span></div>
+          <div class="stats__cell" role="button" tabindex="0" id="std100-trigger" style="cursor:pointer;transition:transform .2s var(--ease);"><span class="stats__num" style="color:var(--brand-gold);">100 ✓</span><span class="stats__label">Estándar</span></div>
         </div>
       </div>
     </section>
@@ -271,11 +271,69 @@
   <consent-banner></consent-banner>
   <site-footer></site-footer>
 
+  <!-- ════ MODAL: Estándar 100 ✓ ════ -->
+  <dialog class="info-dialog" id="std100Dialog" aria-labelledby="std100Title">
+    <div class="info-dialog__inner">
+      <div class="info-dialog__head">
+        <div>
+          <span class="info-dialog__term">Estándar de Calidad</span>
+          <h3 class="info-dialog__title" id="std100Title">100 ✓ — Calidad Entrusted</h3>
+        </div>
+        <button class="info-dialog__close" type="button" aria-label="Cerrar" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="info-dialog__body">
+        <p><em>Cada entregable de MetodologIA pasa por un protocolo de calidad antes de llegar a tus manos.</em></p>
+
+        <h4>¿Qué significa 100 ✓?</h4>
+        <p>Es nuestro <strong>sello de calidad verificable</strong>. Cada recurso, prompt, playbook, workshop y programa cumple con un checklist de 100 puntos antes de ser publicado o entregado.</p>
+
+        <h4>Los 5 pilares del estándar</h4>
+        <ul>
+          <li><strong>Precisión</strong> — Sin alucinaciones, sin supuestos. Todo verificado contra fuentes.</li>
+          <li><strong>Accionabilidad</strong> — Cada entregable es usable desde el minuto uno.</li>
+          <li><strong>Trazabilidad</strong> — Etiquetas de evidencia: [CÓDIGO] [DOC] [INFERENCIA] [SUPUESTO].</li>
+          <li><strong>Reproducibilidad</strong> — El mismo input produce el mismo resultado, siempre.</li>
+          <li><strong>Evolución</strong> — Versionado, retrospectiva y mejora continua.</li>
+        </ul>
+
+        <h4>¿Dónde se aplica?</h4>
+        <ul>
+          <li>Prompts profesionales de la biblioteca</li>
+          <li>Entregables de Workshops y Bootcamps</li>
+          <li>Pipelines comerciales y arquitecturas de prospección</li>
+          <li>Planes de transformación y marcos Digital Champions</li>
+          <li>El agente Pristino (protocolo Zero-Hallucination + Quality Gates G0–G3)</li>
+        </ul>
+
+        <dl class="kv">
+          <dt>Protocolo</dt><dd>Zero-Hallucination</dd>
+          <dt>Quality Gates</dt><dd>G0 → G1 → G2 → G3</dd>
+          <dt>Etiquetas</dt><dd>[CÓDIGO] [DOC] [INFERENCIA] [SUPUESTO]</dd>
+          <dt>Cobertura</dt><dd>100% de entregables públicos y premium</dd>
+        </dl>
+      </div>
+    </div>
+  </dialog>
+
   <script type="module">
     import { initShell } from './js/blueprint/shell.js?v=4';
     import { hydratePage } from './js/cms/hydrate-page.js?v=4';
     initShell({ pageSlug: 'home' });
     hydratePage('home');
+
+    // Micro-interacción: 100 ✓ Estándar → modal
+    const trigger = document.getElementById('std100-trigger');
+    const dialog = document.getElementById('std100Dialog');
+    if (trigger && dialog) {
+      const open = () => dialog.showModal();
+      trigger.addEventListener('click', open);
+      trigger.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+      // Hover pulse
+      trigger.addEventListener('mouseenter', () => { trigger.style.transform = 'scale(1.05)'; });
+      trigger.addEventListener('mouseleave', () => { trigger.style.transform = 'scale(1)'; });
+      // Close on backdrop click
+      dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+    }
   </script>
 </body>
 </html>
