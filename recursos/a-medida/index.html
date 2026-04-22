@@ -36,11 +36,11 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Montserrat:wght@400;500;600;700&family=Jost:wght@400;500;600;700&display=swap"></noscript>
 
     <!-- Global Styles -->
-    <link rel="stylesheet" href="../../estilos/variables.css">
-    <link rel="stylesheet" href="../../estilos/base.css">
-    <link rel="stylesheet" href="../../estilos/components.css">
+    <link rel="stylesheet" href="../../estilos/neoswiss-system.css?v=4">
+    <link rel="stylesheet" >
+    <link rel="stylesheet" >
     <!-- Tailwind (Local Build) -->
-    <link rel="stylesheet" href="../../dist/output.css">
+    <link rel="stylesheet" href="../../estilos/home.css?v=4">
 
     <!-- Nav styles provided by components.css (Skill 119: No Inline Styles) -->
 
@@ -49,9 +49,9 @@
     <link rel="apple-touch-icon" href="../../favicon.svg">
 
     <!-- Components -->
-    <script src="../../components/SiteHeader.js" defer></script>
-    <script src="../../components/SiteFooter.js" defer></script>
-    <script src="../../js/icons.js" defer></script>
+    
+    
+    
 
     <style>
         /* Golden Ratio Header Spacing */
@@ -124,8 +124,10 @@
             background: rgba(2, 6, 23, 0.6);
         }
     </style>
+<script type="importmap">{"imports":{"firebase/app":"https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js","firebase/firestore":"https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js"}}</script>
 </head>
 <body class="bg-slate-900 text-white min-h-screen font-sans antialiased selection:bg-brand-gold/30 selection:text-brand-gold">
+<div class="bg-mesh" aria-hidden="true"></div>
     <!-- PREMIUM NAVIGATION -->
     <site-header base-path="../.." data-skip-i18n></site-header>
 
@@ -147,7 +149,7 @@
                     <li><span class="text-slate-700">/</span></li>
                     <li><a href="../index.html" class="hover:text-brand-gold transition-colors">Recursos</a></li>
                     <li><span class="text-slate-700">/</span></li>
-                    <li><a href="../index.html#catalogo" class="hover:text-brand-gold transition-colors">Catálogo Gratis</a></li>
+                    <li><a href="../index.html#catalogo" class="hover:text-brand-gold transition-colors">Catálogo Abierto</a></li>
                     <li><span class="text-slate-700">/</span></li>
                     <li class="text-slate-100 font-medium" aria-current="page">A Medida</li>
                 </ol>
@@ -353,6 +355,10 @@
 
         </div>
     </main>
+<triple-toggle></triple-toggle>
+<offline-pill></offline-pill>
+<consent-banner></consent-banner>
+<site-footer></site-footer>
 
     <!-- FOOTER -->
     <site-footer base-path="../.."></site-footer>
@@ -362,5 +368,6 @@
             if (typeof icons !== 'undefined') icons.createIcons();
         });
     </script>
+<script type="module">import{initShell}from'../../js/blueprint/shell.js?v=4';initShell({pageSlug:'a-medida'});</script>
 </body>
 </html>

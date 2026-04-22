@@ -36,11 +36,11 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Montserrat:wght@400;500;600;700&family=Jost:wght@400;500;600;700&display=swap"></noscript>
 
     <!-- Global Styles -->
-    <link rel="stylesheet" href="../../estilos/variables.css">
-    <link rel="stylesheet" href="../../estilos/base.css">
-    <link rel="stylesheet" href="../../estilos/components.css">
+    <link rel="stylesheet" href="../../estilos/neoswiss-system.css?v=4">
+    <link rel="stylesheet" >
+    <link rel="stylesheet" >
     <!-- Tailwind (Local Build) -->
-    <link rel="stylesheet" href="../../dist/output.css">
+    <link rel="stylesheet" href="../../estilos/home.css?v=4">
 
     <!-- Nav styles provided by components.css (Skill 119: No Inline Styles) -->
 
@@ -49,9 +49,9 @@
     <link rel="apple-touch-icon" href="../../favicon.svg">
 
     <!-- Components -->
-    <script src="../../components/SiteHeader.js" defer></script>
-    <script src="../../components/SiteFooter.js" defer></script>
-    <script src="../../js/icons.js" defer></script>
+    
+    
+    
 
     <style>
         /* Golden Ratio Layout Utilities */
@@ -103,8 +103,10 @@
             color: var(--brand-gold-dark);
         }
     </style>
+<script type="importmap">{"imports":{"firebase/app":"https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js","firebase/firestore":"https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js"}}</script>
 </head>
 <body class="bg-slate-900 text-white min-h-screen font-sans antialiased">
+<div class="bg-mesh" aria-hidden="true"></div>
     <!-- PREMIUM NAVIGATION -->
     <site-header base-path="../.."></site-header>
 
@@ -158,7 +160,7 @@
                         </a>
                         <a href="../index.html" class="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white/5 border border-white/10 text-white font-medium rounded-xl hover:bg-white/10 transition-all">
                             <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                            <span data-i18n="premium.hero.cta.free">Recursos Gratuitos</span>
+                            <span data-i18n="premium.hero.cta.free">Recursos Sin Riesgos</span>
                         </a>
                     </div>
                 </div>
@@ -411,6 +413,10 @@
 
         </div>
     </main>
+<triple-toggle></triple-toggle>
+<offline-pill></offline-pill>
+<consent-banner></consent-banner>
+<site-footer></site-footer>
 
     <!-- FOOTER -->
     <site-footer base-path="../.."></site-footer>
@@ -449,5 +455,6 @@
     }
     loadCmsPremiumPricing();
     </script>
+<script type="module">import{initShell}from'../../js/blueprint/shell.js?v=4';initShell({pageSlug:'premium'});</script>
 </body>
 </html>

@@ -38,7 +38,7 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
 
     <!-- Tailwind (Local Build) -->
-    <link rel="stylesheet" href="../../../dist/output.css">
+    <link rel="stylesheet" href="../../../estilos/home.css?v=4">
     <style>
         body { background-color: #020617; color: #e2e8f0; font-family: 'Montserrat', sans-serif; }
         h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
@@ -52,10 +52,12 @@
     <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
     <link rel="apple-touch-icon" href="../../../favicon.svg">
 
-    <script src="../../../components/SiteHeader.js" defer></script>
-    <script src="../../../components/SiteFooter.js" defer></script>
+    
+    
+<script type="importmap">{"imports":{"firebase/app":"https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js","firebase/firestore":"https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js"}}</script>
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased">
+<div class="bg-mesh" aria-hidden="true"></div>
     <!-- Navigation -->
     <!-- PREMIUM NAVIGATION: Neural Command Center -->
     <site-header base-path="../../.." data-skip-i18n></site-header>
@@ -104,7 +106,7 @@
                     <span class="px-3 py-1 bg-brand-gold/10 text-brand-gold text-xs font-bold rounded-full border border-brand-gold/30">Q2 2026</span>
                     <span class="px-3 py-1 bg-white/5 text-slate-100 text-xs font-medium rounded-full border border-white/10 uppercase tracking-tighter">Soporte Prioritario</span>
                     <span class="px-3 py-1 bg-white/5 text-slate-100 text-xs font-medium rounded-full border border-white/10 uppercase tracking-tighter">Versiones Enterprise</span>
-                    <a href="../../playbooks/" class="text-xs text-emerald-400 hover:text-emerald-300 font-medium ml-2 border-b border-emerald-400/30">Ver versiones gratuitas</a>
+                    <a href="../../playbooks/" class="text-xs text-emerald-400 hover:text-emerald-300 font-medium ml-2 border-b border-emerald-400/30">Ver versiones sin riesgos</a>
                 </div>
             </div>
 
@@ -174,9 +176,14 @@
             </div>
         </div>
     </main>
+<triple-toggle></triple-toggle>
+<offline-pill></offline-pill>
+<consent-banner></consent-banner>
+<site-footer></site-footer>
 
     <site-footer base-path="../../.."></site-footer>
 
     <!-- Performance Optimization: Removal of Lucide script dependency -->
+<script type="module">import{initShell}from'../../../js/blueprint/shell.js?v=4';initShell({pageSlug:'playbooks'});</script>
 </body>
 </html>

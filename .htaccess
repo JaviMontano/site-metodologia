@@ -10,12 +10,16 @@
     RewriteRule ^vision\.html$                          /vision/  [R=301,L]
     RewriteRule ^metodologia\.html$                     /metodo/  [R=301,L]
     RewriteRule ^empresas/diagnostico-gratuito\.html$   /diagnostico/?audiencia=empresa  [R=301,L]
+    RewriteRule ^empresas/bootcamp-ventas-ia\.html$    /programas/  [R=301,L]
+    RewriteRule ^empresas/workshop-venta-amplificada\.html$ /programas/  [R=301,L]
     RewriteRule ^personas/autodiagnostico\.html$        /diagnostico/?audiencia=persona  [R=301,L]
+    RewriteRule ^personas/bootcamp-amplificacion-profesional\.html$ /programas/  [R=301,L]
+    RewriteRule ^personas/consultive-workshops-estrategia-personal\.html$ /programas/  [R=301,L]
     RewriteRule ^legal/privacidad\.html$                /legal/#privacidad  [R=301,NE,L]
     RewriteRule ^legal/terminos\.html$                  /legal/#terminos    [R=301,NE,L]
     RewriteRule ^nosotros/ecosistema\.html$             /nosotros/  [R=301,L]
     RewriteRule ^nosotros/mision\.html$                 /nosotros/  [R=301,L]
-    RewriteRule ^sitemap\.html$                         /  [R=301,L]
+    # sitemap.html keeps working as-is (legacy format still functional)
 
     # /ruta/ specific pages (before catch-all)
     RewriteRule ^ruta/cotizador.*\.html$                /diagnostico/  [R=301,L]
