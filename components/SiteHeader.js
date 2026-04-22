@@ -19,13 +19,15 @@ const LOGO_SVG = `<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/
 const I18N = {
   es: {
     cta: 'Conversemos', ctaShort: 'Conversemos',
-    nav_vision: 'Visión', nav_recursos: 'Recursos',
-    nav_programas: 'Programas', nav_contacto: 'Contacto',
+    nav_metodo: 'Método', nav_recursos: 'Recursos',
+    nav_programas: 'Programas', nav_campus: 'Campus',
+    nav_contacto: 'Contacto',
   },
   en: {
     cta: "Let's Talk", ctaShort: "Let's Talk",
-    nav_vision: 'Vision', nav_recursos: 'Resources',
-    nav_programas: 'Programs', nav_contacto: 'Contact',
+    nav_metodo: 'Method', nav_recursos: 'Resources',
+    nav_programas: 'Programs', nav_campus: 'Campus',
+    nav_contacto: 'Contact',
   },
 };
 
@@ -71,9 +73,10 @@ class SiteHeader extends HTMLElement {
       </a>
 
       <nav class="site-header__nav" aria-label="Navegación principal">
-        ${navLink('/vision/', t.nav_vision)}
+        ${navLink('/metodo/', t.nav_metodo)}
         ${navLink('/recursos/', t.nav_recursos)}
         ${navLink('/programas/', t.nav_programas)}
+        <a class="site-header__nav-link" href="https://campus.metodologia.info" target="_blank" rel="noopener noreferrer">${t.nav_campus}</a>
         ${navLink('/contacto/', t.nav_contacto)}
       </nav>
 

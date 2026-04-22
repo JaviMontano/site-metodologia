@@ -1045,6 +1045,56 @@ html[data-theme="light"] .site-header__nav-link--active {
   margin-bottom: .5rem;
 }
 
+/* 100 ✓ scorecard grid */
+.std100-tagline {
+  font-size: 1.05rem;
+  text-align: center;
+  margin-bottom: .75rem;
+}
+.std100-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+  margin: .5rem 0;
+}
+.std100-cell {
+  text-align: center;
+  padding: .75rem .5rem;
+  border-radius: var(--brand-radius);
+  background: rgba(255,215,0,.06);
+  border: 1px solid rgba(255,215,0,.15);
+}
+.std100-num {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--brand-gold);
+  line-height: 1;
+}
+.std100-lbl {
+  display: block;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--brand-text-soft);
+  margin-top: .25rem;
+}
+
+/* clickable chip in workshop accordion */
+.chip[style*="cursor"] ,
+.chip[role="button"] {
+  cursor: pointer;
+}
+.chip {
+  transition: background .2s var(--ease), color .2s var(--ease), transform .15s var(--ease);
+}
+.chip:hover {
+  background: rgba(255,215,0,.15);
+  color: var(--brand-gold);
+  transform: translateY(-1px);
+}
 
 /* === 12. CARDS & SURFACES (x-card) === */
 

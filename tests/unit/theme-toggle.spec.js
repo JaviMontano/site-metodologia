@@ -43,9 +43,9 @@ beforeEach(async () => {
 
 describe('theme/toggle', () => {
   describe('getTheme', () => {
-    it('defaults to "dark" when no storage and no prefers-color-scheme', () => {
+    it('defaults to "light" when no storage and no prefers-color-scheme', () => {
       mod.initTheme();
-      expect(mod.getTheme()).toBe('dark');
+      expect(mod.getTheme()).toBe('light');
     });
 
     it('reads from localStorage if present', () => {
@@ -113,10 +113,10 @@ describe('theme/toggle', () => {
   });
 
   describe('toggleTheme', () => {
-    it('flips dark to light (default)', () => {
-      mod.initTheme(); // defaults to dark
+    it('flips light to dark (default)', () => {
+      mod.initTheme(); // defaults to light
       mod.toggleTheme();
-      expect(mod.getTheme()).toBe('light');
+      expect(mod.getTheme()).toBe('dark');
     });
 
     it('flips light to dark (stored light)', () => {
@@ -129,7 +129,7 @@ describe('theme/toggle', () => {
     it('persists the toggled theme', () => {
       mod.initTheme();
       mod.toggleTheme();
-      expect(store.mdg_theme).toBe('light');
+      expect(store.mdg_theme).toBe('dark');
     });
   });
 
@@ -140,9 +140,9 @@ describe('theme/toggle', () => {
       expect(documentMock.documentElement.dataset.theme).toBe('dark');
     });
 
-    it('applies "dark" by default', () => {
+    it('applies "light" by default', () => {
       mod.initTheme();
-      expect(documentMock.documentElement.dataset.theme).toBe('dark');
+      expect(documentMock.documentElement.dataset.theme).toBe('light');
     });
   });
 
@@ -161,7 +161,7 @@ describe('theme/toggle', () => {
       const calls = [];
       mod.subscribe((theme) => calls.push(theme));
       mod.toggleTheme();
-      expect(calls).toEqual(['light']);
+      expect(calls).toEqual(['dark']);
     });
 
     it('unsubscribe stops notifications', () => {

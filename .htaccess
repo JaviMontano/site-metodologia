@@ -7,7 +7,8 @@
 
     # ── Legacy 301 Redirects (T005 / plan.md v6 §3) ──────────────
     # Specific page redirects (must precede catch-all rules)
-    RewriteRule ^vision\.html$                          /vision/  [R=301,L]
+    RewriteRule ^vision\.html$                          /metodo/  [R=301,L]
+    RewriteRule ^vision/?$                              /metodo/  [R=301,L]
     RewriteRule ^metodologia\.html$                     /metodo/  [R=301,L]
     RewriteRule ^empresas/diagnostico-gratuito\.html$   /diagnostico/?audiencia=empresa  [R=301,L]
     RewriteRule ^empresas/bootcamp-ventas-ia\.html$    /programas/  [R=301,L]
@@ -19,7 +20,7 @@
     RewriteRule ^legal/terminos\.html$                  /legal/#terminos    [R=301,NE,L]
     RewriteRule ^nosotros/ecosistema\.html$             /nosotros/  [R=301,L]
     RewriteRule ^nosotros/mision\.html$                 /nosotros/  [R=301,L]
-    # sitemap.html keeps working as-is (legacy format still functional)
+    RewriteRule ^sitemap\.html$                         /sitemap.xml  [R=301,L]
 
     # /ruta/ specific pages (before catch-all)
     RewriteRule ^ruta/cotizador.*\.html$                /diagnostico/  [R=301,L]
@@ -31,8 +32,8 @@
     RewriteRule ^servicios/(.*)$                        /programas/$1  [R=301,L]
 
     # /ruta/ catch-all (after specific /ruta/ rules)
-    RewriteRule ^ruta/(.*)$                             /programas/  [R=301,L]
-    RewriteRule ^ruta/?$                                /programas/  [R=301,L]
+    RewriteRule ^ruta/(.*)$                             /diagnostico/  [R=301,L]
+    RewriteRule ^ruta/?$                                /diagnostico/  [R=301,L]
     # ── End Legacy Redirects ──────────────────────────────────────
 
     # Force HTTPS

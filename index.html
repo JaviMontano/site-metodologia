@@ -57,7 +57,7 @@
 </head>
 <body>
   <div class="bg-mesh" aria-hidden="true"></div>
-  <a href="#main" class="sr-only">Saltar al contenido</a>
+  <a href="#main" class="sr-only" data-i18n="skip_link">Saltar al contenido</a>
 
   <site-header></site-header>
   <site-sidebar data-page="home"></site-sidebar>
@@ -168,23 +168,23 @@
         <h2 class="h2" style="margin:1rem 0 .5rem;">Recursos <span class="gradient-text">abiertos</span></h2>
         <p class="lead" style="margin-bottom:1.5rem;">32 GPTs · 31 Gems · 180+ prompts · Playbooks · Automatizaciones. <strong>Sin costo.</strong></p>
         <div class="accel-trio">
-          <div class="accel-tile x-card" role="button" tabindex="0" onclick="location.href='recursos/'">
+          <div class="accel-tile x-card" role="button" tabindex="0">
             <div class="accel-tile__head"><span class="accel-tile__label">★ Asistentes</span></div>
             <h4 class="accel-tile__title">GPTs + Gems</h4>
             <p class="accel-tile__desc">18 Custom GPTs y 5 Gemini Gems especializados.</p>
-            <span class="accel-tile__foot">Ver asistentes →</span>
+            <span class="accel-tile__foot">Más info →</span>
           </div>
-          <div class="accel-tile x-card" role="button" tabindex="0" onclick="location.href='recursos/biblioteca-prompts/'">
+          <div class="accel-tile x-card" role="button" tabindex="0">
             <div class="accel-tile__head"><span class="accel-tile__label">★ Prompts</span></div>
             <h4 class="accel-tile__title">180+ Prompts</h4>
             <p class="accel-tile__desc">Bibliotecas curadas: ventas, desarrollo, estrategia.</p>
-            <span class="accel-tile__foot">Ver biblioteca →</span>
+            <span class="accel-tile__foot">Más info →</span>
           </div>
-          <div class="accel-tile x-card" role="button" tabindex="0" onclick="location.href='recursos/'">
+          <div class="accel-tile x-card" role="button" tabindex="0">
             <div class="accel-tile__head"><span class="accel-tile__label">★ Herramientas</span></div>
             <h4 class="accel-tile__title">Playbooks + n8n</h4>
             <p class="accel-tile__desc">Guías operativas, automatizaciones y flujos.</p>
-            <span class="accel-tile__foot">Ver todo →</span>
+            <span class="accel-tile__foot">Más info →</span>
           </div>
         </div>
       </div>
@@ -197,21 +197,61 @@
         <h2 class="h2" style="margin:1rem 0 .5rem;">Cuatro fases para <span class="gradient-text">transformar</span></h2>
         <p class="lead" style="margin-bottom:1.5rem;">Del caos reactivo al diseño estratégico.</p>
         <div class="timeline">
-          <article class="tl-item"><span class="tl-item__meta">Fase 01</span><h3 class="tl-item__role">Fundamentar</h3><p class="tl-item__impact">Mapear dolores y oportunidades con <strong>evidencia</strong>.</p></article>
-          <article class="tl-item"><span class="tl-item__meta">Fase 02</span><h3 class="tl-item__role">Acelerar</h3><p class="tl-item__impact">Eliminar fricción y activar <strong>victorias rápidas</strong>.</p></article>
-          <article class="tl-item"><span class="tl-item__meta">Fase 03</span><h3 class="tl-item__role">Catalizar</h3><p class="tl-item__impact">Convertir conocimiento en <strong>activos digitales</strong>.</p></article>
-          <article class="tl-item" style="border-left-color:var(--brand-gold);"><span class="tl-item__meta" style="color:var(--brand-gold);">Fase 04</span><h3 class="tl-item__role">Amplificar</h3><p class="tl-item__impact">Agentes de Metodolog<span style="color:var(--brand-gold)">IA</span> trabajan <strong>24/7</strong>.</p></article>
+          <article class="tl-item x-card" role="button" tabindex="0"><span class="tl-item__meta">Fase 01</span><h3 class="tl-item__role">Fundamentar</h3><p class="tl-item__impact">Mapear dolores y oportunidades con <strong>evidencia</strong>.</p></article>
+          <article class="tl-item x-card" role="button" tabindex="0"><span class="tl-item__meta">Fase 02</span><h3 class="tl-item__role">Acelerar</h3><p class="tl-item__impact">Eliminar fricción y activar <strong>victorias rápidas</strong>.</p></article>
+          <article class="tl-item x-card" role="button" tabindex="0"><span class="tl-item__meta">Fase 03</span><h3 class="tl-item__role">Catalizar</h3><p class="tl-item__impact">Convertir conocimiento en <strong>activos digitales</strong>.</p></article>
+          <article class="tl-item x-card" role="button" tabindex="0" style="border-left-color:var(--brand-gold);"><span class="tl-item__meta" style="color:var(--brand-gold);">Fase 04</span><h3 class="tl-item__role">Amplificar</h3><p class="tl-item__impact">Agentes de Metodolog<span style="color:var(--brand-gold)">IA</span> trabajan <strong>24/7</strong>.</p></article>
         </div>
         <a href="vision/" class="home-cta home-cta--secondary" style="margin-top:1.5rem;display:inline-flex;">Ver Visión completa →</a>
       </div>
     </section>
 
-    <!-- ══════ 05 · WORKSHOPS (Top 4 + acordeón) ══════ -->
-    <section class="section" id="programas">
+    <!-- ══════ 05 · PROPÓSITO (Ikigai) ══════ -->
+    <section class="section" id="proposito">
       <div class="container">
-        <span class="eyebrow">Workshops · 06</span>
-        <h2 class="h2" style="margin:1rem 0 .5rem;">12 Workshops <span class="gradient-text">tácticos</span></h2>
-        <p class="lead" style="margin-bottom:1.5rem;">De 1 a 3 horas según tema y alcance.</p>
+        <span class="eyebrow">Propósito · 06</span>
+        <h2 class="h2" style="margin:1rem 0 .5rem;">Nuestro <span class="gradient-text">Ikigai</span></h2>
+        <p class="lead" style="margin-bottom:1.5rem;">La intersección entre lo que amamos, lo que hacemos bien, lo que el mundo necesita y por lo que nos pagan.</p>
+        <div class="principles">
+          <div class="principle x-card" role="button" tabindex="0">
+            <span class="principle__num" style="color:#f472b6;">♥</span>
+            <h3 class="principle__title">Lo que amamos</h3>
+            <p class="principle__body">Idear estrategia, diseñar sistemas, enseñar y ordenar caos en claridad.</p>
+          </div>
+          <div class="principle x-card" role="button" tabindex="0">
+            <span class="principle__num" style="color:#60a5fa;">✓</span>
+            <h3 class="principle__title">Lo que hacemos bien</h3>
+            <p class="principle__body">Convertir problemas en operación estable. IA aplicada con método.</p>
+          </div>
+          <div class="principle x-card" role="button" tabindex="0">
+            <span class="principle__num" style="color:#34d399;">◎</span>
+            <h3 class="principle__title">Lo que el mundo necesita</h3>
+            <p class="principle__body">Adopción segura de IA, competitividad real, reducir trabajo invisible.</p>
+          </div>
+          <div class="principle x-card" role="button" tabindex="0">
+            <span class="principle__num" style="color:var(--brand-gold);">$</span>
+            <h3 class="principle__title">Por lo que nos pagan</h3>
+            <p class="principle__body">Bootcamps, diagnósticos, pilotos y activos digitales reutilizables.</p>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:1.5rem;">
+          <blockquote style="font-style:italic;color:var(--brand-text-soft);max-width:36rem;margin:0 auto;font-size:.95rem;line-height:1.7;border-left:3px solid var(--brand-gold);padding-left:1rem;text-align:left;">
+            "Diseño y enseño sistemas (IA + método + disciplina) que vuelven el trabajo más <strong style="color:var(--brand-gold);">digno</strong> y <strong style="color:var(--brand-gold);">competitivo</strong>, recuperando tiempo y claridad sin sacrificar salud ni ética."
+          </blockquote>
+          <a href="nosotros/mision.html" class="home-cta home-cta--secondary" style="margin-top:1.5rem;display:inline-flex;">Ver Misión completa →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ 06 · FORMACIÓN (Workshops → Bootcamps → Élite → Campus) ══════ -->
+    <section class="section" id="formacion">
+      <div class="container">
+        <span class="eyebrow">Formación · 07</span>
+        <h2 class="h2" style="margin:1rem 0 .5rem;">De workshops a <span class="gradient-text">programas Élite</span></h2>
+        <p class="lead" style="margin-bottom:1.5rem;">Recorrido completo: desde 1 hora hasta 16 semanas de transformación.</p>
+
+        <!-- Workshops -->
+        <p class="muted" style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:1.5rem 0 .75rem;">12 Workshops · 1 a 3 horas</p>
         <div class="principles">
           <div class="principle x-card" role="button" tabindex="0"><span class="principle__num">WS-01</span><h3 class="principle__title">Intro IA</h3><p class="principle__body">Superar la Falacia de la Herramienta.</p></div>
           <div class="principle x-card" role="button" tabindex="0"><span class="principle__num">WS-02</span><h3 class="principle__title">Prompting Avanzado</h3><p class="principle__body">Protocolos de ejecución de alto rendimiento.</p></div>
@@ -231,28 +271,30 @@
             <span class="chip">WS-12 · Liderazgo Exponencial</span>
           </div>
         </details>
-      </div>
-    </section>
 
-    <!-- ══════ 06 · BOOTCAMPS + ÉLITE ══════ -->
-    <section class="section" id="prueba-social">
-      <div class="container">
-        <span class="eyebrow">Formación · 07</span>
-        <h2 class="h2" style="margin:1rem 0 .5rem;">Bootcamps y Programas <span class="gradient-text">Élite</span></h2>
-
-        <p class="muted" style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:1.5rem 0 .75rem;">5 Bootcamps · 18h + 2 sesiones opcionales</p>
-        <div class="timeline">
+        <!-- Bootcamps -->
+        <p class="muted" style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:2rem 0 .75rem;">5 Bootcamps · 18h + 2 sesiones opcionales</p>
+        <div class="timeline" id="bootcamps-timeline">
           <article class="tl-item x-card"><span class="tl-item__meta">BC-01</span><h3 class="tl-item__role">Ofimática con IA</h3><p class="tl-item__impact">Recupera <strong>2h diarias</strong>. M365 + Copilot.</p></article>
           <article class="tl-item x-card"><span class="tl-item__meta">BC-02</span><h3 class="tl-item__role">Ventas con IA</h3><p class="tl-item__impact">Pipeline automatizado. <strong>Conexión genuina</strong>.</p></article>
-          <article class="tl-item x-card"><span class="tl-item__meta">BC-03</span><h3 class="tl-item__role">Formas de Trabajo</h3><p class="tl-item__impact">Tu sistema operativo. <strong>Paz mental</strong>.</p></article>
+          <article class="tl-item x-card"><span class="tl-item__meta">BC-03</span><h3 class="tl-item__role">Formas de Trabajo</h3><p class="tl-item__impact">Tu sistema operativo. <strong>Predictibilidad total</strong>.</p></article>
           <article class="tl-item x-card"><span class="tl-item__meta">BC-04</span><h3 class="tl-item__role">Trabajo Amplificado</h3><p class="tl-item__impact"><strong>3 agentes</strong> atendiendo tus procesos.</p></article>
           <article class="tl-item x-card"><span class="tl-item__meta">BC-05</span><h3 class="tl-item__role">Vibe Coding</h3><p class="tl-item__impact"><strong>Independencia total</strong> de TI.</p></article>
         </div>
 
+        <!-- Élite -->
         <p class="muted" style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:2rem 0 .75rem;color:var(--brand-gold);">2 Programas Élite · 16 semanas · 48h + 48h</p>
         <div class="refs">
           <article class="ref x-card" style="border-color:rgba(255,215,0,.3);"><h3 class="ref__who" style="color:var(--brand-gold);">Programa de Empoderamiento</h3><p class="ref__role">14 módulos, 2 fases. De ejecutante agotado a estratega de impacto.</p><span class="ref__link">Nivel 7 · 16 semanas</span></article>
           <article class="ref x-card" style="border-color:rgba(255,215,0,.3);"><h3 class="ref__who" style="color:var(--brand-gold);">Digital Champions</h3><p class="ref__role">Agentes de cambio internos. Estándar operativo 100.</p><span class="ref__link">Nivel 9 · 16 semanas</span></article>
+        </div>
+
+        <!-- Campus Virtual -->
+        <div style="margin-top:2rem;padding:1.5rem;border-radius:var(--brand-radius);border:1px solid rgba(255,215,0,.25);background:rgba(255,215,0,.04);text-align:center;">
+          <p class="muted" style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-gold);margin-bottom:.5rem;">Campus Virtual</p>
+          <h3 class="h2" style="font-size:1.3rem;margin:.25rem 0 .5rem;">Tu formación vive en el <span style="color:var(--brand-gold);">Campus</span></h3>
+          <p style="color:var(--brand-text-soft);font-size:.9rem;max-width:30rem;margin:0 auto .75rem;">Accede a materiales, grabaciones, ejercicios y tu progreso desde cualquier dispositivo.</p>
+          <a href="https://campus.metodologia.info" target="_blank" rel="noopener noreferrer" class="home-cta home-cta--primary" style="display:inline-flex;">Ir al Campus →</a>
         </div>
 
         <a href="programas/" class="home-cta home-cta--secondary" style="margin-top:1.5rem;display:inline-flex;">Ver catálogo completo →</a>
@@ -262,7 +304,7 @@
     <!-- ══════ 07 · CONTACTO ══════ -->
     <section class="section" id="contacto">
       <div class="container" style="text-align:center;">
-        <span class="eyebrow">Siguiente paso · 07</span>
+        <span class="eyebrow">Siguiente paso · 08</span>
         <h2 class="h2" style="margin:1rem 0 .5rem;">Aceleremos su <span class="gradient-text">Estrateg<span style="color:var(--brand-gold)">IA</span></span></h2>
         <p class="lead" style="max-width:36rem;margin:0 auto 2rem;">Sin riesgo, sin fricción. Conversemos sobre cómo acelerar tus resultados con método e IA.</p>
         <div class="home-hero__ctas">
@@ -302,41 +344,99 @@
 
     // ═══ GLOSSARY: contenido de todos los modales ═══
     const GLOSSARY = {
+      // ── Estándar 100 ✓ (conciso, tipo scorecard) ──
       'std100': {
-        term: 'Estándar',
-        title: '100 ✓ Calidad Entrusted',
-        body: `<p><strong style="color:var(--brand-gold);font-size:2rem;">100 ✓</strong></p>
-<p><em>1 prompt = task-to-value. 0 fricción. 0 delay.</em></p>
-<dl class="kv">
-<dt>Promesa</dt><dd>1 prompt → resultado de valor</dd>
-<dt>Fricción</dt><dd>0 — abrir y usar</dd>
-<dt>Feedback</dt><dd>0 delay — resultado inmediato</dd>
-<dt>Protocolo</dt><dd>Zero-Hallucination</dd>
-<dt>Gates</dt><dd>G0 → G1 → G2 → G3</dd>
-</dl>`
+        term: 'Estándar de Calidad',
+        title: '100 ✓',
+        body: `<p class="std100-tagline"><em>1</em> prompt → valor. <em>0</em> fricción. <em>0</em> delay.</p>
+<div class="std100-grid">
+  <div class="std100-cell"><span class="std100-num">1</span><span class="std100-lbl">Prompt = Resultado</span></div>
+  <div class="std100-cell"><span class="std100-num">0</span><span class="std100-lbl">Fricción</span></div>
+  <div class="std100-cell"><span class="std100-num">0</span><span class="std100-lbl">Delay</span></div>
+  <div class="std100-cell"><span class="std100-num">✓</span><span class="std100-lbl">Entrusted</span></div>
+</div>
+<p style="margin-top:.75rem;font-size:.85rem;">Calidad verificada: relevancia contextual, precisión factual y protocolo anti-alucinaciones en cada recurso que publicamos.</p>`
       },
+
+      // ── Diagnóstico (3 pasos) ──
+      'diag01': { term: 'Diagnóstico · Paso 1', title: '5 Dimensiones',
+        body: '<p>Evaluamos tu situación en <strong>5 ejes</strong>: madurez digital, dolor operativo, urgencia estratégica, capacidad del equipo y segmento de mercado.</p><h4>Resultado</h4><p>Radar visual con tu nivel actual en cada dimensión.</p>' },
+      'diag02': { term: 'Diagnóstico · Paso 2', title: 'Tu Perfil',
+        body: '<p>Construimos tu <strong>radar de competencias</strong> con nivel detallado por área.</p><h4>Resultado</h4><p>Mapa de fortalezas y brechas priorizadas por impacto.</p>' },
+      'diag03': { term: 'Diagnóstico · Paso 3', title: 'Tu Roadmap',
+        body: '<p>Plan de acción priorizado con <strong>siguiente paso inmediato</strong>.</p><h4>Resultado</h4><p>Roadmap personalizado alineado a tus objetivos y recursos.</p>' },
+
+      // ── Recursos (3 tiles) ──
+      'rec_asist': { term: 'Recursos Abiertos', title: 'GPTs + Gems',
+        body: '<p><strong>18 Custom GPTs</strong> y <strong>5 Gemini Gems</strong> especializados por área.</p><h4>Incluye</h4><ul><li>Pristino — comité completo en 1 chat</li><li>Prompting avanzado para ventas y estrategia</li><li>Research con método y evidencia</li></ul>' },
+      'rec_prompts': { term: 'Recursos Abiertos', title: '180+ Prompts',
+        body: '<p>Bibliotecas curadas para <strong>ventas, desarrollo, estrategia y productividad</strong>.</p><h4>Organización</h4><ul><li>Por rol y nivel de experiencia</li><li>Plantillas copy-paste listas para usar</li><li>Calidad <strong style="color:var(--brand-gold)">100 ✓</strong></li></ul>' },
+      'rec_tools': { term: 'Recursos Abiertos', title: 'Playbooks + n8n',
+        body: '<p>Guías operativas paso a paso y <strong>automatizaciones listas</strong> para importar.</p><h4>Incluye</h4><ul><li>Flujos n8n para prospección y seguimiento</li><li>Playbooks de implementación por caso de uso</li><li>Templates de automatización empresarial</li></ul>' },
+
+      // ── Workshops (WS-01 a WS-12) ──
       'ws01': { term: 'Workshop · 1-3h', title: 'WS-01 · Intro IA',
-        body: '<p>Superar la <em>Falacia de la Herramienta</em>: la IA es amplificador, no sustituto del método.</p><h4>Entregable</h4><p>Mapeo de ecosistema y diagnóstico "Caos vs IA".</p><h4>Evolución</h4><p>Del automatismo ciego a la <strong>curiosidad estratégica</strong> con propósito.</p>' },
+        body: '<p>Superar la <em>Falacia de la Herramienta</em>: la IA amplifica, no sustituye el método.</p><h4>Entregable</h4><p>Mapeo de ecosistema y diagnóstico "Caos vs IA".</p>' },
       'ws02': { term: 'Workshop · 1-3h', title: 'WS-02 · Prompting Avanzado',
-        body: '<p>Protocolos de interacción de alto rendimiento. Calidad <strong style="color:var(--brand-gold)">100 ✓</strong> desde el primer prompt.</p><h4>Entregable</h4><p>Biblioteca de prompts maestros.</p><h4>Evolución</h4><p>Dejarás de "chatear" con la IA para <strong>programar impacto</strong>.</p>' },
+        body: '<p>Protocolos de interacción de alto rendimiento. Calidad <strong style="color:var(--brand-gold)">100 ✓</strong> desde el primer prompt.</p><h4>Entregable</h4><p>Biblioteca de prompts maestros personalizados.</p>' },
       'ws03': { term: 'Workshop · 1-3h', title: 'WS-03 · Segundo Cerebro',
-        body: '<p>PKM con Obsidian/Notion. Nada se olvida, todo se conecta.</p><h4>Entregable</h4><p>Arquitectura PARA/Zettelkasten operativa.</p><h4>Impacto</h4><p>Recupera hasta <strong>5 horas semanales</strong> de búsqueda de información.</p>' },
+        body: '<p>PKM con Obsidian/Notion. Nada se olvida, todo se conecta.</p><h4>Entregable</h4><p>Arquitectura PARA/Zettelkasten operativa.</p><h4>Impacto</h4><p>Recupera <strong>5h semanales</strong> de búsqueda.</p>' },
       'ws04': { term: 'Workshop · 1-3h', title: 'WS-04 · Productividad Personal',
-        body: '<p>GTD + Kanban para dominar el flujo, no la lista.</p><h4>Entregable</h4><p>Tablero de control y sistema "Mente como el Agua".</p><h4>Evolución</h4><p>De vivir reaccionando a <strong>pilotar tu jornada</strong> con intención.</p>' },
+        body: '<p>GTD + Kanban para dominar el flujo, no la lista.</p><h4>Entregable</h4><p>Tablero de control y sistema "Mente como el Agua".</p>' },
+      'ws05': { term: 'Workshop · 1-3h', title: 'WS-05 · Moving Motivators',
+        body: '<p>Descubre qué mueve a tu equipo con la dinámica de <em>Management 3.0</em>.</p><h4>Entregable</h4><p>Mapa de motivaciones del equipo y plan de acción.</p>' },
+      'ws06': { term: 'Workshop · 1-3h', title: 'WS-06 · Happiness Canvas',
+        body: '<p>Framework visual para medir y mejorar la satisfacción del equipo.</p><h4>Entregable</h4><p>Canvas completado con compromisos de mejora.</p>' },
+      'ws07': { term: 'Workshop · 1-3h', title: 'WS-07 · Team Canvas',
+        body: '<p>Alinear propósito, valores, roles y reglas del equipo en una sesión.</p><h4>Entregable</h4><p>Team Canvas firmado como acuerdo de trabajo.</p>' },
+      'ws08': { term: 'Workshop · 1-3h', title: 'WS-08 · De Ocupado a Productivo',
+        body: '<p>Identificar y eliminar las trampas de la "falsa productividad".</p><h4>Entregable</h4><p>Auditoría personal de tiempo y plan de recuperación.</p>' },
+      'ws09': { term: 'Workshop · 1-3h', title: 'WS-09 · ¿Qué pasa con la IA?',
+        body: '<p>Panorama real de la IA: oportunidades, riesgos y mitos desmentidos.</p><h4>Entregable</h4><p>Mapa de oportunidades IA para tu contexto específico.</p>' },
+      'ws10': { term: 'Workshop · 1-3h', title: 'WS-10 · Ideación con IA',
+        body: '<p>Técnicas de brainstorming potenciadas con IA generativa.</p><h4>Entregable</h4><p>Pipeline de ideas priorizadas y validadas.</p>' },
+      'ws11': { term: 'Workshop · 1-3h', title: 'WS-11 · Ética y Gobernanza',
+        body: '<p>Framework para uso responsable de IA en tu organización.</p><h4>Entregable</h4><p>Checklist de gobernanza y política de uso IA.</p>' },
+      'ws12': { term: 'Workshop · 1-3h', title: 'WS-12 · Liderazgo Exponencial',
+        body: '<p>Liderar equipos en la era de la IA: delegar a humanos <em>y</em> a agentes.</p><h4>Entregable</h4><p>Plan de liderazgo híbrido humano + IA.</p>' },
+
+      // ── Propósito / Ikigai ──
+      'iki_love': { term: 'Ikigai', title: 'Lo que amamos',
+        body: '<ul><li>Idear estrategia con socios</li><li>Diseñar sistemas y guardrails</li><li>Enseñar y habilitar: que otros superen</li><li>Ordenar caos en claridad</li></ul>' },
+      'iki_good': { term: 'Ikigai', title: 'Lo que hacemos bien',
+        body: '<ul><li>Convertir problemas en operación estable</li><li>Habilitar equipos (capacidades/CoE)</li><li>IA aplicada con método</li><li>Traducir complejo → operable</li></ul>' },
+      'iki_need': { term: 'Ikigai', title: 'Lo que el mundo necesita',
+        body: '<ul><li>Adopción segura de IA (sin humo)</li><li>Competitividad real para personas y organizaciones</li><li>Reducir trabajo invisible</li><li>Sistemas sostenibles</li></ul>' },
+      'iki_paid': { term: 'Ikigai', title: 'Por lo que nos pagan',
+        body: '<ul><li>Bootcamps y talleres in-company</li><li>Diagnóstico + roadmap por proceso</li><li>Pilotos de implementación</li><li>Activos 1→N (playbooks, asistentes, automatizaciones)</li></ul>' },
+
+      // ── Método (4 fases) ──
+      'fase01': { term: 'El Método · Fase 1', title: 'Fundamentar',
+        body: '<p>Mapear dolores, oportunidades y recursos con <strong>evidencia</strong>, no intuición.</p><h4>Salida</h4><p>Diagnóstico completo + mapa de prioridades.</p>' },
+      'fase02': { term: 'El Método · Fase 2', title: 'Acelerar',
+        body: '<p>Eliminar fricción y activar <strong>victorias rápidas</strong> que generan momentum.</p><h4>Salida</h4><p>Quick wins implementados + métricas base.</p>' },
+      'fase03': { term: 'El Método · Fase 3', title: 'Catalizar',
+        body: '<p>Convertir conocimiento tácito en <strong>activos digitales</strong> reutilizables.</p><h4>Salida</h4><p>Playbooks, templates y flujos automatizados.</p>' },
+      'fase04': { term: 'El Método · Fase 4', title: 'Amplificar',
+        body: '<p>Agentes de Metodolog<span style="color:var(--brand-gold)">IA</span> trabajan <strong>24/7</strong> por ti.</p><h4>Salida</h4><p>Ecosistema autónomo con supervisión humana estratégica.</p>' },
+
+      // ── Bootcamps ──
       'bc01': { term: 'Bootcamp · 18h', title: 'BC-01 · Ofimática con IA',
-        body: '<p>M365 + Copilot. Automatizar la burocracia para liberar talento.</p><h4>Entregable</h4><p>Automatización de reportes, presentaciones y flujos.</p><h4>Impacto</h4><p>Recupera <strong>2 horas diarias</strong> de trabajo administrativo.</p>' },
+        body: '<p>M365 + Copilot. Automatizar la burocracia para liberar talento.</p><h4>Entregable</h4><p>Automatización de reportes, presentaciones y flujos.</p><h4>Impacto</h4><p>Recupera <strong>2h diarias</strong>.</p>' },
       'bc02': { term: 'Bootcamp · 18h', title: 'BC-02 · Ventas con IA',
-        body: '<p>Prospección híbrida y personalización a escala para equipos comerciales.</p><h4>Entregable</h4><p>Pipeline comercial automatizado. Calidad <strong style="color:var(--brand-gold)">100 ✓</strong>.</p><h4>Evolución</h4><p>Del spam ineficiente a la <strong>conexión genuina</strong> y estratégica.</p>' },
+        body: '<p>Prospección híbrida y personalización a escala.</p><h4>Entregable</h4><p>Pipeline comercial automatizado.</p><h4>Impacto</h4><p><strong>Conexión genuina</strong> a escala.</p>' },
       'bc03': { term: 'Bootcamp · 18h', title: 'BC-03 · Formas de Trabajo',
-        body: '<p>Agile + GTD + 2º Cerebro integrados con IA.</p><h4>Entregable</h4><p>Tu propio sistema operativo sin fricción.</p><h4>Impacto</h4><p><strong>Paz mental operativa</strong> permanente.</p>' },
+        body: '<p>Agile + GTD + 2º Cerebro integrados con IA.</p><h4>Entregable</h4><p>Tu propio sistema operativo con cero fricción.</p><h4>Impacto</h4><p><strong>Predictibilidad</strong> y flujo constante.</p>' },
       'bc04': { term: 'Bootcamp · 18h', title: 'BC-04 · Trabajo Amplificado',
-        body: '<p>Ingeniería de agentes: crea tus propios GPTs y asistentes autónomos.</p><h4>Entregable</h4><p><strong>3 agentes operativos</strong> atendiendo procesos de negocio.</p><h4>Evolución</h4><p>De ejecutor del proceso a <strong>jefe de tus propios robots</strong>.</p>' },
+        body: '<p>Crea tus propios GPTs y asistentes autónomos.</p><h4>Entregable</h4><p><strong>3 agentes</strong> atendiendo procesos de negocio.</p>' },
       'bc05': { term: 'Bootcamp · 18h', title: 'BC-05 · Vibe Coding',
-        body: '<p>Construir software y aplicaciones sin saber programar.</p><h4>Entregable</h4><p>Una web app funcional lista para producción.</p><h4>Impacto</h4><p><strong>Independencia total</strong> de TI para soluciones ágiles internas.</p>' },
-      'elite01': { term: 'Élite · 16 semanas · 48h+48h', title: 'Programa de Empoderamiento',
-        body: '<p>14 módulos en 2 fases para lograr más y mejor, en menos tiempo.</p><h4>Entregable</h4><p>Plan Maestro de Carrera con IA y sistemas operativos vitales.</p><h4>Evolución</h4><p>De ejecutante agotado a <strong>estratega de impacto</strong> con soberanía absoluta.</p><dl class="kv"><dt>Nivel</dt><dd>7</dd><dt>Duración</dt><dd>16 semanas</dd></dl>' },
-      'elite02': { term: 'Élite · 16 semanas · 48h+48h', title: 'Digital Champions',
-        body: '<p>Formación avanzada para agentes de cambio dentro de tu organización.</p><h4>Entregable</h4><p>Marco de transformación organizacional. Estándar <strong style="color:var(--brand-gold)">100 ✓</strong>.</p><h4>Evolución</h4><p>El <strong>referente digital</strong> que une cultura y eficiencia.</p><dl class="kv"><dt>Nivel</dt><dd>9</dd><dt>Duración</dt><dd>16 semanas</dd></dl>' },
+        body: '<p>Construir software sin saber programar.</p><h4>Entregable</h4><p>Web app funcional lista para producción.</p><h4>Impacto</h4><p><strong>Independencia total</strong> de TI.</p>' },
+
+      // ── Programas Élite ──
+      'elite01': { term: 'Élite · 16 semanas', title: 'Programa de Empoderamiento',
+        body: '<p>14 módulos en 2 fases: de ejecutante agotado a estratega de impacto.</p><h4>Entregable</h4><p>Plan Maestro de Carrera con IA.</p><dl class="kv"><dt>Nivel</dt><dd>7</dd><dt>Duración</dt><dd>16 semanas · 48h+48h</dd></dl>' },
+      'elite02': { term: 'Élite · 16 semanas', title: 'Digital Champions',
+        body: '<p>Agentes de cambio internos. Estándar <strong style="color:var(--brand-gold)">100 ✓</strong>.</p><h4>Entregable</h4><p>Marco de transformación organizacional.</p><dl class="kv"><dt>Nivel</dt><dd>9</dd><dt>Duración</dt><dd>16 semanas · 48h+48h</dd></dl>' },
     };
 
     // ═══ DIALOG ENGINE ═══
@@ -349,54 +449,74 @@
       document.getElementById('infoDialogBody').innerHTML = d.body;
       dialog.showModal();
     }
+    function wireCard(el, key) {
+      if (!el || !GLOSSARY[key]) return;
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => openInfo(key));
+      el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openInfo(key); }});
+    }
     // Close on backdrop
     dialog?.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
 
     // ═══ WIRE ALL CLICKABLE CARDS ═══
+
     // 100 ✓ trigger
     const std = document.getElementById('std100-trigger');
     if (std) {
-      std.addEventListener('click', () => openInfo('std100'));
-      std.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openInfo('std100'); }});
+      wireCard(std, 'std100');
       std.addEventListener('mouseenter', () => { std.style.transform = 'scale(1.05)'; });
       std.addEventListener('mouseleave', () => { std.style.transform = 'scale(1)'; });
     }
 
-    // Workshops (WS-01 to WS-04)
-    document.querySelectorAll('.principle.x-card').forEach(card => {
+    // Diagnóstico (3 pasos)
+    document.querySelectorAll('#diagnostico .axis.x-card').forEach((card, idx) => {
+      wireCard(card, `diag0${idx + 1}`);
+    });
+
+    // Recursos (3 tiles)
+    const recKeys = ['rec_asist', 'rec_prompts', 'rec_tools'];
+    document.querySelectorAll('.accel-tile.x-card').forEach((card, idx) => {
+      wireCard(card, recKeys[idx]);
+    });
+
+    // Método (4 fases)
+    document.querySelectorAll('#metodo .tl-item').forEach((card, idx) => {
+      wireCard(card, `fase0${idx + 1}`);
+    });
+
+    // Propósito / Ikigai (4 cards)
+    const ikiKeys = ['iki_love', 'iki_good', 'iki_need', 'iki_paid'];
+    document.querySelectorAll('#proposito .principle.x-card').forEach((card, idx) => {
+      wireCard(card, ikiKeys[idx]);
+    });
+
+    // Workshops top 4 (WS-01 to WS-04)
+    document.querySelectorAll('#formacion .principle.x-card').forEach(card => {
       const num = card.querySelector('.principle__num')?.textContent?.trim();
       if (!num) return;
       const key = num.toLowerCase().replace('-','');
-      if (GLOSSARY[key]) {
-        card.addEventListener('click', () => openInfo(key));
-        card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openInfo(key); }});
-      }
+      wireCard(card, key);
+    });
+
+    // Workshops chips (WS-05 to WS-12)
+    document.querySelectorAll('.chip').forEach(chip => {
+      const m = chip.textContent.match(/WS-(\d+)/);
+      if (!m) return;
+      const key = `ws${m[1]}`;
+      wireCard(chip, key);
     });
 
     // Bootcamps (BC-01 to BC-05)
-    document.querySelectorAll('.tl-item.x-card').forEach(card => {
+    document.querySelectorAll('#bootcamps-timeline .tl-item.x-card').forEach(card => {
       const meta = card.querySelector('.tl-item__meta')?.textContent?.trim();
       if (!meta) return;
       const key = meta.toLowerCase().replace('-','');
-      if (GLOSSARY[key]) {
-        card.style.cursor = 'pointer';
-        card.addEventListener('click', () => openInfo(key));
-      }
+      wireCard(card, key);
     });
 
     // Élite programs
     document.querySelectorAll('.ref.x-card').forEach((card, idx) => {
-      const key = `elite0${idx + 1}`;
-      if (GLOSSARY[key]) {
-        card.style.cursor = 'pointer';
-        card.addEventListener('click', () => openInfo(key));
-      }
-    });
-
-    // Diagnóstico cards → navigate to diagnóstico page
-    document.querySelectorAll('#diagnostico .axis.x-card').forEach(card => {
-      card.style.cursor = 'pointer';
-      card.addEventListener('click', () => { location.href = 'diagnostico/'; });
+      wireCard(card, `elite0${idx + 1}`);
     });
   </script>
 </body>

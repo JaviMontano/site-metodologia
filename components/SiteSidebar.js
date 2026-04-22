@@ -17,6 +17,16 @@ function slugFromURL() {
   return segment || 'home';
 }
 
+function getNestedValue(obj, key) {
+  return key.split('.').reduce((value, part) => value?.[part], obj);
+}
+
+function humanizeKey(key) {
+  return key
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
 class SiteSidebar extends HTMLElement {
   constructor() {
     super();
@@ -57,7 +67,6 @@ class SiteSidebar extends HTMLElement {
     this._links = [];
 
     const sections = getSections(this._pageSlug);
-    const pageLabels = this._labels?.sidebar?.[this._pageSlug] ?? {};
 
     // Mobile CTA (visible only ≤640px via CSS)
     const cta = document.createElement('a');
@@ -83,8 +92,9 @@ class SiteSidebar extends HTMLElement {
       a.dataset.section = sec.id;
       a.addEventListener('click', (e) => this._handleLinkClick(e, sec.id));
 
-      // Label: use label from config, fallback to i18n, fallback to id
-      const labelText = sec.label || pageLabels[sec.id]?.[this._lang] || sec.id;
+      const labelText =
+        getNestedValue(this._labels, sec.i18nKey)?.[this._lang] ||
+        humanizeKey(sec.id);
       a.textContent = labelText;
 
       // Number at the end (canonical: .sidebar__link-num)
