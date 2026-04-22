@@ -31,8 +31,8 @@
     RewriteRule ^servicios/(.*)$                        /programas/$1  [R=301,L]
 
     # /ruta/ catch-all (after specific /ruta/ rules)
-    RewriteRule ^ruta/(.*)$                             /diagnostico/  [R=301,L]
-    RewriteRule ^ruta/?$                                /diagnostico/  [R=301,L]
+    RewriteRule ^ruta/(.*)$                             /programas/  [R=301,L]
+    RewriteRule ^ruta/?$                                /programas/  [R=301,L]
     # ── End Legacy Redirects ──────────────────────────────────────
 
     # Force HTTPS
