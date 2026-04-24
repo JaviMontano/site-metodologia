@@ -16,7 +16,8 @@ const SECTIONS = {
     { id: 'recursos', icon: 'library', i18nKey: 'sidebar.home.recursos' },
     { id: 'metodo', icon: 'route', i18nKey: 'sidebar.home.metodo' },
     { id: 'proposito', icon: 'heart', i18nKey: 'sidebar.home.proposito' },
-    { id: 'formacion', icon: 'graduation-cap', i18nKey: 'sidebar.home.formacion' }
+    { id: 'formacion', icon: 'graduation-cap', i18nKey: 'sidebar.home.formacion' },
+    { id: 'contacto', icon: 'mail', i18nKey: 'sidebar.home.contacto' }
   ],
 
   empresas: [
@@ -57,6 +58,16 @@ const SECTIONS = {
     { id: 'prompts', icon: 'terminal', i18nKey: 'sidebar.recursos.prompts' },
     { id: 'automatizacion', icon: 'bot', i18nKey: 'sidebar.recursos.automatizacion' },
     { id: 'comunidad', icon: 'heart-handshake', i18nKey: 'sidebar.recursos.comunidad' }
+  ],
+
+  vision: [
+    { id: 'hero', icon: 'eye', i18nKey: 'sidebar.vision.hero' },
+    { id: 'problema', icon: 'alert-triangle', i18nKey: 'sidebar.vision.problema' },
+    { id: 'trampa', icon: 'shield-alert', i18nKey: 'sidebar.vision.trampa' },
+    { id: 'sistema', icon: 'cpu', i18nKey: 'sidebar.vision.sistema' },
+    { id: 'pivote', icon: 'refresh-cw', i18nKey: 'sidebar.vision.pivote' },
+    { id: 'principios', icon: 'book-open', i18nKey: 'sidebar.vision.principios' },
+    { id: 'contacto', icon: 'mail', i18nKey: 'sidebar.vision.contacto' }
   ],
 
   metodo: [

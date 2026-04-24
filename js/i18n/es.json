@@ -1445,7 +1445,11 @@
       "card3_title": "Madurez en Metodo y FdT",
       "card4_meta": "Paso 04 · 8-9 min",
       "card4_title": "Capacidades Digitales",
-      "muted": "Cada formulario abre en nueva pestaña (Google Forms). Tus respuestas son confidenciales."
+      "muted": "Cada formulario abre en nueva pestaña (Google Forms). Tus respuestas son confidenciales.",
+      "card2_desc": "Nivel de adopcion, herramientas y <strong>confianza con IA</strong>.",
+      "card3_desc": "Formas de trabajo, sistemas personales y <strong>nivel de sistematizacion</strong>.",
+      "card4_desc": "Evaluacion profunda de <strong>competencias digitales</strong> por area.",
+      "explore": "Si te interesa profundizar en los resultados, puedes explorar nuestro <a href=\"/personas/consultive-workshops-estrategia-personal.html\" style=\"color:var(--brand-gold);text-decoration:underline;\">Workshop de Estrategia Personal</a> — una sesion individual donde convertimos tu diagnostico en un plan de accion concreto."
     },
     "empresas": {
       "eyebrow": "Empresas · 03",
@@ -1824,6 +1828,7 @@
     },
     "redes": {
       "badge": "Redes · 04",
+      "title": "Conecta con <span class=\"gradient-text\">Nosotros</span>",
       "lead": "Respuesta en menos de 2 dias habiles.",
       "r1_title": "contacto@metodologia.info",
       "r1_desc": "Correo directo para consultas, propuestas y colaboraciones.",
@@ -1857,7 +1862,8 @@
       "kpi1_label": "Workshops",
       "kpi2_label": "Bootcamps",
       "kpi3_label": "Elite",
-      "kpi4_label": "Consultoria"
+      "kpi4_label": "Consultoria",
+      "subtitle": "Formacion, consultoria y acompanamiento para potenciar tu productividad con <strong style=\"color:var(--brand-gold)\">IA</strong> y metodo."
     },
     "masterclass": {
       "badge": "Masterclasses · 02",
@@ -1925,7 +1931,10 @@
       "bc04_meta": "BC-04 · GPTs + Agentes",
       "bc04_title": "Trabajo Amplificado",
       "bc05_meta": "BC-05 · v0 + Stitch",
-      "bc05_title": "Vibe Coding"
+      "bc05_title": "Vibe Coding",
+      "bc03_impact": "Tu propio sistema operativo: Agile + GTD + 2o Cerebro integrados con IA. <strong>Predictibilidad y cero friccion</strong>.",
+      "bc04_impact": "Crea tus propios GPTs y asistentes autonomos. <strong>3 agentes operativos</strong> atendiendo procesos.",
+      "bc05_impact": "Construye software sin saber programar. <strong>Independencia total</strong> de TI para soluciones agiles."
     },
     "elite": {
       "badge": "Elite · 06",
@@ -1939,6 +1948,7 @@
     },
     "cta": {
       "badge": "Siguiente paso · 07",
+      "title": "¿Listo para <span class=\"gradient-text\">acelerar</span>?",
       "lead": "Sin riesgo. Conversemos sobre tu contexto y disenemos tu ruta personalizada.",
       "cta1": "Conversemos →",
       "cta2": "Diagnostico Sin Riesgo",
@@ -1950,7 +1960,9 @@
       "badge": "B2B · 01",
       "cta_diagnostico": "Diagnostico Sin Riesgo →",
       "cta_cotizador": "Simular Inversion",
-      "cta_programas": "Ver Programas ↓"
+      "cta_programas": "Ver Programas ↓",
+      "title_html": "Acelere su Flujo de Caja con <span class=\"gradient-text\">Inteligencia Artificial</span>",
+      "subtitle_html": "Un sistema comercial asistido por IA que genera la liquidez necesaria para financiar su <strong>(R)Evolucion Organizacional</strong>. Consultoria estrategica y formacion corporativa para equipos de alto rendimiento."
     },
     "stats": {
       "n1": "+127%",
@@ -1973,7 +1985,9 @@
       "s2_org": "Intensivo · 6 horas",
       "s3_meta": "Paso 03",
       "s3_title": "Bootcamp de Gestion Comercial con IA",
-      "s3_org": "Inmersion · 18 horas"
+      "s3_org": "Inmersion · 18 horas",
+      "s2_desc": "Sistema comercial asistido por IA para <strong>acelerar pipeline velocity</strong> en su equipo.",
+      "s3_desc": "Formacion corporativa completa. Sistema <strong>replicable y escalable</strong> para equipos de alto rendimiento."
     },
     "diagnostico": {
       "badge": "Diagnostico · 03",
@@ -1991,6 +2005,7 @@
     },
     "recursos": {
       "badge": "Recursos · 04",
+      "title_html": "Recursos para <span class=\"gradient-text\">Empresas</span>",
       "lead": "Disenamos el sistema operativo que su organizacion necesita para escalar sin friccion.",
       "c1_title": "Catalogo Premium",
       "c1_desc": "Recursos de alto nivel para equipos corporativos exigentes.",
@@ -2014,6 +2029,7 @@
     },
     "metodo": {
       "badge": "El Metodo · 06",
+      "title_html": "Primero evolucionar con <span class=\"gradient-text\">metodo</span>",
       "lead": "Luego revolucionar con tecnologia. Un sistema comercial replicable y escalable asistido por IA.",
       "p1_title": "Diagnosticar",
       "p1_desc": "Medir el punto de partida con precision. Identificar brechas y oportunidades reales.",
@@ -2033,12 +2049,14 @@
   "pers": {
     "hero": {
       "badge": "Autodiagnostico · 01",
+      "subtitle": "La IA no es el destino, es el vehiculo. Defina su estrategia y tome el control de su <strong>relevancia profesional</strong>. Comience con un diagnostico estrategico Sin Riesgo.",
       "cta_diagnostico": "Diagnostico Sin Riesgo →",
       "cta_cotizador": "Disenar mi Inversion",
       "cta_programas": "Ver Programas ↓"
     },
     "recursos": {
       "badge": "Recursos · 02",
+      "title": "Recursos para <span class=\"gradient-text\">Profesionales</span>",
       "lead": "Desde asistentes IA personalizados hasta arquitectura de sistemas 100% personalizada.",
       "c1_title": "Asistentes IA",
       "c1_desc": "Prompts, agentes y flujos automatizados para potenciar tu productividad personal.",
@@ -2055,23 +2073,30 @@
       "lead": "6 Bootcamps tacticos y 2 Programas Elite. Cada programa te acerca a la soberania digital, profesional y estrategica.",
       "b1_meta": "Bootcamp 01",
       "b1_title": "Taller EstrategIA Personal",
+      "b1_desc": "Define tu <strong>estrategia personal</strong> con IA como vehiculo.",
       "b2_meta": "Bootcamp 02",
       "b2_title": "Productividad con IA",
+      "b2_desc": "Automatiza tareas repetitivas y <strong>recupera horas</strong> cada semana.",
       "b3_meta": "Bootcamp 03",
       "b3_title": "Comunicacion Amplificada",
+      "b3_desc": "Domina la <strong>comunicacion asistida por IA</strong> en todos los canales.",
       "b4_meta": "Bootcamp 04",
       "b4_title": "Datos para Decisiones",
+      "b4_desc": "Aprende a tomar decisiones con <strong>datos y analisis IA</strong>.",
       "b5_meta": "Bootcamp 05",
       "b5_title": "Marca Personal Digital",
+      "b5_desc": "Construye tu <strong>presencia digital</strong> con estrategia y herramientas IA.",
       "b6_meta": "Bootcamp 06",
       "b6_title": "Automatizacion Profesional",
+      "b6_desc": "Disena flujos de trabajo <strong>automatizados</strong> para tu practica profesional.",
       "org_tactico": "Tactico · 18h",
       "e1_meta": "Elite 01",
       "e1_title": "Digital Sovereignty Program",
       "e1_org": "Elite · Programa completo",
       "e2_meta": "Elite 02",
       "e2_title": "Digital Champions",
-      "e2_org": "Elite · Programa avanzado"
+      "e2_org": "Elite · Programa avanzado",
+      "e2_desc": "Para lideres que buscan <strong>transformar organizaciones</strong> desde la excelencia individual."
     },
     "comunidad": {
       "badge": "Comunidad · 04",
@@ -2111,7 +2136,7 @@
   "met": {
     "filosofia": {
       "badge": "Filosofia · 01",
-      "lead": "MetodologIA nace de la premisa de que toda persona y organizacion puede sistematizar su exito con las herramientas adecuadas y un proceso basado en evidencia."
+      "lead": "MetodologIA nace de la premisa de que toda persona y organizacion puede <strong>sistematizar su exito</strong> con las herramientas adecuadas y un proceso basado en evidencia."
     },
     "diagnostico": {
       "badge": "Diagnostico · 02",
@@ -2127,12 +2152,14 @@
     },
     "amplificacion": {
       "badge": "Amplificacion · 04",
+      "title": "Escalar lo que <span class=\"gradient-text\">funciona</span>",
       "lead": "Automatizacion, IA aplicada y transferencia de conocimiento al equipo.",
       "card_title": "Amplificacion con IA",
       "card_body": "Escalamos lo que funciona: automatizacion de tareas repetitivas, IA aplicada a la toma de decisiones y transferencia de conocimiento para que el equipo sea autonomo y sostenible."
     },
     "pivote": {
       "badge": "Pivote · 05",
+      "title": "Pivotar con <span class=\"gradient-text\">agilidad</span>",
       "lead": "Cuando los datos indican cambio de rumbo, pivotamos sin perder lo construido.",
       "card_title": "Pivote Agil",
       "card_body": "Los datos mandan. Cuando las metricas indican cambio de rumbo, pivotamos con agilidad sin perder lo construido. Cada iteracion conserva los aprendizajes y redirige la energia hacia lo que genera mayor impacto."

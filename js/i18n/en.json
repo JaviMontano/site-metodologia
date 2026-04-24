@@ -1445,7 +1445,11 @@
       "card3_title": "Method & WoW Maturity",
       "card4_meta": "Step 04 · 8-9 min",
       "card4_title": "Digital Capabilities",
-      "muted": "Each form opens in a new tab (Google Forms). Your responses are confidential."
+      "muted": "Each form opens in a new tab (Google Forms). Your responses are confidential.",
+      "card2_desc": "Adoption level, tools and <strong>AI confidence</strong>.",
+      "card3_desc": "Ways of working, personal systems and <strong>level of systematization</strong>.",
+      "card4_desc": "In-depth evaluation of <strong>digital competencies</strong> by area.",
+      "explore": "If you want to dive deeper into your results, you can explore our <a href=\"/personas/consultive-workshops-estrategia-personal.html\" style=\"color:var(--brand-gold);text-decoration:underline;\">Personal Strategy Workshop</a> — an individual session where we turn your diagnosis into a concrete action plan."
     },
     "empresas": {
       "eyebrow": "Companies · 03",
@@ -1824,6 +1828,7 @@
     },
     "redes": {
       "badge": "Social · 04",
+      "title": "Connect with <span class=\"gradient-text\">Us</span>",
       "lead": "Response within 2 business days.",
       "r1_title": "contacto@metodologia.info",
       "r1_desc": "Direct email for inquiries, proposals and collaborations.",
@@ -1857,7 +1862,8 @@
       "kpi1_label": "Workshops",
       "kpi2_label": "Bootcamps",
       "kpi3_label": "Elite",
-      "kpi4_label": "Consulting"
+      "kpi4_label": "Consulting",
+      "subtitle": "Training, consulting and coaching to boost your productivity with <strong style=\"color:var(--brand-gold)\">AI</strong> and method."
     },
     "masterclass": {
       "badge": "Masterclasses · 02",
@@ -1925,7 +1931,10 @@
       "bc04_meta": "BC-04 · GPTs + Agents",
       "bc04_title": "Amplified Work",
       "bc05_meta": "BC-05 · v0 + Stitch",
-      "bc05_title": "Vibe Coding"
+      "bc05_title": "Vibe Coding",
+      "bc03_impact": "Your own operating system: Agile + GTD + Second Brain integrated with AI. <strong>Predictability and zero friction</strong>.",
+      "bc04_impact": "Build your own GPTs and autonomous assistants. <strong>3 operational agents</strong> handling processes.",
+      "bc05_impact": "Build software without coding skills. <strong>Total independence</strong> from IT for agile solutions."
     },
     "elite": {
       "badge": "Elite · 06",
@@ -1939,6 +1948,7 @@
     },
     "cta": {
       "badge": "Next step · 07",
+      "title": "Ready to <span class=\"gradient-text\">accelerate</span>?",
       "lead": "No risk. Let us talk about your context and design your personalized route.",
       "cta1": "Let's Talk →",
       "cta2": "No-Risk Diagnosis",
@@ -1950,7 +1960,9 @@
       "badge": "B2B · 01",
       "cta_diagnostico": "No-Risk Diagnosis →",
       "cta_cotizador": "Simulate Investment",
-      "cta_programas": "View Programs ↓"
+      "cta_programas": "View Programs ↓",
+      "title_html": "Accelerate your Cash Flow with <span class=\"gradient-text\">Artificial Intelligence</span>",
+      "subtitle_html": "An AI-assisted commercial system that generates the liquidity needed to fund your <strong>Organizational (R)Evolution</strong>. Strategic consulting and corporate training for high-performance teams."
     },
     "stats": {
       "n1": "+127%",
@@ -1973,7 +1985,9 @@
       "s2_org": "Intensive · 6 hours",
       "s3_meta": "Step 03",
       "s3_title": "Commercial Management Bootcamp with AI",
-      "s3_org": "Immersion · 18 hours"
+      "s3_org": "Immersion · 18 hours",
+      "s2_desc": "AI-assisted commercial system to <strong>accelerate pipeline velocity</strong> in your team.",
+      "s3_desc": "Complete corporate training. A <strong>replicable and scalable</strong> system for high-performance teams."
     },
     "diagnostico": {
       "badge": "Diagnosis · 03",
@@ -1991,6 +2005,7 @@
     },
     "recursos": {
       "badge": "Resources · 04",
+      "title_html": "Resources for <span class=\"gradient-text\">Companies</span>",
       "lead": "We design the operating system your organization needs to scale without friction.",
       "c1_title": "Premium Catalog",
       "c1_desc": "High-level resources for demanding corporate teams.",
@@ -2014,6 +2029,7 @@
     },
     "metodo": {
       "badge": "The Method · 06",
+      "title_html": "First evolve with <span class=\"gradient-text\">method</span>",
       "lead": "Then revolutionize with technology. A replicable and scalable AI-assisted commercial system.",
       "p1_title": "Diagnose",
       "p1_desc": "Measure the starting point with precision. Identify real gaps and opportunities.",
@@ -2033,12 +2049,14 @@
   "pers": {
     "hero": {
       "badge": "Self-Assessment · 01",
+      "subtitle": "AI is not the destination, it is the vehicle. Define your strategy and take control of your <strong>professional relevance</strong>. Start with a no-risk strategic diagnosis.",
       "cta_diagnostico": "No-Risk Diagnosis →",
       "cta_cotizador": "Design my Investment",
       "cta_programas": "View Programs ↓"
     },
     "recursos": {
       "badge": "Resources · 02",
+      "title": "Resources for <span class=\"gradient-text\">Professionals</span>",
       "lead": "From personalized AI assistants to 100% custom systems architecture.",
       "c1_title": "AI Assistants",
       "c1_desc": "Prompts, agents and automated workflows to boost your personal productivity.",
@@ -2055,23 +2073,30 @@
       "lead": "6 tactical Bootcamps and 2 Elite Programs. Each program brings you closer to digital, professional and strategic sovereignty.",
       "b1_meta": "Bootcamp 01",
       "b1_title": "Personal StrategyIA Workshop",
+      "b1_desc": "Define your <strong>personal strategy</strong> with AI as the vehicle.",
       "b2_meta": "Bootcamp 02",
       "b2_title": "Productivity with AI",
+      "b2_desc": "Automate repetitive tasks and <strong>reclaim hours</strong> every week.",
       "b3_meta": "Bootcamp 03",
       "b3_title": "Amplified Communication",
+      "b3_desc": "Master <strong>AI-assisted communication</strong> across all channels.",
       "b4_meta": "Bootcamp 04",
       "b4_title": "Data for Decisions",
+      "b4_desc": "Learn to make decisions with <strong>data and AI analysis</strong>.",
       "b5_meta": "Bootcamp 05",
       "b5_title": "Digital Personal Brand",
+      "b5_desc": "Build your <strong>digital presence</strong> with strategy and AI tools.",
       "b6_meta": "Bootcamp 06",
       "b6_title": "Professional Automation",
+      "b6_desc": "Design <strong>automated</strong> workflows for your professional practice.",
       "org_tactico": "Tactical · 18h",
       "e1_meta": "Elite 01",
       "e1_title": "Digital Sovereignty Program",
       "e1_org": "Elite · Full Program",
       "e2_meta": "Elite 02",
       "e2_title": "Digital Champions",
-      "e2_org": "Elite · Advanced Program"
+      "e2_org": "Elite · Advanced Program",
+      "e2_desc": "For leaders seeking to <strong>transform organizations</strong> from individual excellence."
     },
     "comunidad": {
       "badge": "Community · 04",
@@ -2111,7 +2136,7 @@
   "met": {
     "filosofia": {
       "badge": "Philosophy · 01",
-      "lead": "MetodologIA is born from the premise that every person and organization can systematize their success with the right tools and an evidence-based process."
+      "lead": "MetodologIA is born from the premise that every person and organization can <strong>systematize their success</strong> with the right tools and an evidence-based process."
     },
     "diagnostico": {
       "badge": "Diagnosis · 02",
@@ -2127,12 +2152,14 @@
     },
     "amplificacion": {
       "badge": "Amplification · 04",
+      "title": "Scale what <span class=\"gradient-text\">works</span>",
       "lead": "Automation, applied AI and knowledge transfer to the team.",
       "card_title": "Amplification with AI",
       "card_body": "We scale what works: automation of repetitive tasks, AI applied to decision-making and knowledge transfer so the team is autonomous and sustainable."
     },
     "pivote": {
       "badge": "Pivot · 05",
+      "title": "Pivot with <span class=\"gradient-text\">agility</span>",
       "lead": "When data indicates a change of direction, we pivot without losing what was built.",
       "card_title": "Agile Pivot",
       "card_body": "Data rules. When metrics indicate a change of direction, we pivot with agility without losing what was built. Each iteration preserves learnings and redirects energy toward what generates the greatest impact."

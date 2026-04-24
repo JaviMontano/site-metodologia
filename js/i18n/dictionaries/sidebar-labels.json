@@ -7,7 +7,8 @@
       "recursos": { "es": "Recursos", "en": "Resources" },
       "metodo": { "es": "Método", "en": "Method" },
       "proposito": { "es": "Propósito", "en": "Purpose" },
-      "formacion": { "es": "Formación", "en": "Learning" }
+      "formacion": { "es": "Formación", "en": "Learning" },
+      "contacto": { "es": "Contacto", "en": "Contact" }
     },
     "diagnostico": {
       "introduccion": { "es": "Introducción", "en": "Introduction" },
@@ -53,6 +54,15 @@
       "prompts": { "es": "Prompts", "en": "Prompts" },
       "automatizacion": { "es": "Automatización", "en": "Automation" },
       "comunidad": { "es": "Comunidad", "en": "Community" }
+    },
+    "vision": {
+      "hero": { "es": "Visión", "en": "Vision" },
+      "problema": { "es": "Problema", "en": "Problem" },
+      "trampa": { "es": "Trampa", "en": "Trap" },
+      "sistema": { "es": "Sistema", "en": "System" },
+      "pivote": { "es": "Pivote", "en": "Pivot" },
+      "principios": { "es": "Principios", "en": "Principles" },
+      "contacto": { "es": "Contacto", "en": "Contact" }
     },
     "metodo": {
       "filosofia": { "es": "Filosofía", "en": "Philosophy" },
