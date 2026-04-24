@@ -56,7 +56,9 @@
       "cta_levels": "View Levels",
       "cta1": "No-Risk Diagnosis →",
       "cta2": "Explore Resources",
-      "cta3": "Learn the Method ↓"
+      "cta3": "Learn the Method ↓",
+      "title_html": "Let's Accelerate your <span class=\"gradient-text\">Strateg<span style=\"color:var(--brand-gold)\">yIA</span></span>",
+      "subtitle_html": "Proven methodology to achieve <strong>Digital, Professional and Strategic Sovereignty</strong>."
     },
     "dashboard": {
       "eyebrow": "How we define operational success",
@@ -112,10 +114,12 @@
       "research_title": "Research with method",
       "oss_label": "★ Pristino · OSS",
       "oss_title": "Agent on your infra",
+      "title": "No cost, no friction, <span class=\"gradient-text\">no risk</span>",
       "cta": "View all resources →"
     },
     "diag": {
       "eyebrow": "Diagnosis · 03",
+      "title": "No-Risk <span class=\"gradient-text\">Diagnosis</span>",
       "lead": "For individuals: 4 forms in ~20 min. For companies: deep evaluation meeting.",
       "personas_title": "Individuals",
       "personas_desc": "4 forms measuring AI maturity, methodology, digital capabilities and professional profile.",
@@ -127,6 +131,8 @@
     },
     "recursos": {
       "eyebrow": "Resources · 04",
+      "title": "Open <span class=\"gradient-text\">Resources</span>",
+      "lead": "32 GPTs · 31 Gems · 180+ prompts · Playbooks · Automations. <strong>No cost.</strong>",
       "tile1_label": "★ Assistants",
       "tile1_title": "GPTs + Gems",
       "tile1_desc": "18 Custom GPTs and 5 specialized Gemini Gems.",
@@ -142,19 +148,26 @@
     },
     "metodo": {
       "eyebrow": "The Method · 05",
+      "title": "Four phases to <span class=\"gradient-text\">transform</span>",
       "lead": "From reactive chaos to strategic design.",
       "fase1_meta": "Phase 01",
       "fase1_title": "Foundation",
+      "fase1_impact": "Map pain points and opportunities with <strong>evidence</strong>.",
       "fase2_meta": "Phase 02",
       "fase2_title": "Accelerate",
+      "fase2_impact": "Eliminate friction and trigger <strong>quick wins</strong>.",
       "fase3_meta": "Phase 03",
       "fase3_title": "Catalyze",
+      "fase3_impact": "Turn knowledge into <strong>digital assets</strong>.",
       "fase4_meta": "Phase 04",
       "fase4_title": "Amplify",
+      "fase4_impact": "Metodolog<span style=\"color:var(--brand-gold)\">IA</span> agents work <strong>24/7</strong>.",
       "cta": "See full Vision →"
     },
     "proposito": {
       "eyebrow": "Purpose · 06",
+      "title": "Our <span class=\"gradient-text\">Ikigai</span>",
+      "quote": "\"We co-create environments of <strong style=\"color:var(--brand-gold);\">abundance</strong> by promoting <strong style=\"color:var(--brand-gold);\">digital sovereignty</strong> and professional growth for individuals and organizations.\"",
       "lead": "The intersection of what we love, what we do well, what the world needs and what we get paid for.",
       "love_title": "What we love",
       "love_body": "Ideating strategy, designing systems, teaching and turning chaos into clarity.",
@@ -168,6 +181,7 @@
     },
     "formacion": {
       "eyebrow": "Training · 07",
+      "title": "From workshops to <span class=\"gradient-text\">Elite programs</span>",
       "lead": "Complete journey: from 1 hour to 16 weeks of transformation.",
       "ws_label": "12 Workshops · 1 to 3 hours",
       "ws01_title": "AI Intro",
@@ -189,10 +203,15 @@
       "ws12_chip": "WS-12 · Exponential Leadership",
       "bc_label": "5 Bootcamps · 18h + 2 optional sessions",
       "bc01_title": "Office Suite with AI",
+      "bc01_impact": "Recover <strong>2h daily</strong>. M365 + Copilot.",
       "bc02_title": "Sales with AI",
+      "bc02_impact": "Automated pipeline. <strong>Genuine connection</strong>.",
       "bc03_title": "Ways of Working",
+      "bc03_impact": "Your operating system. <strong>Total predictability</strong>.",
       "bc04_title": "Amplified Work",
+      "bc04_impact": "<strong>3 agents</strong> handling your processes.",
       "bc05_title": "Vibe Coding",
+      "bc05_impact": "<strong>Total independence</strong> from IT.",
       "elite_label": "2 Elite Programs · 16 weeks · 48h + 48h",
       "elite1_title": "Empowerment Program",
       "elite1_desc": "14 modules, 2 phases. From exhausted doer to impact strategist.",
@@ -201,12 +220,14 @@
       "elite2_desc": "Internal change agents. Operating standard 100.",
       "elite2_link": "Level 9 · 16 weeks",
       "campus_label": "Virtual Campus",
+      "campus_title": "Your training lives in the <span style=\"color:var(--brand-gold);\">Campus</span>",
       "campus_desc": "Access materials, recordings, exercises and your progress from any device.",
       "campus_cta": "Go to Campus →",
       "cta": "View full catalog →"
     },
     "contacto": {
       "eyebrow": "Next step · 08",
+      "title": "Let's Accelerate your <span class=\"gradient-text\">Strateg<span style=\"color:var(--brand-gold)\">yIA</span></span>",
       "lead": "No risk, no friction. Let's talk about how to accelerate your results with method and AI.",
       "cta1": "Let's Talk →",
       "cta2": "No-Risk Diagnosis",

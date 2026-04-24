@@ -56,7 +56,9 @@
       "cta_levels": "Ver Niveles",
       "cta1": "Diagnóstico Sin Riesgo →",
       "cta2": "Explorar Recursos",
-      "cta3": "Conocer el Método ↓"
+      "cta3": "Conocer el Método ↓",
+      "title_html": "Aceleremos su <span class=\"gradient-text\">Estrateg<span style=\"color:var(--brand-gold)\">IA</span></span>",
+      "subtitle_html": "Metodología probada para alcanzar la <strong>Soberanía Digital, Profesional y Estratégica</strong>."
     },
     "dashboard": {
       "eyebrow": "Así definimos el éxito operativo",
@@ -112,10 +114,12 @@
       "research_title": "Research con método",
       "oss_label": "★ Pristino · OSS",
       "oss_title": "Agente en tu infra",
+      "title": "Sin costo, sin fricción, <span class=\"gradient-text\">sin riesgo</span>",
       "cta": "Ver todos los recursos →"
     },
     "diag": {
       "eyebrow": "Diagnóstico · 03",
+      "title": "Diagnóstico <span class=\"gradient-text\">Sin Riesgo</span>",
       "lead": "Para personas: 4 formularios en ~20 min. Para empresas: reunión de evaluación profunda.",
       "personas_title": "Personas",
       "personas_desc": "4 formularios que miden madurez en IA, método, capacidades digitales y perfil profesional.",
@@ -127,6 +131,8 @@
     },
     "recursos": {
       "eyebrow": "Recursos · 04",
+      "title": "Recursos <span class=\"gradient-text\">abiertos</span>",
+      "lead": "32 GPTs · 31 Gems · 180+ prompts · Playbooks · Automatizaciones. <strong>Sin costo.</strong>",
       "tile1_label": "★ Asistentes",
       "tile1_title": "GPTs + Gems",
       "tile1_desc": "18 Custom GPTs y 5 Gemini Gems especializados.",
@@ -142,19 +148,26 @@
     },
     "metodo": {
       "eyebrow": "El Método · 05",
+      "title": "Cuatro fases para <span class=\"gradient-text\">transformar</span>",
       "lead": "Del caos reactivo al diseño estratégico.",
       "fase1_meta": "Fase 01",
       "fase1_title": "Fundamentar",
+      "fase1_impact": "Mapear dolores y oportunidades con <strong>evidencia</strong>.",
       "fase2_meta": "Fase 02",
       "fase2_title": "Acelerar",
+      "fase2_impact": "Eliminar fricción y activar <strong>victorias rápidas</strong>.",
       "fase3_meta": "Fase 03",
       "fase3_title": "Catalizar",
+      "fase3_impact": "Convertir conocimiento en <strong>activos digitales</strong>.",
       "fase4_meta": "Fase 04",
       "fase4_title": "Amplificar",
+      "fase4_impact": "Agentes de Metodolog<span style=\"color:var(--brand-gold)\">IA</span> trabajan <strong>24/7</strong>.",
       "cta": "Ver Visión completa →"
     },
     "proposito": {
       "eyebrow": "Propósito · 06",
+      "title": "Nuestro <span class=\"gradient-text\">Ikigai</span>",
+      "quote": "\"Cocreamos entornos de <strong style=\"color:var(--brand-gold);\">abundancia</strong> promoviendo la <strong style=\"color:var(--brand-gold);\">soberanía digital</strong> y profesional de personas y organizaciones.\"",
       "lead": "La intersección entre lo que amamos, lo que hacemos bien, lo que el mundo necesita y por lo que nos pagan.",
       "love_title": "Lo que amamos",
       "love_body": "Idear estrategia, diseñar sistemas, enseñar y ordenar caos en claridad.",
@@ -168,6 +181,7 @@
     },
     "formacion": {
       "eyebrow": "Formación · 07",
+      "title": "De workshops a <span class=\"gradient-text\">programas Élite</span>",
       "lead": "Recorrido completo: desde 1 hora hasta 16 semanas de transformación.",
       "ws_label": "12 Workshops · 1 a 3 horas",
       "ws01_title": "Intro IA",
@@ -189,10 +203,15 @@
       "ws12_chip": "WS-12 · Liderazgo Exponencial",
       "bc_label": "5 Bootcamps · 18h + 2 sesiones opcionales",
       "bc01_title": "Ofimática con IA",
+      "bc01_impact": "Recupera <strong>2h diarias</strong>. M365 + Copilot.",
       "bc02_title": "Ventas con IA",
+      "bc02_impact": "Pipeline automatizado. <strong>Conexión genuina</strong>.",
       "bc03_title": "Formas de Trabajo",
+      "bc03_impact": "Tu sistema operativo. <strong>Predictibilidad total</strong>.",
       "bc04_title": "Trabajo Amplificado",
+      "bc04_impact": "<strong>3 agentes</strong> atendiendo tus procesos.",
       "bc05_title": "Vibe Coding",
+      "bc05_impact": "<strong>Independencia total</strong> de TI.",
       "elite_label": "2 Programas Élite · 16 semanas · 48h + 48h",
       "elite1_title": "Programa de Empoderamiento",
       "elite1_desc": "14 módulos, 2 fases. De ejecutante agotado a estratega de impacto.",
@@ -201,12 +220,14 @@
       "elite2_desc": "Agentes de cambio internos. Estándar operativo 100.",
       "elite2_link": "Nivel 9 · 16 semanas",
       "campus_label": "Campus Virtual",
+      "campus_title": "Tu formación vive en el <span style=\"color:var(--brand-gold);\">Campus</span>",
       "campus_desc": "Accede a materiales, grabaciones, ejercicios y tu progreso desde cualquier dispositivo.",
       "campus_cta": "Ir al Campus →",
       "cta": "Ver catálogo completo →"
     },
     "contacto": {
       "eyebrow": "Siguiente paso · 08",
+      "title": "Aceleremos su <span class=\"gradient-text\">Estrateg<span style=\"color:var(--brand-gold)\">IA</span></span>",
       "lead": "Sin riesgo, sin fricción. Conversemos sobre cómo acelerar tus resultados con método e IA.",
       "cta1": "Conversemos →",
       "cta2": "Diagnóstico Sin Riesgo",
