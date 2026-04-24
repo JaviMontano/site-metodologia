@@ -225,6 +225,9 @@
       "campus_cta": "Go to Campus →",
       "cta": "View full catalog →"
     },
+    "modal": {
+      "close": "Close"
+    },
     "contacto": {
       "eyebrow": "Next step · 08",
       "title": "Let's Accelerate your <span class=\"gradient-text\">Strateg<span style=\"color:var(--brand-gold)\">yIA</span></span>",

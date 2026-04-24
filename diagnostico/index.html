@@ -196,12 +196,12 @@
           <span class="info-dialog__term" id="diagDialogTerm"></span>
           <h3 class="info-dialog__title" id="diagDialogTitle"></h3>
         </div>
-        <button class="info-dialog__close" type="button" aria-label="Cerrar" onclick="this.closest('dialog').close()">✕</button>
+        <button class="info-dialog__close" type="button" data-i18n-aria-label="home.modal.close" aria-label="Cerrar" onclick="this.closest('dialog').close()">✕</button>
       </div>
       <div class="info-dialog__body" id="diagDialogBody"></div>
       <div style="margin-top:1.25rem;display:flex;gap:.75rem;flex-wrap:wrap;">
-        <a id="diagDialogCTA" href="#" target="_blank" rel="noopener noreferrer" class="home-cta home-cta--primary" style="display:inline-flex;">Iniciar formulario →</a>
-        <button type="button" class="home-cta home-cta--tertiary" onclick="this.closest('dialog').close()">Cancelar</button>
+        <a id="diagDialogCTA" href="#" target="_blank" rel="noopener noreferrer" class="home-cta home-cta--primary" style="display:inline-flex;" id="diagCTABtn">Iniciar formulario →</a>
+        <button type="button" class="home-cta home-cta--tertiary" id="diagCancelBtn" onclick="this.closest('dialog').close()">Cancelar</button>
       </div>
     </div>
   </dialog>
@@ -209,79 +209,33 @@
   <script type="module">
     import { initShell } from '../js/blueprint/shell.js?v=4';
     import { hydratePage } from '../js/cms/hydrate-page.js?v=4';
+    import { getDiagEntry, getDiagUIText } from '../js/diag-glossary.js?v=4';
     initShell({ pageSlug: 'diagnostico' });
     hydratePage('diagnostico');
 
-    // ═══ DIAGNOSTICO MODALS ═══
-    const DIAG = {
-      ficha: {
-        term: 'Paso 01 · 3-4 min',
-        title: 'Ficha Personal',
-        url: 'https://forms.gle/C3NRx4ZmFmkymsgu5',
-        body: `<p>Este formulario recoge tu <strong>contexto profesional</strong> para personalizar todo el diagnostico.</p>
-<h4>Que te vamos a preguntar</h4>
-<ul>
-<li><strong>Identificacion:</strong> nombre, contacto, ciudad</li>
-<li><strong>Perfil profesional:</strong> empresa, cargo, experiencia, nivel educativo</li>
-<li><strong>Motivacion:</strong> tus 3 motivadores principales, como aprendes mejor, que esperas lograr</li>
-<li><strong>Autorizaciones:</strong> tratamiento de datos y comunicaciones</li>
-</ul>
-<p style="margin-top:.75rem;font-size:.85rem;color:var(--brand-text-soft);">Al completar esta ficha, nuestros agentes activan tu perfil para que, al terminar los demas formularios, puedas recibir un diagnostico a tu medida.</p>`
-      },
-      ia: {
-        term: 'Paso 02 · 4-5 min',
-        title: 'Madurez en IA',
-        url: 'https://forms.gle/HumRZT2soF7XqKav6',
-        body: `<p>Medimos tu <strong>nivel real de adopcion de IA</strong> — no lo que sabes, sino lo que haces con ella.</p>
-<h4>Que te vamos a preguntar</h4>
-<ul>
-<li><strong>Conocimiento:</strong> diferencia entre IA tradicional y generativa, que es un prompt, herramientas usadas</li>
-<li><strong>Practica:</strong> frecuencia de uso, escenarios reales, actitud hacia la IA</li>
-<li><strong>Evidencia:</strong> artefactos construidos con IA, feedback recibido, nivel de confianza</li>
-</ul>
-<p style="margin-top:.75rem;font-size:.85rem;color:var(--brand-text-soft);">Incluye escenarios practicos como: "Tienes 2 horas para un informe sobre un tema que no dominas. Que harias con IA?"</p>`
-      },
-      metodo: {
-        term: 'Paso 03 · 4-5 min',
-        title: 'Madurez en Metodo y FdT',
-        url: 'https://forms.gle/4D7YysEcJtgeH6iVA',
-        body: `<p>Evaluamos tus <strong>formas de trabajo</strong>: como organizas, priorizas y produces resultados.</p>
-<h4>Que te vamos a preguntar</h4>
-<ul>
-<li><strong>Contexto:</strong> equipo vs individual, rol principal, herramientas de organizacion</li>
-<li><strong>Metodo:</strong> marcos aplicados (Agile, GTD, etc.), ciclos de planificacion, retrospectivas</li>
-<li><strong>Capacidades:</strong> power skills, dolor principal, disposicion al cambio</li>
-</ul>
-<p style="margin-top:.75rem;font-size:.85rem;color:var(--brand-text-soft);">Incluye escenarios como: "Informe urgente en 3 horas, sin plantilla, 3 tareas pendientes. Que haces primero?"</p>`
-      },
-      digital: {
-        term: 'Paso 04 · 8-9 min',
-        title: 'Capacidades Digitales',
-        url: 'https://forms.gle/Dwq6u5QaUCGoksiq8',
-        body: `<p>El mas completo: mide tus <strong>competencias digitales reales</strong> en 5 areas.</p>
-<h4>Que te vamos a preguntar</h4>
-<ul>
-<li><strong>Base digital:</strong> manejo de computador, busqueda en internet, seguridad digital</li>
-<li><strong>Ofimatica:</strong> correo, calendario, hojas de calculo, archivos en la nube</li>
-<li><strong>Segundo Cerebro:</strong> captura de notas, organizacion de ideas y aprendizajes</li>
-<li><strong>Multimedia:</strong> video, audio/podcast, edicion basica, herramientas multimedia</li>
-<li><strong>Reflexion:</strong> que habilidad digital mejorar as primero</li>
-</ul>
-<p style="margin-top:.75rem;font-size:.85rem;color:var(--brand-text-soft);">Incluye escenarios practicos con Excel, Google Drive, correo y grabacion de video.</p>`
-      }
-    };
-
+    // ═══ DIAGNOSTICO MODALS (bilingual via diag-glossary.js) ═══
     const dialog = document.getElementById('diagDialog');
+    const ctaBtn = document.getElementById('diagDialogCTA');
+    const cancelBtn = document.getElementById('diagCancelBtn');
     dialog?.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+
+    function updateDialogUI() {
+      const ui = getDiagUIText();
+      if (ctaBtn) ctaBtn.textContent = ui.cta;
+      if (cancelBtn) cancelBtn.textContent = ui.cancel;
+    }
+    updateDialogUI();
+    document.addEventListener('langchange', updateDialogUI);
 
     document.querySelectorAll('[data-diag]').forEach(card => {
       card.addEventListener('click', () => {
-        const d = DIAG[card.dataset.diag];
+        const d = getDiagEntry(card.dataset.diag);
         if (!d || !dialog) return;
         document.getElementById('diagDialogTerm').textContent = d.term;
         document.getElementById('diagDialogTitle').textContent = d.title;
         document.getElementById('diagDialogBody').innerHTML = d.body;
         document.getElementById('diagDialogCTA').href = d.url;
+        updateDialogUI();
         dialog.showModal();
       });
       card.addEventListener('keydown', e => {

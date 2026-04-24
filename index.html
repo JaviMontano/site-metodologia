@@ -327,7 +327,7 @@
           <span class="info-dialog__term" id="infoDialogTerm"></span>
           <h3 class="info-dialog__title" id="infoDialogTitle"></h3>
         </div>
-        <button class="info-dialog__close" type="button" aria-label="Cerrar" onclick="this.closest('dialog').close()">✕</button>
+        <button class="info-dialog__close" type="button" data-i18n-aria-label="home.modal.close" aria-label="Cerrar" onclick="this.closest('dialog').close()">✕</button>
       </div>
       <p class="info-dialog__body" id="infoDialogBody"></p>
     </div>
@@ -336,110 +336,14 @@
   <script type="module">
     import { initShell } from './js/blueprint/shell.js?v=4';
     import { hydratePage } from './js/cms/hydrate-page.js?v=4';
+    import { getEntry } from './js/home-glossary.js?v=4';
     initShell({ pageSlug: 'home' });
     hydratePage('home');
 
-    // ═══ GLOSSARY: contenido de todos los modales ═══
-    const GLOSSARY = {
-      // ── Estándar 100 ✓ (conciso, tipo scorecard) ──
-      'std100': {
-        term: 'Estándar de Calidad',
-        title: '100 ✓',
-        body: `<p class="std100-tagline"><em>1</em> prompt → valor. <em>0</em> fricción. <em>0</em> delay.</p>
-<div class="std100-grid">
-  <div class="std100-cell"><span class="std100-num">1</span><span class="std100-lbl">Prompt = Resultado</span></div>
-  <div class="std100-cell"><span class="std100-num">0</span><span class="std100-lbl">Fricción</span></div>
-  <div class="std100-cell"><span class="std100-num">0</span><span class="std100-lbl">Delay</span></div>
-  <div class="std100-cell"><span class="std100-num">✓</span><span class="std100-lbl">Entrusted</span></div>
-</div>
-<p style="margin-top:.75rem;font-size:.85rem;">Calidad verificada: relevancia contextual, precisión factual y protocolo anti-alucinaciones en cada recurso que publicamos.</p>`
-      },
-
-      // ── Diagnóstico (3 pasos) ──
-      'diag01': { term: 'Diagnóstico · Paso 1', title: '5 Dimensiones',
-        body: '<p>Evaluamos tu situación en <strong>5 ejes</strong>: madurez digital, dolor operativo, urgencia estratégica, capacidad del equipo y segmento de mercado.</p><h4>Resultado</h4><p>Radar visual con tu nivel actual en cada dimensión.</p>' },
-      'diag02': { term: 'Diagnóstico · Paso 2', title: 'Tu Perfil',
-        body: '<p>Construimos tu <strong>radar de competencias</strong> con nivel detallado por área.</p><h4>Resultado</h4><p>Mapa de fortalezas y brechas priorizadas por impacto.</p>' },
-      'diag03': { term: 'Diagnóstico · Paso 3', title: 'Tu Roadmap',
-        body: '<p>Plan de acción priorizado con <strong>siguiente paso inmediato</strong>.</p><h4>Resultado</h4><p>Roadmap personalizado alineado a tus objetivos y recursos.</p>' },
-
-      // ── Recursos (3 tiles) ──
-      'rec_asist': { term: 'Recursos Abiertos', title: 'GPTs + Gems',
-        body: '<p><strong>18 Custom GPTs</strong> y <strong>5 Gemini Gems</strong> especializados por área.</p><h4>Incluye</h4><ul><li>Pristino — comité completo en 1 chat</li><li>Prompting avanzado para ventas y estrategia</li><li>Research con método y evidencia</li></ul>' },
-      'rec_prompts': { term: 'Recursos Abiertos', title: '180+ Prompts',
-        body: '<p>Bibliotecas curadas para <strong>ventas, desarrollo, estrategia y productividad</strong>.</p><h4>Organización</h4><ul><li>Por rol y nivel de experiencia</li><li>Plantillas copy-paste listas para usar</li><li>Calidad <strong style="color:var(--brand-gold)">100 ✓</strong></li></ul>' },
-      'rec_tools': { term: 'Recursos Abiertos', title: 'Playbooks + n8n',
-        body: '<p>Guías operativas paso a paso y <strong>automatizaciones listas</strong> para importar.</p><h4>Incluye</h4><ul><li>Flujos n8n para prospección y seguimiento</li><li>Playbooks de implementación por caso de uso</li><li>Templates de automatización empresarial</li></ul>' },
-
-      // ── Workshops (WS-01 a WS-12) ──
-      'ws01': { term: 'Workshop · 1-3h', title: 'WS-01 · Intro IA',
-        body: '<p>Superar la <em>Falacia de la Herramienta</em>: la IA amplifica, no sustituye el método.</p><h4>Entregable</h4><p>Mapeo de ecosistema y diagnóstico "Caos vs IA".</p>' },
-      'ws02': { term: 'Workshop · 1-3h', title: 'WS-02 · Prompting Avanzado',
-        body: '<p>Protocolos de interacción de alto rendimiento. Calidad <strong style="color:var(--brand-gold)">100 ✓</strong> desde el primer prompt.</p><h4>Entregable</h4><p>Biblioteca de prompts maestros personalizados.</p>' },
-      'ws03': { term: 'Workshop · 1-3h', title: 'WS-03 · Segundo Cerebro',
-        body: '<p>PKM con Obsidian/Notion. Nada se olvida, todo se conecta.</p><h4>Entregable</h4><p>Arquitectura PARA/Zettelkasten operativa.</p><h4>Impacto</h4><p>Recupera <strong>5h semanales</strong> de búsqueda.</p>' },
-      'ws04': { term: 'Workshop · 1-3h', title: 'WS-04 · Productividad Personal',
-        body: '<p>GTD + Kanban para dominar el flujo, no la lista.</p><h4>Entregable</h4><p>Tablero de control y sistema "Mente como el Agua".</p>' },
-      'ws05': { term: 'Workshop · 1-3h', title: 'WS-05 · Moving Motivators',
-        body: '<p>Descubre qué mueve a tu equipo con la dinámica de <em>Management 3.0</em>.</p><h4>Entregable</h4><p>Mapa de motivaciones del equipo y plan de acción.</p>' },
-      'ws06': { term: 'Workshop · 1-3h', title: 'WS-06 · Happiness Canvas',
-        body: '<p>Framework visual para medir y mejorar la satisfacción del equipo.</p><h4>Entregable</h4><p>Canvas completado con compromisos de mejora.</p>' },
-      'ws07': { term: 'Workshop · 1-3h', title: 'WS-07 · Team Canvas',
-        body: '<p>Alinear propósito, valores, roles y reglas del equipo en una sesión.</p><h4>Entregable</h4><p>Team Canvas firmado como acuerdo de trabajo.</p>' },
-      'ws08': { term: 'Workshop · 1-3h', title: 'WS-08 · De Ocupado a Productivo',
-        body: '<p>Identificar y eliminar las trampas de la "falsa productividad".</p><h4>Entregable</h4><p>Auditoría personal de tiempo y plan de recuperación.</p>' },
-      'ws09': { term: 'Workshop · 1-3h', title: 'WS-09 · ¿Qué pasa con la IA?',
-        body: '<p>Panorama real de la IA: oportunidades, riesgos y mitos desmentidos.</p><h4>Entregable</h4><p>Mapa de oportunidades IA para tu contexto específico.</p>' },
-      'ws10': { term: 'Workshop · 1-3h', title: 'WS-10 · Ideación con IA',
-        body: '<p>Técnicas de brainstorming potenciadas con IA generativa.</p><h4>Entregable</h4><p>Pipeline de ideas priorizadas y validadas.</p>' },
-      'ws11': { term: 'Workshop · 1-3h', title: 'WS-11 · Ética y Gobernanza',
-        body: '<p>Framework para uso responsable de IA en tu organización.</p><h4>Entregable</h4><p>Checklist de gobernanza y política de uso IA.</p>' },
-      'ws12': { term: 'Workshop · 1-3h', title: 'WS-12 · Liderazgo Exponencial',
-        body: '<p>Liderar equipos en la era de la IA: delegar a humanos <em>y</em> a agentes.</p><h4>Entregable</h4><p>Plan de liderazgo híbrido humano + IA.</p>' },
-
-      // ── Propósito / Ikigai ──
-      'iki_love': { term: 'Ikigai', title: 'Lo que amamos',
-        body: '<ul><li>Idear estrategia con socios</li><li>Diseñar sistemas y guardrails</li><li>Enseñar y habilitar: que otros superen</li><li>Ordenar caos en claridad</li></ul>' },
-      'iki_good': { term: 'Ikigai', title: 'Lo que hacemos bien',
-        body: '<ul><li>Convertir problemas en operación estable</li><li>Habilitar equipos (capacidades/CoE)</li><li>IA aplicada con método</li><li>Traducir complejo → operable</li></ul>' },
-      'iki_need': { term: 'Ikigai', title: 'Lo que el mundo necesita',
-        body: '<ul><li>Adopción segura de IA (sin humo)</li><li>Competitividad real para personas y organizaciones</li><li>Reducir trabajo invisible</li><li>Sistemas sostenibles</li></ul>' },
-      'iki_paid': { term: 'Ikigai', title: 'Por lo que nos pagan',
-        body: '<ul><li>Bootcamps y talleres in-company</li><li>Diagnóstico + roadmap por proceso</li><li>Pilotos de implementación</li><li>Activos 1→N (playbooks, asistentes, automatizaciones)</li></ul>' },
-
-      // ── Método (4 fases) ──
-      'fase01': { term: 'El Método · Fase 1', title: 'Fundamentar',
-        body: '<p>Mapear dolores, oportunidades y recursos con <strong>evidencia</strong>, no intuición.</p><h4>Salida</h4><p>Diagnóstico completo + mapa de prioridades.</p>' },
-      'fase02': { term: 'El Método · Fase 2', title: 'Acelerar',
-        body: '<p>Eliminar fricción y activar <strong>victorias rápidas</strong> que generan momentum.</p><h4>Salida</h4><p>Quick wins implementados + métricas base.</p>' },
-      'fase03': { term: 'El Método · Fase 3', title: 'Catalizar',
-        body: '<p>Convertir conocimiento tácito en <strong>activos digitales</strong> reutilizables.</p><h4>Salida</h4><p>Playbooks, templates y flujos automatizados.</p>' },
-      'fase04': { term: 'El Método · Fase 4', title: 'Amplificar',
-        body: '<p>Agentes de Metodolog<span style="color:var(--brand-gold)">IA</span> trabajan <strong>24/7</strong> por ti.</p><h4>Salida</h4><p>Ecosistema autónomo con supervisión humana estratégica.</p>' },
-
-      // ── Bootcamps ──
-      'bc01': { term: 'Bootcamp · 18h', title: 'BC-01 · Ofimática con IA',
-        body: '<p>M365 + Copilot. Automatizar la burocracia para liberar talento.</p><h4>Entregable</h4><p>Automatización de reportes, presentaciones y flujos.</p><h4>Impacto</h4><p>Recupera <strong>2h diarias</strong>.</p>' },
-      'bc02': { term: 'Bootcamp · 18h', title: 'BC-02 · Ventas con IA',
-        body: '<p>Prospección híbrida y personalización a escala.</p><h4>Entregable</h4><p>Pipeline comercial automatizado.</p><h4>Impacto</h4><p><strong>Conexión genuina</strong> a escala.</p>' },
-      'bc03': { term: 'Bootcamp · 18h', title: 'BC-03 · Formas de Trabajo',
-        body: '<p>Agile + GTD + 2º Cerebro integrados con IA.</p><h4>Entregable</h4><p>Tu propio sistema operativo con cero fricción.</p><h4>Impacto</h4><p><strong>Predictibilidad</strong> y flujo constante.</p>' },
-      'bc04': { term: 'Bootcamp · 18h', title: 'BC-04 · Trabajo Amplificado',
-        body: '<p>Crea tus propios GPTs y asistentes autónomos.</p><h4>Entregable</h4><p><strong>3 agentes</strong> atendiendo procesos de negocio.</p>' },
-      'bc05': { term: 'Bootcamp · 18h', title: 'BC-05 · Vibe Coding',
-        body: '<p>Construir software sin saber programar.</p><h4>Entregable</h4><p>Web app funcional lista para producción.</p><h4>Impacto</h4><p><strong>Independencia total</strong> de TI.</p>' },
-
-      // ── Programas Élite ──
-      'elite01': { term: 'Élite · 16 semanas', title: 'Programa de Empoderamiento',
-        body: '<p>14 módulos en 2 fases: de ejecutante agotado a estratega de impacto.</p><h4>Entregable</h4><p>Plan Maestro de Carrera con IA.</p><dl class="kv"><dt>Nivel</dt><dd>7</dd><dt>Duración</dt><dd>16 semanas · 48h+48h</dd></dl>' },
-      'elite02': { term: 'Élite · 16 semanas', title: 'Digital Champions',
-        body: '<p>Agentes de cambio internos. Estándar <strong style="color:var(--brand-gold)">100 ✓</strong>.</p><h4>Entregable</h4><p>Marco de transformación organizacional.</p><dl class="kv"><dt>Nivel</dt><dd>9</dd><dt>Duración</dt><dd>16 semanas · 48h+48h</dd></dl>' },
-    };
-
-    // ═══ DIALOG ENGINE ═══
+    // ═══ DIALOG ENGINE (bilingual via home-glossary.js) ═══
     const dialog = document.getElementById('infoDialog');
     function openInfo(key) {
-      const d = GLOSSARY[key];
+      const d = getEntry(key);
       if (!d || !dialog) return;
       document.getElementById('infoDialogTerm').textContent = d.term;
       document.getElementById('infoDialogTitle').textContent = d.title;
@@ -447,7 +351,7 @@
       dialog.showModal();
     }
     function wireCard(el, key) {
-      if (!el || !GLOSSARY[key]) return;
+      if (!el || !getEntry(key)) return;
       el.style.cursor = 'pointer';
       el.addEventListener('click', () => openInfo(key));
       el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openInfo(key); }});

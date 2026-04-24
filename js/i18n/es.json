@@ -225,6 +225,9 @@
       "campus_cta": "Ir al Campus →",
       "cta": "Ver catálogo completo →"
     },
+    "modal": {
+      "close": "Cerrar"
+    },
     "contacto": {
       "eyebrow": "Siguiente paso · 08",
       "title": "Aceleremos su <span class=\"gradient-text\">Estrateg<span style=\"color:var(--brand-gold)\">IA</span></span>",
