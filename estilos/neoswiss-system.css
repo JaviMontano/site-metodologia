@@ -1009,6 +1009,66 @@ html[data-theme="light"] .site-header__nav-link--active {
   letter-spacing: -0.01em;
 }
 
+/* ── Estándar 100 ✓ modal grid ── */
+.std100-tagline {
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  color: var(--brand-text);
+  letter-spacing: 0.01em;
+}
+
+.std100-tagline em {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.std100-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+  margin-bottom: 1rem;
+}
+
+.std100-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem .75rem;
+  border-radius: var(--brand-radius-sm, 8px);
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 215, 0, .15);
+  text-align: center;
+  gap: .35rem;
+}
+
+.std100-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--brand-gold);
+  line-height: 1;
+}
+
+.std100-lbl {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--brand-text-soft);
+}
+
+html[data-theme="light"] .std100-cell {
+  background: rgba(0, 0, 0, .03);
+  border-color: rgba(18, 37, 98, .1);
+}
+
+html[data-theme="light"] .std100-num {
+  color: var(--brand-navy, #122562);
+}
+
 .info-dialog__body .kv {
   display: grid;
   grid-template-columns: auto 1fr;

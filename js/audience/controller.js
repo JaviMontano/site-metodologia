@@ -7,7 +7,7 @@
  */
 
 import { getAudience, setAudience, subscribe } from './state.js';
-import { resolveSlot } from '../blueprint/slot-resolver.js';
+import { resolveSlot } from '../blueprint/slot-resolver-v2.js';
 import { emit } from '../state/bus.js';
 
 /** @type {{ pageSlug: string, locale: string, dictionaries: object, firestoreSlots: object, cmsEnabled: boolean } | null} */
@@ -42,7 +42,8 @@ export function initAudienceController(options) {
 
   // Subscribe to future audience changes
   subscribe((newAudience) => {
-    scheduleHydration(pageSlug, newAudience, locale, currentOptions);
+    const currentLocale = document.documentElement.lang || 'es';
+    scheduleHydration(pageSlug, newAudience, currentLocale, currentOptions);
   });
 
   // Initial hydration with current audience

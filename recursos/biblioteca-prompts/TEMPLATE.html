@@ -13,15 +13,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;900&family=Montserrat:wght@400;600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- MetodologIA Design System -->
-    <link rel="stylesheet" href="../../estilos/variables.css">
-    <link rel="stylesheet" href="../../estilos/base.css">
-    <link rel="stylesheet" href="../../estilos/components.css">
+    <link rel="stylesheet" href="../../estilos/neoswiss-system.css?v=4">
+    <link rel="stylesheet" >
+    <link rel="stylesheet" >
     
     <!-- Components -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../../js/icons.js" defer></script>
-    <script src="../../components/SiteHeader.js" defer></script>
-    <script src="../../components/SiteFooter.js" defer></script>
+    
+    
+    
     <style>
         :root {
             --brand-gold: #eab308;
@@ -175,6 +175,7 @@
 
         .back-link:hover { color: white; }
     </style>
+<script type="importmap">{"imports":{"firebase/app":"https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js","firebase/firestore":"https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js"}}</script>
 </head>
     <site-header base-path="../../.." theme="dark" data-skip-i18n></site-header>
 
@@ -238,6 +239,10 @@
             <button class="copy-btn">Copiar Prompt</button>
         </article>
     </main>
+<triple-toggle></triple-toggle>
+<offline-pill></offline-pill>
+<consent-banner></consent-banner>
+<site-footer></site-footer>
 
     <site-footer base-path="../../.."></site-footer>
 
@@ -258,5 +263,6 @@
             });
         });
     </script>
+<script type="module">import{initShell}from'../../js/blueprint/shell.js?v=4';initShell({pageSlug:'biblioteca-prompts'});</script>
 </body>
 </html>

@@ -78,7 +78,7 @@ class SiteSidebar extends HTMLElement {
     // Sidebar head (canonical: .sidebar__head)
     const head = document.createElement('div');
     head.className = 'sidebar__head';
-    head.textContent = 'Índice';
+    head.textContent = this._lang === 'en' ? 'Index' : 'Índice';
     this.appendChild(head);
 
     // Nav wrapper (canonical: .sidebar__nav)
@@ -179,7 +179,8 @@ class SiteSidebar extends HTMLElement {
 
   async _loadLabels() {
     try {
-      const basePath = this.getAttribute('base-path') || '.';
+      const basePath = this.getAttribute('base-path')
+        || (window.location.pathname.replace(/\/+$/, '').split('/').length - 1 >= 1 ? '..' : '.');
       const res = await fetch(`${basePath}/js/i18n/dictionaries/sidebar-labels.json`);
       if (res.ok) this._labels = await res.json();
     } catch { /* labels remain null — ids used as fallback */ }
@@ -214,9 +215,9 @@ class SiteSidebar extends HTMLElement {
     if (this.classList.contains('is-open')) this.close();
   }
 
-  _handleLangChange(lang) {
-    this._lang = lang || 'es';
-    this.render();
+  _handleLangChange(data) {
+    this._lang = (data && data.locale) || data || 'es';
+    this._loadLabels().then(() => this.render());
   }
 }
 
