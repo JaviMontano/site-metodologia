@@ -414,13 +414,13 @@ html[data-theme="light"] .site-header__nav-link {
 
 html[data-theme="light"] .site-header__nav-link:hover,
 html[data-theme="light"] .site-header__nav-link:focus-visible {
-  color: #b88700;
-  background: rgba(184, 135, 0, .08);
+  color: #e0b400;
+  background: rgba(224, 180, 0, .08);
 }
 
 html[data-theme="light"] .site-header__nav-link--active {
-  color: #b88700;
-  background: rgba(184, 135, 0, .12);
+  color: #e0b400;
+  background: rgba(224, 180, 0, .12);
 }
 
 /* Ecosystem hover-reveal (desktop only) */
@@ -2346,13 +2346,13 @@ html[data-theme="light"] {
   --brand-darker: #e2e8f0;
   --brand-surface: #ffffff;
   --brand-surface-alt: #f1f5f9;
-  --brand-gold: #b88700;
-  --brand-gold-soft: #d4a106;
+  --brand-gold: #e0b400;
+  --brand-gold-soft: #f0c820;
   --brand-text: #0a122a;
   --brand-text-soft: #334155;
   --brand-muted: #64748b;
   --brand-border: rgba(10, 18, 42, .12);
-  --brand-border-hover: rgba(184, 135, 0, .45);
+  --brand-border-hover: rgba(224, 180, 0, .45);
 }
 
 html[data-theme="light"] body {
@@ -2366,8 +2366,8 @@ html[data-theme="light"] body {
 
 html[data-theme="light"] .bg-mesh {
   background:
-    radial-gradient(ellipse 60% 40% at 18% 12%, rgba(184, 135, 0, .08) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 50% at 82% 85%, rgba(184, 135, 0, .06) 0%, transparent 55%);
+    radial-gradient(ellipse 60% 40% at 18% 12%, rgba(224, 180, 0, .08) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 82% 85%, rgba(224, 180, 0, .06) 0%, transparent 55%);
 }
 
 /* Light: Header */
@@ -2376,12 +2376,12 @@ html[data-theme="light"] .site-header {
 }
 
 html[data-theme="light"] .site-header__cta {
-  background: #b88700;
+  background: #e0b400;
   color: #fff;
 }
 
 html[data-theme="light"] .site-header__logo-wrap {
-  box-shadow: 0 0 0 1px rgba(184, 135, 0, .4), 0 8px 22px rgba(10, 18, 42, .15);
+  box-shadow: 0 0 0 1px rgba(224, 180, 0, .4), 0 8px 22px rgba(10, 18, 42, .15);
 }
 
 html[data-theme="light"] .site-header__role-brand {
@@ -2402,13 +2402,13 @@ html[data-theme="light"] .sidebar__link {
 }
 
 html[data-theme="light"] .sidebar__link:hover {
-  background: rgba(184, 135, 0, .08);
-  color: #b88700;
+  background: rgba(224, 180, 0, .08);
+  color: #e0b400;
 }
 
 html[data-theme="light"] .sidebar__link.is-active {
-  background: rgba(184, 135, 0, .12);
-  box-shadow: inset 3px 0 0 #b88700;
+  background: rgba(224, 180, 0, .12);
+  box-shadow: inset 3px 0 0 #e0b400;
 }
 
 html[data-theme="light"] .sidebar-backdrop {
@@ -2417,7 +2417,7 @@ html[data-theme="light"] .sidebar-backdrop {
 
 /* Light: Gradient text */
 html[data-theme="light"] .gradient-text {
-  background: linear-gradient(135deg, #0a122a 0%, #b88700 100%);
+  background: linear-gradient(135deg, #0a122a 0%, #e0b400 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2461,8 +2461,8 @@ html[data-theme="light"] .stats {
 
 /* Light: Accels */
 html[data-theme="light"] .accels {
-  background: linear-gradient(135deg, rgba(184, 135, 0, .1), rgba(184, 135, 0, .02));
-  border-color: rgba(184, 135, 0, .3);
+  background: linear-gradient(135deg, rgba(224, 180, 0, .1), rgba(224, 180, 0, .02));
+  border-color: rgba(224, 180, 0, .3);
 }
 
 html[data-theme="light"] .accel {
@@ -2471,19 +2471,19 @@ html[data-theme="light"] .accel {
 }
 
 html[data-theme="light"] .accel--agent {
-  background: radial-gradient(circle at 30% 30%, rgba(184, 135, 0, .12), #fff);
-  box-shadow: 0 0 0 1px rgba(184, 135, 0, .2), 0 8px 24px rgba(184, 135, 0, .1);
+  background: radial-gradient(circle at 30% 30%, rgba(224, 180, 0, .12), #fff);
+  box-shadow: 0 0 0 1px rgba(224, 180, 0, .2), 0 8px 24px rgba(224, 180, 0, .1);
 }
 
 html[data-theme="light"] .accel-hero {
-  background: radial-gradient(circle at 15% 20%, rgba(184, 135, 0, .12), transparent 60%),
+  background: radial-gradient(circle at 15% 20%, rgba(224, 180, 0, .12), transparent 60%),
               linear-gradient(135deg, #fff, #f8fafc);
-  border-color: rgba(184, 135, 0, .4);
-  box-shadow: 0 0 0 1px rgba(184, 135, 0, .12), 0 20px 50px rgba(10, 18, 42, .1);
+  border-color: rgba(224, 180, 0, .4);
+  box-shadow: 0 0 0 1px rgba(224, 180, 0, .12), 0 20px 50px rgba(10, 18, 42, .1);
 }
 
 html[data-theme="light"] .accel-hero__cta {
-  background: #b88700;
+  background: #e0b400;
   color: #fff;
 }
 
@@ -2496,9 +2496,9 @@ html[data-theme="light"] .chip {
 
 html[data-theme="light"] .chip--gold,
 html[data-theme="light"] .chip--hero {
-  background: rgba(184, 135, 0, .1);
-  border-color: rgba(184, 135, 0, .4);
-  color: #b88700;
+  background: rgba(224, 180, 0, .1);
+  border-color: rgba(224, 180, 0, .4);
+  color: #e0b400;
 }
 
 html[data-theme="light"] .chip--extra {
@@ -2516,14 +2516,14 @@ html[data-theme="light"] .form-item {
 }
 
 html[data-theme="light"] .form-item__dot {
-  background: #b88700;
+  background: #e0b400;
 }
 
 /* Light: Info dialog */
 html[data-theme="light"] .info-dialog {
   background: #fff;
   color: #0a122a;
-  border-color: rgba(184, 135, 0, .4);
+  border-color: rgba(224, 180, 0, .4);
 }
 
 html[data-theme="light"] .info-dialog::backdrop {
@@ -2552,65 +2552,65 @@ html[data-theme="light"] .tl-item__impact strong,
 html[data-theme="light"] .stats__num,
 html[data-theme="light"] .sidebar__link.is-active,
 html[data-theme="light"] .sidebar__head {
-  color: #b88700;
+  color: #e0b400;
 }
 
 /* Light: Info popover */
 html[data-theme="light"] .info-pop {
-  background: rgba(184, 135, 0, .12);
-  border-color: rgba(184, 135, 0, .35);
-  color: #b88700;
+  background: rgba(224, 180, 0, .12);
+  border-color: rgba(224, 180, 0, .35);
+  color: #e0b400;
 }
 
 html[data-theme="light"] .info-pop:hover,
 html[data-theme="light"] .info-pop:focus-visible {
-  background: #b88700;
+  background: #e0b400;
   color: #fff;
 }
 
 /* Light: Skills group info button */
 html[data-theme="light"] .skills-group__info {
-  background: rgba(184, 135, 0, .1);
-  border-color: rgba(184, 135, 0, .35);
-  color: #b88700;
+  background: rgba(224, 180, 0, .1);
+  border-color: rgba(224, 180, 0, .35);
+  color: #e0b400;
 }
 
 html[data-theme="light"] .skills-group__info:hover,
 html[data-theme="light"] .skills-group__info:focus-visible {
-  background: #b88700;
+  background: #e0b400;
   color: #fff;
 }
 
 /* Light: Skills group toggle */
 html[data-theme="light"] .skills-group__toggle {
-  background: rgba(184, 135, 0, .08);
-  border-color: rgba(184, 135, 0, .3);
-  color: #b88700;
+  background: rgba(224, 180, 0, .08);
+  border-color: rgba(224, 180, 0, .3);
+  color: #e0b400;
 }
 
 html[data-theme="light"] .skills-group__toggle:hover,
 html[data-theme="light"] .skills-group__toggle:focus-visible {
-  background: rgba(184, 135, 0, .14);
-  border-color: #b88700;
+  background: rgba(224, 180, 0, .14);
+  border-color: #e0b400;
 }
 
 /* Light: Section foot */
 html[data-theme="light"] .section-foot {
-  background: linear-gradient(135deg, rgba(184, 135, 0, .08), rgba(184, 135, 0, .02));
-  border-color: rgba(184, 135, 0, .3);
+  background: linear-gradient(135deg, rgba(224, 180, 0, .08), rgba(224, 180, 0, .02));
+  border-color: rgba(224, 180, 0, .3);
 }
 
 html[data-theme="light"] .section-foot:hover {
-  background: linear-gradient(135deg, rgba(184, 135, 0, .16), rgba(184, 135, 0, .04));
-  border-color: #b88700;
+  background: linear-gradient(135deg, rgba(224, 180, 0, .16), rgba(224, 180, 0, .04));
+  border-color: #e0b400;
 }
 
 html[data-theme="light"] .section-foot__label {
-  color: #b88700;
+  color: #e0b400;
 }
 
 html[data-theme="light"] .section-foot__text strong {
-  color: #b88700;
+  color: #e0b400;
 }
 
 /* Light: Footer */
@@ -2619,8 +2619,8 @@ html[data-theme="light"] .site-footer {
 }
 
 html[data-theme="light"] .site-footer__col-head {
-  color: #b88700;
-  border-bottom-color: rgba(184, 135, 0, .2);
+  color: #e0b400;
+  border-bottom-color: rgba(224, 180, 0, .2);
 }
 
 html[data-theme="light"] .site-footer__link {
@@ -2628,11 +2628,11 @@ html[data-theme="light"] .site-footer__link {
 }
 
 html[data-theme="light"] .site-footer__link:hover {
-  color: #b88700;
+  color: #e0b400;
 }
 
 html[data-theme="light"] .site-footer__stat-num {
-  color: #b88700;
+  color: #e0b400;
 }
 
 html[data-theme="light"] .site-footer__brand-name {
@@ -2640,16 +2640,16 @@ html[data-theme="light"] .site-footer__brand-name {
 }
 
 html[data-theme="light"] .sidebar__cta {
-  background: #b88700;
+  background: #e0b400;
   color: #fff;
 }
 
 html[data-theme="light"] .sidebar__ecosystem strong {
-  color: #b88700;
+  color: #e0b400;
 }
 
 html[data-theme="light"] .site-header__ecosystem strong {
-  color: #b88700;
+  color: #e0b400;
 }
 
 /* Light: Hero photo */
@@ -2659,18 +2659,18 @@ html[data-theme="light"] .hero__photo {
 
 /* Light: Timeline left border */
 html[data-theme="light"] .tl-item {
-  border-left-color: #b88700;
+  border-left-color: #e0b400;
 }
 
 /* Light: Strong text in impact/lead */
 html[data-theme="light"] .tl-item__impact strong,
 html[data-theme="light"] .lead strong {
-  color: #b88700;
+  color: #e0b400;
 }
 
 /* Light: Accels kicker dot */
 html[data-theme="light"] .accels__kicker::before {
-  background: #b88700;
+  background: #e0b400;
 }
 
 
