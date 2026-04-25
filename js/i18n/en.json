@@ -1986,8 +1986,12 @@
       "s3_meta": "Step 03",
       "s3_title": "Commercial Management Bootcamp with AI",
       "s3_org": "Immersion · 18 hours",
+      "s1_desc": "We identify gaps and manual friction. Map of time losses and <strong>immediate action plan</strong>.",
+      "s1_risk": "Risk: $0",
       "s2_desc": "AI-assisted commercial system to <strong>accelerate pipeline velocity</strong> in your team.",
-      "s3_desc": "Complete corporate training. A <strong>replicable and scalable</strong> system for high-performance teams."
+      "s2_level": "Exploration",
+      "s3_desc": "Complete corporate training. A <strong>replicable and scalable</strong> system for high-performance teams.",
+      "s3_level": "Full Commitment"
     },
     "diagnostico": {
       "badge": "Diagnosis · 03",
@@ -2044,6 +2048,9 @@
       "badge": "Next step · 07",
       "lead": "No friction. Just strategic clarity. Schedule your no-risk diagnosis and receive a personalized roadmap.",
       "cta": "Schedule No-Risk Diagnosis →"
+    },
+    "pyme": {
+      "text": "<strong>Universal Access:</strong> Companies ≤ 10 employees / ≤ 3 years may qualify for <a href=\"../personas/\" style=\"text-decoration:underline;\">Individual</a> pricing. (Subject to validation)."
     }
   },
   "pers": {

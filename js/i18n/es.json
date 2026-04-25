@@ -1986,8 +1986,12 @@
       "s3_meta": "Paso 03",
       "s3_title": "Bootcamp de Gestion Comercial con IA",
       "s3_org": "Inmersion · 18 horas",
+      "s1_desc": "Identificamos brechas y fricciones manuales. Mapa de perdidas de tiempo y <strong>plan de accion inmediato</strong>.",
+      "s1_risk": "Riesgo: $0",
       "s2_desc": "Sistema comercial asistido por IA para <strong>acelerar pipeline velocity</strong> en su equipo.",
-      "s3_desc": "Formacion corporativa completa. Sistema <strong>replicable y escalable</strong> para equipos de alto rendimiento."
+      "s2_level": "Exploración",
+      "s3_desc": "Formacion corporativa completa. Sistema <strong>replicable y escalable</strong> para equipos de alto rendimiento.",
+      "s3_level": "Compromiso Total"
     },
     "diagnostico": {
       "badge": "Diagnostico · 03",
@@ -2044,6 +2048,9 @@
       "badge": "Siguiente paso · 07",
       "lead": "Sin friccion. Solo claridad estrategica. Agende su diagnostico sin riesgo y reciba un roadmap personalizado.",
       "cta": "Agendar Diagnostico Sin Riesgo →"
+    },
+    "pyme": {
+      "text": "<strong>Acceso Universal:</strong> Empresas ≤ 10 empleados / ≤ 3 años pueden aspirar a Tarifa <a href=\"../personas/\" style=\"text-decoration:underline;\">Personas</a>. (Sujeto a validación)."
     }
   },
   "pers": {
