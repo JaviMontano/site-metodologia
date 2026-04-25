@@ -25,7 +25,7 @@ import '../../components/ConsentBanner.js?v=4';
 import { initTheme } from '../theme/toggle.js?v=4';
 import { initAudienceController, hydrateSlots } from '../audience/controller.js';
 import { getAudience } from '../audience/state.js';
-import { on } from '../state/bus.js';
+import { on, emit } from '../state/bus.js';
 import { initLegacyRouter, checkRedirect } from '../redirects/legacy-router.js';
 
 /**
@@ -95,6 +95,12 @@ export async function initShell(options = {}) {
       document.head.appendChild(s);
     });
   }
+  // Bridge: i18n.js fires a DOM CustomEvent, bus subscribers need an emit
+  document.addEventListener('langchange', (e) => {
+    const locale = e.detail?.lang || 'es';
+    emit('langchange', { locale });
+  });
+
   const [pageDict, commonDict] = await Promise.all([
     fetchJSON(`${base}js/i18n/dictionaries/${pageSlug}.json`),
     fetchJSON(`${base}js/i18n/dictionaries/common.json`),
