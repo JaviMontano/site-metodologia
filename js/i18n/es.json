@@ -2506,5 +2506,124 @@
     "title": "Página no encontrada",
     "body": "La página que buscas no existe o fue movida. Vuelve al inicio y explora todo lo que MetodologIA tiene para ti.",
     "cta": "Volver al home →"
+  },
+  "vis": {
+    "hero": {
+      "badge": "La Ciencia del Trabajo Aumentado",
+      "title": "<span style=\"color:var(--brand-gold)\">Método</span> + Tecnolog<span style=\"color:var(--brand-gold)\">IA</span> = <span class=\"gradient-text\">Soberanía</span>",
+      "description": "<strong>Spoiler alert:</strong> La tecnología sin método es solo velocidad en la dirección equivocada. Diseñamos sistemas para la <strong style=\"color:var(--brand-gold)\">Soberanía Digital, Profesional y Estratégica</strong>.",
+      "cta1": "Explorar el Sistema ↓",
+      "cta2": "Conversemos"
+    },
+    "problema": {
+      "badge": "Diagnóstico · 02",
+      "title": "La <span style=\"color:#ef4444\">Fractura</span> <span class=\"gradient-text\">Operativa</span>",
+      "subtitle": "El \"caos\" no es mala suerte. Es un fallo de diseño en tu sistema de trabajo.",
+      "card1": {
+        "num": "01 · Alerta Crítica",
+        "title": "Multitasking Crónico",
+        "desc": "El asesino silencioso de la profundidad estratégica. Cada interrupción cuesta 23 minutos de refoco."
+      },
+      "card2": {
+        "num": "02 · Drenaje de Recursos",
+        "title": "Fricción Repetitiva",
+        "desc": "Tareas zombies que drenan talento senior. Tu equipo más valioso hace copy-paste 4 horas al día."
+      },
+      "card3": {
+        "num": "03 · Amnesia Institucional",
+        "title": "Silos de Información",
+        "desc": "Conocimiento atrapado en chats, correos y cabezas. Cuando alguien se va, se lleva todo."
+      },
+      "card4": {
+        "num": "04 · Falacia de Herramienta",
+        "title": "IA Cosmética",
+        "desc": "Herramientas potentes, procesos rotos. Comprar software no arregla un problema de comportamiento."
+      }
+    },
+    "trampa": {
+      "badge": "La Trampa · 03",
+      "title": "Caos + <span style=\"color:var(--brand-gold)\">IA</span> = Caos<sup style=\"color:var(--brand-gold)\">²</sup>",
+      "description": "La tecnología es un <strong>amplificador</strong>.<br>Si tu proceso es sólido, lo escala.<br>Si tu proceso es basura, <strong style=\"color:#ef4444\">escala la basura</strong>.",
+      "quote": "\"Creer que comprar software arreglará un problema de comportamiento.\"",
+      "quote_author": "— La Falacia de la Herramienta"
+    },
+    "sistema": {
+      "badge": "El Sistema · 04",
+      "title": "Las 4 Fases de la <span class=\"gradient-text\">Soberanía</span>",
+      "subtitle": "Del caos reactivo al diseño estratégico. Cada fase construye sobre la anterior.",
+      "f1": {
+        "meta": "Fase 1 · Diagnóstico",
+        "title": "FUNDAMENTAR",
+        "desc": "Mapeamos dolores, flujos y oportunidades reales. <strong>Sin supuestos</strong> — solo evidencia medible."
+      },
+      "f2": {
+        "meta": "Fase 2 · Tracción",
+        "title": "ACELERAR",
+        "desc": "Eliminamos fricción y activamos <strong>victorias rápidas</strong>. El equipo siente el cambio en semanas, no meses."
+      },
+      "f3": {
+        "meta": "Fase 3 · Sistematización",
+        "title": "CATALIZAR",
+        "desc": "Convertimos conocimiento tácito en <strong>activos digitales replicables</strong>. Playbooks, templates, agentes."
+      },
+      "f4": {
+        "meta": "Fase 4 · Escala & Soberanía",
+        "title": "AMPLIFICAR",
+        "desc": "Agentes de Metodolog<span style=\"color:var(--brand-gold)\">IA</span> trabajan <strong>24/7</strong> para ti. Tú diseñas, ellos ejecutan."
+      }
+    },
+    "pivote": {
+      "badge": "Framework · 05",
+      "title": "Framework <span class=\"gradient-text\">P.I.V.O.T.E.</span>",
+      "subtitle": "Human First, <span style=\"color:var(--brand-gold)\">IA</span> Next. Limpiamos la señal antes de amplificarla. Cada decisión se evalúa en este orden — la tecnología es <em>siempre</em> penúltima.",
+      "phase_a": "Fase A · Fundamentar",
+      "phase_b": "Fase B · Amplificar",
+      "p": { "title": "Personas", "desc": "Mindset, roles y capacidades. ¿Quién decide, quién ejecuta, quién aprende?" },
+      "i": { "title": "Interacciones", "desc": "Flujos, fricciones y dependencias. ¿Dónde se pierde tiempo, energía y contexto?" },
+      "v": { "title": "Valor", "desc": "Impacto real medible. ¿Qué actividades generan ROI y cuáles son ruido?" },
+      "o": { "title": "Organización", "desc": "Sistematización y estructura. Playbooks, SOPs y knowledge base viva." },
+      "t": { "title": "Tecnología", "desc": "Automatización e IA. Solo después de limpiar la señal, la amplificamos." },
+      "e": { "title": "Evolución", "desc": "Mejora continua. Métricas, retrospectivas y pivoteo basado en datos." }
+    },
+    "principios": {
+      "badge": "Principios · 06",
+      "title": "Lo que nos <span class=\"gradient-text\">Define</span>",
+      "subtitle": "Cuatro pilares innegociables de Metodolog<span style=\"color:var(--brand-gold)\">IA</span>.",
+      "metodo": {
+        "num": "01 · Método",
+        "title": "Primero el orden, después la herramienta.",
+        "desc": "Si el proceso está roto, la IA solo escala el caos. Un método claro convierte la IA en palanca."
+      },
+      "soberania": {
+        "num": "02 · Soberanía",
+        "title": "Termino cuando ya no me necesitas.",
+        "desc": "Construimos capacidad instalada, no dependencia. Cada engagement transfiere conocimiento explícito."
+      },
+      "dignidad": {
+        "num": "03 · Dignidad",
+        "title": "El rendimiento no justifica el desgaste.",
+        "desc": "Productividad sin bienestar es explotación disfrazada. Diseñamos cadencias con ritmo sostenible."
+      },
+      "evidencia": {
+        "num": "04 · Evidencia",
+        "title": "Sin datos, no hay verdad.",
+        "desc": "Todo lo que afirmamos tiene un antes y un después medible. CSAT, ROI, TTFW, Lead Time."
+      }
+    },
+    "resultado": {
+      "title": "El destino: <span class=\"gradient-text\">Soberanía Estratégica</span>",
+      "subtitle": "De operador reactivo a diseñador de impacto. Los sistemas trabajan para ti.",
+      "card1": { "title": "Liberas horas estratégicas", "desc": "Automatización inteligente para que tu talento se enfoque en lo que importa." },
+      "card2": { "title": "Crecimiento exponencial", "desc": "Sin aumentar costos fijos. Los agentes multiplican tu capacidad de entrega." },
+      "card3": { "title": "Organización antifrágil", "desc": "Que aprende de manera continua. El conocimiento nunca se va con las personas." }
+    },
+    "contacto": {
+      "badge": "Conectar · 07",
+      "title": "Aceleremos su <span class=\"gradient-text\">Estrateg<span style=\"color:var(--brand-gold)\">IA</span></span>",
+      "lead": "Sin riesgo, sin fricción. 60 minutos para conectar tus dolores y objetivos con las posibilidades reales.",
+      "cta1": "Conversemos →",
+      "cta2": "Explorar Recursos",
+      "response": "Respuesta en 2 días hábiles."
+    }
   }
 }
