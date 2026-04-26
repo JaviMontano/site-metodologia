@@ -1,12 +1,12 @@
 # site-metodologia-agentic — Sesión de Discovery SAGE
-> Auto-generado por Sofka SAGE v12.0 | 2026-04-21T16:39:51Z
+> Auto-generado por Sofka SAGE v12.0 | 2026-04-22T04:12:01Z
 
 ## Contexto del Proyecto
 | Atributo | Valor |
 |----------|-------|
 | Proyecto | `site-metodologia-agentic` |
 | Lenguaje | JavaScript/TypeScript |
-| Archivos | 534 total, 109 fuente |
+| Archivos | 3422 total, 452 fuente |
 | Git | ✅ activo |
 | Entregables | 0/16 |
 | RAG priming | 0 archivos |
