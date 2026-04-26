@@ -1,0 +1,254 @@
+/**
+ * home.css — Minimal page-specific overrides for index.html
+ *
+ * All base patterns come from neoswiss-system.css (canonical design system).
+ * This file only adds:
+ *   1. CTA button hierarchy (primary/secondary/tertiary)
+ *   2. Hero CTA layout
+ *   3. Reduced motion
+ *
+ * @license Copyleft
+ * @copyright MetodologIA
+ */
+
+/* ═══════════════════════════════════════════════════════════════
+   CTA BUTTON HIERARCHY
+   .home-cta--primary   → Gold bg, dark text
+   .home-cta--secondary → Outline, gold border
+   .home-cta--tertiary  → Text link
+   ═══════════════════════════════════════════════════════════════ */
+
+.home-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  min-height: 44px;
+  transition: transform .3s var(--ease),
+              box-shadow .3s var(--ease),
+              background .3s var(--ease),
+              color .3s var(--ease);
+  touch-action: manipulation;
+}
+
+.home-cta--primary {
+  padding: .9rem 1.8rem;
+  font-size: clamp(.95rem, 1.2vw, 1.15rem);
+  color: var(--brand-dark);
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  letter-spacing: .04em;
+}
+
+.home-cta--primary:hover,
+.home-cta--primary:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(255, 215, 0, .4);
+  outline: none;
+}
+
+.home-cta--primary:active {
+  transform: translateY(0) scale(.98);
+  transition-duration: .1s;
+}
+
+.home-cta--secondary {
+  padding: .75rem 1.5rem;
+  font-size: clamp(.875rem, 1vw, 1.05rem);
+  color: var(--brand-gold);
+  background: transparent;
+  border-color: var(--brand-gold);
+}
+
+.home-cta--secondary:hover,
+.home-cta--secondary:focus-visible {
+  background: var(--brand-gold);
+  color: var(--brand-dark);
+  outline: none;
+}
+
+.home-cta--tertiary {
+  padding: .5rem .75rem;
+  font-size: clamp(.875rem, 1vw, 1rem);
+  font-weight: 600;
+  color: var(--brand-gold);
+  background: none;
+  border: none;
+}
+
+.home-cta--tertiary:hover,
+.home-cta--tertiary:focus-visible {
+  color: var(--brand-text);
+  outline: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO CTA GROUP — vertical on mobile, horizontal on sm+
+   ═══════════════════════════════════════════════════════════════ */
+
+.home-hero__ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .home-hero__ctas {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LIGHT THEME OVERRIDES
+   ═══════════════════════════════════════════════════════════════ */
+
+html[data-theme="light"] .home-cta--primary {
+  background: #b88700;
+  border-color: #b88700;
+  color: #fff;
+}
+
+html[data-theme="light"] .home-cta--secondary {
+  color: #b88700;
+  border-color: #b88700;
+}
+
+html[data-theme="light"] .home-cta--secondary:hover {
+  background: #b88700;
+  color: #fff;
+}
+
+html[data-theme="light"] .home-cta--tertiary {
+  color: #b88700;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   REDUCED MOTION
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .home-cta {
+    transition: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HOME PAGE UTILITY CLASSES
+   Replaces all inline styles on index.html to satisfy linting
+   and centralise styling in this external file.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Hero section ── */
+.home-hero__container  { text-align: center; }
+.home-hero__h1         { margin: 1rem auto; max-width: 48rem; }
+.home-hero__lead       { max-width: 36rem; margin: 0 auto 2rem; }
+.home-hero__stats      { margin-top: 2.5rem; }
+
+/* ── Stats: 100✓ cell ── */
+.stats__cell--interactive {
+  cursor: pointer;
+  transition: transform .2s var(--ease);
+}
+.stats__num--gold { color: var(--brand-gold); }
+
+/* ── Section headings ── */
+.section-h2       { margin: 1rem 0 .5rem; }
+.section-lead     { margin-bottom: 1.5rem; }
+
+/* ── CTA inline-flex helpers ── */
+.home-cta--inline  { margin-top: 1.5rem; display: inline-flex; }
+
+/* ── Diagnóstico section ── */
+.diag-refs         { gap: 1rem; }
+.diag-card--gold   { border-color: rgba(255, 215, 0, .3); }
+.diag-card__title--gold { color: var(--brand-gold); }
+
+/* ── Método: fase 4 gold accent ── */
+.tl-item--gold     { border-left-color: var(--brand-gold); }
+.tl-item__meta--gold { color: var(--brand-gold); }
+
+/* ── Propósito / Ikigai icon colours ── */
+.principle__num--pink  { color: #f472b6; }
+.principle__num--blue  { color: #60a5fa; }
+.principle__num--green { color: #34d399; }
+.principle__num--gold  { color: var(--brand-gold); }
+
+/* ── Propósito: quote wrapper & quote ── */
+.proposito__quote-wrap  { text-align: center; margin-top: 1.5rem; }
+.proposito__blockquote {
+  font-style: italic;
+  color: var(--brand-text-soft);
+  max-width: 36rem;
+  margin: 0 auto;
+  font-size: .95rem;
+  line-height: 1.7;
+  border-left: 3px solid var(--brand-gold);
+  padding-left: 1rem;
+  text-align: left;
+}
+.proposito__quote-strong { color: var(--brand-gold); }
+
+/* ── Formación: section labels ── */
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.section-label--ws   { margin: 1.5rem 0 .75rem; }
+.section-label--bc   { margin: 2rem 0 .75rem; }
+.section-label--gold {
+  margin: 2rem 0 .75rem;
+  color: var(--brand-gold);
+}
+
+/* ── Formación: details / workshops ── */
+.ws-details         { margin-top: 1rem; }
+.ws-details__inner  { margin-top: 1rem; gap: .5rem; }
+.ws-summary         { cursor: pointer; list-style: none; }
+
+/* ── Formación: élite cards ── */
+.elite-card { border-color: rgba(255, 215, 0, .3); }
+.elite-card__title { color: var(--brand-gold); }
+
+/* ── Formación: campus block ── */
+.campus-block {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: var(--brand-radius);
+  border: 1px solid rgba(255, 215, 0, .25);
+  background: rgba(255, 215, 0, .04);
+  text-align: center;
+}
+.campus-block__label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+  margin-bottom: .5rem;
+}
+.campus-block__h3 { font-size: 1.3rem; margin: .25rem 0 .5rem; }
+.campus-block__span { color: var(--brand-gold); }
+.campus-block__desc {
+  color: var(--brand-text-soft);
+  font-size: .9rem;
+  max-width: 30rem;
+  margin: 0 auto .75rem;
+}
+
+/* ── Contacto section ── */
+.contacto__lead  { max-width: 36rem; margin: 0 auto 2rem; }
+.contacto__muted { font-size: .85rem; margin-top: 1rem; }
+
+/* ── Modal CTA ── */
+.dialog-cta { margin-top: 1.25rem; }
