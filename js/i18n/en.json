@@ -2606,12 +2606,30 @@
       "subtitle": "Human First, <span style=\"color:var(--brand-gold)\">AI</span> Next. We clean the signal before amplifying it. Every decision is evaluated in this order — technology is <em>always</em> second to last.",
       "phase_a": "Phase A · Ground",
       "phase_b": "Phase B · Amplify",
-      "p": { "title": "People", "desc": "Mindset, roles and capabilities. Who decides, who executes, who learns?" },
-      "i": { "title": "Interactions", "desc": "Flows, friction and dependencies. Where is time, energy and context lost?" },
-      "v": { "title": "Value", "desc": "Measurable real impact. Which activities generate ROI and which are noise?" },
-      "o": { "title": "Organization", "desc": "Systematization and structure. Playbooks, SOPs and living knowledge base." },
-      "t": { "title": "Technology", "desc": "Automation and AI. Only after cleaning the signal do we amplify it." },
-      "e": { "title": "Evolution", "desc": "Continuous improvement. Metrics, retrospectives and data-driven pivoting." }
+      "p": {
+        "title": "People",
+        "desc": "Mindset, roles and capabilities. Who decides, who executes, who learns?"
+      },
+      "i": {
+        "title": "Interactions",
+        "desc": "Flows, friction and dependencies. Where is time, energy and context lost?"
+      },
+      "v": {
+        "title": "Value",
+        "desc": "Measurable real impact. Which activities generate ROI and which are noise?"
+      },
+      "o": {
+        "title": "Organization",
+        "desc": "Systematization and structure. Playbooks, SOPs and living knowledge base."
+      },
+      "t": {
+        "title": "Technology",
+        "desc": "Automation and AI. Only after cleaning the signal do we amplify it."
+      },
+      "e": {
+        "title": "Evolution",
+        "desc": "Continuous improvement. Metrics, retrospectives and data-driven pivoting."
+      }
     },
     "principios": {
       "badge": "Principles · 06",
@@ -2641,9 +2659,18 @@
     "resultado": {
       "title": "The destination: <span class=\"gradient-text\">Strategic Sovereignty</span>",
       "subtitle": "From reactive operator to impact designer. The systems work for you.",
-      "card1": { "title": "Free strategic hours", "desc": "Intelligent automation so your talent focuses on what matters." },
-      "card2": { "title": "Exponential growth", "desc": "Without increasing fixed costs. Agents multiply your delivery capacity." },
-      "card3": { "title": "Antifragile organization", "desc": "That learns continuously. Knowledge never leaves with people." }
+      "card1": {
+        "title": "Free strategic hours",
+        "desc": "Intelligent automation so your talent focuses on what matters."
+      },
+      "card2": {
+        "title": "Exponential growth",
+        "desc": "Without increasing fixed costs. Agents multiply your delivery capacity."
+      },
+      "card3": {
+        "title": "Antifragile organization",
+        "desc": "That learns continuously. Knowledge never leaves with people."
+      }
     },
     "contacto": {
       "badge": "Connect · 07",
@@ -2652,6 +2679,308 @@
       "cta1": "Let's Talk →",
       "cta2": "Explore Resources",
       "response": "Response within 2 business days."
+    }
+  },
+  "sub": {
+    "recursos": {
+      "asistentes": {
+        "command_center": {
+          "title": "CommandCenter",
+          "lead": "Central orchestrator for projects and decisions. Coordinates priorities, assigns ownership, and keeps execution on track.",
+          "badge": "MOAT · Methods",
+          "body": "Frameworks, processes, and methodological architecture. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "dbr": {
+          "title": "DBR",
+          "lead": "Daily Business Review. Daily business check-in: key metrics, blockers, and decisions of the day.",
+          "badge": "MOAT · Assets",
+          "body": "Reports, reviews, and business deliverables. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "finder_conocimiento": {
+          "title": "FinderConocimiento",
+          "lead": "Intelligent knowledge base search. Finds, connects, and synthesizes scattered information.",
+          "badge": "MOAT · Ontology",
+          "body": "Research, analysis, and structured knowledge. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "finder_digital": {
+          "title": "FinderDigital",
+          "lead": "Digital ecosystem explorer. Maps tools, platforms, and technological opportunities.",
+          "badge": "MOAT · Ontology",
+          "body": "Research, analysis, and structured knowledge. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "finder_metodologia": {
+          "title": "FinderMetodologia",
+          "lead": "Specialized methodology search engine. SAFe, LeSS, Scrum, Kanban, Design Thinking, and more.",
+          "badge": "MOAT · Ontology",
+          "body": "Research, analysis, and structured knowledge. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "hbr": {
+          "title": "HBR",
+          "lead": "Half-Year Business Review. Semi-annual review: strategy, investment, and roadmap adjustments.",
+          "badge": "MOAT · Assets",
+          "body": "Reports, reviews, and business deliverables. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "infographic_gem_studio": {
+          "title": "InfographicGemStudio",
+          "lead": "AI-powered infographic studio. Visual design of data, frameworks, and processes.",
+          "badge": "MOAT · Templates",
+          "body": "Visual generation, infographics, and content. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "infographic_multimodal": {
+          "title": "InfographicMultimodalGenerator",
+          "lead": "Multimodal infographic generator. Combines text, data, and visualization into a single output.",
+          "badge": "MOAT · Templates",
+          "body": "Visual generation, infographics, and content. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "infographic_strategy": {
+          "title": "InfographicStrategyPlanner",
+          "lead": "Strategic infographic planner. Defines visual narrative, structure, and information flow.",
+          "badge": "MOAT · Templates",
+          "body": "Visual generation, infographics, and content. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "kpi_architect": {
+          "title": "KPIArchitect",
+          "lead": "Indicator architecture. Designs dashboards, defines metrics, and builds measurement systems.",
+          "badge": "MOAT · Methods",
+          "body": "Frameworks, processes, and methodological architecture. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "management_analyst": {
+          "title": "ManagementAnalyst",
+          "lead": "Management and operations analysis. Organizational maturity diagnosis and recommendations.",
+          "badge": "MOAT · Ontology",
+          "body": "Research, analysis, and structured knowledge. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "mbr": {
+          "title": "MBR",
+          "lead": "Monthly Business Review. Monthly review: trends, pipeline, health metrics, and forecast.",
+          "badge": "MOAT · Assets",
+          "body": "Reports, reviews, and business deliverables. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "meeting_analyst": {
+          "title": "MeetingAnalyst",
+          "lead": "Meeting analysis. Extracts agreements, action items, and decisions from transcripts.",
+          "badge": "MOAT · Assets",
+          "body": "Reports, reviews, and business deliverables. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "notetaker": {
+          "title": "NoteTaker",
+          "lead": "Intelligent note-taking. Structures, connects, and enriches notes with context and references.",
+          "badge": "MOAT · Assets",
+          "body": "Reports, reviews, and business deliverables. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "okr_architect": {
+          "title": "OKRArchitect",
+          "lead": "OKR and key results design. Aligns teams with measurable objectives and quarterly cycles.",
+          "badge": "MOAT · Methods",
+          "body": "Frameworks, processes, and methodological architecture. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "operations_analyst": {
+          "title": "OperationsAnalyst",
+          "lead": "Operations analysis. Identifies bottlenecks, losses, and improvement opportunities.",
+          "badge": "MOAT · Ontology",
+          "body": "Research, analysis, and structured knowledge. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "pristino": {
+          "title": "Pristino",
+          "lead": "Expert committee in 1 chat. Orchestrates multiple perspectives (strategy, architecture, UX, delivery) on your challenge in a single conversation.",
+          "badge": "MOAT · Star",
+          "body": "Primary orchestrator of the ecosystem. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "process_modeler": {
+          "title": "ProcessModeler",
+          "lead": "Business process modeling. BPMN, flowcharts, and operations optimization.",
+          "badge": "MOAT · Methods",
+          "body": "Frameworks, processes, and methodological architecture. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "productivity_architect": {
+          "title": "ProductivityArchitect",
+          "lead": "Personal productivity systems. GTD, Kanban, time-blocking, and high-performance routines.",
+          "badge": "MOAT · Methods",
+          "body": "Frameworks, processes, and methodological architecture. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "project_architect": {
+          "title": "ProjectArchitect",
+          "lead": "Project management architecture. WBS, schedules, risk management, and progress reports.",
+          "badge": "MOAT · Methods",
+          "body": "Frameworks, processes, and methodological architecture. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "prompt_analyst": {
+          "title": "PromptAnalyst",
+          "lead": "Prompt analysis and improvement. Quality evaluation, optimization, and reverse engineering.",
+          "badge": "MOAT · Ontology",
+          "body": "Research, analysis, and structured knowledge. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "qa_analyst": {
+          "title": "QAAnalyst",
+          "lead": "Quality assurance. Deliverable review, checklists, and validation against standards.",
+          "badge": "MOAT · Ontology",
+          "body": "Research, analysis, and structured knowledge. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "qbr": {
+          "title": "QBR",
+          "lead": "Quarterly Business Review. Quarterly review: OKRs, results, and planning for the next Q.",
+          "badge": "MOAT · Assets",
+          "body": "Reports, reviews, and business deliverables. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "research_blueprint": {
+          "title": "ResearchBlueprint",
+          "lead": "Structured research blueprint. Hypothesis design, theoretical framework, and methodology.",
+          "badge": "MOAT · Ontology",
+          "body": "Research, analysis, and structured knowledge. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "research_studio": {
+          "title": "ResearchStudio",
+          "lead": "Deep research studio. Literature review, state of the art, and executive synthesis.",
+          "badge": "MOAT · Ontology",
+          "body": "Research, analysis, and structured knowledge. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "scaleup_review": {
+          "title": "ScaleUpReview",
+          "lead": "Scale-up review. Evaluates whether your operation is ready to grow without breaking processes.",
+          "badge": "MOAT · Methods",
+          "body": "Frameworks, processes, and methodological architecture. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "strategy_architect": {
+          "title": "StrategyArchitect",
+          "lead": "Strategic design with frameworks. Builds roadmaps, defines vision, and aligns long-term objectives.",
+          "badge": "MOAT · Methods",
+          "body": "Frameworks, processes, and methodological architecture. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "tactics_architect": {
+          "title": "TacticsArchitect",
+          "lead": "Short-term execution tactics. Sprint planning, prioritization, and weekly action plans.",
+          "badge": "MOAT · Methods",
+          "body": "Frameworks, processes, and methodological architecture. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "task_tracking_analyst": {
+          "title": "TaskTrackingAnalyst",
+          "lead": "Task tracking. Prioritization, dependencies, and blocking alerts.",
+          "badge": "MOAT · Assets",
+          "body": "Reports, reviews, and business deliverables. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "wbr": {
+          "title": "WBR",
+          "lead": "Weekly Business Review. Weekly review: progress vs plan, deviations, and tactical adjustments.",
+          "badge": "MOAT · Assets",
+          "body": "Reports, reviews, and business deliverables. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "workflow_generator": {
+          "title": "WorkflowGenerator",
+          "lead": "Workflow generator. Automates repetitive processes with clear logic.",
+          "badge": "MOAT · Methods",
+          "body": "Frameworks, processes, and methodological architecture. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        },
+        "ybr": {
+          "title": "YBR",
+          "lead": "Yearly Business Review. Annual review: retrospective, lessons learned, and vision for the next year.",
+          "badge": "MOAT · Assets",
+          "body": "Reports, reviews, and business deliverables. Every assistant in the MetodologIA ecosystem follows the 100 ✓ quality standard."
+        }
+      }
+    },
+    "flujos_genspark": {
+      "title": "GenSpark Flows"
+    },
+    "ebooks": {
+      "title": "Ebooks"
+    },
+    "asistentes_gemini": {
+      "title": "Gemini Assistants"
+    },
+    "prototipos_v0": {
+      "title": "v0 Prototypes"
+    },
+    "asistentes_gpt": {
+      "title": "GPT Assistants"
+    },
+    "workflows": {
+      "title": "Workflows",
+      "wf_01": {
+        "title": "Workflow 01"
+      },
+      "wf_02": {
+        "title": "Workflow 02"
+      },
+      "wf_03": {
+        "title": "Workflow 03"
+      },
+      "wf_04": {
+        "title": "Workflow 04"
+      }
+    },
+    "a_medida": {
+      "title": "Custom Solutions"
+    },
+    "playbooks": {
+      "title": "Playbooks",
+      "item_01": {
+        "title": "Playbook 01"
+      }
+    },
+    "automatizaciones": {
+      "title": "Automations"
+    },
+    "flujos_manus": {
+      "title": "Manus Flows"
+    },
+    "prototipos_stitch": {
+      "title": "Stitch Prototypes"
+    },
+    "miniapps_claude": {
+      "title": "Claude MiniApps"
+    },
+    "miniapps_aistudio": {
+      "title": "AI Studio MiniApps"
+    },
+    "plugins_claude_code": {
+      "title": "Claude Code Plugins"
+    },
+    "premium": {
+      "flujos_genspark": {
+        "title": "GenSpark Flows Premium"
+      },
+      "ebooks": {
+        "title": "Ebooks Premium"
+      },
+      "asistentes_gemini": {
+        "title": "Gemini Assistants Premium"
+      },
+      "prototipos_v0": {
+        "title": "v0 Prototypes Premium"
+      },
+      "asistentes_gpt": {
+        "title": "GPT Assistants Premium"
+      },
+      "workflows": {
+        "title": "Workflows Premium"
+      },
+      "a_medida": {
+        "title": "Custom Solutions Premium"
+      },
+      "playbooks": {
+        "title": "Playbooks Premium"
+      },
+      "automatizaciones": {
+        "title": "Automations Premium"
+      },
+      "flujos_manus": {
+        "title": "Manus Flows Premium"
+      },
+      "prototipos_stitch": {
+        "title": "Stitch Prototypes Premium"
+      },
+      "miniapps_claude": {
+        "title": "Claude MiniApps Premium"
+      },
+      "miniapps_aistudio": {
+        "title": "AI Studio MiniApps Premium"
+      },
+      "plugins_claude_code": {
+        "title": "Claude Code Plugins Premium"
+      },
+      "catalogo": {
+        "title": "Premium Catalog"
+      }
     }
   }
 }
