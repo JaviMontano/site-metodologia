@@ -1,4 +1,4 @@
-<!-- Sofka SAGE Ghost Menu — Auto-generated 2026-04-21T16:39:51Z -->
+<!-- Sofka SAGE Ghost Menu — Auto-generated 2026-04-22T04:12:01Z -->
 ## 🗂️ SAGE Ghost Menu
 
 | Estado | Valor |

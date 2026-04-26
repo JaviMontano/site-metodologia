@@ -1,5 +1,5 @@
 # Calibration Digest — Sofka SAGE
-> Auto-generado: 2026-04-21T16:39:51Z
+> Auto-generado: 2026-04-22T04:12:01Z
 > Estado: **NO PRIMED** — se requiere /sdf:prime-repo
 
 ## Estado de Priming
@@ -8,7 +8,7 @@
 - **Acción requerida**: Ejecutar `/sdf:prime-repo` antes de iniciar discovery
 
 ## Fingerprint del Repo
-- **Git**: branch=009-home-landing-sales, commits=238, last=c57ee43 clarify: tasks.md Q&A — 5 ambiguities resolved via Socratic debate
+- **Git**: branch=009-home-landing-sales, commits=379, last=20af7bd feat(009): dynamic modal system — all cards now clickable with content
 - **Domain hints**: node
 
 

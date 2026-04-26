@@ -13,16 +13,16 @@
  */
 
 // --- Component imports (self-register on import) ---
-// ?v=4 cache-bust ensures fresh components
-import '../../components/SiteHeader.js?v=4';
-import '../../components/SiteSidebar.js?v=4';
-import '../../components/SiteFooter.js?v=4';
-import '../../components/TripleToggle.js?v=4';
-import '../../components/OfflinePill.js?v=4';
-import '../../components/ConsentBanner.js?v=4';
+// ?v=5 cache-bust ensures fresh components
+import '../../components/SiteHeader.js?v=5';
+import '../../components/SiteSidebar.js?v=5';
+import '../../components/SiteFooter.js?v=5';
+import '../../components/TripleToggle.js?v=5';
+import '../../components/OfflinePill.js?v=5';
+import '../../components/ConsentBanner.js?v=5';
 
 // --- Module imports ---
-import { initTheme } from '../theme/toggle.js?v=4';
+import { initTheme } from '../theme/toggle.js?v=5';
 import { initAudienceController, hydrateSlots } from '../audience/controller.js';
 import { getAudience } from '../audience/state.js';
 import { on, emit } from '../state/bus.js';
@@ -89,7 +89,7 @@ export async function initShell(options = {}) {
   if (!window.i18n) {
     await new Promise((resolve) => {
       const s = document.createElement('script');
-      s.src = `${base}js/i18n/i18n.js?v=4`;
+      s.src = `${base}js/i18n/i18n.js?v=5`;
       s.onload = resolve;
       s.onerror = resolve; // proceed even if it fails
       document.head.appendChild(s);

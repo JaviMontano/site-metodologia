@@ -7,7 +7,7 @@
 ## Contexto del Repo Activo
 - **Proyecto**: `site-metodologia-agentic`
 - **Lenguaje principal**: JavaScript/TypeScript
-- **Archivos fuente**: 109
+- **Archivos fuente**: 452
 - **Entregables existentes**: 0/16
 - **RAG priming disponible**: 0 archivos
 
@@ -48,4 +48,4 @@ El discovery-conductor opera como líder del comité permanente:
 4. Comenzar pipeline según modo seleccionado
 
 ---
-*Generado por session-context-gen.sh | Sofka SAGE v12.0 | 2026-04-21T16:39:51Z*
+*Generado por session-context-gen.sh | Sofka SAGE v12.0 | 2026-04-22T04:12:01Z*
