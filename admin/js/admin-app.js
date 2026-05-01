@@ -11,9 +11,25 @@ import { PriceEditor } from './price-editor.js';
 import { I18nEditor } from './i18n-editor.js';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 
-const app = getFirebaseApp();
-AuthService.init(app);
-AdminAPI.init(app);
+window.__adminBundleLoaded = true;
+
+let app;
+try {
+  app = getFirebaseApp();
+  AuthService.init(app);
+  AdminAPI.init(app);
+} catch (err) {
+  console.error('[admin] Firebase init failed:', err);
+  const login = document.getElementById('login-screen');
+  const fallback = document.getElementById('bundle-error');
+  if (login && fallback) {
+    login.classList.add('hidden');
+    fallback.classList.remove('hidden');
+    const desc = fallback.querySelector('.admin-login__desc');
+    if (desc) desc.textContent = `Firebase init failed: ${err.message}. Revisa la config en js/cms/firebase-config.js.`;
+  }
+  throw err;
+}
 
 const loginScreen = document.getElementById('login-screen');
 const deniedScreen = document.getElementById('denied-screen');

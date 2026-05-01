@@ -75,14 +75,52 @@ ssh -p 65002 u363367449@156.67.75.195 \
 |----|--------|---------|
 | BUG-001 | CDN propagating | SiteHeader.js stale on Cloudflare — correct on origin, CDN dev mode ON |
 | BUG-002 | Fixed locally | `ruta-mode.js` now has a committed `data/business-logic.json` contract artifact |
+| BUG-003 | Open (pre-existing) | 16 unit tests fallan en theme-toggle / triple-toggle — no relacionado con auth, registrar issue separado |
+
+## Admin Bundle Build Policy
+
+`admin/js/admin-bundle.js` **se commitea al repo** porque Hostinger es estático puro (Constitución I — sin Node.js en producción). Workflow:
+
+```bash
+# Antes de PR a staging/main si tocaste admin/js/*.js
+npm install --legacy-peer-deps
+npm run build:admin
+git add admin/js/admin-bundle.js
+git commit -m "chore: rebuild admin bundle"
+```
+
+CI (`.github/workflows/build-admin-bundle.yml`) ejecuta drift check en cada PR: si el bundle commiteado no coincide con `npm run build:admin` fresh, el PR falla. Esto previene que el bundle quede obsoleto.
+
+## Bootstrap First super_admin
+
+Ver guía completa en `scripts/README-bootstrap.md`. Resumen:
+
+```bash
+# 1. Descargar service account JSON desde Firebase Console
+# 2. Guardarlo en ~/secrets/metodologia-sa.json (NUNCA en repo — gitignored)
+export GOOGLE_APPLICATION_CREDENTIALS=~/secrets/metodologia-sa.json
+node scripts/set-user-role.js --email TU_EMAIL --role super_admin
+# 3. Cerrar sesión y volver a entrar en /admin/ para refrescar token
+```
+
+## MCP Servers
+
+`.mcp.json` configura tres servers — requiere reiniciar Claude Code tras instalar:
+
+| Server | Comando | Propósito |
+|--------|---------|-----------|
+| `tessl` | `tessl mcp start` | IIKit specs y skills |
+| `firebase` | `npx -y firebase-tools@latest experimental:mcp --dir .` | Firestore, Auth, Functions, emulator. Requiere `firebase login` primera vez |
+| `playwright` | `npx -y @playwright/mcp@latest` | Automatización de navegador para Console, hpanel, smoke tests |
 
 ## Test Commands
 
 ```bash
-npx vitest run              # 46 unit tests (8 files)
-npx vitest run tests/unit   # Unit only
-npx playwright test         # E2E (requires dev server)
-npx playwright test tests/e2e/ruta-i18n.spec.js  # BUG-001 regression
+npx vitest run                                       # 438 tests (8 files con fallos pre-existentes — BUG-003)
+npx vitest run tests/unit/auth-service.test.js       # Auth — debe ser 100% verde
+npx playwright test                                  # E2E (requiere dev server)
+npx playwright test tests/e2e/ruta-i18n.spec.js      # BUG-001 regression
+npx playwright test tests/e2e/admin-flow.spec.js     # Auth flow E2E
 ```
 
 ## Session Quick Start
@@ -90,4 +128,5 @@ npx playwright test tests/e2e/ruta-i18n.spec.js  # BUG-001 regression
 1. Check `git branch` — you should be on a feature branch from `staging`
 2. Read `CONSTITUTION.md` for governance
 3. Check this file's Active Bugs before starting work
-4. Run `npx vitest run` to verify baseline is green
+4. Run `npx vitest run tests/unit/auth-service.test.js` to verify auth baseline
+5. If tocas `admin/js/*.js`, recuerda `npm run build:admin` antes de commitear

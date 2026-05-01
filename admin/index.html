@@ -56,10 +56,33 @@
         <i data-lucide="shield-x" class="admin-denied__icon"></i>
         <div>
           <h2 class="admin-login__title" style="color: var(--brand-red);">Access Denied</h2>
-          <p class="admin-login__subtitle">Contact a super admin to request access.</p>
+          <p class="admin-login__subtitle">Tu cuenta no tiene un rol asignado.</p>
         </div>
       </div>
+      <p class="admin-login__desc" style="font-size: 0.875rem; opacity: 0.85;">
+        Un super admin debe ejecutar
+        <code style="background: rgba(0,0,0,0.15); padding: 2px 6px; border-radius: 4px;">setRole</code>
+        con tu email para darte acceso. Mientras tanto, cierra sesión y contacta a tu admin.
+      </p>
       <button id="logout-btn-denied" class="admin-btn admin-btn--secondary">Sign Out</button>
+    </div>
+  </div>
+
+  <!-- Bundle failure fallback -->
+  <div id="bundle-error" class="admin-login hidden">
+    <div class="admin-login__card">
+      <div class="admin-login__logo">
+        <i data-lucide="alert-triangle" class="admin-denied__icon"></i>
+        <div>
+          <h2 class="admin-login__title" style="color: var(--brand-red);">Bundle no cargado</h2>
+          <p class="admin-login__subtitle">El módulo de administración no se pudo cargar.</p>
+        </div>
+      </div>
+      <p class="admin-login__desc" style="font-size: 0.875rem; opacity: 0.85;">
+        Ejecuta <code style="background: rgba(0,0,0,0.15); padding: 2px 6px; border-radius: 4px;">npm run build:admin</code>
+        en local y commitea <code style="background: rgba(0,0,0,0.15); padding: 2px 6px; border-radius: 4px;">admin/js/admin-bundle.js</code>,
+        o verifica que el archivo se haya desplegado a Hostinger.
+      </p>
     </div>
   </div>
 
@@ -99,7 +122,22 @@
     </main>
   </div>
 
-  <script type="module" src="js/admin-bundle.js"></script>
-  <script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
+  <script type="module" src="js/admin-bundle.js" onerror="document.getElementById('login-screen').classList.add('hidden');document.getElementById('bundle-error').classList.remove('hidden');"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
+    // Safety net: if bundle never executes within 4s, show fallback.
+    window.__adminBundleLoaded = false;
+    setTimeout(() => {
+      if (!window.__adminBundleLoaded) {
+        const login = document.getElementById('login-screen');
+        const err = document.getElementById('bundle-error');
+        if (login && err && !login.classList.contains('hidden')) {
+          login.classList.add('hidden');
+          err.classList.remove('hidden');
+          if (window.lucide) lucide.createIcons();
+        }
+      }
+    }, 4000);
+  </script>
 </body>
 </html>
